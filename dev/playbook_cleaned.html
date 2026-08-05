@@ -1,0 +1,1631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JobDiva Recruiter Playbook — HonorVet Technologies</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --red:#EE1A0F;--orange:#FF9000;--charcoal:#231F20;
+  --grey:#808286;--border:#E0E0E0;--green:#27AE60;
+  --blue:#2b5fb0;--gold:#B8860B;--sb:272px;
+}
+html{scroll-behavior:smooth;overflow-anchor:none;}
+body{font-family:'Poppins',sans-serif;background:#F5F5F5;color:var(--charcoal);overflow-x:hidden;}
+
+/* ══ HEADER ══ */
+#hdr{position:fixed;top:0;left:0;right:0;height:70px;z-index:3000;
+  background:#fff;border-bottom:3px solid var(--red);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 28px;box-shadow:0 2px 14px rgba(0,0,0,.07);
+  /* Force its own GPU compositing layer so it can't get dropped by
+     the renderer during Autoplay's large scrollIntoView jumps on
+     this very image-heavy page -- without this, fixed elements can
+     occasionally fail to repaint through a big programmatic scroll. */
+  transform:translateZ(0);will-change:transform;backface-visibility:hidden;}
+.hdr-logo{height:46px;width:auto;object-fit:contain;display:block;}
+.hdr-l{display:flex;align-items:center;gap:16px;}
+.hdr-sep{width:1px;height:32px;background:var(--border);}
+.hdr-mod{font-size:12px;font-weight:600;color:var(--grey);letter-spacing:.3px;}
+.hdr-r{display:flex;gap:8px;}
+.hdr-tag{font-size:9px;font-weight:700;letter-spacing:1.5px;padding:5px 13px;
+  border-radius:20px;border:1.5px solid rgba(238,26,15,.25);color:var(--red);background:#FFF0EF;}
+#prog{position:fixed;top:70px;left:0;height:3px;z-index:3001;
+  background:linear-gradient(90deg,var(--red),var(--orange));width:0%;transition:width .1s;
+  transform:translateZ(0);will-change:transform,width;}
+
+/* ══ SHELL ══ */
+#shell{display:flex;padding-top:70px;min-height:100vh;}
+
+/* ══ SIDEBAR ══ */
+#sb{position:fixed;top:70px;left:0;bottom:0;width:var(--sb);
+  background:#fff;border-right:1px solid var(--border);
+  display:flex;flex-direction:column;z-index:2000;
+  transform:translateZ(0);will-change:transform;backface-visibility:hidden;}
+.sb-top{padding:16px 18px 12px;border-bottom:1px solid var(--border);flex-shrink:0;}
+.sb-top-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:800;color:var(--charcoal);}
+.sb-top-sub{font-size:9px;letter-spacing:1.5px;color:var(--grey);margin-top:2px;text-transform:uppercase;}
+.sb-prog-wrap{margin-top:10px;}
+.sb-prog-labels{display:flex;justify-content:space-between;font-size:9px;color:var(--grey);margin-bottom:4px;}
+.sb-prog-labels span:first-child{font-weight:700;color:var(--charcoal);}
+.sb-prog-bg{height:5px;background:#F0F0F0;border-radius:3px;}
+.sb-prog-bar{height:100%;background:linear-gradient(90deg,var(--red),var(--orange));border-radius:3px;width:0%;transition:width .4s;}
+
+.sb-list{flex:1;overflow-y:auto;padding:6px 0;}
+.sb-item{cursor:pointer;border-left:3px solid transparent;transition:all .18s;}
+.sb-item:hover{background:#FAFAFA;}
+.sb-item.active{background:#FFF0EF;border-left-color:var(--red);}
+.sb-item.visited .sb-num{background:var(--green);}
+.sb-item-inner{display:flex;align-items:center;gap:11px;padding:10px 14px;}
+.sb-num{width:28px;height:28px;border-radius:50%;background:var(--charcoal);
+  color:#fff;display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:700;flex-shrink:0;transition:background .2s;}
+.sb-item.active .sb-num{background:var(--red);}
+.sb-ch-num{font-size:8px;font-weight:700;letter-spacing:1.5px;color:var(--grey);margin-bottom:2px;}
+.sb-ch-title{font-size:11.5px;font-weight:700;color:var(--charcoal);line-height:1.3;}
+.sb-item.active .sb-ch-title{color:var(--red);}
+.sb-play{display:inline-flex;align-items:center;gap:5px;margin-top:4px;
+  padding:3px 9px;border-radius:10px;font-size:9px;font-weight:700;
+  border:none;background:var(--red);color:#fff;cursor:pointer;
+  transition:all .18s;opacity:0;font-family:'Poppins',sans-serif;}
+.sb-item:hover .sb-play,.sb-item.active .sb-play{opacity:1;}
+.sb-play.on{background:var(--green);}
+
+/* ══ MINI PLAYER — collapsible ══ */
+.sb-player-toggle{width:100%;border:none;background:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 16px;border-top:1px solid var(--border);background:#FAFAFA;
+  font-family:'Poppins',sans-serif;transition:.2s;}
+.sb-player-toggle:hover{background:#F0F0F0;}
+.spt-left{display:flex;align-items:center;gap:10px;}
+.spt-avatar{position:relative;width:34px;height:34px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--red),var(--orange));
+  display:flex;align-items:center;justify-content:center;font-size:15px;
+  box-shadow:0 2px 8px rgba(238,26,15,.3);}
+.spt-avatar::after{content:'';position:absolute;bottom:-1px;right:-1px;width:9px;height:9px;
+  border-radius:50%;background:var(--green);border:2px solid #fff;}
+.spt-label{font-size:10.5px;font-weight:700;color:var(--charcoal);}
+.spt-now{font-size:9.5px;color:var(--grey);margin-top:1px;text-align:left;}
+.spt-chevron{font-size:12px;color:var(--grey);transition:transform .25s;}
+.spt-chevron.open{transform:rotate(180deg);}
+.sb-player-body{padding:12px 16px 14px;border-top:1px solid var(--border);background:#fff;display:none;}
+.sb-player-body.open{display:block;}
+.sb-now-label{font-size:8px;font-weight:700;letter-spacing:1.5px;color:var(--grey);text-transform:uppercase;}
+.sb-now-title{font-size:11px;font-weight:700;color:var(--charcoal);margin-top:3px;min-height:14px;line-height:1.3;}
+.sb-controls{display:flex;align-items:center;gap:7px;margin-top:10px;}
+.ctrl{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--border);
+  background:#fff;font-size:11px;cursor:pointer;display:flex;align-items:center;
+  justify-content:center;transition:all .18s;color:var(--charcoal);}
+.ctrl:hover{border-color:var(--red);color:var(--red);}
+.ctrl.prime{width:40px;height:40px;background:var(--red);color:#fff;
+  border:none;font-size:16px;box-shadow:0 4px 14px rgba(238,26,15,.3);}
+.ctrl.prime:hover{background:#c8160c;color:#fff;}
+.eq{display:flex;gap:2px;align-items:flex-end;height:18px;margin-left:4px;}
+.eq span{width:3px;border-radius:2px;background:var(--red);display:block;height:4px;}
+.eq.on span{animation:eq .65s ease-in-out infinite alternate;}
+.eq.on span:nth-child(2){animation-delay:.1s;height:10px;}
+.eq.on span:nth-child(3){animation-delay:.2s;height:7px;}
+.eq.on span:nth-child(4){animation-delay:.3s;height:13px;}
+.eq.on span:nth-child(5){animation-delay:.15s;height:5px;}
+@keyframes eq{from{transform:scaleY(.3)}to{transform:scaleY(1)}}
+.speed-row{display:flex;align-items:center;gap:6px;margin-top:8px;}
+.speed-label{font-size:9px;color:var(--grey);}
+.speed-btn{padding:2px 8px;border-radius:3px;border:1px solid var(--border);
+  background:#fff;font-size:9.5px;cursor:pointer;font-family:'Poppins',sans-serif;transition:.15s;}
+.speed-btn.on,.speed-btn:hover{background:var(--red);color:#fff;border-color:var(--red);}
+
+/* ══ MAIN ══ */
+#main{margin-left:var(--sb);flex:1;min-width:0;}
+
+/* ══ HERO ══ */
+#hero{background:linear-gradient(150deg,#fff 0%,#FFF7F4 55%,#FFF0EC 100%);
+  padding:64px 56px 56px;position:relative;overflow:hidden;}
+#hero::before{content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(35,31,32,.03) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(35,31,32,.03) 1px,transparent 1px);
+  background-size:44px 44px;pointer-events:none;}
+.orb{position:absolute;border-radius:50%;filter:blur(90px);pointer-events:none;}
+.orb1{width:380px;height:380px;background:rgba(238,26,15,.1);top:-80px;right:-80px;animation:flt 11s ease-in-out infinite;}
+.orb2{width:260px;height:260px;background:rgba(255,144,0,.07);bottom:-40px;left:5%;animation:flt 9s ease-in-out infinite reverse;}
+@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-20px)}}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;
+  background:#FFF0EF;border:1px solid rgba(238,26,15,.2);border-radius:20px;
+  padding:5px 15px;font-family:'Courier New',monospace;font-size:10px;
+  font-weight:700;color:var(--red);letter-spacing:2px;margin-bottom:18px;}
+.ping{width:7px;height:7px;border-radius:50%;background:var(--red);display:inline-block;position:relative;}
+.ping::after{content:'';position:absolute;inset:-4px;border-radius:50%;
+  border:1.5px solid var(--red);animation:ping 1.6s ease-out infinite;}
+@keyframes ping{0%{opacity:1;transform:scale(.5)}100%{opacity:0;transform:scale(1.9)}}
+#hero h1{font-family:'Playfair Display',serif;font-size:clamp(32px,4.5vw,56px);
+  font-weight:900;color:var(--charcoal);line-height:1.08;margin-bottom:12px;}
+#hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--red),var(--orange));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-p{font-size:14.5px;color:var(--grey);line-height:1.8;max-width:680px;margin-bottom:24px;}
+
+/* ══ LEARNING BAR ══ */
+.learn-bar-wrap{width:100%;max-width:880px;margin-bottom:36px;}
+.learn-meta{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:12px;}
+.learn-time-block{display:flex;align-items:center;gap:11px;}
+.learn-clock{font-size:26px;line-height:1;}
+.learn-time-main{font-family:"Courier New",monospace;font-size:26px;font-weight:700;color:var(--red);line-height:1;}
+.learn-time-sub{font-size:9px;letter-spacing:1.5px;color:var(--grey);text-transform:uppercase;margin-top:2px;}
+.learn-chips{display:flex;flex-wrap:wrap;gap:7px;}
+.lchip{font-size:10px;font-weight:600;color:var(--grey);background:#fff;
+  border:1.5px solid var(--border);border-radius:16px;padding:4px 11px;}
+.learn-pct-block{font-family:"Courier New",monospace;text-align:right;}
+#heroPct{font-size:26px;font-weight:700;color:var(--red);}
+.learn-pct-label{font-size:9px;letter-spacing:1.5px;color:var(--grey);display:block;text-transform:uppercase;margin-top:1px;}
+.learn-track{position:relative;height:10px;background:#F0F0F0;border-radius:10px;overflow:visible;margin-top:8px;}
+.learn-fill{height:100%;width:0%;border-radius:10px;
+  background:linear-gradient(90deg,#EE1A0F 0%,#FF6B35 40%,#FF9000 70%,#27AE60 100%);
+  transition:width .5s cubic-bezier(.22,1,.36,1);
+  box-shadow:0 2px 8px rgba(238,26,15,.25);}
+.learn-markers{position:absolute;top:16px;left:0;right:0;pointer-events:none;}
+.lm{position:absolute;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:2px;}
+.lm::before{content:"";width:1px;height:6px;background:var(--border);}
+.lm span{font-size:8px;color:var(--grey);white-space:nowrap;}
+.lm:last-child{transform:translateX(-100%);}
+.lm:first-child{transform:translateX(0%);}
+
+/* ══ CHAPTER SECTIONS ══ */
+.ch{padding:64px 56px;background:#fff;scroll-margin-top:70px;border-bottom:1px solid #F0F0F0;}
+.ch.alt{background:linear-gradient(180deg,#F9F9F9,#fff);}
+.ch-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.ch-badge{width:42px;height:42px;border-radius:10px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--red),var(--orange));
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-family:'Courier New',monospace;font-size:13px;font-weight:700;}
+.ch-lbl{font-family:'Courier New',monospace;font-size:9.5px;font-weight:700;
+  letter-spacing:2.5px;color:var(--grey);text-transform:uppercase;}
+.ch h2{font-family:'Playfair Display',serif;font-size:clamp(24px,3vw,38px);
+  font-weight:800;color:var(--charcoal);line-height:1.12;margin-bottom:9px;}
+.ch-sub{font-size:14px;color:var(--grey);line-height:1.75;max-width:700px;}
+.ch-bar{width:44px;height:4px;border-radius:3px;margin-top:14px;
+  background:linear-gradient(90deg,var(--red),var(--orange));}
+.ch-listen{display:inline-flex;align-items:center;gap:8px;margin-top:14px;
+  padding:9px 20px;border-radius:8px;border:none;cursor:pointer;
+  background:linear-gradient(90deg,var(--red),var(--orange));
+  color:#fff;font-family:'Poppins',sans-serif;font-size:11.5px;
+  font-weight:700;transition:all .2s;}
+.ch-listen:hover{box-shadow:0 8px 22px rgba(238,26,15,.3);transform:translateY(-1px);}
+.ch-listen.playing{background:linear-gradient(90deg,var(--green),#1a7a40);}
+
+/* ══ SCREEN FRAMES ══ */
+.sframe{border-radius:12px;overflow:hidden;background:#fff;
+  box-shadow:0 16px 44px rgba(35,31,32,.12),0 0 0 1px var(--border);}
+.sframe-chrome{background:#F2F2F3;padding:10px 14px;
+  display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--border);}
+.sc-dots{display:flex;gap:5px;}
+.sc-dot{width:11px;height:11px;border-radius:50%;}
+.sc-url{flex:1;background:#fff;border:1px solid #ddd;border-radius:5px;
+  padding:4px 11px;font-family:'Courier New',monospace;font-size:9px;color:var(--grey);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.sframe img{width:100%;display:block;}
+.sframe-cap{padding:14px 18px 14px 16px;background:linear-gradient(135deg,#FFFBF5,#FAFAFA);
+  border-top:1px solid var(--border);border-left:4px solid var(--orange);
+  font-size:12.5px;color:#555;line-height:1.85;position:relative;}
+.sframe-cap b{color:var(--charcoal);}
+.cap-pin{display:inline-flex;align-items:center;justify-content:center;
+  width:20px;height:20px;border-radius:50%;background:#FFF0DD;font-size:11px;
+  margin-right:4px;vertical-align:-4px;}
+.cap-chip{display:inline-flex;align-items:center;gap:5px;padding:2px 9px 2px 7px;
+  border-radius:11px;font-weight:700;font-size:11.5px;margin:1px 2px;white-space:nowrap;}
+.cap-chip::before{content:'';width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.cap-chip.green{background:#E6F7ED;color:#1a7a40;}
+.cap-chip.green::before{background:var(--green);}
+.cap-chip.blue{background:#E8EEFA;color:var(--blue);}
+.cap-chip.blue::before{background:var(--blue);}
+.cap-chip.red{background:#FDECEB;color:var(--red);}
+.cap-chip.red::before{background:var(--red);}
+.cap-chip.gold{background:#FBF1DC;color:#8a6508;}
+.cap-chip.gold::before{background:var(--gold);}
+.badge-live{font-size:10px;font-weight:700;color:var(--green);letter-spacing:1px;
+  text-transform:uppercase;display:flex;align-items:center;gap:6px;margin-bottom:8px;}
+.badge-rec{font-size:10px;font-weight:700;color:var(--charcoal);letter-spacing:1px;
+  text-transform:uppercase;display:flex;align-items:center;gap:6px;margin-bottom:8px;
+  background:var(--charcoal);color:#fff;padding:4px 10px;border-radius:4px;display:inline-flex;}
+.recdot{width:7px;height:7px;border-radius:50%;background:var(--red);animation:blink 1s ease-in-out infinite;flex-shrink:0;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.15}}
+.full-shot{margin-bottom:40px;scroll-margin-top:70px;}
+.shot-section-label{font-family:'Courier New',monospace;font-size:9px;font-weight:700;
+  letter-spacing:2px;color:var(--grey);text-transform:uppercase;
+  margin:36px 0 12px;display:flex;align-items:center;gap:10px;}
+.shot-section-label::after{content:'';flex:1;height:1px;background:var(--border);}
+
+/* ══ LAYOUT ══ */
+.duo{display:grid;gap:40px;align-items:start;margin-bottom:44px;}
+.duo.s55{grid-template-columns:1fr 1.3fr;}
+.duo.s50{grid-template-columns:1fr 1fr;}
+.duo.flip .sframe{order:2;}
+.duo.flip .txt{order:1;}
+.txt h3{font-family:'Playfair Display',serif;font-size:21px;font-weight:800;
+  color:var(--charcoal);line-height:1.25;margin-bottom:11px;}
+.txt p{font-size:13px;color:#555;line-height:1.85;margin-bottom:12px;}
+.flist{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:12px;}
+.flist li{display:flex;gap:10px;font-size:12.5px;color:#444;line-height:1.65;align-items:flex-start;}
+.arr{color:var(--red);font-weight:700;flex-shrink:0;}
+.flist b{color:var(--charcoal);}
+code{background:#F0F0F0;border:1px solid var(--border);border-radius:3px;
+  padding:1px 6px;font-family:'Courier New',monospace;font-size:11px;}
+
+/* ══ CALLOUT BOXES ══ */
+.box{border-radius:0 10px 10px 0;padding:14px 17px;margin:12px 0;}
+.box-w{background:#FFF0EF;border-left:4px solid var(--red);}
+.box-t{background:#EAF7EF;border-left:4px solid var(--green);}
+.box-i{background:#EAF1F8;border-left:4px solid var(--blue);}
+.box-a{background:#FFF6E6;border-left:4px solid var(--orange);}
+.box-h{font-size:12px;font-weight:700;margin-bottom:6px;}
+.box ul{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.box li{font-size:11.5px;color:#444;line-height:1.6;display:flex;gap:6px;}
+.box li::before{content:'→';font-size:10px;opacity:.5;flex-shrink:0;margin-top:2px;}
+.eg-box{background:#F6FFF9;border:1.5px solid var(--green);border-radius:10px;
+  padding:14px 17px;margin:12px 0;}
+.eg-h{font-size:10px;font-weight:700;color:var(--green);letter-spacing:1px;
+  text-transform:uppercase;margin-bottom:7px;}
+.eg-box p{font-size:12.5px;color:#333;line-height:1.75;}
+
+/* ══ CARDS ══ */
+.cards{display:grid;gap:14px;}
+.g2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr));}
+.g3{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
+.g4{grid-template-columns:repeat(auto-fit,minmax(205px,1fr));}
+.card{background:#fff;border:1px solid var(--border);border-radius:11px;
+  padding:17px 19px;box-shadow:0 3px 10px rgba(0,0,0,.04);
+  position:relative;overflow:hidden;transition:all .25s;}
+.card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--red),var(--orange));opacity:0;transition:.25s;}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(35,31,32,.11);}
+.card:hover::after{opacity:1;}
+.card-ico{font-size:20px;margin-bottom:10px;}
+.card h4{font-size:13px;font-weight:700;color:var(--charcoal);margin-bottom:6px;}
+.card p{font-size:11.5px;color:var(--grey);line-height:1.65;}
+.card .sub{font-size:10.5px;color:#aaa;margin-top:7px;padding-top:7px;
+  border-top:1px dashed var(--border);font-style:italic;}
+.tab-pill{display:inline-block;color:#fff;font-family:'Courier New',monospace;
+  font-size:8px;font-weight:700;letter-spacing:.8px;padding:3px 8px;
+  border-radius:3px;margin-bottom:8px;text-transform:uppercase;}
+
+/* ══ APP MENU GROUPS ══ */
+.ag{border:1.5px solid;border-radius:10px;overflow:hidden;margin-bottom:10px;transition:.2s;}
+.ag:hover{transform:translateX(4px);}
+.ag-h{color:#fff;font-family:'Courier New',monospace;font-size:10px;font-weight:700;
+  letter-spacing:2px;padding:8px 14px;display:flex;align-items:center;gap:8px;}
+.ag-h em{font-style:normal;opacity:.65;font-weight:400;}
+.ag-t{display:flex;flex-wrap:wrap;padding:10px 12px;gap:5px;}
+.tile{font-size:10px;background:#F8F8F8;border:1px solid #E8E8E8;border-radius:4px;
+  padding:3px 9px;color:#444;transition:.15s;}
+.tile:hover{background:#fff;border-color:var(--red);color:var(--red);}
+
+/* ══ STEPS ══ */
+.steps-wrap{max-width:820px;position:relative;}
+.steps-wrap::before{content:'';position:absolute;left:18px;top:30px;bottom:30px;
+  width:2px;background:linear-gradient(180deg,var(--red),var(--orange));opacity:.18;}
+.step-row{display:flex;gap:20px;padding:13px 0;align-items:flex-start;}
+.step-num{width:36px;height:36px;border-radius:50%;border:2.5px solid var(--red);
+  background:#fff;color:var(--red);display:flex;align-items:center;
+  justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;z-index:1;transition:.25s;}
+.step-row:hover .step-num{background:var(--red);color:#fff;transform:scale(1.1);}
+.step-row.last .step-num{border-color:var(--green);color:var(--green);}
+.step-row.last:hover .step-num{background:var(--green);color:#fff;}
+.step-t{font-weight:700;font-size:13.5px;color:var(--charcoal);margin-bottom:3px;}
+.step-d{font-size:12px;color:var(--grey);line-height:1.65;}
+
+/* ══ PROFILE TABS ══ */
+.ptabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:9px;margin-top:20px;}
+.ptab{background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px 15px;
+  display:flex;gap:11px;align-items:flex-start;transition:.22s;}
+.ptab:hover{border-color:rgba(238,26,15,.3);box-shadow:0 5px 16px rgba(35,31,32,.07);transform:translateY(-2px);}
+.ptab-ic{width:30px;height:30px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+.ptab-name{font-size:11.5px;font-weight:700;color:var(--charcoal);margin-bottom:2px;}
+.ptab-desc{font-size:10.5px;color:var(--grey);line-height:1.5;}
+
+/* ══ DIVIDER ══ */
+.sdiv{display:flex;align-items:center;gap:13px;margin:32px 0 24px;}
+.sdiv-l{flex:1;height:1px;background:var(--border);}
+.sdiv-t{font-family:'Courier New',monospace;font-size:9px;letter-spacing:2.5px;
+  color:var(--grey);text-transform:uppercase;white-space:nowrap;}
+
+/* ══ FOOTER ══ */
+#footer{background:#F7F7F7;border-top:2px solid rgba(238,26,15,.18);
+  padding:46px 56px;text-align:center;}
+.foot-logo{height:58px;width:auto;display:block;margin:0 auto 14px;object-fit:contain;
+  mix-blend-mode:multiply;}
+.foot-bar{width:50px;height:3px;border-radius:2px;margin:0 auto 14px;
+  background:linear-gradient(90deg,var(--red),var(--orange));}
+.foot-copy{font-size:11px;color:var(--grey);line-height:1.9;}
+
+/* ══ SCROLL REVEAL ══ */
+.sr{opacity:0;transform:translateY(26px);transition:all .6s cubic-bezier(.22,1,.36,1);}
+.sr.vis{opacity:1;transform:none;}
+
+@media(max-width:960px){
+  #sb{display:none;}
+  #main{margin-left:0;}
+  .duo.s55,.duo.s50{grid-template-columns:1fr;}
+  .ch{padding:44px 22px;}
+  #hero{padding:44px 22px 36px;}
+}
+
+/* === START COURSE BUTTON === */
+.start-course-wrap{margin-bottom:28px;}
+.start-course-btn{
+  display:flex;align-items:center;gap:16px;width:100%;max-width:620px;
+  background:linear-gradient(90deg,var(--red),var(--orange));
+  border:none;border-radius:14px;padding:18px 24px;cursor:pointer;
+  box-shadow:0 14px 36px rgba(238,26,15,.28);transition:all .25s;
+  text-align:left;
+}
+.start-course-btn:hover{transform:translateY(-2px);box-shadow:0 18px 44px rgba(238,26,15,.36);}
+.start-course-btn.playing{background:linear-gradient(90deg,var(--green),#1a8a45);box-shadow:0 14px 36px rgba(39,174,96,.28);}
+.scb-icon{
+  width:46px;height:46px;border-radius:50%;background:rgba(255,255,255,.22);
+  display:flex;align-items:center;justify-content:center;color:#fff;
+  font-size:18px;flex-shrink:0;transition:.25s;
+}
+.start-course-btn.playing .scb-icon{animation:scbPulse 1.4s ease-in-out infinite;}
+@keyframes scbPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+.scb-text{display:flex;flex-direction:column;gap:3px;}
+.scb-title{font-size:15px;font-weight:800;color:#fff;letter-spacing:.3px;}
+.scb-sub{font-size:11.5px;color:rgba(255,255,255,.85);line-height:1.5;}
+
+/* === AUTOPLAY BANNER (shown while course is running) === */
+.autoplay-banner{
+  display:none;align-items:center;gap:14px;margin-top:14px;
+  max-width:620px;background:#fff;border:1.5px solid var(--green);
+  border-radius:12px;padding:12px 18px;box-shadow:0 8px 24px rgba(39,174,96,.15);
+}
+.autoplay-banner.show{display:flex;}
+.ab-pulse{
+  width:12px;height:12px;border-radius:50%;background:var(--green);
+  flex-shrink:0;position:relative;
+}
+.ab-pulse::after{
+  content:'';position:absolute;inset:-5px;border-radius:50%;
+  border:2px solid var(--green);animation:abPing 1.4s ease-out infinite;
+}
+@keyframes abPing{0%{opacity:1;transform:scale(.6)}100%{opacity:0;transform:scale(1.9)}}
+.ab-text{flex:1;display:flex;flex-direction:column;}
+.ab-label{font-size:9px;font-weight:700;letter-spacing:2px;color:var(--green);text-transform:uppercase;}
+.ab-chapter{font-size:13px;font-weight:700;color:var(--charcoal);margin-top:2px;}
+.ab-stop{
+  background:#fff;border:1.5px solid var(--red);color:var(--red);
+  font-family:'Poppins',sans-serif;font-size:11px;font-weight:700;
+  padding:8px 16px;border-radius:8px;cursor:pointer;transition:.2s;flex-shrink:0;
+}
+.ab-stop:hover{background:var(--red);color:#fff;}
+
+/* === TRANSITION TOAST (appears briefly between chapters) === */
+#transitionToast{
+  position:fixed;top:90px;left:50%;transform:translateX(-50%) translateY(-20px);
+  background:var(--charcoal);color:#fff;padding:14px 28px;border-radius:50px;
+  font-size:13px;font-weight:700;letter-spacing:.5px;z-index:4000;
+  box-shadow:0 12px 36px rgba(0,0,0,.25);
+  opacity:0;transition:all .4s cubic-bezier(.22,1,.36,1);
+  display:flex;align-items:center;gap:10px;pointer-events:none;
+}
+#transitionToast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+#transitionToast .tt-dot{
+  width:8px;height:8px;border-radius:50%;background:var(--red);
+  animation:blink 1s ease-in-out infinite;
+}
+
+@media(max-width:600px){
+  .start-course-btn{padding:14px 18px;gap:12px;}
+  .scb-icon{width:38px;height:38px;font-size:15px;}
+  .scb-title{font-size:13px;}
+  .scb-sub{font-size:10.5px;}
+}
+
+</style>
+</head>
+<body>
+
+<header id="hdr">
+  <div class="hdr-l">
+    <img src="[DATA_URI_REMOVED]" alt="HonorVet Technologies" class="hdr-logo">
+    <div class="hdr-sep"></div>
+    <div class="hdr-mod">JobDiva Recruiter Playbook</div>
+  </div>
+  <div class="hdr-r">
+    <div class="hdr-tag">US Healthcare Staffing</div>
+    <div class="hdr-tag">2026 Edition</div>
+  </div>
+</header>
+<div id="prog"></div>
+<div id="transitionToast"><span class="tt-dot"></span><span id="toastText">Now moving to Chapter 1...</span></div>
+<div id="shell">
+
+<!-- ████ SIDEBAR ████ -->
+<nav id="sb">
+  <div class="sb-top">
+    <div class="sb-top-title">Playbook Index</div>
+    <div class="sb-top-sub">JobDiva Training · 6 Chapters</div>
+    <div class="sb-prog-wrap">
+      <div class="sb-prog-labels">
+        <span>Your Progress</span>
+        <span id="pct">0%</span>
+      </div>
+      <div class="sb-prog-bg"><div class="sb-prog-bar" id="pbar"></div></div>
+    </div>
+  </div>
+  <div class="sb-list">
+
+    <div class="sb-item active" data-ch="1" onclick="navTo(1)">
+      <div class="sb-item-inner">
+        <div class="sb-num">01</div>
+        <div>
+          <div class="sb-ch-num">Chapter 1</div>
+          <div class="sb-ch-title">App Menu & Workspace</div>
+          <button class="sb-play" data-pbtn="1" onclick="event.stopPropagation();toggleChapterPlay(1)">▶ Play narration</button>
+        </div>
+      </div>
+    </div>
+    <div class="sb-item" data-ch="2" onclick="navTo(2)">
+      <div class="sb-item-inner">
+        <div class="sb-num">02</div>
+        <div>
+          <div class="sb-ch-num">Chapter 2</div>
+          <div class="sb-ch-title">Search Candidates — 8 Tabs</div>
+          <button class="sb-play" data-pbtn="2" onclick="event.stopPropagation();toggleChapterPlay(2)">▶ Play narration</button>
+        </div>
+      </div>
+    </div>
+    <div class="sb-item" data-ch="3" onclick="navTo(3)">
+      <div class="sb-item-inner">
+        <div class="sb-num">03</div>
+        <div>
+          <div class="sb-ch-num">Chapter 3</div>
+          <div class="sb-ch-title">Inside the Candidate Profile</div>
+          <button class="sb-play" data-pbtn="3" onclick="event.stopPropagation();toggleChapterPlay(3)">▶ Play narration</button>
+        </div>
+      </div>
+    </div>
+    <div class="sb-item" data-ch="4" onclick="navTo(4)">
+      <div class="sb-item-inner">
+        <div class="sb-num">04</div>
+        <div>
+          <div class="sb-ch-num">Chapter 4</div>
+          <div class="sb-ch-title">New Candidate — 4 Methods</div>
+          <button class="sb-play" data-pbtn="4" onclick="event.stopPropagation();toggleChapterPlay(4)">▶ Play narration</button>
+        </div>
+      </div>
+    </div>
+    <div class="sb-item" data-ch="5" onclick="navTo(5)">
+      <div class="sb-item-inner">
+        <div class="sb-num">05</div>
+        <div>
+          <div class="sb-ch-num">Chapter 5</div>
+          <div class="sb-ch-title">DivaMatch & The Harvester</div>
+          <button class="sb-play" data-pbtn="5" onclick="event.stopPropagation();toggleChapterPlay(5)">▶ Play narration</button>
+        </div>
+      </div>
+    </div>
+    <div class="sb-item" data-ch="6" onclick="navTo(6)">
+      <div class="sb-item-inner">
+        <div class="sb-num">06</div>
+        <div>
+          <div class="sb-ch-num">Chapter 6</div>
+          <div class="sb-ch-title">Compliance & Submittal</div>
+          <button class="sb-play" data-pbtn="6" onclick="event.stopPropagation();toggleChapterPlay(6)">▶ Play narration</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COLLAPSIBLE MINI PLAYER -->
+  <button class="sb-player-toggle" id="playerToggle" onclick="togglePlayer()">
+    <div class="spt-left">
+      <span class="spt-avatar">🎧</span>
+      <div>
+        <div class="spt-label">Riley <span style="font-weight:500;color:var(--grey);">· Your Training Guide</span></div>
+        <div class="spt-now" id="toggleNowTitle">Tap to expand player</div>
+      </div>
+    </div>
+    <span class="spt-chevron" id="chevron">▲</span>
+  </button>
+  <div class="sb-player-body" id="playerBody">
+    <div class="sb-now-label">Now Playing</div>
+    <div class="sb-now-title" id="nowTitle">Select a chapter to begin</div>
+    <div class="sb-controls">
+      <button class="ctrl" onclick="prevCh()" title="Previous">⏮</button>
+      <button class="ctrl prime" id="mainBtn" onclick="togglePlay()">▶</button>
+      <button class="ctrl" onclick="nextCh()" title="Next">⏭</button>
+      <button class="ctrl" onclick="stopAll()" title="Stop">⏹</button>
+      <div class="eq" id="eq"><span></span><span></span><span></span><span></span><span></span></div>
+    </div>
+    <div class="speed-row">
+      <span class="speed-label">Speed:</span>
+      <button class="speed-btn" onclick="setSpeed(.85)" data-sp=".85">0.85×</button>
+      <button class="speed-btn on" onclick="setSpeed(1.05)" data-sp="1.05">1.05×</button>
+      <button class="speed-btn" onclick="setSpeed(1.25)" data-sp="1.25">1.25×</button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<section id="hero">
+  <div class="orb orb1"></div><div class="orb orb2"></div>
+  <div class="hero-tag"><span class="ping"></span>&nbsp;HONORVET TECHNOLOGIES · US HEALTHCARE STAFFING</div>
+  <h1>JobDiva <em>Recruiter Playbook</em></h1>
+  <p class="hero-p">A simple, visual guide to JobDiva — made for new recruiters at HonorVet Technologies. It uses real screen recordings, real screenshots, real examples, and audio you can listen to. Take your time. Go chapter by chapter.</p>
+
+  <div class="learn-bar-wrap sr">
+    <div class="learn-track">
+      <div class="learn-fill" id="heroFill"></div>
+      <div class="learn-markers">
+        <div class="lm" style="left:0%"><span>Start</span></div>
+        <div class="lm" style="left:16.66%"><span>Ch 1</span></div>
+        <div class="lm" style="left:33.33%"><span>Ch 2</span></div>
+        <div class="lm" style="left:50%"><span>Ch 3</span></div>
+        <div class="lm" style="left:66.66%"><span>Ch 4</span></div>
+        <div class="lm" style="left:83.33%"><span>Ch 5</span></div>
+        <div class="lm" style="left:100%"><span>Done ✓</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="start-course-wrap sr">
+    <button class="start-course-btn" id="startCourseBtn" onclick="startCourse()">
+      <span class="scb-icon">▶</span>
+      <span class="scb-text">
+        <span class="scb-title" id="scbTitle">Start Course — Auto-Play All Chapters</span>
+        <span class="scb-sub" id="scbSub">Sit back. We'll guide you through every chapter with audio, and scroll automatically.</span>
+      </span>
+    </button>
+    <div class="autoplay-banner" id="autoplayBanner">
+      <div class="ab-pulse"></div>
+      <div class="ab-text">
+        <span class="ab-label" id="abLabel">Now playing</span>
+        <span class="ab-chapter" id="abChapter">Chapter 1 — App Menu &amp; Workspace</span>
+      </div>
+      <button class="ab-stop" onclick="stopCourse()">⏹ Stop Auto-Play</button>
+    </div>
+  </div>
+
+</section>
+
+<section class="ch" id="ch1" data-chapter="1">
+  <div class="ch-eyebrow sr"><div class="ch-badge">01</div><span class="ch-lbl">Chapter One</span></div>
+  <h2 class="sr">App Menu &amp; Workspace</h2>
+  <p class="ch-sub sr">Before you talk to any candidate, let's learn where everything is. There are 4 colour groups and one top bar. You will use these every single day.</p>
+  <div class="ch-bar sr"></div>
+  <button class="ch-listen sr" onclick="toggleChapterPlay(1)" data-clbtn="1">🔊 &nbsp;Listen to Chapter 1</button>
+
+  <div class="shot-section-label sr">Screenshot — App Menu: All Four Groups Labeled</div>
+  <div class="full-shot sr">
+    <div class="badge-live">📸 Your Screenshot — App Menu open, all four colour groups visible</div>
+    <div class="sframe">
+      <div class="sframe-chrome">
+        <div class="sc-dots"><div class="sc-dot" style="background:#FF5F57"></div><div class="sc-dot" style="background:#FFBD2E"></div><div class="sc-dot" style="background:#28C840"></div></div>
+        <div class="sc-url">www1.jobdiva.com · App Menu open — Sourcing (green) · Jobs (blue) · Analytics (red) · Engagement (gold)</div>
+      </div>
+      <img src="[DATA_URI_REMOVED]" alt="JobDiva App Menu showing all four colour groups: Sourcing green, Jobs blue, Analytics red, Engagement gold including My Calendar Company Calendars Job Calendars e-interview Live Interview DivaBuzz Dashboard" loading="lazy">
+      <div class="sframe-cap"><span class="cap-pin">📌</span>Here it is paused on one screen so you can read every label. <span class="cap-chip green">Green = Sourcing</span> (8 tools for finding and adding people). <span class="cap-chip blue">Blue = Jobs</span> (6 tools for your open positions). <span class="cap-chip red">Red = Analytics</span> (Reports + BI). <span class="cap-chip gold">Gold = Engagement</span> — My Calendar, Company Calendars, Job Calendars, e-interview, Live Interview, and DivaBuzz Dashboard.</div>
+    </div>
+  </div>
+
+  <div class="shot-section-label sr">Live Recording — App Menu Navigation</div>
+  <div class="full-shot sr">
+    <div class="badge-rec"><span class="recdot"></span>SCREEN RECORDING · App Menu → New Candidate loading</div>
+    <div class="sframe">
+      <div class="sframe-chrome">
+        <div class="sc-dots"><div class="sc-dot" style="background:#FF5F57"></div><div class="sc-dot" style="background:#FFBD2E"></div><div class="sc-dot" style="background:#28C840"></div></div>
+        <div class="sc-url">www1.jobdiva.com · App Menu · Sourcing → New Candidate</div>
+      </div>
+      <img src="[DATA_URI_REMOVED]" alt="Live recording: App Menu opens, cursor hovers over New Candidate, screen navigates" class="" loading="lazy">
+      <div class="sframe-cap">🎬 <b>Watch this:</b> The menu opens. Then the Sourcing group. Then "New Candidate" is clicked. This is how you move around JobDiva every day.</div>
+    </div>
+  </div>
+
+  <div class="duo s55 sr">
+    <div class="txt">
+      <h3>The Top Bar — 5 Things You Will See Every Day</h3>
+      <p>Every page in JobDiva has the same bar at the top. Let's learn what each part does.</p>
+      <ul class="flist">
+        <li><span class="arr">→</span><span><b>JobDiva Logo (top-left)</b> — click this anytime to go back to your home page</span></li>
+        <li><span class="arr">→</span><span><b>Search Bar (centre)</b> — type a name, phone number, or email here. This is the fastest way to find anything. You don't need to click through menus</span></li>
+        <li><span class="arr">→</span><span><b>🔔 Bell Icon</b> — shows new jobs and reminders from overnight. Check this every morning, before you check your email</span></li>
+        <li><span class="arr">→</span><span><b>"Hi, Tanya" (top-right)</b> — this shows whose account you are using. Always use your own login. Never share your password</span></li>
+        <li><span class="arr">→</span><span><b>Left Sidebar</b> — Sourcing (green) and Jobs (blue) are always shown here. Green = people. Blue = job positions</span></li>
+      </ul>
+      <div class="eg-box">
+        <div class="eg-h">💡 Real Example</div>
+        <p>Say Jellie Acedo, a nurse, calls you back. Don't go hunting through menus. Just type <code>Jellie Acedo</code> in the search bar at the top. Her whole profile opens right away — her license, your last note, her job matches, everything. One search. That's it.</p>
+      </div>
+      <div class="box box-t">
+        <div class="box-h" style="color:var(--green)">✅ 30-second morning checklist</div>
+        <ul>
+          <li>Check that your name is shown in the top-right corner</li>
+          <li>Check the 🔔 bell icon for any new alerts</li>
+          <li>Go to Jobs → My Jobs and see which jobs need attention first</li>
+        </ul>
+      </div>
+    </div>
+    <div class="sframe sr">
+      <div class="sframe-chrome">
+        <div class="sc-dots"><div class="sc-dot" style="background:#FF5F57"></div><div class="sc-dot" style="background:#FFBD2E"></div><div class="sc-dot" style="background:#28C840"></div></div>
+        <div class="sc-url">Sourcing → New Candidate · All four entry methods visible</div>
+      </div>
+      <img src="[DATA_URI_REMOVED]" alt="New Candidate screen showing Upload Email Paste Register four methods" class="" loading="lazy">
+      <div class="sframe-cap">📌 The <b>left sidebar</b> is always on screen. Here, the Sourcing group is open and "New Candidate" is highlighted.</div>
+    </div>
+  </div>
+
+  <div class="sdiv sr"><div class="sdiv-l"></div><div class="sdiv-t">FOUR APP MENU GROUPS</div><div class="sdiv-l"></div></div>
+  <div class="cards g2 sr">
+    <div>
+      <div class="ag" style="border-color:var(--green)"><div class="ag-h" style="background:var(--green)">🟢 SOURCING — Green <em>(For Finding People)</em></div><div class="ag-t"><span class="tile">Talent Search</span><span class="tile">New Candidate</span><span class="tile">Search Candidates</span><span class="tile">Search Employees</span><span class="tile">Candidate Hotlists</span><span class="tile">Search Attributes</span><span class="tile">Import Candidates</span></div></div>
+      <div class="ag" style="border-color:var(--red)"><div class="ag-h" style="background:var(--red)">🔴 ANALYTICS — Red <em>(For Reports)</em></div><div class="ag-t"><span class="tile">Reports</span><span class="tile">BI Shared with Me</span></div></div>
+    </div>
+    <div>
+      <div class="ag" style="border-color:var(--blue)"><div class="ag-h" style="background:var(--blue)">🔵 JOBS — Blue <em>(Your Open Positions)</em></div><div class="ag-t"><span class="tile">My Jobs</span><span class="tile">My Jobs as Primary</span><span class="tile">Search Jobs</span><span class="tile">New Job</span><span class="tile">My Jobs Dashboard</span><span class="tile">Primary Jobs Dashboard</span></div></div>
+      <div class="ag" style="border-color:#b8860b"><div class="ag-h" style="background:#b8860b">🟡 ENGAGEMENT — Gold <em>(Calendar & Interviews)</em></div><div class="ag-t"><span class="tile">My Calendar</span><span class="tile">Company Calendars</span><span class="tile">e-interview</span><span class="tile">Live Interview</span><span class="tile">DivaBuzz Dashboard</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="ch alt" id="ch2" data-chapter="2">
+  <div class="ch-eyebrow sr"><div class="ch-badge">02</div><span class="ch-lbl">Chapter Two</span></div>
+  <h2 class="sr">Search Candidates — All 8 Tabs</h2>
+  <p class="ch-sub sr">This is the screen you will use the most. Every search starts here. There are 8 tabs (filters) you can use. Once you know them, you can find any nurse in under a minute.</p>
+  <div class="ch-bar sr"></div>
+  <button class="ch-listen sr" onclick="toggleChapterPlay(2)" data-clbtn="2">🔊 &nbsp;Listen to Chapter 2</button>
+
+  <div class="box box-w sr" style="margin-top:24px">
+    <div class="box-h" style="color:var(--red)">⚠ The #1 Rule — Always Search First</div>
+    <ul>
+      <li>Search by <b>email first</b>. If nothing shows up, try the phone number. Then try the name. Only create a new profile if you find nothing at all</li>
+      <li>If you create a duplicate profile, it splits up the candidate's history. This causes problems for the whole team</li>
+    </ul>
+  </div>
+
+  <!-- Your uploaded screenshot: Profession/Specialty -->
+  <div class="shot-section-label sr">Tab 1 — Profession / Specialty</div>
+  <div class="full-shot sr">
+    <div class="badge-live">📸 Your Screenshot — Search Candidates · Profession/Specialty Tab · RN Selected</div>
+    <div class="sframe">
+      <div class="sframe-chrome">
+        <div class="sc-dots"><div class="sc-dot" style="background:#FF5F57"></div><div class="sc-dot" style="background:#FFBD2E"></div><div class="sc-dot" style="background:#28C840"></div></div>
+        <div class="sc-url">Search Candidates · Profession/Specialty tab · RN = REMOVE (selected) · Specialty list open · PROFESSION [RN IS ANY]</div>
+      </div>
+      <img src="[DATA_URI_REMOVED]" alt="Search Candidates Profession Specialty tab RN selected REMOVE button specialty list open" class="" loading="lazy">
+      <div class="sframe-cap">📌 Here, <b>RN is selected</b>. The ADD button turned red and now says REMOVE — that means it worked. On the right, you can pick a specialty. At the bottom, you can see what JobDiva will search for: <b>PROFESSION [ RN IS ANY ]</b>.</div>
+    </div>
+  </div>
+
+  <!-- GIF: selecting specialty -->
+  <div class="shot-section-label sr">Live Recording — Selecting Profession & Specialty</div>
+  <div class="full-shot sr">
+    <div class="badge-rec"><span class="recdot"></span>SCREEN RECORDING · ADD → RN → Specialty → CVICU → Criteria updates</div>
+    <div class="sframe">
+      <div class="sframe-chrome">
+        <div class="sc-dots"><div class="sc-dot" style="background:#FF5F57"></div><div class="sc-dot" style="background:#FFBD2E"></div><div class="sc-dot" style="background:#28C840"></div></div>
+        <div class="sc-url">Search Candidates · Profession/Specialty tab · Full selection workflow</div>
+      </div>
+      <img src="[DATA_URI_REMOVED]" alt="Live recording of clicking ADD next to RN button flips to REMOVE specialty list opens CVICU selected criteria updates" class="" loading="lazy">
+      <div class="sframe-cap">🎬 <b>Watch what happens:</b> Click ADD. The button turns red and says REMOVE. A list of specialties opens on the right. Scroll down and pick CVICU. The search box at the bottom updates to show <b>PROFESSION [ RN IS CVICU ]</b>. Click Done, then click SEARCH.</div>
+    </div>
+  </div>
+
+  <!-- Licenses tab screenshot -->
+  <div class="shot-section-label sr">Tab 2 — Licenses</div>
+  <div class="full-shot sr">
+    <div class="badge-live">📸 Real Screenshot — Licenses Tab · License type, State, Expiry filters</div>
+    <div class="sframe">
+      <div class="sframe-chrome">
+        <div class="sc-dots"><div class="sc-dot" style="background:#FF5F57"></div><div class="sc-dot" style="background:#FFBD2E"></div><div class="sc-dot" style="background:#28C840"></div></div>
+        <div class="sc-url">Search Candidates · Licenses tab · License type dropdown · Country · State · Expiring After · Require Documentation</div>
+      </div>
+      <img src="[DATA_URI_REMOVED]" alt="Search Candidates Licenses tab showing license type dropdown State selector Expiring After date field" class="" loading="lazy">
+      <div class="sframe-cap">📌 On the <b>Licenses tab</b>, first pick the license type (RN, LPN, NP, PA, etc.). Then pick the Country and State where the job is. Set "Expiring After" to a date after the job ends — this makes sure the license won't expire too early. Click AND if you need to add more than one license.</div>
+    </div>
+  </div>
+
+  <!-- 8 tab cards -->
+  <div class="sdiv sr"><div class="sdiv-l"></div><div class="sdiv-t">ALL 8 FILTER TABS</div><div class="sdiv-l"></div></div>
+  <div class="cards g3 sr" style="margin-bottom:40px">
+    <div class="card"><span class="tab-pill" style="background:var(--green)">TAB 1</span><h4>📋 Profession / Specialty</h4><p>Start your search here. Click ADD next to a job type (like RN). The button turns red — that means it's selected. Then pick a specialty from the right side. You'll see your search build at the bottom.</p><div class="sub">Example: PROFESSION [ RN IS CVICU ]</div></div>
+    <div class="card"><span class="tab-pill" style="background:var(--green)">TAB 2</span><h4>📜 Licenses</h4><p>Pick the license type, country, and state. Set the state to match where the job is. Set "Expiry After" to a date past the job's end date. Always check that the license is Active.</p><div class="sub">Example: RN · USA · California · Active</div></div>
+    <div class="card"><span class="tab-pill" style="background:var(--blue)">TAB 3</span><h4>🏥 Certifications</h4><p>Every healthcare worker needs BLS. ICU nurses also need ACLS. Pediatric (children's) nurses need PALS. Set the expiry date after the job ends so JobDiva skips anyone whose certification will run out too soon.</p><div class="sub">Example: ACLS · active · expiry after assignment end</div></div>
+    <div class="card"><span class="tab-pill" style="background:var(--orange)">TAB 4</span><h4>🎓 Qualification</h4><p>This is about the candidate's degree. Use this if the client needs someone with a BSN or MSN degree. You can combine this with the Licenses tab when searching for Nurse Practitioners or CRNAs.</p><div class="sub">Example: BSN for magnet hospital contracts</div></div>
+    <div class="card"><span class="tab-pill" style="background:var(--green)">TAB 5</span><h4>✅ Require</h4><p>List the skills the candidate MUST have. Each row is one skill, with the minimum years of experience needed. Check the "Recent" box if you want someone who has worked at the bedside in the last 12 months.</p><div class="sub">Example: ICU RN · Years ≥ 2 · Recent ✓</div></div>
+    <div class="card"><span class="tab-pill" style="background:var(--red)">TAB 6</span><h4>❌ Exclude</h4><p>This removes any candidate who matches what you type here. Be careful — it removes a lot of people, so only use it when you're sure.</p><div class="sub">Example: "New Grad" from CVOR travel searches</div></div>
+    <div class="card"><span class="tab-pill" style="background:#6B2FB3">TAB 7</span><h4>🏷 Attribute</h4><p>This searches for special tags that recruiters add to candidates, like "Compact License," "Top Candidate," or "Do Not Place." This is a quick way to find candidates who are already checked and approved.</p><div class="sub">Example: search tag "Compact License"</div></div>
+    <div class="card"><span class="tab-pill" style="background:var(--blue)">TAB 8</span><h4>💼 Title</h4><p>This searches by job title. It's helpful for roles that aren't in the main Profession list, like CT Tech, Echo Tech, or Surgical Tech.</p><div class="sub">Example: "Cardiac Sonographer"</div></div>
+    <div class="card"><span class="tab-pill" style="background:var(--grey)">PANEL</span><h4>📍 Right Side Panel</h4><p>This panel stays on screen no matter which tab you're on. You can set the State, Zip code, search radius, Pay Range, and the date the candidate is available. "w/o Mapping" turns off JobDiva's auto-matching of similar words.</p><div class="sub">If you turn on "w/o Mapping", searching "RN" will NOT also find "Registered Nurse"</div></div>
+  </div>
+
+  <!-- Results GIF + screenshot -->
+  <div class="shot-section-label sr">Live Recording — Results Table Loading</div>
+  <div class="full-shot sr">
+    <div class="badge-rec"><span class="recdot"></span>SCREEN RECORDING · Search results load · 3 candidates · colour-coded rows</div>
+    <div class="sframe">
+      <div class="sframe-chrome">
+        <div class="sc-dots"><div class="sc-dot" style="background:#FF5F57"></div><div class="sc-dot" style="background:#FFBD2E"></div><div class="sc-dot" style="background:#28C840"></div></div>
+        <div class="sc-url">Search Results · RN CVICU · CA Licence · 3 candidates · Exclude Qualify Expand Hotlist Preview Relevancy</div>
+      </div>
+      <img src="[DATA_URI_REMOVED]" alt="Live recording of search results loading with Jellie Acedo Akibi Hemrayeva Mitchell Watters appearing" class="" loading="lazy">
+      <div class="sframe-cap">🎬 <b>The results are here:</b> 3 CVICU nurses with a California license. Each row shows the Name, an "R" icon if the resume was added automatically, Phone number, City, State, and important dates.</div>
+    </div>
+  </div>
+  <div class="shot-section-label sr">Screenshot — Results Table Fully Loaded</div>
+  <div class="full-shot sr">
+    <div class="badge-live">📸 Real Screenshot — Results table: 3 candidates, green action bar, Loading Complete</div>
+    <div class="sframe">
+      <div class="sframe-chrome">
+        <div class="sc-dots"><div class="sc-dot" style="background:#FF5F57"></div><div class="sc-dot" style="background:#FFBD2E"></div><div class="sc-dot" style="background:#28C840"></div></div>
+        <div class="sc-url">Search Results · Loading Complete · Jellie Acedo (FL) · Akibi Hemrayeva (NY) · Mitchell Watters (CA)</div>
+      </div>
+      <img src="[DATA_URI_REMOVED]" alt="Search results table showing three candidates with New badges phone numbers city state dates and green action buttons" class="" loading="lazy">
+      <div class="sframe-cap">📌 <b>How to read this table:</b> A yellow <b>New</b> tag means nobody has called this person yet — call them first! The <b>R</b> icon means a resume was automatically added. "Available" shows when they can start. "Last Note" shows when a recruiter last talked to them.</div>
+    </div>
+  </div>
+  <div class="eg-box sr">
+    <div class="eg-h">💡 Example — What To Do Next</div>
+    <p>You have 3 results: <b>Jellie Acedo</b> (New, in Florida, ready 05/28), <b>Akibi Hemrayeva</b> (New, in New York), and <b>Mitchell Watters</b> (in California, no recent notes). Call Jellie first — she's New and ready soon. You can also click Relevancy to see who matches best. Always start with the newest, most ready candidate.</p>
+  </div>
+</section>
+
+<section class="ch" id="ch3" data-chapter="3">
+  <div class="ch-eyebrow sr"><div class="ch-badge">03</div><span class="ch-lbl">Chapter Three</span></div>
+  <h2 class="sr">Inside the Candidate Profile</h2>
+  <p class="ch-sub sr">When you click on a candidate's name, this is what opens. You'll see two panels and 12 tabs. Let's go through what each one is for.</p>
+  <div class="ch-bar sr"></div>
+  <button class="ch-listen sr" onclick="toggleChapterPlay(3)" data-clbtn="3">🔊 &nbsp;Listen to Chapter 3</button>
+
+  <!-- Opening profile GIF -->
+  <div class="shot-section-label sr">Live Recording — Opening Jellie Acedo's Profile</div>
+  <div class="full-shot sr">
+    <div class="badge-rec"><span class="recdot"></span>SCREEN RECORDING · Clicking Jellie Acedo → Profile loads → DivaMatch tab opens</div>
+    <div class="sframe">
+      <div class="sframe-chrome">
+        <div class="sc-dots"><div class="sc-dot" style="background:#FF5F57"></div><div class="sc-dot" style="background:#FFBD2E"></div><div class="sc-dot" style="background:#28C840"></div></div>
+        <div class="sc-url">Search Results → Click Jellie Acedo → Candidate Profile loads → two-panel layout</div>
+      </div>
+      <img src="[DATA_URI_REMOVED]" alt="Live recording clicking Jellie Acedo name profile opens showing two panel layout left contact right tabs" class="" loading="lazy">
+      <div class="sframe-cap">🎬 <b>Watch:</b> Click the candidate's name. Their profile opens with two panels. The left side shows who they are. The right side has 12 tabs: Candidate Wallet, Resume, Candidate Credibility, DivaMatch, Saved Email, Tasks, Assignment, Onboard, Calendar, e-interviews, Live Interviews, and LinkedIn.</div>
+    </div>
+  </div>
+
+  <!-- Profile with tabs screenshot -->
+  <div class="shot-section-label sr">Screenshot — Left Panel: Notes, Activities, Licenses</div>
+  <div class="full-shot sr">
+    <div class="badge-live">📸 Real Screenshot — Saved Email tab · Full left panel · License #599289 CA visible</div>
+    <div class="sframe">
+      <div class="sframe-chrome">
+        <div class="sc-dots"><div class="sc-dot" style="background:#FF5F57"></div><div class="sc-dot" style="background:#FFBD2E"></div><div class="sc-dot" style="background:#28C840"></div></div>
+        <div class="sc-url">Jellie Acedo · Saved Email tab · Left panel: Activities (1) · Notes (5+) · Qualifications · Licenses (RN #599289 CA)</div>
+      </div>
+      <img src="[DATA_URI_REMOVED]" alt="Candidate profile left panel showing Jellie Acedo with Activities Submitted 1 Notes 5+ Qualifications 2 and Licenses with RN 599289 CA 02/28/2028" class="" loading="lazy">
+      <div class="sframe-cap">📌 <b>What to look at on the left side:</b> <b>Activities</b> shows how many times she's been submitted, interviewed, or started a job. <b>Notes</b> — always read these before you call! <b>Licenses</b> shows her nursing license number, state, and when it expires. You can see all of this without clicking into any tab.</div>
+    </div>
+  </div>
+
+  <div class="box box-w sr">
+    <div class="box-h" style="color:var(--red)">⚠ Always Read the Notes Before You Call</div>
+    <ul>
+      <li>"Do Not Contact" — stop right away and tell your manager</li>
+      <li>"On Assignment until [date]" — check when this ends before offering a new job</li>
+      <li>"RTR given [date] for [client]" — talk to that recruiter before doing anything</li>
+    </ul>
+  </div>
+
+  <!-- DivaMatch screenshot -->
+  <div class="shot-section-label sr">Screenshot — DivaMatch Tab: Ranked Job Matches</div>
+  <div class="full-shot sr">
+    <div class="badge-live">📸 Real Screenshot — DivaMatch open · Scores 100, 73, 71 · Full job details</div>
+    <div class="sframe">
+      <div class="sframe-chrome">
+        <div class="sc-dots"><div class="sc-dot" style="background:#FF5F57"></div><div class="sc-dot" style="background:#FFBD2E"></div><div class="sc-dot" style="background:#28C840"></div></div>
+        <div class="sc-url">Jellie Acedo · DivaMatch tab · Sort by Highest Score · 100 CVOR · 73 OB Tech · 71 SPT · Job Filters panel</div>
+      </div>
+      <img src="[DATA_URI_REMOVED]" alt="DivaMatch results for Jellie Acedo showing three scored matches 100 73 71 with full job descriptions pay rates and locations" class="" loading="lazy">
+      <div class="sframe-cap">📌 <b>What the scores mean:</b> A score of <b>100</b> means a job is a perfect match — here it's a CVOR Tech job in Wisconsin, paying $2,660 a week for 13 weeks. <b>73</b> and <b>71</b> are also good matches, just not perfect. On the right, you can use filters to narrow things down.</div>
+    </div>
+  </div>
+
+  <!-- Resume GIF -->
+  <div class="shot-section-label sr">Live Recording — Resume Tab · Version History</div>
+  <div class="full-shot sr">
+    <div class="badge-rec"><span class="recdot"></span>SCREEN RECORDING · Resume tab · 4 Resumes panel · AI Assist button</div>
+    <div class="sframe">
+      <div class="sframe-chrome">
+        <div class="sc-dots"><div class="sc-dot" style="background:#FF5F57"></div><div class="sc-dot" style="background:#FFBD2E"></div><div class="sc-dot" style="background:#28C840"></div></div>
+        <div class="sc-url">Jellie Acedo · Resume tab · 4 Resumes version panel · Uploaded 05/28/26 by Polly Kay · AI Assist</div>
+      </div>
+      <img src="[DATA_URI_REMOVED]" alt="Live recording of resume tab showing 4 versions panel and AI assist button with resume content" class="" loading="lazy">
+      <div class="sframe-cap">🎬 <b>Watch:</b> The Resume tab opens. A box appears showing "4 Resumes" — these are different versions. The newest one is at the top (dated 05/28/26). Always use the newest one when submitting a candidate.</div>
+    </div>
+  </div>
+
+  <!-- Experience screenshot -->
+  <div class="shot-section-label sr">Screenshot — Experience History in Left Panel</div>
+  <div class="full-shot sr">
+    <div class="badge-live">📸 Real Screenshot — Experience (7) accordion · Work history with hospital names and dates</div>
+    <div class="sframe">
+      <div class="sframe-chrome">
+        <div class="sc-dots"><div class="sc-dot" style="background:#FF5F57"></div><div class="sc-dot" style="background:#FFBD2E"></div><div class="sc-dot" style="background:#28C840"></div></div>
+        <div class="sc-url">Jellie Acedo · Left panel · Licenses #599289 CA 02/2028 · Certifications (0) · Experience (7) hospitals</div>
+      </div>
+      <img src="[DATA_URI_REMOVED]" alt="Candidate left panel showing Licenses RN 599289 CA Certifications and Experience 7 entries with Kaiser Mount Sinai UF Health" class="" loading="lazy">
+      <div class="sframe-cap">📌 <b>Experience</b> shows where she's worked before — 7 hospitals total, including Kaiser Permanente and Mount Sinai. You can see this without clicking anything. But notice: <b>Certifications shows 0</b> — that means no certifications are on file. Make sure to check this before submitting her for an ICU job.</div>
+    </div>
+  </div>
+
+  <div class="eg-box sr">
+    <div class="eg-h">💡 Example — Getting Ready to Call Jellie</div>
+    <p>Before you call Jellie, check her profile. <b>Wallet Status says "Incomplete"</b> (in orange) — something is missing. <b>Activities</b> shows she's been submitted once before. You read her <b>Notes</b> — good, no "Do Not Contact" warnings. Her <b>License</b> is active until 2028. But she has <b>0 Certifications</b>. Now you know what to ask her about — before you even say hello.</p>
+  </div>
+
+  <div class="sdiv sr"><div class="sdiv-l"></div><div class="sdiv-t">ALL 12 PROFILE TABS — QUICK REFERENCE</div><div class="sdiv-l"></div></div>
+  <div class="ptabs sr">
+    <div class="ptab"><div class="ptab-ic" style="background:#FFF0EF">💼</div><div><div class="ptab-name">Candidate Wallet</div><div class="ptab-desc">Shows if her paperwork is all in order. "Incomplete" means something is missing or expired. Don't submit her until it says "Complete."</div></div></div>
+    <div class="ptab"><div class="ptab-ic" style="background:#EAF1F8">📄</div><div><div class="ptab-name">Resume</div><div class="ptab-desc">Shows all resume versions, newest first. "U" means a recruiter uploaded it. "R" means JobDiva's system added it automatically.</div></div></div>
+    <div class="ptab"><div class="ptab-ic" style="background:#EAF7EF">⭐</div><div><div class="ptab-name">DivaMatch</div><div class="ptab-desc">Shows job matches scored from 0 to 100. When you call, start with the highest-scoring job.</div></div></div>
+    <div class="ptab"><div class="ptab-ic" style="background:#FFF6E6">🏅</div><div><div class="ptab-name">Candidate Credibility</div><div class="ptab-desc">Shows past interviews, jobs, and references. This helps you trust candidates you've worked with before.</div></div></div>
+    <div class="ptab"><div class="ptab-ic" style="background:#F3EDFA">📧</div><div><div class="ptab-name">Saved Email</div><div class="ptab-desc">Shows all emails sent through JobDiva. Check this before calling — they may have already replied.</div></div></div>
+    <div class="ptab"><div class="ptab-ic" style="background:#FFF0EF">✅</div><div><div class="ptab-name">Tasks</div><div class="ptab-desc">Your to-do list for this candidate. Add a task after every call so you don't forget anything.</div></div></div>
+    <div class="ptab"><div class="ptab-ic" style="background:#EAF1F8">🏥</div><div><div class="ptab-name">Assignment</div><div class="ptab-desc">Shows current and past jobs. If it says "On Assignment," check when the job ends.</div></div></div>
+    <div class="ptab"><div class="ptab-ic" style="background:#EAF7EF">🚀</div><div><div class="ptab-name">Onboard</div><div class="ptab-desc">Shows the paperwork needed after a candidate accepts a job — signatures, forms, and start date.</div></div></div>
+    <div class="ptab"><div class="ptab-ic" style="background:#FFF6E6">📅</div><div><div class="ptab-name">Calendar</div><div class="ptab-desc">Shows calls, interviews, and follow-ups. Add reminders here so you don't forget to call back.</div></div></div>
+    <div class="ptab"><div class="ptab-ic" style="background:#F3EDFA">🎤</div><div><div class="ptab-name">e-interviews / Live Interviews</div><div class="ptab-desc">Video interview links. Some clients want to see these before they'll look at a candidate.</div></div></div>
+    <div class="ptab"><div class="ptab-ic" style="background:#EAF1F8">🔗</div><div><div class="ptab-name">LinkedIn</div><div class="ptab-desc">Links to the candidate's LinkedIn profile. You can check their work history or message them.</div></div></div>
+    <div class="ptab"><div class="ptab-ic" style="background:#FFF0EF">📊</div><div><div class="ptab-name">Activities / Pipeline</div><div class="ptab-desc">Shows every job this candidate was submitted to, and what stage it's at. Always check this before submitting again — so you don't submit the same person twice.</div></div></div>
+  </div>
+</section>
+
+<section class="ch alt" id="ch4" data-chapter="4">
+  <div class="ch-eyebrow sr"><div class="ch-badge">04</div><span class="ch-lbl">Chapter Four</span></div>
+  <h2 class="sr">New Candidate — 4 Entry Methods</h2>
+  <p class="ch-sub sr">How to add a new person to JobDiva — and how to avoid creating the same profile twice.</p>
+  <div class="ch-bar sr"></div>
+  <button class="ch-listen sr" onclick="toggleChapterPlay(4)" data-clbtn="4">🔊 &nbsp;Listen to Chapter 4</button>
+
+  <div class="box box-w sr" style="margin-top:24px">
+    <div class="box-h" style="color:var(--red)">🔴 Always Search First, Before Creating a New Profile</div>
+    <ul>
+      <li>Search by email, then phone, then name. Only create a new profile if nothing comes up</li>
+      <li>If you make a duplicate, it splits up their history and your teammates won't see important notes</li>
+    </ul>
+  </div>
+
+  <!-- Look Up explanation (no screenshot available of this exact screen) -->
+  <div class="shot-section-label sr">Step 1 — Look Up a Candidate First</div>
+  <div class="box box-i sr" style="margin-bottom:32px">
+    <div class="box-h" style="color:var(--blue)">🔍 What the "Look up a candidate" Tab Does</div>
+    <ul>
+      <li>When you click <b>New Candidate</b>, the screen always opens on the <b>"Look up a candidate"</b> tab first — this is on purpose, not a mistake</li>
+      <li>This tab lets you search for a person who may already exist in JobDiva, using fields like <b>email, phone number, or name</b></li>
+      <li>Fill in at least one field and click the search button. If a match is found, open their existing record instead of creating a new one</li>
+      <li>Only switch to the <b>"Create a candidate"</b> tab (shown below) if your search returns zero results</li>
+    </ul>
+  </div>
+
+  <!-- Create 4 methods screenshot -->
+  <div class="shot-section-label sr">Screenshot — Create a Candidate: All 4 Methods</div>
+  <div class="full-shot sr">
+    <div class="badge-live">📸 Real Screenshot — Create candidate tab · Upload / Email / Paste / Register Without Resume</div>
+    <div class="sframe">
+      <div class="sframe-chrome">
+        <div class="sc-dots"><div class="sc-dot" style="background:#FF5F57"></div><div class="sc-dot" style="background:#FFBD2E"></div><div class="sc-dot" style="background:#28C840"></div></div>
+        <div class="sc-url">Look up a candidate / Create a candidate tabs · Create candidate panel · Upload Resume · Resume Source* · Browse · Upload</div>
+      </div>
+      <img src="[DATA_URI_REMOVED]" alt="Create a candidate screen showing Look up a candidate and Create a candidate tabs Upload Email Paste Register Without Resume radio buttons and Resume Source required dropdown with Browse and Upload buttons" class="" loading="lazy">
+      <div class="sframe-cap">📌 At the top, you'll see <b>4 options</b>: Upload, Email, Paste, and Register Without Resume. "Upload" is picked by default. You MUST also pick a <b>Resume Source</b> before uploading. Click Browse to choose a file. Files must be under 5 MB.</div>
+    </div>
+  </div>
+
+  <div class="cards g4 sr" style="margin-top:8px">
+    <div class="card"><div class="card-ico">📁</div><h4>1 · Upload</h4><p>You have the resume file. Click Browse, pick the file (.doc, .docx, or .pdf — under 5MB), choose a Resume Source, then click Upload. JobDiva fills in the details for you.</p><div class="sub">After uploading, double check the name, email, and phone are correct</div></div>
+    <div class="card"><div class="card-ico">📨</div><h4>2 · Email</h4><p>If a candidate emails you their resume, just forward it to your JobDiva email address. JobDiva will create their profile automatically in a few minutes.</p><div class="sub">Great for busy days with lots of resumes coming in</div></div>
+    <div class="card"><div class="card-ico">📋</div><h4>3 · Paste</h4><p>If you have resume text from LinkedIn or a website, click "Paste," paste the text in, and click Submit. JobDiva will organize the information for you.</p><div class="sub">Good for when you find someone on LinkedIn but have no file</div></div>
+    <div class="card"><div class="card-ico">📝</div><h4>4 · Register Without Resume</h4><p>If you talked to someone on the phone but they have no resume yet, use this. It creates a basic profile with their name, phone, and email. You can add their resume later.</p><div class="sub">Set a reminder to get their resume within 24 hours</div></div>
+  </div>
+
+  <div class="eg-box sr" style="margin-top:16px">
+    <div class="eg-h">💡 Example — Mitchell Calls You</div>
+    <p>Mitchell, a nurse, calls you after seeing your post on LinkedIn. Before you create a new profile, type his phone number <code>951-300-8582</code> in Look Up. You find he's already in the system from a job fair. Open his profile, add a note about this call, and talk to him. No duplicate created — and his history is saved.</p>
+  </div>
+
+  <div class="box box-a sr">
+    <div class="box-h" style="color:var(--orange)">⌨ Resume Source — You Must Pick One</div>
+    <ul>
+      <li><b>Job Board</b> — sites like Indeed, Monster, or CareerBuilder</li>
+      <li><b>LinkedIn</b> — you messaged them or they messaged you</li>
+      <li><b>Referral</b> — someone else suggested this person</li>
+      <li><b>Career Site</b> — they applied on HonorVet's website</li>
+      <li><b>Database</b> — they were already in JobDiva and you're reaching out again</li>
+      <li><b>Event / Job Fair</b> — you met them in person</li>
+    </ul>
+  </div>
+</section>
+
+<section class="ch" id="ch5" data-chapter="5">
+  <div class="ch-eyebrow sr"><div class="ch-badge">05</div><span class="ch-lbl">Chapter Five</span></div>
+  <h2 class="sr">DivaMatch &amp; The Harvester</h2>
+  <p class="ch-sub sr">Two tools that work for you all day and night — one finds the best job matches, the other finds new candidates automatically.</p>
+  <div class="ch-bar sr"></div>
+  <button class="ch-listen sr" onclick="toggleChapterPlay(5)" data-clbtn="5">🔊 &nbsp;Listen to Chapter 5</button>
+
+  <!-- DivaMatch GIF -->
+  <div class="shot-section-label sr">Live Recording — DivaMatch Loading for Jellie Acedo</div>
+  <div class="full-shot sr">
+    <div class="badge-rec"><span class="recdot"></span>SCREEN RECORDING · DivaMatch tab · Scores load · 100 · 73 · 71 · Full job details</div>
+    <div class="sframe">
+      <div class="sframe-chrome">
+        <div class="sc-dots"><div class="sc-dot" style="background:#FF5F57"></div><div class="sc-dot" style="background:#FFBD2E"></div><div class="sc-dot" style="background:#28C840"></div></div>
+        <div class="sc-url">Jellie Acedo · DivaMatch tab · Scores: 100 CVOR · 73 OB Tech · 71 SPT · Sort by Highest Score</div>
+      </div>
+      <img src="[DATA_URI_REMOVED]" alt="Live recording DivaMatch loading scores 100 73 71 with job descriptions Aya Healthcare Wisconsin Oregon Ohio" class="" loading="lazy">
+      <div class="sframe-cap">🎬 <b>Watch:</b> Three job matches load, sorted by score. The top one (Score 100) is a CVOR Tech job in Wisconsin, paying $2,660 a week, day shift, 13 weeks. This is the first thing you'd mention when you call Jellie.</div>
+    </div>
+  </div>
+
+  <div class="duo s55 sr">
+    <div class="txt">
+      <h3>How To Read DivaMatch Scores</h3>
+      <p>DivaMatch looks at every open job and gives it a score based on how well it fits this candidate — their skills, specialty, location, pay, and shift. A higher score means a better match.</p>
+      <ul class="flist">
+        <li><span class="arr">→</span><span><b>Score 100</b> — a perfect match! Mention this job first when you call</span></li>
+        <li><span class="arr">→</span><span><b>Score 70 and up</b> — a strong match. Maybe the pay or shift is a little different, but still worth talking about</span></li>
+        <li><span class="arr">→</span><span><b>Score 50 to 69</b> — an okay match. Check what doesn't fit before you bring it up</span></li>
+        <li><span class="arr">→</span><span><b>Below 50</b> — not a great match. Double-check everything before mentioning it to the candidate</span></li>
+        <li><span class="arr">→</span><span><b>Email Selected Jobs</b> — check the boxes next to jobs and email them all to the candidate at once</span></li>
+        <li><span class="arr">→</span><span><b>Job Filters (on the right)</b> — narrow down jobs by date, zip code, experience needed, and more</span></li>
+      </ul>
+      <div class="eg-box">
+        <div class="eg-h">💡 Example — Calling Jellie</div>
+        <p>Before you call, sort by Highest Score. The top job (score 100) is a CVOR Tech role in Wisconsin, day shift, paying $2,660 a week, for 13 weeks. You can simply say: <em>"Hi Jellie, I have a CVOR job in Wisconsin, day shift, $2,660 a week. Want to hear more?"</em> DivaMatch basically wrote your opening line for you!</p>
+      </div>
+    </div>
+    <div class="sframe sr">
+      <div class="sframe-chrome">
+        <div class="sc-dots"><div class="sc-dot" style="background:#FF5F57"></div><div class="sc-dot" style="background:#FFBD2E"></div><div class="sc-dot" style="background:#28C840"></div></div>
+        <div class="sc-url">Jellie Acedo · DivaMatch results · Scores 100, 73, 71 loaded</div>
+      </div>
+      <img src="[DATA_URI_REMOVED]" alt="DivaMatch showing three scored job matches with full details and Job Filters panel" class="" loading="lazy">
+      <div class="sframe-cap">📌 Use the dropdown in the top right to <b>Sort by Highest Score</b>. You can also check boxes to email several jobs to the candidate at once.</div>
+    </div>
+  </div>
+
+  <div class="sdiv sr"><div class="sdiv-l"></div><div class="sdiv-t">THE HARVESTER — WORKS FOR YOU 24/7</div><div class="sdiv-l"></div></div>
+  <div class="cards g3 sr">
+    <div class="card"><div class="card-ico">🌐</div><h4>What the Harvester Does</h4><p>This runs by itself on every open job — as long as the Qualifications tab is filled in. It searches job boards all day and night, even while you sleep, and finds new matching candidates for you.</p><div class="sub">If the status says "On Schedule," it's working right now</div></div>
+    <div class="card"><div class="card-ico">⛔</div><h4>"Missing Criteria" Means It's Turned Off</h4><p>If you see "Missing Criteria," the Harvester is NOT working for that job — zero new candidates. To fix it: open the job, go to Qualifications, add at least one Required Skill, make sure the location is filled in, then click Save. That's all it takes to turn it back on.</p><div class="sub">Check your open jobs every week — this is an easy thing to miss</div></div>
+    <div class="card"><div class="card-ico">🔔</div><h4>Agent Search — Get Alerts Automatically</h4><p>Instead of running the same search over and over, save it as an "Agent." JobDiva will alert you whenever a new matching candidate is added. Great for hard-to-fill jobs.</p><div class="sub">Example: Save "CVOR RN with CA license and active ACLS" as an Agent</div></div>
+  </div>
+</section>
+
+<section class="ch alt" id="ch6" data-chapter="6">
+  <div class="ch-eyebrow sr"><div class="ch-badge">06</div><span class="ch-lbl">Chapter Six</span></div>
+  <h2 class="sr">Compliance &amp; Submittal — 9 Steps</h2>
+  <p class="ch-sub sr">These are 9 steps you must follow every time, for every candidate, before you submit them to a job. No skipping steps.</p>
+  <div class="ch-bar sr"></div>
+  <button class="ch-listen sr" onclick="toggleChapterPlay(6)" data-clbtn="6">🔊 &nbsp;Listen to Chapter 6</button>
+
+  <div class="box box-w sr" style="margin-top:24px">
+    <div class="box-h" style="color:var(--red)">⚠ Why You Can't Skip Any Step</div>
+    <ul>
+      <li>Skipping the <b>license check</b> could put a patient at risk and get HonorVet in trouble</li>
+      <li>Skipping the <b>OIG check</b> breaks the rules for government-funded hospitals</li>
+      <li>Skipping the <b>Pipeline check</b> can mean submitting someone twice — this looks bad for HonorVet</li>
+      <li>Skipping <b>RTR</b> means the candidate didn't agree to be submitted — that's a problem</li>
+    </ul>
+  </div>
+
+  <div class="steps-wrap sr">
+    <div class="step-row"><div class="step-num">1</div><div><div class="step-t">Step 1: Check If They Qualify</div><div class="step-d">Compare their resume to the job. Does their specialty match? Have they worked recently? Do they have enough years of experience? If it doesn't look right on paper, move to the next candidate.</div></div></div>
+    <div class="step-row"><div class="step-num">2</div><div><div class="step-t">Step 2: Check Their License</div><div class="step-d">Go to the Licenses tab. Make sure: the license type matches the job, the state matches (or they have a compact license), it says Active, and it won't expire during the job. Write down the license number. <em>Example: Jellie's RN license #599289, California, Active, expires Feb 2028 ✓</em></div></div></div>
+    <div class="step-row"><div class="step-num">3</div><div><div class="step-t">Step 3: Check Their Certifications</div><div class="step-d">Every healthcare worker needs BLS. ICU, CVOR, and critical care also need ACLS. Children's units need PALS. Make sure nothing expires during the job. <em>Note: Jellie shows 0 certifications — bring this up before submitting her for an ICU job.</em></div></div></div>
+    <div class="step-row"><div class="step-num">4</div><div><div class="step-t">Step 4: Check OIG and SAM Lists</div><div class="step-d">Check the candidate on oig.hhs.gov and SAM.gov — these are government lists. Write the result in Notes, like: <code>"OIG clear 06/05/2026 — [your initials]"</code>. Hospitals that get government funding cannot hire anyone on these lists.</div></div></div>
+    <div class="step-row"><div class="step-num">5</div><div><div class="step-t">Step 5: Check Background and Vaccines</div><div class="step-d">Make sure their background check is recent (usually within the last 12 months). Check that their Flu, Hepatitis B, MMR, and TB results meet what THIS client wants — every client is a bit different. Check the job notes for details.</div></div></div>
+    <div class="step-row"><div class="step-num">6</div><div><div class="step-t">Step 6: Call Them — Confirm Everything</div><div class="step-d">Call them. Make sure they: (1) actually want this job and facility, (2) can start on the right date, (3) are okay with the shift, and (4) the pay works for them. Get a clear "yes" on all four. <em>Example: "Jellie, this is a CVOR job in Wisconsin, day shift, $2,660 a week — does that work for you?"</em></div></div></div>
+    <div class="step-row"><div class="step-num">7</div><div><div class="step-t">Step 7: Get Right to Represent (RTR)</div><div class="step-d">Ask them clearly if it's okay to submit them to this client. Once they say yes, write it down right away in Notes: <code>"RTR given 06/05/2026 for Aya Healthcare — CVOR WI · [your name]"</code></div></div></div>
+    <div class="step-row"><div class="step-num">8</div><div><div class="step-t">Step 8: Make Sure They're Not Already Submitted</div><div class="step-d">Open the candidate's Activities or Pipeline tab. Make sure no one — including you — has already submitted them to this client. If they have, talk to that recruiter. Don't submit them again.</div></div></div>
+    <div class="step-row last"><div class="step-num">9</div><div><div class="step-t">Step 9: Submit and Set a Reminder</div><div class="step-d">Write a short note about the call. Attach the resume in HonorVet's format. Click Submit. Then set a reminder to follow up in 48 hours. The steps after this are: <b>Submitted → Client Review → Interview → Offer → Placed.</b></div></div></div>
+  </div>
+</section>
+
+<footer id="footer">
+  <img src="[DATA_URI_REMOVED]" alt="HonorVet Technologies" class="foot-logo">
+  <div class="foot-bar"></div>
+  <div class="foot-copy">
+    JobDiva Recruiter Playbook &nbsp;·&nbsp; US Healthcare Staffing Training &nbsp;·&nbsp; For Internal Use Only<br>
+    © 2026 HonorVet Technologies &nbsp;·&nbsp; All rights reserved
+  </div>
+</footer>
+</main>
+</div>
+
+<script>
+var SCRIPTS = {"1": "Chapter one. The App Menu and your workspace. This is your home screen. When you log into JobDiva, you will see the App Menu. It has four colour groups. Green is Sourcing. This is for finding and adding people. Blue is Jobs. This is for your open positions. Red is Analytics, for reports. Gold is Engagement, for calendars and interviews. Try to remember these colours. You will use them every day. Now look at the top bar. The search bar in the middle is your fastest tool. Type a name, phone number, or email, and JobDiva takes you there right away. The bell icon on the right shows your alerts. Check it every morning. It shows new jobs and reminders from overnight. The greeting at the top shows your name. Always make sure it's your own account. Before you start work each day, do three things. One: check that your name is shown at the top. Two: check the bell for new alerts. Three: open My Jobs to see what needs your attention.", "2": "Chapter two. Search Candidates. This is the screen you will use most. But first, the most important rule: always search before you create a new profile. Type the email first. If nothing comes up, try the phone number. Then try the name. Only create a new profile if you find nothing at all. This stops you from making duplicate profiles, which cause problems for the whole team. Now let's look at the eight tabs. Tab one is Profession and Specialty. This is where every search starts. Click ADD next to a job type, like RN. The button turns red and says REMOVE. That means it's selected. Now look at the right side. You'll see a list of specialties. Scroll down and click one, like CVICU. At the bottom, you'll see your search building, like this: PROFESSION RN IS CVICU. Tab two is Licenses. Pick the license type, the state, and make sure it says Active. Always Active. Never pick someone with an expired license. Tab three is Certifications. Everyone needs BLS. ICU nurses also need ACLS. Children's nurses need PALS. Tab four is Qualification, for degree requirements. Tab five is Require, for must-have skills and years of experience. Tab six is Exclude. This removes anyone who matches what you type — use it carefully. Tab seven is Attribute, for special tags your team uses. Tab eight is Title, for searching by job title. Once you've set your filters, click the blue Search button. Your results will show up in a table. Look for the yellow New badge first. That means nobody has called this person yet.", "3": "Chapter three. Inside the candidate's profile. When you click on someone's name, their profile opens. You'll see two parts. The left side shows who they are. The right side has twelve tabs where you do most of your work. On the left side, first check the Wallet Status. If it says Incomplete in orange, something is missing — maybe a license or certification. Don't submit this person until it says Complete. Below that, you'll see their email and phone numbers. You can click small icons to log a call or send an email. The Activities section shows how many times they've been submitted, interviewed, or placed. Then comes Notes. Always open Notes and read every single one before you call. If you see Do Not Contact, stop and tell your manager. If you see On Assignment, check when that job ends. If you see RTR given, talk to the recruiter who wrote that note first. On the right side, the most useful tabs are: Candidate Wallet for compliance, Resume for all versions on file, DivaMatch for job matches, Tasks for your to-do list, and Activities for their history. Open the Resume tab and always use the newest version — it's always at the top. You'll see a small panel showing every version with its date.", "4": "Chapter four. Adding a new candidate. There are four ways to add someone to JobDiva. But first — always search before you create. The screen opens on Look up a candidate. Type in the email and click Look Up. Only go to Create a candidate if nothing comes up. Method one is Upload. If you have their resume file, click Browse and pick the file. It must be under five megabytes. Pick a Resume Source from the dropdown — this is required. Then click Upload. JobDiva reads the file and fills in the details for you. Always double check the name, email, and phone after. Method two is Email. If the candidate emailed you their resume, just forward it to your JobDiva email address. JobDiva creates the profile by itself, usually within minutes. Method three is Paste. If you have resume text from LinkedIn or a website, click Paste, paste in the text, and click Submit. Method four is Register Without Resume. If you talked to someone on the phone but they don't have a resume yet, use this. It creates a basic profile with their name, phone, and email. Set a reminder to get their resume within twenty-four hours. Remember: you must always pick a Resume Source. Choose the right one — Job Board, LinkedIn, Referral, Career Site, Database, or Event.", "5": "Chapter five. DivaMatch and the Harvester. DivaMatch is a tool that scores every open job against a candidate. Open the DivaMatch tab on any profile, and you'll see every open job, scored from zero to one hundred. A higher score means a better match. The score looks at skills, specialty, location, pay, and shift. A score of one hundred means it's a perfect match — mention this job first when you call. A score of seventy or higher is still a strong match, worth talking about. Below fifty means there are some gaps — check those before you bring it up. You can also email several matching jobs to a candidate at once by checking boxes on this screen. Now, the Harvester. This is a tool that works for you all day and night. It runs by itself on every open job — as long as the Qualifications tab is filled in. It searches job boards continuously and finds new candidates while you sleep. But here's the important part: if a job shows Missing Criteria, the Harvester is turned OFF for that job. You're getting zero new candidates. To fix this: open the job, go to Qualifications, add at least one required skill, make sure the location is filled in, and click Save. That's it — the Harvester turns back on. Lastly, Agent Search. Instead of running the same search again and again, save it as an Agent. JobDiva will alert you whenever a new matching candidate is added to the system.", "6": "Chapter six. Compliance and Submittal. These are nine steps. You must do all nine, for every candidate, every time. No skipping. Step one: check if they qualify. Compare their resume to the job. Does their specialty match? Have they worked recently? Do they have enough experience? If it doesn't look right, move to the next candidate. Step two: check their license on the Licenses tab. The license type must match the job. The state must match, or they need a compact license. It must say Active. And it must not expire during the job. Write down the license number. Step three: check their certifications. Everyone needs BLS. ICU and critical care need ACLS. Children's units need PALS. Make sure nothing expires during the job. Step four: check the OIG and SAM lists. These are government lists. Go to oig dot hhs dot gov and SAM dot gov. Write the result in Notes with today's date. Hospitals that get government money cannot hire anyone on these lists. Step five: check background and vaccines. Make sure the background check is recent. Check that Flu, Hepatitis B, MMR, and TB results meet what this specific client wants — every client is a little different. Step six: call the candidate. Make sure they really want this job, can start on the right date, are okay with the shift, and the pay works for them. Get a clear yes on all four. Step seven: get Right to Represent. Ask if it's okay to submit them to this client. Once they say yes, write it down right away in Notes with today's date and the client's name. Step eight: check the Pipeline tab. Make sure nobody — including you — has already submitted this person to this client. Step nine: write a note about the call, attach the resume in HonorVet's format, and click Submit. Then set a reminder to follow up in forty-eight hours."};
+var S = {ch:0,speed:1.05,playing:false,paused:false};
+var synth = window.speechSynthesis;
+var voices = [];
+
+function loadVoices(){ voices = synth.getVoices()||[]; }
+loadVoices();
+if(synth.onvoiceschanged!==undefined) synth.onvoiceschanged = loadVoices;
+
+/* Voice quality ranking — natural-sounding neural voices first,
+   then good platform voices, then any English voice as fallback.
+   Chrome/Edge expose Google's neural "Online" voices which sound
+   far more human than the older robotic offline ones. */
+var VOICE_PRIORITY = [
+  'Google US English',
+  'Microsoft Aria Online (Natural)',
+  'Microsoft Ava Online (Natural)',
+  'Microsoft Andrew Online (Natural)',
+  'Microsoft Emma Online (Natural)',
+  'Microsoft Jenny Online (Natural)',
+  'Microsoft Guy Online (Natural)',
+  'Microsoft Aria Online',
+  'Microsoft Jenny Online',
+  'Samantha',
+  'Microsoft Zira Desktop',
+  'Microsoft David Desktop',
+  'Google UK English Female'
+];
+function bestVoice(){
+  if(!voices.length) loadVoices();
+  for(var i=0;i<VOICE_PRIORITY.length;i++)
+    for(var j=0;j<voices.length;j++)
+      if(voices[j].name.indexOf(VOICE_PRIORITY[i])!==-1) return voices[j];
+  // Prefer any voice whose name suggests it's a higher-quality
+  // "Natural"/"Online"/neural voice, even if not in our list above.
+  for(var k=0;k<voices.length;k++){
+    var nm=voices[k].name;
+    if((voices[k].lang==='en-US'||voices[k].lang==='en-GB') &&
+       (nm.indexOf('Natural')!==-1 || nm.indexOf('Online')!==-1 || nm.indexOf('Neural')!==-1))
+      return voices[k];
+  }
+  for(var m=0;m<voices.length;m++)
+    if(voices[m].lang==='en-US'||voices[m].lang==='en_US') return voices[m];
+  for(var p=0;p<voices.length;p++)
+    if((voices[p].lang||'').indexOf('en')===0) return voices[p];
+  return voices[0]||null;
+}
+
+/* ── COLLAPSIBLE PLAYER ── */
+var playerOpen = false;
+function togglePlayer(){
+  playerOpen = !playerOpen;
+  var body = document.getElementById('playerBody');
+  var chev = document.getElementById('chevron');
+  body.classList.toggle('open', playerOpen);
+  chev.classList.toggle('open', playerOpen);
+}
+
+/* ── PLAY ── */
+function playChapter(n){
+  if(!synth){alert('Audio needs Chrome or Edge.');return;}
+  synth.cancel();
+  S.ch=n; S.playing=false; S.paused=false;
+  highlightSidebar(n);
+  setUI(false);
+  // Open player if collapsed
+  if(!playerOpen) togglePlayer();
+  var text = SCRIPTS[n];
+  if(!text) return;
+  speakScript(text, n, function(){ S.playing=false; setUI(false); });
+}
+
+/* ============ NATURAL-SOUNDING PLAYBACK ENGINE ============
+   Speaks a full chapter script so it sounds like a real person
+   reading aloud, not a robot:
+     - Splits on SENTENCES (not raw character counts) so we never
+       cut a thought in half.
+     - Groups 1-2 short sentences per chunk (still respecting a
+       safe length limit) to avoid Chrome's long-utterance cutoff
+       bug, while keeping each spoken unit a complete thought.
+     - Inserts a short silent pause between chunks (longer after
+       a paragraph-ending sentence) so the narration breathes,
+       the same way a human pauses between sentences.
+     - Gently varies pitch/rate per chunk (±small amount) so the
+       voice doesn't sound flat and monotone over a long passage.
+     onChapterDone(n) is called once the whole script finishes.
+
+   Pause/resume is handled by us, not the browser: speechSynthesis's
+   own pause()/resume() is notoriously unreliable across browsers --
+   it can silently fail to resume at all, or resume the wrong
+   utterance. Instead we remember exactly which sentence-chunk was
+   playing (S.resumeIdx) and, on resume, simply re-call this function
+   starting from that chunk -- 100% reliable everywhere, and "resumes"
+   from the sentence you paused on rather than the start of the
+   chapter. */
+function speakScript(text, n, onChapterDone, startIdx){
+  var sentences = (text.match(/[^.!?]+[.!?]+(?:\s+|$)/g) || [text])
+                    .map(function(s){ return s.trim(); })
+                    .filter(Boolean);
+
+  // Group sentences into natural-sounding chunks (1-2 sentences,
+  // capped so Chrome doesn't truncate very long utterances).
+  var chunks=[], cur='';
+  sentences.forEach(function(s){
+    if(cur && (cur.length + s.length + 1) > 220){
+      chunks.push(cur); cur = s;
+    } else {
+      cur = cur ? (cur + ' ' + s) : s;
+      // keep at most ~2 sentences per chunk for natural breathing
+      if((cur.match(/[.!?]/g)||[]).length >= 2){ chunks.push(cur); cur=''; }
+    }
+  });
+  if(cur) chunks.push(cur);
+
+  // Remember how to resume this exact chapter if paused partway through.
+  S.resumeCallback = onChapterDone;
+
+  var idx = startIdx || 0;
+  function speakNext(){
+    if(idx>=chunks.length || S.ch!==n){
+      if(idx>=chunks.length && S.ch===n && onChapterDone) onChapterDone();
+      else { S.playing=false; setUI(false); }
+      return;
+    }
+    // Track the chunk we're about to speak BEFORE speaking it, so if
+    // we're paused mid-chunk, resuming starts from this same chunk
+    // rather than skipping ahead or losing our place.
+    S.resumeIdx = idx;
+    var chunkText = chunks[idx++];
+
+    var u = new SpeechSynthesisUtterance(chunkText);
+    var v = bestVoice();
+    if(v) u.voice = v;
+    u.lang = 'en-US';
+
+    // Slight, natural variation so it doesn't sound like a metronome.
+    // Stays close to the user-selected speed but adds tiny human jitter.
+    var jitter = (Math.random()*0.06) - 0.03; // -0.03..+0.03
+    u.rate  = Math.max(0.6, S.speed + jitter);
+    u.pitch = 1.0 + (Math.random()*0.14 - 0.07); // 0.93..1.07 -- a bit more vocal variety so it doesn't sound flat
+
+    u.onstart = function(){ S.playing=true; S.paused=false; setUI(true); };
+    u.onerror = function(e){
+      if(e.error!=='interrupted'){ S.playing=false; setUI(false); }
+    };
+    u.onend = function(){
+      // Shorter breathing pauses than before -- enough to sound human,
+      // not so much that it drags. A bit longer at natural topic
+      // breaks, shorter for a plain sentence-to-sentence step.
+      var pause = /[.!?]\s*$/.test(chunkText) ? 140 : 70;
+      // Slightly longer pause at natural topic breaks
+      if((chunkText.match(/[.!?]/g)||[]).length >= 2) pause += 60;
+      setTimeout(speakNext, pause);
+    };
+    synth.speak(u);
+  }
+  setTimeout(speakNext, startIdx ? 30 : 100);
+}
+
+function togglePlay(){
+  if(!synth) return;
+  if(S.playing){
+    synth.cancel(); S.paused=true; S.playing=false; setUI(false);
+  } else if(S.paused && S.ch>0 && SCRIPTS[S.ch]){
+    S.paused=false;
+    speakScript(SCRIPTS[S.ch], S.ch, S.resumeCallback, S.resumeIdx);
+  } else {
+    playChapter(S.ch>0?S.ch:1);
+  }
+}
+/* Same pause/resume logic as togglePlay(), but scoped to a specific
+   chapter -- used by the inline "Listen to Chapter N" buttons. Without
+   this, clicking that button while it's showing "Pause" called
+   playChapter(n) again, which always restarts the chapter from the
+   very first sentence instead of actually pausing/resuming it. */
+function toggleChapterPlay(n){
+  if(!synth) return;
+  if(S.ch===n && S.playing){
+    synth.cancel(); S.paused=true; S.playing=false; setUI(false);
+  } else if(S.ch===n && S.paused && SCRIPTS[n]){
+    S.paused=false;
+    speakScript(SCRIPTS[n], n, S.resumeCallback, S.resumeIdx);
+  } else {
+    playChapter(n);
+  }
+}
+function stopAll(){
+  synth&&synth.cancel();S.playing=false;S.paused=false;
+  document.getElementById('nowTitle').textContent='Select a chapter to begin';
+  document.getElementById('toggleNowTitle').textContent='Tap to expand player';
+  setUI(false);
+  if(courseRunning){
+    courseRunning=false;
+    clearTimeout(courseTimer);
+    updateStartBtn(false);
+    hideAutoplayBanner();
+  }
+}
+function nextCh(){playChapter(Math.min(6,S.ch<1?1:S.ch+1));}
+function prevCh(){playChapter(Math.max(1,S.ch<2?1:S.ch-1));}
+function setSpeed(r){
+  S.speed=r;
+  document.querySelectorAll('.speed-btn').forEach(function(b){
+    b.classList.toggle('on',parseFloat(b.getAttribute('data-sp'))===r);
+  });
+  if(S.playing){
+    // If the guided course is the one currently narrating, restart
+    // this chapter at the new speed without treating it as the user
+    // "taking over" -- only a manual chapter/play click should stop
+    // Autoplay, not a speed change.
+    if(courseRunning) playChapterAuto(S.ch);
+    else playChapter(S.ch);
+  }
+}
+
+var titles={1:'App Menu & Workspace',2:'Search Candidates',3:'Candidate Profile',4:'New Candidate',5:'DivaMatch & Harvester',6:'Compliance & Submittal'};
+function setUI(on){
+  document.getElementById('mainBtn').textContent=on?'⏸':'▶';
+  document.getElementById('eq').classList.toggle('on',on);
+  var ch=S.ch;
+  document.querySelectorAll('[data-pbtn]').forEach(function(b){
+    var n=parseInt(b.getAttribute('data-pbtn'));
+    b.textContent=(on&&n===ch)?'⏸ Pause':'▶ Play narration';
+    b.classList.toggle('on',on&&n===ch);
+  });
+  document.querySelectorAll('[data-clbtn]').forEach(function(b){
+    var n=parseInt(b.getAttribute('data-clbtn'));
+    b.textContent=(on&&n===ch)?'⏸  Pause':'🔊  Listen to Chapter '+n;
+    b.classList.toggle('playing',on&&n===ch);
+  });
+  if(ch>0){
+    var t=titles[ch]||'';
+    document.getElementById('nowTitle').textContent=on?'▶ '+t:t;
+    document.getElementById('toggleNowTitle').textContent=on?'▶ '+t:(t||'Tap to expand player');
+  }
+}
+
+function navTo(n){
+  if(courseRunning){
+    courseRunning=false;
+    clearTimeout(courseTimer);
+    if(synth) synth.cancel();
+    S.playing=false; S.paused=false;
+    setUI(false);
+    updateStartBtn(false);
+    hideAutoplayBanner();
+  }
+  highlightSidebar(n);
+  var el=document.getElementById('ch'+n);
+  if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function highlightSidebar(n){
+  document.querySelectorAll('.sb-item').forEach(function(el){
+    var c=parseInt(el.getAttribute('data-ch'));
+    el.classList.toggle('active',c===n);
+    if(c<n) el.classList.add('visited');
+  });
+  // Mark this chapter (and all before it) as visited permanently,
+  // regardless of which direction the user is currently scrolling.
+  var pct=Math.round(((n-1)/6)*100);
+  setProgress(pct);
+}
+
+/* While the auto-play course is actively navigating between
+   chapters, we don't want this observer's scroll-based highlight
+   to overwrite the chapter the course just set (and is currently
+   narrating) -- that's what caused the visuals to jump to a
+   different chapter than the audio. */
+var suppressScrollHighlight = false;
+
+var chObs=new IntersectionObserver(function(entries){
+  // Belt-and-suspenders: while the guided course is running, it is the
+  // ONLY thing allowed to decide which chapter is highlighted. Checking
+  // both flags (instead of just suppressScrollHighlight) means a stray
+  // layout shift -- a lazy-loaded image nudging the page, for example --
+  // can never sneak in and highlight a different chapter than the one
+  // currently being narrated.
+  if(suppressScrollHighlight || courseRunning) return;
+  entries.forEach(function(e){
+    if(e.isIntersecting){
+      var n=parseInt(e.target.getAttribute('data-chapter'));
+      if(n) highlightSidebar(n);
+    }
+  });
+},{rootMargin:'-20% 0px -70% 0px'});
+document.querySelectorAll('[data-chapter]').forEach(function(el){chObs.observe(el);});
+
+/* If the user grabs the scrollbar / scrolls a meaningful amount
+   on their own while the auto-play course is running and we're
+   NOT in the middle of our own programmatic chapter transition,
+   treat it as "user took control" and pause the course cleanly
+   (same as pressing Stop). This avoids audio for one chapter
+   playing while a different chapter is shown on screen. */
+var lastAutoScrollY = window.scrollY;
+window.addEventListener('scroll',function(){
+  if(courseRunning && !suppressScrollHighlight){
+    var dy = Math.abs(window.scrollY - lastAutoScrollY);
+    if(dy > 200){
+      stopCourse();
+      showToast('Auto-play paused — scroll position changed', 2200);
+    }
+  }
+  lastAutoScrollY = window.scrollY;
+
+  var d=document.documentElement;
+  var sc=d.scrollTop||document.body.scrollTop;
+  var tot=d.scrollHeight-d.clientHeight;
+  var pct=Math.round(sc/tot*100);
+  setProgress(pct);
+});
+
+/* ============ PROGRESS — ONLY EVER MOVES FORWARD ============
+   Scrolling back up to review a finished chapter must NOT make
+   the progress bar (top bar, hero bar, or sidebar bar) shrink.
+   We track the highest percentage reached so far and always
+   render that value, even if the current scroll position is
+   earlier in the page. */
+var maxProgressPct = 0;
+function setProgress(pct){
+  if(pct > maxProgressPct) maxProgressPct = pct;
+  var shown = maxProgressPct;
+  // Top thin progress bar
+  var prog = document.getElementById('prog');
+  if(prog) prog.style.width = shown+'%';
+  // Hero learning-time bar
+  var fill = document.getElementById('heroFill');
+  var pctEl = document.getElementById('heroPct');
+  if(fill) fill.style.width = shown+'%';
+  if(pctEl) pctEl.textContent = shown+'%';
+  // Sidebar chapter progress bar
+  var pbar = document.getElementById('pbar');
+  var pct2 = document.getElementById('pct');
+  if(pbar) pbar.style.width = shown+'%';
+  if(pct2) pct2.textContent = shown+'%';
+}
+
+var revObs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('vis');});
+},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.sr').forEach(function(el){revObs.observe(el);});
+
+window.addEventListener('beforeunload',function(){synth&&synth.cancel();});
+
+/* ============ START COURSE / AUTO-PLAY SEQUENCE ============ */
+var courseRunning = false;
+var courseTimer = null;
+var CHAPTER_TITLES = {1:'App Menu & Workspace',2:'Search Candidates',3:'Inside the Candidate Profile',4:'New Candidate — 4 Methods',5:'DivaMatch & The Harvester',6:'Compliance & Submittal'};
+
+function showToast(text, ms){
+  var t = document.getElementById('transitionToast');
+  document.getElementById('toastText').textContent = text;
+  t.classList.add('show');
+  clearTimeout(t._hideTimer);
+  t._hideTimer = setTimeout(function(){ t.classList.remove('show'); }, ms || 2600);
+}
+
+function startCourse(){
+  if(courseRunning){ stopCourse(); return; }
+  courseRunning = true;
+  updateStartBtn(true);
+  showAutoplayBanner(1);
+  // Begin with chapter 1
+  goToChapterAndPlay(1, true);
+}
+
+function stopCourse(){
+  courseRunning = false;
+  suppressScrollHighlight = false; // hand control back to normal scroll-based highlighting
+  clearTimeout(courseTimer);
+  if(synth) synth.cancel();
+  S.playing = false; S.paused = false;
+  setUI(false);
+  updateStartBtn(false);
+  hideAutoplayBanner();
+  // Re-sync the manual-scroll baseline so resuming normal scrolling
+  // right after stopping doesn't immediately look like a "jump".
+  lastAutoScrollY = window.scrollY;
+}
+
+function updateStartBtn(playing){
+  var btn = document.getElementById('startCourseBtn');
+  var icon = btn.querySelector('.scb-icon');
+  var title = document.getElementById('scbTitle');
+  var sub = document.getElementById('scbSub');
+  btn.classList.toggle('playing', playing);
+  if(playing){
+    icon.textContent = '⏸';
+    title.textContent = 'Course Playing — Click to Stop';
+    sub.textContent = "We're guiding you through each chapter automatically.";
+  } else {
+    icon.textContent = '▶';
+    title.textContent = 'Start Course — Auto-Play All Chapters';
+    sub.textContent = "Sit back. We'll guide you through every chapter with audio, and scroll automatically.";
+  }
+}
+
+function showAutoplayBanner(n){
+  var b = document.getElementById('autoplayBanner');
+  b.classList.add('show');
+  document.getElementById('abChapter').textContent = 'Chapter '+n+' — '+CHAPTER_TITLES[n];
+}
+function hideAutoplayBanner(){
+  document.getElementById('autoplayBanner').classList.remove('show');
+}
+
+/* Scroll to a chapter, show transition toast, then play its narration.
+   When narration ends, automatically move to the next chapter. */
+/* Waits until the page has actually stopped scrolling (position
+   unchanged for two consecutive checks), then calls done().
+   Falls back to a max wait so we never hang forever even if a
+   layout shift (e.g. a late-loading image) keeps nudging the
+   scroll position slightly. */
+function waitForScrollSettle(targetEl, done, maxWaitMs){
+  var lastY = window.scrollY;
+  var stableCount = 0;
+  var elapsed = 0;
+  var stepMs = 100;
+  var maxMs = maxWaitMs || 3500;
+  // Require a longer stretch of "not moving" before we trust it --
+  // native smooth-scroll easing can sit almost-still for a sample or
+  // two while still a beat away from the real target, especially on
+  // long jumps between chapters. Two samples (200ms) was too easy to
+  // satisfy by accident; four (400ms) is comfortably past that.
+  var REQUIRED_STABLE = 4;
+  // Pixels of tolerance for "has the chapter actually reached the top
+  // of the viewport" -- scroll-margin-top already accounts for the
+  // fixed header, so 0 is the expected resting value.
+  var POS_TOLERANCE = 6;
+
+  function distanceFromTarget(){
+    if(!targetEl) return 0;
+    // .ch elements use scroll-margin-top (70px, to clear the fixed
+    // header) so their resting position after scrollIntoView is NOT
+    // rect.top === 0 -- it's rect.top === scroll-margin-top. Comparing
+    // against 0 directly meant "arrived" could basically never be
+    // true, so this always burned through the full timeout before
+    // doing anything, making Autoplay look like it had stalled.
+    var marginTop = parseFloat(getComputedStyle(targetEl).scrollMarginTop) || 0;
+    return targetEl.getBoundingClientRect().top - marginTop;
+  }
+
+  function check(){
+    if(!courseRunning){ return; } // aborted (user stopped the course)
+    var y = window.scrollY;
+    lastAutoScrollY = y; // keep manual-scroll detector in sync with our own scroll
+    if(Math.abs(y - lastY) < 2){
+      stableCount++;
+    } else {
+      stableCount = 0;
+    }
+    lastY = y;
+    elapsed += stepMs;
+
+    var arrived = Math.abs(distanceFromTarget()) <= POS_TOLERANCE;
+
+    if((stableCount >= REQUIRED_STABLE && arrived) || elapsed >= maxMs){
+      // If we hit the timeout without quite landing exactly on the
+      // chapter (a slow device, a long jump, an image still loading),
+      // snap straight to it. This guarantees the narration we're
+      // about to start ALWAYS matches what's on screen -- audio and
+      // visuals can never start out of step with each other.
+      // Manually calculate the scroll position to respect scroll-margin-top,
+      // since scrollIntoView(block:'start') ignores it and places the element at
+      // rect.top === 0, cutting off content under the fixed header.
+      if(targetEl && !arrived){
+        var marginTop = parseFloat(getComputedStyle(targetEl).scrollMarginTop) || 0;
+        var targetRect = targetEl.getBoundingClientRect();
+        var targetScrollPos = window.scrollY + targetRect.top - marginTop;
+        window.scrollTo({top: targetScrollPos, behavior: 'auto'});
+        // Use the position we just requested, not window.scrollY read
+        // immediately after -- the browser may not have applied the
+        // scroll yet, so reading it here can still capture the OLD
+        // position. That stale value would later be compared against
+        // the real (now-scrolled) position once the next scroll event
+        // fires, after suppressScrollHighlight has already been turned
+        // back off -- triggering a false 'user scrolled' detection that
+        // silently stops the whole course.
+        lastAutoScrollY = targetScrollPos;
+      }
+      done();
+    } else {
+      courseTimer = setTimeout(check, stepMs);
+    }
+  }
+  courseTimer = setTimeout(check, stepMs);
+}
+
+function goToChapterAndPlay(n, isFirst){
+  if(!courseRunning) return;
+  if(n > 6){
+    // Course complete
+    showToast('🎉 Course complete! Great job.', 4000);
+    courseRunning = false;
+    updateStartBtn(false);
+    hideAutoplayBanner();
+    return;
+  }
+
+  // The course is the single source of truth for "current chapter"
+  // while it's running -- prevents the scroll-based sidebar
+  // highlighter from fighting us if the page is still moving.
+  suppressScrollHighlight = true;
+
+  highlightSidebar(n);
+  showAutoplayBanner(n);
+
+  var msg = (n===1) ? 'Now starting Chapter 1...' : ('Now moving to Chapter '+n+'...');
+  showToast(msg, 2400);
+
+  var ch = document.getElementById('ch'+n);
+  var el = (ch && ch.querySelector('.full-shot')) || ch;
+  if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+
+  // Wait until the smooth-scroll has actually finished (not a
+  // guessed timeout) before starting narration, so audio and the
+  // on-screen chapter are always in sync. chObs (the scroll-based
+  // sidebar highlighter) is now guarded by courseRunning directly,
+  // so re-enabling suppressScrollHighlight here is safe -- it's only
+  // needed by the "user grabbed the scrollbar" detector further down,
+  // which should stay active during narration.
+  waitForScrollSettle(el, function(){
+    if(!courseRunning) return;
+    suppressScrollHighlight = false;
+    playChapterAuto(n);
+  }, isFirst ? 3000 : 4500);
+}
+
+/* Like playChapter(), but when the narration fully ends it automatically
+   advances to the next chapter (only while courseRunning is true). */
+function playChapterAuto(n){
+  if(!synth){ alert('Audio needs Chrome or Edge.'); return; }
+  synth.cancel();
+  S.ch=n; S.playing=false; S.paused=false;
+  setUI(false);
+  if(!playerOpen) togglePlayer();
+
+  // Brief settle window: even with CSS scroll-anchoring disabled, a
+  // late-decoding image or font swap can still nudge layout right as
+  // we land on a chapter. Re-suppressing the manual-scroll detector
+  // for a moment absorbs that without falsely treating it as the
+  // user grabbing the scrollbar.
+  suppressScrollHighlight = true;
+  lastAutoScrollY = window.scrollY;
+  setTimeout(function(){
+    if(courseRunning && S.ch===n) suppressScrollHighlight = false;
+  }, 800);
+
+  var text = SCRIPTS[n];
+  if(!text){ advanceCourse(n); return; }
+
+  // Reuse the same natural-sounding playback engine as manual play,
+  // so the auto-play course doesn't sound any more robotic than
+  // pressing "Listen to this chapter" yourself. When this chapter's
+  // narration finishes, automatically advance to the next one --
+  // but only if the course is still running and we haven't been
+  // interrupted (e.g. by the user clicking another chapter).
+  speakScript(text, n, function(){
+    if(!courseRunning || S.ch!==n){ S.playing=false; setUI(false); return; }
+    S.playing=false; setUI(false);
+    advanceCourse(n);
+  });
+}
+
+function advanceCourse(currentChapter){
+  if(!courseRunning) return;
+  var next = currentChapter + 1;
+  // brief pause between chapters so the transition feels natural
+  courseTimer = setTimeout(function(){
+    goToChapterAndPlay(next, false);
+  }, 900);
+}
+
+/* If user manually presses a chapter's play button or sidebar play
+   while the course is running, treat it as stopping auto-play
+   so we don't fight the manual choice. */
+var _origPlayChapter = playChapter;
+playChapter = function(n){
+  if(courseRunning){
+    courseRunning = false;
+    clearTimeout(courseTimer);
+    updateStartBtn(false);
+    hideAutoplayBanner();
+  }
+  _origPlayChapter(n);
+};
+</script>
+</body>
+</html>

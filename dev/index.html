@@ -1,0 +1,2101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JobDiva Mastery — Recruiter Training</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+:root{
+  --navy:#0d1830; --navy2:#152442; --navy3:#1e3260; --blue:#2455d1; --blue-light:#4f7ce8;
+  --gold:#9c6d1e; --gold-deep:#7a5313; --gold-fill:#dcab4c; --gold-soft:#f3dfa8;
+  --ink:#111a2e; --paper:#f6f3ec; --card:#fffdf9;
+  --ok:#1f9d55; --warn:#c0392b; --muted:#6b7280;
+  --laser:#a3203f; --laser-soft:#c8425f;
+  --hairline:rgba(17,26,46,0.09);
+  --r-sm:8px; --r-md:12px; --r-lg:18px; --r-xl:24px;
+  --shadow-soft:0 1px 2px rgba(17,26,46,0.04), 0 10px 30px rgba(17,26,46,0.08);
+  --shadow-deep:0 24px 60px rgba(10,16,32,0.18), 0 2px 6px rgba(10,16,32,0.08);
+}
+*{box-sizing:border-box;}
+body{
+  margin:0; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  font-size:15px; line-height:1.5;
+  background:
+    repeating-linear-gradient(135deg, rgba(17,26,46,0.012) 0px, rgba(17,26,46,0.012) 1px, transparent 1px, transparent 5px),
+    radial-gradient(ellipse 900px 500px at 12% -6%, rgba(220,171,76,0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 1000px 700px at 105% 10%, rgba(30,50,96,0.09) 0%, transparent 55%),
+    linear-gradient(175deg, #fbf9f4 0%, #f3efe4 45%, #ece6d6 100%);
+  color:var(--ink); min-height:100vh; letter-spacing:.1px;
+}
+.app{display:flex; min-height:100vh;}
+::-webkit-scrollbar{width:9px; height:9px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:rgba(17,26,46,0.16); border-radius:8px;}
+::-webkit-scrollbar-thumb:hover{background:rgba(156,109,30,0.45);}
+
+/* SIDEBAR */
+.sidebar{
+  width:296px; flex-shrink:0; background:linear-gradient(190deg,rgba(255,253,249,0.94),rgba(246,241,230,0.9));
+  backdrop-filter:blur(10px); border-right:1px solid var(--hairline); padding:22px 15px;
+  position:sticky; top:0; height:100vh; overflow-y:auto;
+  box-shadow:1px 0 0 rgba(255,255,255,0.6) inset, -18px 0 40px -20px rgba(17,26,46,0.12) inset;
+}
+.brand{display:flex; align-items:center; gap:12px; margin-bottom:20px; padding:2px 6px 16px; border-bottom:1px solid var(--hairline);}
+.brand .logo{
+  width:40px;height:40px;border-radius:11px; position:relative;
+  background:linear-gradient(150deg,#2a3d68,var(--navy) 60%);
+  display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--gold-soft);
+  font-size:15px; font-family:Georgia,'Cambria',serif; letter-spacing:.5px;
+  box-shadow:0 6px 16px rgba(13,24,48,0.35), inset 0 0 0 1px rgba(220,171,76,0.4), inset 0 1px 0 rgba(255,255,255,0.12);
+}
+.brand h1{font-size:15.5px; margin:0; letter-spacing:.2px; color:var(--ink); font-family:Georgia,'Cambria',serif; font-weight:700;}
+.brand span{font-size:10.5px; color:var(--gold); display:block; letter-spacing:.9px; text-transform:uppercase; margin-top:2px; font-weight:600;}
+.progress-wrap{margin:4px 6px 20px; }
+.progress-bar{height:5px;border-radius:6px;background:rgba(17,26,46,0.08);overflow:hidden; box-shadow:inset 0 1px 2px rgba(17,26,46,0.15);}
+.progress-fill{
+  height:100%;background:linear-gradient(90deg,var(--navy3),var(--gold-fill));width:0%;transition:width .5s ease;
+  box-shadow:0 0 8px rgba(220,171,76,0.5); position:relative; overflow:hidden;
+}
+.progress-fill::after, .course-progress-fill::after{
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(100deg, transparent 0%, rgba(255,255,255,0.55) 45%, transparent 65%);
+  transform:translateX(-100%); animation:barShimmer 3.2s ease-in-out infinite;
+}
+@keyframes barShimmer{
+  0%{transform:translateX(-100%);} 55%{transform:translateX(220%);} 100%{transform:translateX(220%);}
+}
+.progress-label{font-size:10.5px;color:var(--muted);margin-top:8px; letter-spacing:.2px;}
+
+.mod-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:3px;}
+.mod-item{
+  display:flex; align-items:center; gap:10px; padding:9px 10px; border-radius:var(--r-sm); cursor:pointer;
+  font-size:12.5px; color:#465066; transition:.18s ease; border:1px solid transparent; position:relative;
+}
+.mod-item:hover{background:rgba(30,50,96,0.06);}
+.mod-item.active{
+  background:linear-gradient(90deg,rgba(30,50,96,0.09),rgba(220,171,76,0.05));
+  border-color:rgba(30,50,96,0.14); color:var(--ink); font-weight:600;
+  box-shadow:inset 3px 0 0 var(--gold-fill), 0 4px 14px -6px rgba(17,26,46,0.18);
+}
+.mod-item.active::before{
+  content:'◆'; position:absolute; left:-10px; top:50%; transform:translateY(-50%);
+  font-size:7px; color:var(--gold-fill);
+}
+.mod-item .num{
+  width:22px;height:22px;border-radius:50%;background:rgba(17,26,46,0.06);flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:700;color:#5c6b85;
+  transition:.18s ease;
+}
+.mod-item.done .num{
+  background:linear-gradient(145deg,#2bb56b,var(--ok)); color:#fff; box-shadow:0 2px 6px rgba(31,157,85,0.35);
+  animation:checkPop .4s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes checkPop{ 0%{transform:scale(.4); opacity:.5;} 60%{transform:scale(1.18);} 100%{transform:scale(1); opacity:1;} }
+.mod-item.active .num{background:linear-gradient(145deg,#ecc373,var(--gold-fill)); color:#2a1700; box-shadow:0 2px 8px rgba(220,171,76,0.5);}
+.mod-item .lbl{line-height:1.28;}
+.mod-item.nested{margin-left:14px;}
+.mod-item.nested .num{width:18px; height:18px; font-size:9.5px;}
+
+.section-head{
+  display:flex; align-items:center; gap:7px; cursor:pointer; user-select:none;
+  font-size:10px; font-weight:700; letter-spacing:1.3px; text-transform:uppercase; color:var(--navy3);
+  padding:15px 10px 8px; margin-top:2px; border-radius:6px;
+}
+.section-head:hover{background:rgba(30,50,96,0.06);}
+.section-head:first-child{padding-top:4px;}
+.section-chevron{font-size:9px; width:10px; display:inline-block; color:var(--gold);}
+.section-body{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:3px;}
+.section-body.collapsed{display:none;}
+.subsection-head{
+  font-size:9.5px; font-weight:700; letter-spacing:.7px; text-transform:uppercase; color:var(--gold);
+  padding:11px 10px 3px 14px; opacity:.85;
+}
+
+/* MAIN STAGE */
+.main{flex:1; display:flex; flex-direction:column; min-width:0;}
+.topbar{
+  display:flex; justify-content:space-between; align-items:center; padding:13px 28px;
+  border-bottom:1px solid var(--hairline); background:rgba(255,253,249,0.7); backdrop-filter:blur(8px);
+  position:relative;
+}
+.topbar::after{
+  content:''; position:absolute; left:0; right:0; bottom:-1px; height:3px;
+  background:
+    linear-gradient(90deg, transparent, rgba(220,171,76,0.65) 30%, rgba(220,171,76,0.65) 70%, transparent) top/100% 1px no-repeat,
+    linear-gradient(90deg, transparent, rgba(220,171,76,0.28) 30%, rgba(220,171,76,0.28) 70%, transparent) bottom/100% 1px no-repeat;
+}
+.topbar h2{margin:0; font-size:20px; color:var(--ink); font-family:Georgia,'Cambria',serif; font-weight:700; letter-spacing:.1px;}
+.topbar .sub{font-size:12px; color:var(--muted); margin-top:3px; letter-spacing:.1px;}
+.badge{
+  font-size:10px; padding:6px 14px 6px 12px; border-radius:20px; text-transform:uppercase;
+  background:linear-gradient(120deg,rgba(220,171,76,0.14),rgba(220,171,76,0.05)); color:var(--gold-deep);
+  border:1px solid rgba(220,171,76,0.45); font-weight:700; letter-spacing:1.1px;
+  box-shadow:0 0 0 3px rgba(220,171,76,0.08), 0 2px 8px rgba(156,109,30,0.12);
+}
+.badge::before{content:'◆ ';font-size:7px; vertical-align:1.5px;}
+
+.stage-outer{flex:1; padding:18px 22px 8px; display:flex; flex-direction:column; gap:14px; overflow:hidden;}
+
+.stage{
+  position:relative; background:linear-gradient(165deg,#fdfbf6,#eee8d9 65%,#e7dfc9);
+  border:1px solid var(--hairline); border-radius:var(--r-xl); flex:1; min-height:360px;
+  overflow:hidden; box-shadow:var(--shadow-deep), inset 0 1px 0 rgba(255,255,255,0.6);
+}
+.stage::before{
+  content:''; position:absolute; inset:0; pointer-events:none; z-index:1;
+  background:radial-gradient(ellipse 70% 45% at 50% 0%, rgba(220,171,76,0.07), transparent 70%);
+}
+.screen-title{
+  position:absolute; top:16px; left:20px; font-size:10.5px; letter-spacing:1.6px; text-transform:uppercase;
+  color:var(--gold-deep); opacity:.85; z-index:5; font-weight:700;
+}
+
+/* real screenshot panel — sized to each image's own aspect ratio (set via JS
+   on load) so the frame shrink-wraps the screenshot instead of leaving
+   letterboxed blank space around a fixed-aspect box. */
+.mockui{
+  position:absolute; top:0; left:0; margin:0;
+  /* width/height are set in px by JS (sizeMockuiToImage) to exactly match
+     each screenshot's aspect ratio — CSS auto-sizing here is unreliable
+     because left/right both being non-auto forces width:auto to stretch
+     full-width regardless of aspect-ratio, per the abspos sizing algorithm. */
+  background:#ffffff; border-radius:var(--r-md);
+  box-shadow:0 20px 50px rgba(17,26,46,0.18), 0 2px 8px rgba(17,26,46,0.1); overflow:hidden;
+  opacity:0; transform:scale(.96);
+  transition:opacity .45s ease, transform .55s cubic-bezier(.22,1.4,.36,1);
+  display:flex; align-items:center; justify-content:center;
+  border:1px solid rgba(17,26,46,0.08);
+}
+.mockui.show{opacity:1; transform:scale(1);}
+.mockui img{
+  width:100%; height:100%; object-fit:contain; display:block; border-radius:4px;
+}
+.shot-caption{
+  position:absolute; left:16px; bottom:12px; z-index:6; background:rgba(10,15,28,0.86);
+  border:1px solid rgba(220,171,76,0.3); border-radius:8px; padding:6px 13px; font-size:10.5px;
+  color:#f0dcae; letter-spacing:.3px; box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Honest stand-in for steps with no matching real footage — deliberately
+   distinct from a screenshot (dashed border, flag banner, no chrome) so it
+   never gets mistaken for "the real JobDiva screen for this step." */
+.concept-card{
+  width:86%; max-width:520px; padding:30px 32px; text-align:center;
+  border:1.5px dashed rgba(156,109,30,0.4); border-radius:var(--r-lg);
+  background:linear-gradient(160deg,rgba(220,171,76,0.06),rgba(30,50,96,0.03));
+  box-shadow:0 10px 30px rgba(17,26,46,0.06);
+}
+.concept-flag{
+  display:inline-block; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+  color:var(--gold-deep); background:rgba(220,171,76,0.14); border:1px solid rgba(220,171,76,0.4);
+  border-radius:20px; padding:5px 13px; margin-bottom:18px;
+  box-shadow:0 0 0 3px rgba(220,171,76,0.08);
+}
+.concept-flag::before{content:'◆ '; font-size:7px; vertical-align:1.5px;}
+.concept-icon{
+  font-size:32px; margin-bottom:8px; filter:drop-shadow(0 4px 8px rgba(17,26,46,0.15));
+  display:inline-block; animation:floatY 3.2s ease-in-out infinite;
+}
+@keyframes floatY{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-6px);} }
+.concept-title{font-family:Georgia,'Cambria',serif; font-weight:700; font-size:18px; color:var(--ink); margin-bottom:16px;}
+.concept-list{list-style:none; margin:0 0 12px; padding:0; text-align:left; display:inline-block;}
+.concept-list li{
+  font-size:13px; color:#3c4a63; line-height:1.55; padding:6px 0 6px 24px; position:relative;
+}
+.concept-list li::before{content:'✓'; position:absolute; left:0; color:var(--ok); font-weight:700;}
+.concept-note{font-size:11.5px; color:var(--muted); font-style:italic; margin-top:8px;}
+
+/* "Start Course" gate — nothing narrates until this is dismissed */
+.start-overlay{
+  position:absolute; inset:0; z-index:60; display:flex; align-items:center; justify-content:center;
+  background:radial-gradient(ellipse 70% 60% at 50% 40%, rgba(21,36,66,0.55), rgba(8,12,22,0.78));
+  backdrop-filter:blur(4px);
+  opacity:1; transition:opacity .35s ease, visibility .35s ease; visibility:visible;
+}
+.start-overlay.hidden{opacity:0; visibility:hidden; pointer-events:none;}
+.start-card{
+  background:linear-gradient(165deg,var(--card),#f7f0de); border-radius:var(--r-lg); padding:36px 40px;
+  text-align:center; max-width:360px;
+  box-shadow:0 30px 70px rgba(5,8,18,0.45), 0 0 0 1px rgba(220,171,76,0.25), inset 0 1px 0 rgba(255,255,255,0.8);
+  border:1px solid rgba(220,171,76,0.3);
+}
+.start-icon{
+  font-size:30px; margin:0 auto 14px; width:62px; height:62px; border-radius:50%; display:flex;
+  align-items:center; justify-content:center;
+  background:linear-gradient(150deg,#2a3d68,var(--navy));
+  animation:breatheGlow 2.6s ease-in-out infinite;
+}
+@keyframes breatheGlow{
+  0%,100%{box-shadow:0 8px 20px rgba(13,24,48,0.35), 0 0 0 1px rgba(220,171,76,0.5), 0 0 0 5px rgba(220,171,76,0.14),
+    inset 0 0 0 1px rgba(220,171,76,0.5), inset 0 2px 4px rgba(255,255,255,0.1);}
+  50%{box-shadow:0 8px 24px rgba(13,24,48,0.42), 0 0 0 1px rgba(220,171,76,0.65), 0 0 0 9px rgba(220,171,76,0.22),
+    inset 0 0 0 1px rgba(220,171,76,0.65), inset 0 2px 4px rgba(255,255,255,0.16);}
+}
+.start-card h3{margin:0 0 10px; font-size:20px; color:var(--ink); font-family:Georgia,'Cambria',serif; font-weight:700;}
+.start-card p{margin:0 0 20px; font-size:13px; color:var(--muted); line-height:1.55;}
+.start-btn{font-size:14px; padding:13px 22px; width:100%; justify-content:center;}
+.mockui-topbar{
+  height:34px; background:linear-gradient(90deg,#12294f,#1c3a6b); display:flex; align-items:center; gap:6px; padding:0 12px;
+}
+.mockui-topbar .dot{width:9px;height:9px;border-radius:50%;}
+.mockui-topbar .t{font-size:11px;color:#cfe0ff;margin-left:8px;font-family:monospace;letter-spacing:.5px;}
+.mockui-body{position:relative; padding:16px 20px; color:#1b2a41; font-size:12.5px; height:calc(100% - 34px); overflow:hidden;}
+.panel-row{display:flex; gap:16px; flex-wrap:wrap;}
+.field{
+  background:#eef3fb; border:1px solid #d7e2f2; border-radius:8px; padding:8px 12px; min-width:130px;
+  position:relative; transition:.25s;
+}
+.field .k{font-size:10px; color:#7688a3; text-transform:uppercase; letter-spacing:.5px;}
+.field .v{font-size:13px; font-weight:600; color:#16233b; margin-top:2px;}
+.chk{display:flex;align-items:center;gap:8px;background:#eef3fb;border:1px solid #d7e2f2;border-radius:8px;padding:8px 12px;}
+.chk .box{width:15px;height:15px;border-radius:4px;border:2px solid #96a9c9;position:relative;flex-shrink:0;}
+.chk .box.on{background:var(--blue); border-color:var(--blue);}
+.chk .box.on::after{content:'✓'; position:absolute; inset:0; color:#fff; font-size:10px; display:flex; align-items:center; justify-content:center;}
+.tabrow{display:flex; gap:6px; flex-wrap:wrap; margin-top:10px;}
+.tab{background:#e3ecfa;border-radius:6px;padding:5px 10px;font-size:10.5px;color:#345; font-weight:600;}
+.tab.hot{background:linear-gradient(90deg,#ffe8b8,#ffd479); color:#5a3d00;}
+.rowline{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px dashed #e0e7f2;font-size:12px;}
+.pill{padding:3px 9px;border-radius:20px;font-size:10px;font-weight:700;}
+.pill.green{background:#dcf7e3;color:#187a3e;}
+.pill.amber{background:#fff1d6;color:#8a5b00;}
+.pill.blue{background:#dbe9ff;color:#1a4fa0;}
+.note-box{background:#fffbe9;border:1px solid #f0dfa3;border-radius:8px;padding:10px 12px;margin-top:10px;font-size:12px;color:#4a3c00;}
+
+/* highlight glow ring applied to .field/.chk/.tab when targeted */
+.hl-ring{
+  outline:3px solid var(--laser); outline-offset:3px; border-radius:10px;
+  box-shadow:0 0 0 6px rgba(163,32,63,0.22), 0 0 22px rgba(163,32,63,0.5);
+  animation:pulseRing 1.1s ease-in-out infinite;
+}
+@keyframes pulseRing{
+  0%,100%{box-shadow:0 0 0 6px rgba(163,32,63,0.22), 0 0 18px rgba(163,32,63,0.4);}
+  50%{box-shadow:0 0 0 10px rgba(163,32,63,0.1), 0 0 30px rgba(163,32,63,0.65);}
+}
+
+/* laser pointer dot */
+.laser{
+  position:absolute; width:22px; height:22px; border-radius:50%; pointer-events:none; z-index:50;
+  background:radial-gradient(circle, #fff 0%, var(--laser-soft) 35%, rgba(163,32,63,0) 70%);
+  box-shadow:0 0 18px 6px rgba(163,32,63,0.75), 0 0 40px 14px rgba(163,32,63,0.3);
+  transform:translate(-50%,-50%); opacity:0; transition:left .55s cubic-bezier(.4,0,.2,1), top .55s cubic-bezier(.4,0,.2,1), opacity .25s ease;
+}
+.laser.on{opacity:1;}
+.laser::after{
+  content:''; position:absolute; inset:-6px; border-radius:50%; border:2px solid rgba(255,255,255,0.6);
+  animation:sonar 1.3s ease-out infinite;
+}
+@keyframes sonar{0%{transform:scale(.4);opacity:1;} 100%{transform:scale(2.3);opacity:0;}}
+
+/* magnifying glass — zooms into the exact feature being discussed */
+.magnifier{
+  position:absolute; width:152px; height:152px; border-radius:50%; pointer-events:none; z-index:48;
+  border:5px solid #fff; box-shadow:0 0 0 3px var(--laser), 0 4px 10px rgba(220,171,76,0.3), 0 18px 40px rgba(13,24,48,0.4);
+  background-repeat:no-repeat; opacity:0;
+  transform:translate(-50%,-50%) scale(.85);
+  transition:left .55s cubic-bezier(.4,0,.2,1), top .55s cubic-bezier(.4,0,.2,1), opacity .3s ease, transform .3s ease;
+}
+.magnifier.on{opacity:1; transform:translate(-50%,-50%) scale(1);}
+.magnifier::before{
+  content:''; position:absolute; inset:0; border-radius:50%;
+  box-shadow:inset 0 3px 12px rgba(255,255,255,0.75), inset 0 -12px 20px rgba(0,0,0,0.14);
+  pointer-events:none;
+}
+.magnifier::after{
+  content:''; position:absolute; width:16px; height:46px; bottom:-38px; right:-10px;
+  background:linear-gradient(180deg,#e8d7ab,#9c6d1e); border-radius:8px; transform:rotate(45deg);
+  box-shadow:0 3px 8px rgba(0,0,0,0.35);
+}
+
+/* caption / narration bar */
+.narration{
+  background:linear-gradient(120deg,rgba(255,253,249,0.95),rgba(246,241,230,0.9));
+  border:1px solid var(--hairline); border-left:3px solid var(--gold-fill); border-radius:var(--r-md); padding:14px 22px 14px 20px;
+  min-height:64px; display:flex; align-items:center; gap:17px; box-shadow:var(--shadow-soft);
+  position:relative; overflow:hidden;
+}
+.narration::after{
+  content:'”'; position:absolute; right:14px; top:-18px; font-family:Georgia,'Cambria',serif;
+  font-size:80px; color:rgba(156,109,30,0.08); line-height:1; pointer-events:none;
+}
+.narration .mic{
+  width:42px;height:42px;border-radius:50%; background:linear-gradient(150deg,#2a3d68,var(--navy)); flex-shrink:0;
+  display:flex;align-items:center;justify-content:center; font-size:17px; position:relative;
+  box-shadow:0 6px 14px rgba(13,24,48,0.3), inset 0 0 0 1px rgba(220,171,76,0.35);
+}
+.mic.speaking::before{
+  content:''; position:absolute; inset:-6px; border-radius:50%; border:2px solid var(--gold-fill);
+  animation:sonar 1.4s ease-out infinite;
+}
+.narration p{margin:0; font-size:15.5px; line-height:1.6; color:var(--ink);}
+.narration .step-tag{font-size:10.5px; color:var(--gold-deep); letter-spacing:1.2px; text-transform:uppercase; margin-bottom:5px; display:block; font-weight:700;}
+
+/* Generic fade-slide entrance, retriggered from JS by toggling this class
+   (removed then re-added on the next frame) whenever text content changes. */
+@keyframes fadeSlideIn{ from{opacity:0; transform:translateY(7px);} to{opacity:1; transform:translateY(0);} }
+.fade-slide-in{animation:fadeSlideIn .4s cubic-bezier(.25,.7,.35,1) both;}
+
+/* controls */
+.controls{display:flex; align-items:center; justify-content:space-between; gap:14px; padding:10px 28px 18px;}
+.controls .grp{display:flex; gap:10px; align-items:center;}
+button.ctrl{
+  background:linear-gradient(165deg,#26385e,var(--navy)); color:#fbf6ea; border:none; border-radius:10px;
+  padding:11px 17px; font-size:13.5px; font-weight:600; cursor:pointer; display:flex; align-items:center; gap:6px;
+  box-shadow:0 8px 18px rgba(13,24,48,0.28), inset 0 1px 0 rgba(255,255,255,0.08); transition:.18s ease;
+  letter-spacing:.2px; position:relative; overflow:hidden;
+}
+button.ctrl::before{
+  content:''; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
+  background:linear-gradient(115deg, rgba(255,255,255,0.22) 0%, transparent 30%);
+}
+button.ctrl::after{
+  content:''; position:absolute; top:-60%; left:-40%; width:35%; height:220%;
+  background:linear-gradient(115deg, transparent, rgba(255,255,255,0.4), transparent);
+  transform:translateX(-40%) rotate(10deg); pointer-events:none; opacity:0;
+}
+button.ctrl:hover::after{ opacity:1; animation:btnSheen .85s ease; }
+@keyframes btnSheen{
+  0%{transform:translateX(-40%) rotate(10deg); opacity:0;}
+  15%{opacity:1;}
+  100%{transform:translateX(340%) rotate(10deg); opacity:0;}
+}
+button.ctrl:hover{transform:translateY(-1px); box-shadow:0 10px 22px rgba(13,24,48,0.38), inset 0 1px 0 rgba(255,255,255,0.12);}
+button.ctrl:active{transform:translateY(0) scale(.97);}
+button.ctrl:disabled{opacity:.4; cursor:not-allowed; transform:none;}
+button.ctrl.ghost{
+  background:rgba(17,26,46,0.04); color:var(--ink); box-shadow:none; border:1px solid rgba(17,26,46,0.14);
+}
+button.ctrl.ghost::before{display:none;}
+button.ctrl.ghost::after{background:linear-gradient(115deg, transparent, rgba(156,109,30,0.28), transparent);}
+button.ctrl.ghost:hover{background:rgba(17,26,46,0.07); box-shadow:none;}
+button.ctrl.gold{
+  background:linear-gradient(165deg,#ecc373,var(--gold-fill) 60%,#b98a2e); color:#2a1700;
+  box-shadow:0 8px 18px rgba(156,109,30,0.35), inset 0 1px 0 rgba(255,255,255,0.35);
+}
+button.ctrl.gold:hover{box-shadow:0 10px 22px rgba(156,109,30,0.45), inset 0 1px 0 rgba(255,255,255,0.4);}
+.stepper{display:flex; gap:6px;}
+.stepdot{width:8px;height:8px;border-radius:50%;background:rgba(17,26,46,0.12); transition:.2s;}
+.stepdot.on{background:var(--gold-fill); box-shadow:0 0 8px rgba(220,171,76,0.65);}
+
+/* Course-wide progress bar — LinkedIn-Learning-style, tracks position across ALL steps in ALL modules */
+.course-progress{
+  display:flex; align-items:center; gap:12px; padding:8px 28px; background:rgba(255,253,249,0.6);
+  border-bottom:1px solid var(--hairline);
+}
+.course-progress-track{
+  flex:1; height:6px; border-radius:6px; background:rgba(17,26,46,0.08); overflow:hidden;
+  box-shadow:inset 0 1px 3px rgba(17,26,46,0.18);
+}
+.course-progress-fill{
+  height:100%; border-radius:6px; width:0%;
+  background:linear-gradient(90deg,var(--navy3),var(--gold-fill));
+  transition:width .4s ease; box-shadow:0 0 8px rgba(220,171,76,0.45);
+  position:relative; overflow:hidden;
+}
+.course-progress-label{
+  font-size:11px; color:var(--muted); white-space:nowrap; font-variant-numeric:tabular-nums; letter-spacing:.2px;
+}
+
+/* Final Assessment & Certification */
+.quiz-view{
+  flex:1; display:none; flex-direction:column; padding:22px 32px 26px; overflow-y:auto;
+}
+.quiz-view.show{display:flex;}
+.quiz-card{
+  flex:1; background:linear-gradient(165deg,#fdfbf6,#eee8d9 65%,#e7dfc9);
+  border:1px solid var(--hairline); border-radius:var(--r-xl);
+  box-shadow:var(--shadow-deep), inset 0 1px 0 rgba(255,255,255,0.6);
+  padding:36px 42px; display:flex; flex-direction:column;
+}
+.quiz-eyebrow{
+  font-size:10.5px; letter-spacing:1.6px; text-transform:uppercase; color:var(--gold-deep);
+  font-weight:700; margin-bottom:10px;
+}
+.quiz-progress-row{display:flex; align-items:center; gap:14px; margin-bottom:26px;}
+.quiz-progress-track{flex:1; height:6px; border-radius:6px; background:rgba(17,26,46,0.08); box-shadow:inset 0 1px 3px rgba(17,26,46,0.18); overflow:hidden;}
+.quiz-progress-fill{height:100%; border-radius:6px; background:linear-gradient(90deg,var(--navy3),var(--gold-fill)); transition:width .4s ease;}
+.quiz-progress-count{font-size:11.5px; color:var(--muted); white-space:nowrap; font-variant-numeric:tabular-nums;}
+.quiz-question{font-family:Georgia,'Cambria',serif; font-weight:700; font-size:21px; color:var(--ink); line-height:1.4; margin-bottom:26px;}
+.quiz-options{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:11px; flex:1;}
+.quiz-option{
+  display:flex; align-items:center; gap:13px; padding:14px 18px; border-radius:var(--r-md);
+  background:rgba(255,253,249,0.7); border:1px solid var(--hairline); cursor:pointer; transition:.15s ease;
+  font-size:14.5px; color:var(--ink);
+}
+.quiz-option:hover{background:rgba(30,50,96,0.06); border-color:rgba(30,50,96,0.18);}
+.quiz-option .radio{
+  width:19px; height:19px; border-radius:50%; border:2px solid rgba(17,26,46,0.25); flex-shrink:0; position:relative;
+}
+.quiz-option.selected{background:linear-gradient(90deg,rgba(30,50,96,0.09),rgba(220,171,76,0.06)); border-color:var(--gold-fill); font-weight:600;}
+.quiz-option.selected .radio{border-color:var(--gold-fill); background:var(--gold-fill);}
+.quiz-option.selected .radio::after{content:''; position:absolute; inset:4px; border-radius:50%; background:#2a1700;}
+.quiz-option.correct{background:linear-gradient(90deg,rgba(31,157,85,0.12),rgba(31,157,85,0.04)); border-color:rgba(31,157,85,0.5);}
+.quiz-option.wrong{background:linear-gradient(90deg,rgba(192,57,43,0.12),rgba(192,57,43,0.04)); border-color:rgba(192,57,43,0.5);}
+.quiz-nav{display:flex; justify-content:space-between; align-items:center; margin-top:28px;}
+
+.quiz-results{text-align:center; margin:auto; max-width:480px;}
+.quiz-score-ring{
+  width:150px; height:150px; border-radius:50%; margin:0 auto 22px; display:flex; align-items:center; justify-content:center;
+  background:conic-gradient(var(--gold-fill) calc(var(--pct,0)*1%), rgba(17,26,46,0.08) 0);
+  position:relative;
+}
+.quiz-score-ring::before{content:''; position:absolute; inset:10px; border-radius:50%; background:var(--card); box-shadow:inset 0 2px 6px rgba(17,26,46,0.1);}
+.quiz-score-ring .pct{position:relative; font-family:Georgia,'Cambria',serif; font-weight:700; font-size:32px; color:var(--ink);}
+.quiz-results h3{font-family:Georgia,'Cambria',serif; font-size:24px; margin:0 0 10px; color:var(--ink);}
+.quiz-results p{color:var(--muted); font-size:14.5px; line-height:1.6; margin:0 0 24px;}
+.quiz-results .pass-banner{
+  display:inline-block; padding:7px 18px; border-radius:20px; font-size:11px; font-weight:700;
+  letter-spacing:1px; text-transform:uppercase; margin-bottom:18px;
+}
+.quiz-results .pass-banner.pass{background:rgba(31,157,85,0.14); color:#166b3f; border:1px solid rgba(31,157,85,0.4);}
+.quiz-results .pass-banner.fail{background:rgba(192,57,43,0.1); color:#8a2e22; border:1px solid rgba(192,57,43,0.35);}
+
+/* Certificate — matches HonorVet Technologies' standard certificate template */
+.certificate{
+  margin:auto; max-width:820px; width:100%; text-align:center; position:relative;
+  background:#f7f7f7;
+  border-left:8px solid #ee1a0f; border-right:8px solid #ee1a0f; border-bottom:2px solid #e1e1e1;
+  box-shadow:0 16px 48px rgba(0,0,0,0.14);
+  overflow:hidden; padding:0 0 26px;
+}
+.cert-frame-accent{height:8px; background:linear-gradient(90deg,#ee1a0f 0%,#ff7a00 45%,#f0c52f 100%);}
+.cert-body-pad{padding:36px 56px 0; text-align:center;}
+.cert-logo-wrap{margin-bottom:14px;}
+.cert-logo-wrap img{width:210px; max-width:100%; height:auto; display:block; margin:0 auto 14px;}
+.cert-sdvosb{font-size:10.5px; letter-spacing:4px; text-transform:uppercase; color:#9a9a9a;}
+.cert-divider-soft{height:1px; background:#e7d6d2; margin:22px 0 20px;}
+.cert-completion-label{color:#ee1a0f; font-size:14px; letter-spacing:3.5px; font-weight:800; margin-bottom:12px;}
+.cert-course-name{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:25px; font-weight:800; color:#1f1f25; line-height:1.25; margin-bottom:20px;}
+.cert-certify-text{font-size:14px; color:#7b7b7b; margin-bottom:8px;}
+.cert-recipient{
+  display:inline-block; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  font-size:36px; font-weight:800; color:#f25a06; line-height:1.15;
+  border-bottom:4px solid #ee1a0f; padding:0 10px 8px; margin-bottom:24px;
+}
+.cert-name-input{
+  display:inline-block; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  font-size:36px; font-weight:800; color:#f25a06; text-align:center;
+  border:none; border-bottom:4px solid #ee1a0f; background:transparent; padding:0 10px 8px; margin-bottom:24px;
+  width:100%; max-width:460px;
+}
+.cert-name-input::placeholder{color:#e0a68f; font-weight:600;}
+.cert-name-input:focus{outline:none;}
+.cert-desc{max-width:620px; margin:0 auto 22px; font-size:13.5px; line-height:1.9; color:#545454;}
+.cert-desc strong{color:#2e2a2d;}
+.cert-badges{
+  display:inline-flex; align-items:center; justify-content:center; gap:14px; min-width:300px;
+  padding:11px 26px; border:1px solid #efb5a9; border-radius:999px; background:rgba(255,255,255,0.65);
+  color:#ee3a15; font-size:13px; font-weight:700; margin-bottom:8px;
+}
+.cert-divider-space{margin-top:38px; margin-bottom:20px;}
+.cert-sig{
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; font-size:27px; font-weight:700;
+  font-style:italic; color:#29242a; display:inline-block; border-bottom:3px solid #1f1f25; padding:0 22px 6px; margin-bottom:9px;
+}
+.cert-sig-role{color:#ee1a0f; font-size:10.5px; letter-spacing:2.5px; font-weight:800; margin-bottom:5px;}
+.cert-url{color:#7d7d7d; font-size:12.5px; margin-bottom:20px;}
+.cert-footer-row{margin-top:18px; padding-top:16px; border-top:1px solid #ddd; display:flex; justify-content:space-between; gap:24px;}
+.cert-meta-block{flex:1;}
+.cert-meta-block.left{text-align:left;}
+.cert-meta-block.right{text-align:right;}
+.cert-meta-value{font-family:'Courier New',monospace; color:#2b2b2b; font-size:15px; font-weight:600;}
+.cert-meta-label{font-size:9.5px; letter-spacing:2px; text-transform:uppercase; color:#aaa; margin-top:5px;}
+.cert-actions{display:flex; gap:12px; justify-content:center; margin-top:24px;}
+@media print{
+  body *{visibility:hidden;}
+  .certificate, .certificate *{visibility:visible;}
+  .certificate{position:fixed; inset:0; margin:auto; box-shadow:none; max-width:none; width:100%;}
+  .cert-actions{display:none !important;}
+}
+
+.menuBtn{display:none;}
+@media (max-width:900px){
+  .sidebar{position:fixed; z-index:60; top:0; left:0; transform:translateX(-100%); transition:.3s;}
+  .sidebar.open{transform:translateX(0);}
+  .stage-outer{padding:16px;}
+  .controls{flex-wrap:wrap; padding:14px 16px;}
+  .menuBtn{
+    display:flex; align-items:center; justify-content:center; width:34px;height:34px;border-radius:8px;
+    background:rgba(17,26,46,0.06); border:1px solid rgba(17,26,46,0.15); color:var(--ink); font-size:16px;
+    cursor:pointer; margin-right:10px; flex-shrink:0;
+  }
+  .sidebar-backdrop{display:none; position:fixed; inset:0; background:rgba(5,8,16,0.55); z-index:55;}
+  .sidebar-backdrop.show{display:block;}
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar" id="sidebar">
+    <div class="brand">
+      <div class="logo">JD</div>
+      <div>
+        <h1>JobDiva Mastery</h1>
+        <span>Recruiter Micro-Training</span>
+      </div>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="progress-label" id="progressLabel">0 of 21 modules complete</div>
+    </div>
+    <ul class="mod-list" id="modList"></ul>
+  </aside>
+
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <main class="main">
+    <div class="topbar">
+      <div style="display:flex; align-items:center;">
+        <div class="menuBtn" id="menuBtn">☰</div>
+        <div>
+        <h2 id="modTitle">Welcome</h2>
+        <div class="sub" id="modSub">Micro-module 1 of 21</div>
+      </div>
+      <div class="badge" id="modBadge">HEALTHCARE &amp; IT · ATS TRAINING</div>
+      </div>
+    </div>
+
+    <div class="course-progress">
+      <div class="course-progress-track"><div class="course-progress-fill" id="courseProgressFill"></div></div>
+      <div class="course-progress-label" id="courseProgressLabel">Lesson 1 of 54 · 0% complete</div>
+    </div>
+
+    <div class="stage-outer">
+      <div class="stage" id="stage">
+        <div class="screen-title" id="screenTitle">JobDiva — Job Order View</div>
+        <div class="magnifier" id="magnifier"></div>
+        <div class="mockui" id="mockui"></div>
+        <div class="start-overlay" id="startOverlay">
+          <div class="start-card">
+            <div class="start-icon">🎓</div>
+            <h3>Ready when you are</h3>
+            <p>Narration plays automatically once you start — nothing plays until then.</p>
+            <button class="ctrl gold start-btn" id="startCourseBtn">▶ Start Course</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="narration">
+        <div class="mic" id="mic">🔊</div>
+        <div style="flex:1;" id="narrationContent">
+          <span class="step-tag" id="stepTag">Step 1</span>
+          <p id="narrationText">Loading module…</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="grp">
+        <button class="ctrl ghost" id="prevModBtn">⟨ Prev module</button>
+        <button class="ctrl ghost" id="nextModBtn">Next module ⟩</button>
+      </div>
+      <div class="stepper" id="stepper"></div>
+      <div class="grp">
+        <button class="ctrl ghost" id="replayBtn">↺ Replay</button>
+        <button class="ctrl" id="prevStepBtn">◂ Back</button>
+        <button class="ctrl gold" id="playBtn">⏸ Pause</button>
+        <button class="ctrl" id="nextStepBtn">Next ▸</button>
+      </div>
+    </div>
+
+    <div class="quiz-view" id="quizView">
+      <div class="quiz-card" id="quizCard"></div>
+    </div>
+  </main>
+</div>
+
+<script>
+/* ---------------------------------------------------------------
+   DATA: 15 micro-modules distilled from the JobDiva session
+   Each step: narration text (spoken + captioned), a mock-UI builder,
+   and a laser target (percentage coords within the mock UI area).
+----------------------------------------------------------------*/
+
+function fieldsPanel(title, fields, extra){
+  return `<div class="mockui-body">
+    <div style="font-weight:700;color:#12294f;margin-bottom:10px;">${title}</div>
+    <div class="panel-row">${fields}</div>
+    ${extra||''}
+  </div>`;
+}
+function topbar(color1,color2,label){
+  return `<div class="mockui-topbar" style="background:linear-gradient(90deg,${color1},${color2})">
+    <div class="dot" style="background:#ff5f57"></div><div class="dot" style="background:#febc2e"></div><div class="dot" style="background:#28c840"></div>
+    <div class="t">${label}</div></div>`;
+}
+/* Short looping clip (animated WebP) cropped from the actual JobDiva session recording. */
+function shot(file, alt, caption){
+  return `<img src="shots/clips/${file}" alt="${alt}">` +
+    (caption ? `<div class="shot-caption">${caption}</div>` : '');
+}
+
+/* For steps with no matching real footage — an honest, clearly-labeled
+   concept card instead of reusing an unrelated screenshot. No magnifier
+   renders on these (there's no img element), which is intentional. */
+function conceptCard(icon, title, points, note){
+  const items = points.map(p=>`<li>${p}</li>`).join('');
+  return `<div class="concept-card">
+    <div class="concept-flag">No matching screen recording — concept overview</div>
+    <div class="concept-icon">${icon}</div>
+    <div class="concept-title">${title}</div>
+    <ul class="concept-list">${items}</ul>
+    ${note ? `<div class="concept-note">${note}</div>` : ''}
+  </div>`;
+}
+
+const MODULES = [
+{
+  section:"Foundations",
+  title:"What Is an ATS?",
+  screen:"Real Screenshot — Sign In & Homepage",
+  steps:[
+    {
+      text:"Here's what a typical Monday looks like once you're a few months into this job: forty open candidates, a dozen active job orders, three interviews to schedule, and a client waiting on an update — all before lunch. That's the job you're training for. A recruiter's work comes down to one thing: matching people who need work with companies who need people — sourcing qualified candidates for open job orders, and guiding each one all the way to a placement. Now multiply that by dozens of candidates and multiple jobs running at once. Trying to track all of that with spreadsheets or email would collapse fast — which is exactly why this training exists.",
+      target:{x:32.9,y:35.4},
+      html: shot("p1_homepage_tour.webp","JobDiva Apps Menu","This is exactly why recruitment organizations use an Applicant Tracking System")
+    },
+    {
+      text:"That's exactly why staffing organizations use an ATS — an Applicant Tracking System: a recruitment software platform that helps organizations manage the entire hiring process from beginning to end. Think of it as a centralized database where recruiters store candidate information, manage requisitions, submit candidates to clients, and maintain complete recruitment records. JobDiva is our ATS.",
+      target:{x:78.5,y:50.2},
+      html: shot("p1_homepage_tour.webp","JobDiva Apps Menu — Jobs row","Every requisition, submission, and record lives inside this one system")
+    },
+    {
+      text:"Because every recruiter follows the same standardized workflow, the hiring process becomes faster, more efficient, and easier to manage. Now that we understand what an ATS is, let's log into JobDiva. The first screen you'll see is the JobDiva homepage — think of it as your personal recruiting dashboard, where every activity of your day begins.",
+      target:{x:50,y:71.6},
+      html: shot("p1_login_motion.webp","JobDiva Sign In screen","Logging in — every activity of your day starts right after this")
+    }
+  ]
+},
+{
+  section:"Foundations",
+  title:"Key Terms You'll Hear Constantly",
+  screen:"Real Screenshot — JobDiva",
+  steps:[
+    {
+      text:"A 'Job Order' or 'req' is an open position a client needs filled. A 'Boolean Search' is a search built with logical operators — AND, OR, NOT — to find exactly the right resumes. We'll cover the AND/OR rule in detail shortly.",
+      target:{x:58.9,y:50.2},
+      html: shot("p1_homepage_tour.webp","New Job tile","Job Order = New Job; Boolean Search happens in Agent Search, covered soon")
+    },
+    {
+      text:"A 'Hotlist' is your curated shortlist of top candidates for a role — your live pipeline. 'DivaMatch' is JobDiva's built-in matching engine that scores how well a job and a candidate fit each other.",
+      target:{x:58.9,y:35.4},
+      html: shot("p1_homepage_tour.webp","Candidate Hotlists tile","Hotlist — your shortlist entry point; DivaMatch is covered in its own module")
+    },
+    {
+      text:"A 'Candidate Wallet' bundles the right documents into a submittal packet. 'RTR' means Right to Represent — the candidate's consent for you to submit them to a client. A 'Disposition' is the logged reason behind every Reject or Shortlist decision. And a 'Submission' is the formal act of presenting a candidate for a specific job.",
+      target:{x:31.9,y:28.5},
+      html: shot("candidate_wallet.webp","Attachments modal — RTR tab","This is the real RTR (Right to Represent) tab inside a candidate's Attachments")
+    }
+  ]
+},
+{
+  section:"Foundations",
+  title:"Healthcare vs. IT Recruiting: What Differs",
+  screen:"Real Screenshot — Job Order Form",
+  steps:[
+    {
+      text:"In Healthcare recruiting, credentials are everything — licenses, certifications like ACLS or BLS, and specialty experience like Operating Room or ICU. A candidate can be technically perfect but unplaceable if a license has expired.",
+      target:{x:47.4,y:28.7},
+      html: shot("profession_specialty.webp","Job Order — Healthcare Sector","This actual req is flagged Healthcare Sector, Division: Healthcare")
+    },
+    {
+      text:"In IT recruiting, the equivalents are technical skills and stack experience — languages, frameworks, cloud platforms — plus work authorization and rate structure, W2 or Corp-to-Corp. There's no license to expire, but the skill match has to be precise.",
+      target:{x:54.3,y:19},
+      html: shot("profession_specialty.webp","Agent Search tabs","For an IT req, these same tabs hold skills/stack keywords instead of licenses")
+    },
+    {
+      text:"Either way, the recruiting process itself — attach, outreach, screen, submit, interview, offer — stays exactly the same. Only the specific fields and verification checks change. Next, let's tour the JobDiva homepage itself.",
+      target:{x:73.6,y:19},
+      html: shot("profession_specialty.webp","Agent Search — full tab row","Same Agent Search screen drives both Healthcare and IT sourcing")
+    }
+  ]
+},
+{
+  section:"Foundations",
+  title:"JobDiva Homepage Tour",
+  screen:"Real Screenshot — JobDiva Homepage",
+  steps:[
+    {
+      text:"At the very top of the screen is the top navigation bar — the primary menu that gives you access to different modules in JobDiva, depending on your organization's configuration and your own user permissions: My Jobs, CRM, Dashboard, Sourcing, Talent Search, New Candidates, and more.",
+      target:{x:94.7,y:21.4},
+      html: shot("p2_topnav.webp","Top Navigation Bar — module menu","As a recruiter, you'll spend most of your time in Candidates, Jobs, and Search")
+    },
+    {
+      text:"On the left side of the homepage is your left navigation panel — shortcuts to frequently used recruiting functions, so you don't have to dig through multiple menus. My Jobs, My Dashboard, New Job, Search Job — as you gain experience, these shortcuts will help you work faster every day.",
+      target:{x:9,y:47.6},
+      html: shot("p2_leftnav.webp","Left Navigation Panel — Search Jobs","Quick shortcuts live here — the ones you'll use dozens of times a day")
+    },
+    {
+      text:"Next to that are your Applications, Dashboard, and History views, and your Settings tab. The Dashboard tracks your progress — how many submissions you've made, how many interviews are lined up, how many external submittals you've done. History lets you jump straight back to the last job, candidate, or page you had open. Settings may look different depending on your access.",
+      target:{x:25,y:23.8},
+      html: shot("p2_dashboard.webp","User Dashboard — tracking your week","Real weekly tracking: Referrals, Completed Tasks, External Submittals, Interviews, Starts")
+    },
+    {
+      text:"One of the most powerful features in JobDiva is Global Search. Instead of opening multiple menus, you can search for candidates, job requisitions, companies, contacts, or activities directly from one search box — you'll use this dozens of times a day, so learning to search efficiently saves real time.",
+      target:{x:40.7,y:14.4},
+      html: shot("p2_globalsearch.webp","Global Search bar","One search box reaches candidates, jobs, companies, contacts, and activities")
+    },
+    {
+      text:"Recruitment changes constantly through the day — candidates respond, clients schedule interviews, managers request urgent submissions, offers get accepted or declined. Your notifications keep you informed of all of it, so checking them regularly means nothing important slips through.",
+      target:{x:78.5,y:33.2},
+      html: shot("p2_dashboard.webp","Notifications bell","Every update — from a candidate reply to an accepted offer — surfaces here")
+    },
+    {
+      text:"Next to notifications is your user profile — where you manage account settings and sign out securely. Remember: every action you take inside JobDiva is linked to your profile. Your activities, notes, and submissions are all recorded under your name, which is exactly why accuracy and accountability matter.",
+      target:{x:96,y:16.5},
+      html: shot("p2_dashboard.webp","User avatar — top right corner","Every note, submission, and update ties back to the account you're signed in as")
+    }
+  ]
+},
+{
+  section:"Foundations",
+  title:"A Day in the Life: Using the Homepage",
+  screen:"Real Screenshot — User Dashboard",
+  steps:[
+    {
+      text:"So how does a recruiter actually use this homepage on a normal workday? The day usually begins by reviewing the dashboard and checking notifications — a quick read on what changed since you last logged in.",
+      target:{x:59,y:50.6},
+      html: shot("p2_dashboard.webp","My Recruiting Activities for the Week","Real weekly goals: External Submittals, Interviews, Starts — tracked automatically")
+    },
+    {
+      text:"Then you check My Jobs for anything assigned to you, contact candidates by call, email, or text, conduct phone screens, update candidate records, and move qualified candidates through each stage of the HireTrack Flow — all starting from this one homepage.",
+      target:{x:4.4,y:37.8},
+      html: shot("p2_dashboard.webp","My Jobs — highlighted in the sidebar","This job was assigned to me, so I find it right here under My Jobs")
+    }
+  ]
+},
+{
+  section:"Foundations",
+  title:"The HireTrack Flow: Two Phases, Nine Checkpoints",
+  screen:"HireTrack Flow — Standard Operating Procedure (Company Reference Slide)",
+  steps:[
+    {
+      text:"Before we go any further into JobDiva itself, here's the roadmap — straight from HonorVet's own HireTrack Flow standard operating procedure. This entire training follows this one official framework: a structured, end-to-end pipeline that tracks every candidate from first contact to a signed offer — with one accountable owner and one documented outcome at every single stage.",
+      target:{x:20,y:7},
+      html: shot("ppt_hiretrack_flow.png","HireTrack Flow — Standard Operating Procedure","The official two-phase, nine-checkpoint framework this whole course is built on")
+    },
+    {
+      text:"The flow has exactly two phases. Phase 1 is Sourcing & Screening — five steps, from Attach Candidate, through Outreach and Phone Screen, to Internal and External Submission. That's exactly where we're headed next.",
+      target:{x:26,y:19},
+      html: shot("ppt_hiretrack_flow.png","Phase 1 — Sourcing & Screening","Steps 01–05: Attach Candidate → Outreach → Phone Screen → Internal Submission → External Submission")
+    },
+    {
+      text:"Phase 2 is Interview & Offer — four more steps: Interview Prep, Interview Completed, Feedback & Debrief, and Offer Extended, ending in either Offer Accepted or Offer Declined. Every step has a named owner role and a Reject-or-Shortlisted branch — miss either one, and the pipeline breaks.",
+      target:{x:74,y:19},
+      html: shot("ppt_hiretrack_flow.png","Phase 2 — Interview & Offer","Steps 06–09: Interview Prep → Interview Completed → Feedback & Debrief → Offer Extended")
+    }
+  ]
+},
+{
+  section:"Phase 1 — Sourcing & Screening",
+  title:"My Jobs — Find Your Assigned Requisition",
+  step:"—", owner:"Recruiter",
+  screen:"Real Screenshot — My Jobs & Job Details",
+  steps:[
+    {
+      text:"Before you can source, attach, or submit anyone, you need the job itself. Every requisition assigned to you lives under My Jobs — or My Jobs as Primary if you're the lead recruiter on it.",
+      target:{x:3.8,y:57.2},
+      html: shot("job_order.webp","My Jobs — left sidebar","Your assigned reqs live under My Jobs / My Jobs as Primary")
+    },
+    {
+      text:"Click your assigned job, and its Job Details page opens. At the top sits the Title — a short, plain-English label recruiters use every day to talk about this req. This one reads 'RN OR Test': RN-OR means Registered Nurse, Operating Room, and 'Test' just marks this specific req as one created for training purposes, not a live client job.",
+      target:{x:27,y:9.2},
+      html: shot("p1_jobdetails_page.webp","Job #26-16797 — Title field","The real Job Details page: Title reads \"RN OR Test\" — RN-OR, marked Test for training")
+    },
+    {
+      text:"Specialty lives just to the right, inside the Agent Search panel's Profession/Specialty tab — this is the exact criteria JobDiva uses to match candidates against this job. We'll open this panel properly in the next module.",
+      target:{x:79,y:6},
+      html: shot("p1_jobdetails_page.webp","Agent Search panel — Profession/Specialty tab","Specialty criteria is set here, not on the job order itself")
+    },
+    {
+      text:"Scroll down slightly and you'll find Location — the Address, City, State, and Zip the role is based out of. For travel and hybrid healthcare roles especially, this is often the first thing a candidate asks about.",
+      target:{x:24,y:27},
+      html: shot("p1_jobdetails_page.webp","Location fields — Addr, City, State, Zip","This req is based in Fairfield, NJ 07004")
+    },
+    {
+      text:"BR — Bill Rate — sits in the Billing section: what the client pays per hour for this role. It's not the candidate's pay rate, but it sets the ceiling everything else, including what you can offer, has to fit under.",
+      target:{x:24,y:49.3},
+      html: shot("p1_jobdetails_page.webp","Billing section — Bill Rate","This req bills at $100.00/Hour")
+    },
+    {
+      text:"Scroll further down and you'll reach the Job Description — the full skills, certifications, and requirements list. Right above it sits the Candidates tab bar: Applicants, Agent Search, Notes, Submitted, and DivaMatch, all one click away from this same page.",
+      target:{x:44,y:36},
+      html: shot("p1_jobdescription.webp","Job Description & Candidates tab bar","The full RN Operating Room description, plus every Candidates tab for this job")
+    }
+  ]
+},
+{
+  section:"Phase 1 — Sourcing & Screening", subsection:"Job Details — Agent Search",
+  title:"Profession, Specialty, Licenses & Certifications",
+  step:"01", owner:"Recruiter",
+  screen:"Real Screenshot — Agent Search",
+  steps:[
+    {
+      text:"This is Tab 1 in more depth. Select Profession and Specialty manually rather than relying on auto-pick — for our example, that's RN, and Operating Room. This is the single biggest driver of relevant matches.",
+      target:{x:59.6,y:21.2},
+      html: shot("profession_specialty.webp","\"Use the Profession/Specialties Selected on the Job\"","This checkbox controls whether the job's own Profession/Specialty is auto-applied")
+    },
+    {
+      text:"Next, add Licenses to confirm the candidate is legally credentialed, and add required Certifications straight from the job description — things like ACLS or BLS.",
+      target:{x:60.1,y:19},
+      html: shot("profession_specialty.webp","Licenses / Certifications tabs","Licenses and Certifications sit right next to Profession/Specialty")
+    },
+    {
+      text:"Qualifications can be skipped for now — that field is still being refined. Focus your energy on Profession, Specialty, Licenses, and Certifications first.",
+      target:{x:69.1,y:19},
+      html: shot("profession_specialty.webp","Qualification tab","Qualification is the one tab you can safely skip for now")
+    }
+  ]
+},
+{
+  section:"Phase 1 — Sourcing & Screening", subsection:"Job Details — Agent Search",
+  title:"Keywords & The AND/OR Rule",
+  step:"01", owner:"Recruiter",
+  screen:"Real Screenshot — Require Tab",
+  steps:[
+    {
+      text:"This is Tabs 5 and 6, Require and Exclude, in more depth. Your keyword should describe the job itself — here, 'Operating Room.' But watch this checkbox carefully: ticking a required-years-of-experience filter narrows your results by adding an extra condition.",
+      target:{x:60.4,y:23.3},
+      html: shot("keywords_andor.webp","Require tab — keyword \"Operating Room\"","The real keyword entered live in this session")
+    },
+    {
+      text:"Here's the golden rule: clicking 'New Skill' acts like AND — it narrows results. Clicking 'Select All' / 'Or' on the same line acts like OR — it expands results. Use OR when a candidate could describe the same thing two different ways — like 'Operating Room' or 'OR'.",
+      target:{x:76.8,y:23.3},
+      html: shot("keywords_andor.webp","\"OR\" toggle next to the keyword","This exact toggle is what switches the logic between AND and OR")
+    },
+    {
+      text:"You can also Exclude terms — for example, excluding 'Med Surg' keeps unrelated specialties out of your Operating Room search. And for Title, list every variation a candidate might use: 'RN Operating Room,' 'RNOR,' or simply 'Registered Nurse.'",
+      target:{x:74.5,y:61.1},
+      html: shot("keywords_andor.webp","Boolean string preview","The live boolean string JobDiva builds from your entries, shown at the bottom")
+    }
+  ]
+},
+{
+  section:"Phase 1 — Sourcing & Screening", subsection:"Job Details — Agent Search",
+  title:"Real-Time Job Board Access",
+  step:"01", owner:"Recruiter",
+  screen:"Real Screenshot — Exclude Tab",
+  steps:[
+    {
+      text:"Always check 'Real-Time Job Board Access.' Without it, your search only pulls candidates already sitting in JobDiva's database — some of whom may be stale or already contacted elsewhere.",
+      target:{x:57.9,y:68.9},
+      html: shot("realtime_boards.webp","Real Time Job Board Access checkbox","The actual checkbox from this session, checked on")
+    },
+    {
+      text:"With real-time access on, you unlock detailed filters on Dice and Monster — willingness to relocate, total experience, work authorization, and 'resume last updated,' which tells you who's an active candidate versus a passive one.",
+      target:{x:64.5,y:68.9},
+      html: shot("realtime_boards.webp","Dice / Monster board icons","Clicking either icon opens that board's own extra filters")
+    },
+    {
+      text:"If your LinkedIn Recruiter seat is integrated, one click on the LinkedIn icon on the job page pulls recommended matches directly from LinkedIn too — another sourcing channel from the same screen.",
+      target:{x:43.6,y:16.5},
+      html: shot("profession_specialty.webp","Job page toolbar — LinkedIn icon","The LinkedIn icon in the job page's top toolbar")
+    }
+  ]
+},
+{
+  section:"Phase 1 — Sourcing & Screening", subsection:"Talent Search — Candidate Database",
+  title:"Search Candidates — All 8 Filter Tabs",
+  step:"01", owner:"Recruiter",
+  screen:"Real Screenshot — Search Candidates",
+  steps:[
+    {
+      text:"That's Agent Search covered. Now the other path from the Job Details page: Talent Search. Search Candidates is the screen you'll use the most here — every search starts by scanning the whole database. But the #1 rule comes first: always search by email before creating anyone new. If nothing shows up, try the phone number, then the name. A duplicate profile splits up a candidate's history and causes problems for the whole team.",
+      target:{x:31.3,y:64.2},
+      html: shot("pb_search_profession.jpg","Tab 1 — Profession/Specialty, RN selected","Click ADD next to a profession — the button turns red and says REMOVE once it's selected")
+    },
+    {
+      text:"Tab 2 is Licenses — pick the type, country, and state, and set 'Expiring After' to a date past the job's end so JobDiva skips anyone whose license runs out too soon. The remaining tabs: Certifications (BLS, ACLS, PALS), Qualification (degree requirements), Require (must-have skills), Exclude (removes matches — use carefully), Attribute (team tags like 'Top Candidate'), and Title (job titles outside the standard list).",
+      target:{x:32.6,y:37.1},
+      html: shot("pb_search_licenses.jpg","Tab 2 — Licenses, criteria building live","The live criteria string at the bottom shows exactly what JobDiva will search for")
+    },
+    {
+      text:"Once your filters are set, click Search. Read the results with a yellow 'New' badge first — nobody's called that person yet. The 'R' icon means the resume was added automatically. 'Available' shows when they can start, and 'Last Note' shows when a recruiter last talked to them — always work the newest, most-ready candidate first.",
+      target:{x:42.6,y:55.5},
+      html: shot("pb_search_results.jpg","Search results — New badges, R icon, Available date","Three real matches: a New candidate ready in days beats an older lead with no recent notes")
+    }
+  ]
+},
+{
+  section:"Phase 1 — Sourcing & Screening", subsection:"Candidate Addition / Creation in JobDiva",
+  title:"New Candidate — 4 Entry Methods",
+  step:"01", owner:"Recruiter",
+  screen:"Real Screenshot — New Candidate",
+  steps:[
+    {
+      text:"Click New Candidate, and JobDiva always opens on 'Look up a candidate' first — that's deliberate, not a mistake. Search by email, phone, or name before you ever create anything. Only switch to 'Create a candidate' if that search comes back empty.",
+      target:{x:43.5,y:40.5},
+      html: shot("pb_newcandidate_lookup.jpg","Look up a candidate vs. Create a candidate","This tab order exists specifically to stop duplicate profiles before they happen")
+    },
+    {
+      text:"When you do need to create someone, there are four methods: Upload a resume file (under 5MB), Email — just forward their resume to your JobDiva address and it builds the profile automatically, Paste — for resume text copied from LinkedIn, and Register Without Resume for a phone contact with no file yet. Whichever method you use, you must also pick a Resume Source — Job Board, LinkedIn, Referral, Career Site, Database, or Event.",
+      target:{x:48.4,y:40.7},
+      html: shot("pb_newcandidate_methods.jpg","Create a Candidate — 4 methods","Upload is selected by default; Resume Source is required no matter which method you pick")
+    }
+  ]
+},
+{
+  section:"Phase 1 — Sourcing & Screening", subsection:"Candidate Addition / Creation in JobDiva",
+  title:"Candidate Profile — 12 Tabs at a Glance",
+  step:"01", owner:"Recruiter",
+  screen:"Real Screenshot — Candidate Profile",
+  steps:[
+    {
+      text:"Open any candidate and the left panel tells you what you need before you even click anything: Wallet Status — 'Incomplete' in orange means something's missing, don't submit yet. Activities shows submission/interview/start counts. And Notes — always read every one before you call. Watch for 'Do Not Contact,' 'On Assignment until [date],' or 'RTR given [date]' — each one changes what you do next.",
+      target:{x:9.8,y:23},
+      html: shot("pb_profile_left.jpg","Left panel — Wallet Status, Activities, Notes","This candidate's Wallet Status reads Incomplete — something's missing before she can be submitted")
+    },
+    {
+      text:"The right side has 12 tabs. Candidate Wallet and Resume cover compliance and paperwork. DivaMatch and Candidate Credibility show job fit and track record. Saved Email, Tasks, and Calendar keep your follow-ups organized. Assignment and Onboard track current and upcoming placements. And e-interviews, Live Interviews, and LinkedIn round out how you connect. One more: check Activities/Pipeline before every submission, so you never submit the same person to the same client twice.",
+      target:{x:61.3,y:9.9},
+      html: shot("pb_profile_left.jpg","Right panel — the 12-tab bar","Every one of these tabs is one click away on every candidate profile")
+    }
+  ]
+},
+{
+  section:"Phase 1 — Sourcing & Screening",
+  title:"Step 01 · Attach Candidate & Take Ownership",
+  step:"01", owner:"Recruiter",
+  screen:"Real Screenshot — Notes Modal",
+  steps:[
+    {
+      text:"Step 01 of the HireTrack Flow: Attach Candidate and Take Ownership. Owner: Recruiter. However you found them — Agent Search, Talent Search, or a brand-new profile — the first move is the same: review their resume and log the relevant disposition.",
+      target:{x:34.4,y:25.4},
+      html: shot("notes.webp","Notes — Link to Open Job","The real Notes dialog: Link to Open Job set to 26-16797")
+    },
+    {
+      text:"Then attach that candidate record directly to the active requisition in JobDiva under Notes → 'Link to Open Job,' and claim ownership. This is the action that turns 'a resume you found' into 'a candidate you own' — no one else can claim them out from under you once this is done.",
+      target:{x:34.4,y:25.4},
+      html: shot("notes.webp","Notes — Link to Open Job","The real Notes dialog: Link to Open Job set to 26-16797")
+    }
+  ]
+},
+{
+  section:"Phase 1 — Sourcing & Screening", subsection:"Matching & Automation",
+  title:"DivaMatch: Two-Way Matching, Scoring & The Harvester",
+  step:"01", owner:"Recruiter",
+  screen:"Real Screenshot — DivaMatch Results",
+  steps:[
+    {
+      text:"DivaMatch reads a job description and scans the database for the closest-fit candidates, scoring by relevancy. It also runs in reverse — open it from a candidate's profile instead, and it flips to show every open job that candidate is a strong fit for.",
+      target:{x:30.6,y:30.1},
+      html: shot("divamatch.webp","DivaMatch Results — Candidate Scores","Run from a job, this page lists candidates — run from a candidate, it lists jobs")
+    },
+    {
+      text:"The scoring bands: 100 is a perfect match — lead with it on your call. 70 and up is still strong, worth talking about. 50 to 69 is worth a look, but check what doesn't fit first. Below 50, double-check everything before you even mention it.",
+      target:{x:35.5,y:30.3},
+      html: shot("pb_divamatch.jpg","DivaMatch — Score 100 match","A real 100-score match: CVOR Tech in Wisconsin, day shift, $2,660/week — practically writes your opening line for you")
+    },
+    {
+      text:"On the Resume tab, always work from the newest version — it's the one at the top of the version list. AI Assist can clean up formatting fast.",
+      target:{x:88.9,y:31.5},
+      html: shot("pb_resume.jpg","Resume tab — version history","Four resume versions on file; the newest, dated 05/28/26, is the one to submit")
+    },
+    {
+      text:"Separately, the Harvester works around the clock on every open job — as long as its Qualifications tab is filled in — scanning job boards for new matching candidates while you sleep. If a job shows 'Missing Criteria,' the Harvester is switched off for it: zero new candidates. The fix is quick — add at least one required skill and a location, then save. And instead of re-running the same search daily, save it as an Agent Search — JobDiva will alert you the moment a new match appears.",
+      target:{x:44.2,y:24.9},
+      html: shot("pb_appmenu.jpg","JobDiva Apps Menu","The Harvester and Agent Search both run quietly in the background from your open job orders")
+    }
+  ]
+},
+{
+  section:"Phase 1 — Sourcing & Screening", subsection:"Visibility",
+  title:"Applicants Tab & Posting Jobs",
+  step:"01", owner:"Recruiter",
+  screen:"Real Screenshot — Job Applicants",
+  steps:[
+    {
+      text:"The Applicants tab shows everyone who applied through a job board posting. If it's empty, that usually means the job simply hasn't been posted yet.",
+      target:{x:50,y:33},
+      html: shot("applicants_tab.webp","Job Applicants modal","The real \"No Candidates have applied for this Job\" state from this session")
+    },
+    {
+      text:"From here you can 'Post to JobDiva Boards' — sending the job to LinkedIn, Monster, and your company website in a few clicks. Post at the end of your shift, and expect a fresh pipeline waiting for you the next morning.",
+      target:{x:41.4,y:25.5},
+      html: shot("post_boards.webp","Post to Job Boards — Portal Job Category","Actual posting dialog: Portal Job Category set to Healthcare")
+    },
+    {
+      text:"Once applicants arrive, use the Action column to Shortlist or Reject right from this list — it's auto-saved, and it tells you exactly how effective each posting is.",
+      target:{x:77.8,y:30.6},
+      html: shot("applicants_tab.webp","Applicants list — Action column","Once candidates apply, this same modal grows an Action column here")
+    }
+  ]
+},
+{
+  section:"Phase 1 — Sourcing & Screening", subsection:"Visibility",
+  title:"Posting to LinkedIn & AI Assist",
+  step:"01", owner:"Recruiter",
+  screen:"Real Screenshot — Post to Job Boards",
+  steps:[
+    {
+      text:"Posting a job to your Enterprise LinkedIn account lists it as an open application on the company page. Posting it as a personal post instead shows up on your feed — people can only comment, not apply directly.",
+      target:{x:28.1,y:11.3},
+      html: shot("post_boards.webp","Post to Job Boards — header","The real Post to Job Boards dialog, opened live in this session")
+    },
+    {
+      text:"Before you post, tighten the description — open the job's posting editor and click AI Assist, right above the description box. This is the same AI Assist you'll see in a few other places in JobDiva, always doing the same job: cleaning up text you'd otherwise have to rewrite by hand.",
+      target:{x:34.5,y:34.4},
+      html: shot("p1_aiassist_editor.webp","Job Description editor — AI Assist button","The real AI Assist button, sitting right above the rich-text description editor")
+    },
+    {
+      text:"Click it, and AI Assist shows you the description as it stands, then asks how you'd like it edited. Tell it in plain English — 'shorten this' or 'format requirements into bullet points' — or just tick a box: Correct grammar and spelling, Remove contact information, or pitch the job's city or state. Click Generate, and it rewrites the description for you, ready to post.",
+      target:{x:50,y:52},
+      html: shot("p1_aiassist_modal.webp","AI Assist — edit instructions & Generate","The real AI Assist panel: instructions box, four one-click options, and Generate")
+    },
+    {
+      text:"And remember the bigger picture: healthcare recruiting is relationship-driven, not transactional. Connect with candidates on social media — your relationship is often the only thing that's different between you and the hundred other recruiters chasing the same resume.",
+      target:{x:50,y:50},
+      html: conceptCard("🤝","Relationships Beat Transactions",
+        ["Engage with candidates' posts — comment, don't just InMail","Remember personal details: a shift change, a move, a kid starting school","Be the recruiter they'd refer a friend to, not just the one who calls when a req opens"],
+        "No JobDiva screen for this one — it happens outside the platform, in how you show up.")
+    }
+  ]
+},
+{
+  section:"Phase 1 — Sourcing & Screening", subsection:"Profile Hygiene",
+  title:"Availability & Preferred Locations",
+  step:"01", owner:"Recruiter",
+  screen:"Real Screenshot — Candidate Profile",
+  steps:[
+    {
+      text:"A candidate profile might show 'Unavailable until [date]' after a submission. If the candidate tells you they're free sooner — or later — update it immediately using 'Change Availability.'",
+      target:{x:6,y:17.3},
+      html: shot("availability.webp","Emily Carter Test — Availability status","The real \"Unavailable Until\" status shown on this candidate's profile")
+    },
+    {
+      text:"Preferred Locations works the same way — remove or add a city, state, or region the moment the candidate tells you. A complete profile means you never have to call and ask twice.",
+      target:{x:5.4,y:33},
+      html: shot("preferred_locations.webp","Preferred Locations panel","This candidate's actual Preferred Locations: California, Los Angeles - CA")
+    }
+  ]
+},
+{
+  section:"Phase 1 — Sourcing & Screening",
+  title:"Step 02 · Outreach — Text, Call & Email",
+  step:"02", owner:"Recruiter",
+  screen:"Real Screenshot — Availability / Email Preferences",
+  steps:[
+    {
+      text:"Step 02 of the HireTrack Flow: Outreach. Owner: Recruiter. Once you own the candidate, reach out by text, call, or email to confirm interest, availability, and basic fit — every touch should be logged in JobDiva, not left sitting in your personal inbox.",
+      target:{x:71.1,y:34},
+      html: shot("email_optout.webp","Availability / Email Preferences dialog","Every outreach channel — including email preferences — lives on the candidate's profile")
+    },
+    {
+      text:"Managing that channel matters too. When a candidate replies asking to stop receiving emails, generate an Opt-Out link right from their profile. If they only want a pause — say, six months — schedule an automatic Opt-In date instead of cutting them off for good.",
+      target:{x:71.1,y:34},
+      html: shot("email_optout.webp","Generate Opt-Out Link button","The real Opt-Out / Opt-In controls from this candidate's Availability dialog")
+    }
+  ]
+},
+{
+  section:"Phase 1 — Sourcing & Screening",
+  title:"Step 03 · Phone Screen & Disposition",
+  step:"03", owner:"Recruiter",
+  screen:"Real Screenshot — Notes Modal",
+  steps:[
+    {
+      text:"Step 03: Phone Screen. Owner: Recruiter. Get the candidate on a live call to assess qualifications, compliance, and genuine interest — then record your decision immediately: 'Not Qualified,' 'Qualified but Not Suitable,' or Shortlisted to proceed to Internal Submission.",
+      target:{x:34.4,y:25.4},
+      html: shot("notes.webp","Notes — Link to Open Job","Every decision gets logged against the job the candidate is linked to")
+    },
+    {
+      text:"This is exactly where HireTrack's 'one documented outcome per stage' rule lives. If you don't log the phone screen note and disposition, there's no proof the screen ever happened — and no ownership protection if another recruiter finds the same candidate later.",
+      target:{x:28.6,y:32.1},
+      html: shot("notes.webp","Search Jobs panel","Undocumented work is unprotected work — this dialog is where you fix that")
+    }
+  ]
+},
+{
+  section:"Phase 1 — Sourcing & Screening", subsection:"Compliance & Documentation",
+  title:"Compliance Checklist Before Submission (9 Steps)",
+  step:"03", owner:"Recruiter",
+  screen:"Real Screenshot — Candidate Profile",
+  steps:[
+    {
+      text:"Before any healthcare candidate goes near a submission, run all 9 compliance steps — every time, no skipping. Step 1: does their resume actually qualify for this job — right specialty, recent experience, enough years? Step 2: check their License tab — type matches the job, state matches or they hold a compact license, status is Active, and it won't expire mid-assignment. Step 3: check Certifications — BLS for everyone, ACLS for ICU and critical care, PALS for pediatric units — nothing expiring during the job.",
+      target:{x:9.8,y:23},
+      html: shot("pb_profile_left.jpg","Left panel — Licenses, Qualifications","Skipping the license check risks patient safety and puts HonorVet at risk — this is never optional")
+    },
+    {
+      text:"Step 4: check the OIG and SAM exclusion lists at oig.hhs.gov and SAM.gov, then log the result in Notes with today's date — hospitals that take government funding legally cannot hire anyone on those lists. Step 5: confirm their background check is recent, and that Flu, Hepatitis B, MMR, and TB records match what this specific client requires — every client's requirements differ slightly, so check the job notes.",
+      target:{x:3.4,y:77},
+      html: shot("pb_profile_left.jpg","Notes panel — where compliance checks get logged","\"OIG clear 06/05/2026 — [initials]\" is exactly the kind of note that protects you later")
+    },
+    {
+      text:"Step 6: call them and get a clear yes on all four things — they want this specific job and facility, they can start on the date, the shift works, and the pay works. Step 7: once they say yes, get Right to Represent and log it immediately — 'RTR given [date] for [client] · [your name].' Without it, they never agreed to be submitted at all.",
+      target:{x:34.4,y:25.4},
+      html: shot("notes.webp","Notes — where RTR gets logged","\"RTR given [date] for [client]\" is written here the moment they say yes — not remembered, not assumed")
+    },
+    {
+      text:"Step 8: open Activities or Pipeline and make sure nobody — including you, on a different day — has already submitted this person to this same client. Step 9: write a short note on the call, attach the resume in HonorVet's format, and submit. Then set a reminder to follow up in 48 hours. From here the flow continues exactly as HireTrack defines it: Submitted → Client Review → Interview → Offer → Placed.",
+      target:{x:4.3,y:64.8},
+      html: shot("pb_profile_left.jpg","Activities section — Submitted / Interviewed / Started","This candidate's real Activities count: Submitted 1 — check this before you submit her again")
+    }
+  ]
+},
+{
+  section:"Phase 1 — Sourcing & Screening", subsection:"Compliance & Documentation",
+  title:"Licenses & Certifications: Use the Real Tabs",
+  step:"03", owner:"Recruiter",
+  screen:"Real Screenshot — Add License Modal",
+  steps:[
+    {
+      text:"Never upload a license or certification into the generic Attachments tab. Use the dedicated Licenses tab — add the license number, state, and expiration date, then attach the file.",
+      target:{x:42.7,y:58.8},
+      html: shot("licenses_certs_tabs.webp","Add License — RN License row","The real Add License dialog, RN License row checked and ready for entry")
+    },
+    {
+      text:"Do the same for Certifications — ACLS, BLS, whatever applies — in the Certifications tab. This is exactly why: if it's not in the correct structured field, it will never show up when someone filters a search by license or certification.",
+      target:{x:54.1,y:74.4},
+      html: shot("licenses_certs_tabs.webp","Add License — Save button","Certifications use this identical pattern, just under the Certifications tab")
+    }
+  ]
+},
+{
+  section:"Phase 1 — Sourcing & Screening", subsection:"Compliance & Documentation",
+  title:"Candidate Wallet & Attachments",
+  step:"03", owner:"Recruiter",
+  screen:"Real Screenshot — Attachments / Wallet",
+  steps:[
+    {
+      text:"Attachments hold every candidate document — resumes, skills checklists, ACLS and BLS certificates. Once everything is uploaded here, you don't have to gather it manually each time.",
+      target:{x:28.4,y:25.4},
+      html: shot("candidate_wallet.webp","Attachments modal","The real Attachments dialog for this candidate, RTR tab open")
+    },
+    {
+      text:"The Wallet lets you bundle exactly the right documents into a submittal packet for a specific position — one packet for Job A, a different packet for Job B — without redoing the work each time.",
+      target:{x:34.7,y:14.9},
+      html: shot("availability.webp","Emily Carter Test's Wallet","Her actual Wallet: resume + ACLS + BLS bundled and ready to submit")
+    }
+  ]
+},
+{
+  section:"Phase 1 — Sourcing & Screening", subsection:"Compliance & Documentation",
+  title:"Hotlists: Your Live Pipeline",
+  step:"03", owner:"Recruiter",
+  screen:"Real Screenshot — JobDiva Apps Menu",
+  steps:[
+    {
+      text:"A Hotlist is your curated shortlist of high-priority candidates for a role. When someone looks like a strong fit, add them straight from their profile — that list becomes the pipeline you work every single day.",
+      target:{x:5.4,y:36.8},
+      html: shot("job_order.webp","Candidate Hotlists — left sidebar","This is the real \"Candidate Hotlists\" entry point in JobDiva's sidebar")
+    }
+  ]
+},
+{
+  section:"Phase 1 — Sourcing & Screening",
+  title:"Step 04 · Internal Submission",
+  step:"04", owner:"Recruiter → Recruiting Manager",
+  screen:"Real Screenshot — New Activity: Submittal",
+  steps:[
+    {
+      text:"Step 04: Internal Submission. Owner: Recruiter, reviewed by Recruiting Manager. Go to Activities → Submission ID → Selected Jobs, and choose the job. Submit to your Primary Sales contact — not directly to the client's Hiring Manager.",
+      target:{x:25.8,y:39.5},
+      html: shot("internal_submission.webp","New Activity — Submit to","The real submission: \"Submit to: Tanya Awasthi - Primary Sales\"")
+    },
+    {
+      text:"Add the agreed pay rate, bill rate, submission date, and attach the most current resume — then save to trigger your Internal Submitter Template.",
+      target:{x:49.9,y:42.8},
+      html: shot("internal_submission.webp","New Activity — Pay section","Actual Agreed Bill Rate / Pay Rate fields from this submission")
+    },
+    {
+      text:"Complete the candidate summary and give an honest rating: A for 90-100% fit, B for 80-89%, C for 70-79% — then flag any real risk, like an expiring certification. The Recruiting Manager's decision branches the same way as every stage: Internal Reject with a logged reason, or Shortlisted — proceed to External Submission.",
+      target:{x:74,y:51.2},
+      html: shot("internal_submission.webp","New Activity — Resume / summary panel","This candidate's actual resume summary, pulled straight into the submission")
+    }
+  ]
+},
+{
+  section:"Phase 1 — Sourcing & Screening",
+  title:"Step 05 · External Submission & RTR Lock",
+  step:"05", owner:"Recruiting Manager",
+  screen:"Real Screenshot — New Activity: Submittal",
+  steps:[
+    {
+      text:"Step 05: External Submission. Owner: Recruiting Manager. Once shortlisted internally, the candidate moves to the Recruiting Manager's desk for external submission — presenting the profile to the client or hiring authority.",
+      target:{x:25.8,y:39.5},
+      html: shot("internal_submission.webp","New Activity screen (illustrative)","Same New Activity screen — external submission follows this same pattern in JobDiva")
+    },
+    {
+      text:"Before that goes out, the resume gets reformatted to the client's own template, a skill matrix is attached, and — critically — a Right-to-Represent lock is executed: the candidate's formal consent that only your agency submits them for this specific role.",
+      target:{x:74,y:51.2},
+      html: shot("internal_submission.webp","New Activity — Resume / summary panel","Resume and summary panel — this is where the client-ready packet comes together")
+    },
+    {
+      text:"From here it branches exactly the same way: External Reject with a logged reason, or Shortlisted — moving on to Interview Prep. One shortcut exists: an Auto-Offer Shortlisted candidate skips Interview Prep entirely and goes straight to Offer Extended.",
+      target:{x:49.9,y:42.8},
+      html: shot("internal_submission.webp","New Activity — Pay section","Rate details carry forward from here into the client-facing submission")
+    }
+  ]
+},
+{
+  section:"Phase 2 — Interview & Offer",
+  title:"Step 06 · Interview Prep",
+  step:"06", owner:"Account Mgr / Recruiting Mgr",
+  screen:"Real Screenshot — Live Interviews",
+  steps:[
+    {
+      text:"Step 06: Interview Prep. Owner: Account Manager or Recruiting Manager. Before the client interview happens, brief the candidate — confirm format, coach them on what the client will ask, and set clear expectations for the conversation ahead.",
+      target:{x:46.1,y:19.9},
+      html: shot("preferred_locations.webp","Live Interviews tab — Scheduled row","Scheduling starts here, in the same Live Interviews tab used for the interview itself")
+    }
+  ]
+},
+{
+  section:"Phase 2 — Interview & Offer",
+  title:"Step 07 · Interview Completed",
+  step:"07", owner:"Acct Mgr / Recruiting Mgr / Recruiter",
+  screen:"Real Screenshot — Live Interviews",
+  steps:[
+    {
+      text:"Step 07: Interview Completed. Owner: Account Manager, Recruiting Manager, or Recruiter. Conduct the client interview — using JobDiva's Live Interview feature for a recorded video session if needed — and record the outcome the moment it wraps up.",
+      target:{x:46.1,y:19.9},
+      html: shot("preferred_locations.webp","Live Interviews tab — Scheduled row","A real scheduled Live Interview, with Cancel / Start controls")
+    },
+    {
+      text:"The scheduling confirmation lands in Outlook automatically, and once recorded, the interview video saves directly to the candidate's profile — so Feedback & Debrief, the next step, always has the full record to work from.",
+      target:{x:7.6,y:42.5},
+      html: shot("live_interview_email.webp","Outlook — Live Interview invite email","The actual calendar email JobDiva sent for this Live Interview")
+    }
+  ]
+},
+{
+  section:"Phase 2 — Interview & Offer",
+  title:"Step 08 · Feedback & Debrief",
+  step:"08", owner:"Account Mgr / Recruiting Mgr",
+  screen:"Concept — Feedback & Debrief",
+  steps:[
+    {
+      text:"Step 08: Feedback & Debrief. Owner: Account Manager or Recruiting Manager. Collect the client's feedback on the interview, then debrief the candidate — tell them honestly how it went and what happens next.",
+      target:{x:50,y:50},
+      html: conceptCard("📞","Feedback & Debrief — two calls, one stage",
+        ["Call the client: how did the interview go? Any concerns?","Call the candidate: give them honest, specific feedback","Tell them clearly what happens next and when"],
+        "This exact screen wasn't captured on video — the two calls happen by phone, not inside a JobDiva form.")
+    },
+    {
+      text:"If the client rejects at this stage, log the Interview Reject reason immediately in Notes — same discipline as every earlier stage. If they're moving forward, the next stop is Offer Extended.",
+      target:{x:50,y:50},
+      html: conceptCard("📝","Log the outcome in Notes",
+        ["Client rejects → log \"Interview Reject\" + reason, same as every stage","Client wants to move forward → proceed to Step 09, Offer Extended"],
+        "Logged the same way you've logged every disposition since Step 03 — in the candidate's Notes tab.")
+    }
+  ]
+},
+{
+  section:"Phase 2 — Interview & Offer",
+  title:"Step 09 · Offer Extended, Accepted & Declined",
+  step:"09", owner:"Account Mgr / Recruiting Mgr",
+  screen:"Concept — Offer Extended",
+  steps:[
+    {
+      text:"Step 09: Offer Extended. Owner: Account Manager or Recruiting Manager. The formal offer goes out to the candidate — pay rate, start date, and terms, all confirmed before it's sent.",
+      target:{x:50,y:50},
+      html: conceptCard("🤝","Offer Extended — confirm before it's sent",
+        ["Pay rate matches what was discussed and agreed","Start date is realistic and confirmed with the client","Shift, location, and terms are all locked in — no surprises"],
+        "This exact offer screen wasn't captured on video — confirm every detail out loud with the candidate before it goes out.")
+    },
+    {
+      text:"Offer Accepted: the Account Manager, Recruiting Manager, and Recruiter confirm joining details together, and the placement is complete. Offer Declined: the reason gets logged, and the requisition reopens — sending you right back to Step 01, sourcing again.",
+      target:{x:21.5,y:20.1},
+      html: shot("job_order.webp","Sourcing row","A declined offer reopens the req here — back to Step 01")
+    }
+  ]
+},
+{
+  section:"Wrap-Up",
+  title:"Recap: The Full HireTrack Flow, End to End",
+  screen:"Real Screenshot — JobDiva Apps Menu",
+  steps:[
+    {
+      text:"Let's recap the HireTrack Flow. Phase 1, Sourcing & Screening: Attach Candidate and Take Ownership, Outreach, Phone Screen, Internal Submission, External Submission.",
+      target:{x:21.5,y:20.1},
+      html: shot("job_order.webp","Sourcing row","Step 01 → 02 → 03 → 04 → 05")
+    },
+    {
+      text:"Phase 2, Interview & Offer: Interview Prep, Interview Completed, Feedback & Debrief, Offer Extended — ending in Offer Accepted or Offer Declined.",
+      target:{x:50.4,y:33.8},
+      html: shot("job_order.webp","Jobs row","Step 06 → 07 → 08 → 09")
+    },
+    {
+      text:"Nine steps, two phases, one accountable owner and one documented outcome at every stage. Practice that discipline in JobDiva every day — that's the HireTrack Flow, end to end. Well done.",
+      target:{x:21.5,y:75.4},
+      html: shot("job_order.webp","Analytics row","Training complete — go put it into practice")
+    }
+  ]
+}
+];
+
+/* ---------------------------------------------------------------
+   FINAL ASSESSMENT & CERTIFICATION
+   Standard 80%-to-pass quiz. Not part of MODULES — it has its own
+   render path (quiz-view) instead of the shot()/magnifier machinery,
+   since narrated screenshots don't make sense for multiple-choice.
+----------------------------------------------------------------*/
+const PASS_THRESHOLD = 0.8;
+const QUIZ_QUESTIONS = [
+  {
+    q:"What does an ATS (Applicant Tracking System) primarily give a staffing organization?",
+    options:["A place to store personal photos of candidates","A centralized system to manage candidates, requisitions, submissions, and records","A tool that only Recruiting Managers can access","A replacement for phone calls with candidates"],
+    correct:1
+  },
+  {
+    q:"The HireTrack Flow has how many total steps, across how many phases?",
+    options:["5 steps, one phase","9 steps, two phases","12 steps, three phases","6 steps, two phases"],
+    correct:1
+  },
+  {
+    q:"From the Job Details page, what's the difference between Agent Search and Talent Search?",
+    options:["They are identical, just different names","Agent Search builds criteria off the job order itself; Talent Search searches the whole candidate database directly","Talent Search is only for IT reqs","Agent Search is only available to Recruiting Managers"],
+    correct:1
+  },
+  {
+    q:"In DivaMatch, what does a score of 100 mean?",
+    options:["The candidate has 100 years of experience","The match is broken and needs to be re-run","A perfect match — lead with it on your call","The candidate has already been submitted 100 times"],
+    correct:2
+  },
+  {
+    q:"What is RTR (Right to Represent), and why does it matter?",
+    options:["A license type for Operating Room nurses","The candidate's consent for you to submit them to a client — without it, they never agreed to be submitted at all","A filter tab inside Talent Search","A billing code used in the Compensation section"],
+    correct:1
+  },
+  {
+    q:"In keyword search, what's the difference between clicking 'New Skill' versus 'Select All' / 'Or'?",
+    options:["'New Skill' expands results (OR), 'Or' narrows them (AND)","There's no functional difference","'New Skill' acts like AND (narrows results), 'Or' acts like OR (expands results)","Both always narrow the results the same way"],
+    correct:2
+  },
+  {
+    q:"BR (Bill Rate) on a job order refers to:",
+    options:["What the candidate gets paid per hour","What the client pays per hour for the role — it sets the ceiling everything else has to fit under","A discount applied to overtime only","The recruiter's commission rate"],
+    correct:1
+  },
+  {
+    q:"As part of the 9-step compliance checklist, why do you check the OIG and SAM exclusion lists?",
+    options:["To verify the candidate's preferred shift","Hospitals taking government funding legally cannot hire anyone on those lists","To check if the candidate has a criminal record","It's optional and can be skipped for healthcare-only roles"],
+    correct:1
+  },
+  {
+    q:"What does AI Assist do when editing a job posting description?",
+    options:["Automatically submits the job to every board without review","Deletes the original description permanently","Rewrites the description based on your instructions or one-click options like 'Correct grammar' or 'Remove contact info'","Only works on IT requisitions, not healthcare"],
+    correct:2
+  },
+  {
+    q:"What's the purpose of the Candidate Wallet?",
+    options:["It stores the recruiter's commission history","It bundles exactly the right documents into a submittal packet for a specific position","It's where you enter the candidate's bank details","It replaces the Notes tab"],
+    correct:1
+  },
+  {
+    q:"If a client declines an offer (Offer Declined), what happens next in the HireTrack Flow?",
+    options:["The candidate is permanently blocked from future jobs","Nothing — the process simply ends","The reason gets logged, and the requisition reopens — back to Step 01, sourcing again","The job automatically closes with no further action"],
+    correct:2
+  },
+  {
+    q:"Before creating a new candidate profile, what should you always do first?",
+    options:["Search by email (then phone, then name) to avoid creating a duplicate","Immediately upload their resume","Call the candidate to ask permission","Post the job to LinkedIn first"],
+    correct:0
+  },
+  {
+    q:"Which HireTrack step comes immediately after Phone Screen (Step 03)?",
+    options:["External Submission","Interview Prep","Internal Submission","Offer Extended"],
+    correct:2
+  },
+  {
+    q:"What does the Real-Time Job Board Access checkbox do during a search?",
+    options:["It deletes stale candidates from JobDiva permanently","It pulls live results from boards like Dice and Monster, not just JobDiva's existing database","It only works for IT requisitions","It automatically emails every matching candidate"],
+    correct:1
+  }
+];
+let quizAnswers = new Array(QUIZ_QUESTIONS.length).fill(null);
+let quizIndex = 0;
+let quizSubmitted = false;
+let quizScorePct = 0;
+
+/* ---------------------------------------------------------------
+   ENGINE
+----------------------------------------------------------------*/
+let curMod = 0, curStep = 0;
+let completed = new Set();
+let speaking = false;
+/* Bumped on every loadStep() call. Any async callback (image load, the
+   180ms reveal timer, autoplay's advance timer) captures the generation
+   it was scheduled under and checks it before touching shared state —
+   this stops a stale callback from a module the user already left from
+   silently mutating whatever module they navigated to afterward. */
+let renderGen = 0;
+/* Nothing speaks until the user explicitly starts the course — no more
+   narration playing in the background before anyone asked for it. */
+let courseStarted = false;
+
+const modListEl = document.getElementById('modList');
+const stageEl = document.getElementById('stage');
+const mockuiEl = document.getElementById('mockui');
+const magnifierEl = document.getElementById('magnifier');
+const narrationText = document.getElementById('narrationText');
+const stepTag = document.getElementById('stepTag');
+const modTitle = document.getElementById('modTitle');
+const modSub = document.getElementById('modSub');
+const screenTitleEl = document.getElementById('screenTitle');
+const micEl = document.getElementById('mic');
+const stepperEl = document.getElementById('stepper');
+const progressFill = document.getElementById('progressFill');
+const progressLabel = document.getElementById('progressLabel');
+
+/* Sections collapse into an accordion — only the section containing the
+   current module auto-expands. Clicking a header toggles it manually,
+   so a learner can peek at another section without losing their place. */
+let manuallyOpenedSections = new Set();
+
+function buildSidebar(){
+  modListEl.innerHTML = '';
+  const activeSection = MODULES[curMod].section;
+  let lastSection = null, lastSubsection = null, bodyUl = null;
+
+  MODULES.forEach((m,i)=>{
+    if(m.section && m.section !== lastSection){
+      lastSection = m.section;
+      lastSubsection = null;
+      const isOpen = (m.section === activeSection) || manuallyOpenedSections.has(m.section);
+
+      const header = document.createElement('li');
+      header.className = 'section-head' + (isOpen ? ' open' : '');
+      header.innerHTML = `<span class="section-chevron">${isOpen ? '▾' : '▸'}</span><span>${m.section}</span>`;
+      header.onclick = ()=>{
+        if(manuallyOpenedSections.has(m.section)) manuallyOpenedSections.delete(m.section);
+        else manuallyOpenedSections.add(m.section);
+        buildSidebar();
+      };
+      modListEl.appendChild(header);
+
+      bodyUl = document.createElement('ul');
+      bodyUl.className = 'section-body' + (isOpen ? '' : ' collapsed');
+      modListEl.appendChild(bodyUl);
+    }
+
+    if(m.subsection && m.subsection !== lastSubsection){
+      lastSubsection = m.subsection;
+      const subhead = document.createElement('li');
+      subhead.className = 'subsection-head';
+      subhead.textContent = m.subsection;
+      bodyUl.appendChild(subhead);
+    } else if(!m.subsection){
+      lastSubsection = null;
+    }
+
+    const li = document.createElement('li');
+    li.className = 'mod-item' + (i===curMod && !quizActive?' active':'') + (completed.has(i)?' done':'') + (m.subsection ? ' nested' : '');
+    li.innerHTML = `<div class="num">${completed.has(i)?'✓':i+1}</div><div class="lbl">${m.title}</div>`;
+    li.onclick = ()=>{
+      document.getElementById('startOverlay').classList.add('hidden');
+      isPaused = false;
+      stopSpeak();
+      if(quizActive) exitQuizToModule(i); else loadModule(i);
+      document.getElementById('sidebar').classList.remove('open'); document.getElementById('sidebarBackdrop').classList.remove('show');
+    };
+    bodyUl.appendChild(li);
+  });
+
+  // Final Assessment & Certification — always last, its own section
+  const certHeader = document.createElement('li');
+  certHeader.className = 'section-head open';
+  certHeader.innerHTML = `<span class="section-chevron">▾</span><span>Certification</span>`;
+  modListEl.appendChild(certHeader);
+  const certBody = document.createElement('ul');
+  certBody.className = 'section-body';
+  const certLi = document.createElement('li');
+  certLi.className = 'mod-item' + (quizActive ? ' active' : '') + (quizSubmitted && quizScorePct >= PASS_THRESHOLD*100 ? ' done' : '');
+  certLi.innerHTML = `<div class="num">${quizSubmitted && quizScorePct >= PASS_THRESHOLD*100 ? '✓' : '🎓'}</div><div class="lbl">Final Assessment &amp; Certification</div>`;
+  certLi.onclick = ()=>{
+    showQuiz();
+    document.getElementById('sidebar').classList.remove('open'); document.getElementById('sidebarBackdrop').classList.remove('show');
+  };
+  certBody.appendChild(certLi);
+  modListEl.appendChild(certBody);
+
+  progressFill.style.width = (completed.size/MODULES.length*100)+'%';
+  progressLabel.textContent = `${completed.size} of ${MODULES.length} modules complete`;
+}
+
+/* On-screen caption stays short (like real subtitles) so it never grows
+   tall enough to collide with the magnifier. Full narration still shows
+   in the panel below and is what gets spoken aloud. */
+function buildStepper(n){
+  stepperEl.innerHTML='';
+  for(let i=0;i<n;i++){
+    const d=document.createElement('div');
+    d.className='stepdot'+(i===curStep?' on':'');
+    stepperEl.appendChild(d);
+  }
+}
+
+/* Retriggers a CSS entrance animation on an element whose content just
+   changed — removing the class, forcing a reflow, then re-adding it, since
+   simply re-adding an already-present class does nothing. */
+function reanimate(el, cls){
+  el.classList.remove(cls);
+  void el.offsetWidth; // force reflow so the removal actually takes effect
+  el.classList.add(cls);
+}
+
+function loadModule(i){
+  curMod = i; curStep = 0;
+  const m = MODULES[curMod];
+  modTitle.textContent = m.title;
+  const sectionLabel = m.subsection ? `${m.section} › ${m.subsection}` : m.section;
+  modSub.textContent = m.owner
+    ? `${sectionLabel} · Owner: ${m.owner}`
+    : `${sectionLabel || 'Micro-module'} ${curMod+1} of ${MODULES.length}`;
+  screenTitleEl.textContent = m.screen;
+  document.getElementById('modBadge').textContent = m.step ? `STEP ${m.step} · HIRETRACK FLOW` : (m.section || 'HIRETRACK FLOW');
+  reanimate(modTitle.parentElement, 'fade-slide-in');
+  reanimate(screenTitleEl, 'fade-slide-in');
+  buildSidebar();
+  loadStep();
+}
+
+function loadStep(){
+  const myGen = ++renderGen;
+  const m = MODULES[curMod];
+  const s = m.steps[curStep];
+  mockuiEl.classList.remove('show');
+  magnifierEl.classList.remove('on');
+  setTimeout(()=>{
+    if(myGen !== renderGen) return; // a newer loadStep() has since taken over
+    mockuiEl.innerHTML = s.html;
+    mockuiEl.classList.add('show');
+
+    // Fit mockui's box (in real px, computed here rather than trusting CSS
+    // auto-sizing) to whichever is relevant: the screenshot's own aspect
+    // ratio, or a stable default box for concept cards with no image.
+    const PAD_X = 28, PAD_Y = 40; // total horizontal/vertical breathing room inside the stage
+    const fitBox = (aspect)=>{
+      const stageRect = stageEl.getBoundingClientRect();
+      const availW = stageRect.width - PAD_X, availH = stageRect.height - PAD_Y;
+      let w, h;
+      if(aspect){
+        const availAspect = availW/availH;
+        if(aspect > availAspect){ w = availW; h = w/aspect; }
+        else { h = availH; w = h*aspect; }
+      } else { w = availW; h = availH; }
+      mockuiEl.style.width = w+'px';
+      mockuiEl.style.height = h+'px';
+      mockuiEl.style.left = ((stageRect.width - w)/2)+'px';
+      mockuiEl.style.top = ((stageRect.height - h)/2)+'px';
+    };
+    if(!mockuiEl.querySelector('img')) fitBox(null); // concept card — stable default box
+
+    const placeMagnifier = ()=>{
+      if(myGen !== renderGen) return; // stale — a different step/module is now showing
+      const imgEl = mockuiEl.querySelector('img');
+      if(imgEl && imgEl.naturalWidth){
+        fitBox(imgEl.naturalWidth/imgEl.naturalHeight);
+      }
+      const target = imgEl || mockuiEl;
+      const rect = target.getBoundingClientRect();
+      const stageRect = stageEl.getBoundingClientRect();
+      const x = rect.left - stageRect.left + rect.width * (s.target.x/100);
+      const y = rect.top - stageRect.top + rect.height * (s.target.y/100);
+
+      if(imgEl){
+        const zoom = 1.9;
+        const bgW = rect.width * zoom, bgH = rect.height * zoom;
+        const localX = rect.width * (s.target.x/100);
+        const localY = rect.height * (s.target.y/100);
+        magnifierEl.style.backgroundImage = `url("${imgEl.src}")`;
+        magnifierEl.style.backgroundSize = `${bgW}px ${bgH}px`;
+        magnifierEl.style.backgroundPosition = `${-(localX*zoom - 75)}px ${-(localY*zoom - 75)}px`;
+        magnifierEl.style.left = x+'px';
+        magnifierEl.style.top = y+'px';
+        magnifierEl.classList.add('on');
+      }
+
+      if(courseStarted) speakCurrent(myGen);
+    };
+    const imgEl = mockuiEl.querySelector('img');
+    if(imgEl && !imgEl.complete){
+      imgEl.addEventListener('load', placeMagnifier, {once:true});
+      imgEl.addEventListener('error', placeMagnifier, {once:true});
+    } else {
+      setTimeout(placeMagnifier, 120);
+    }
+  }, 180);
+
+  stepTag.textContent = `Step ${curStep+1} of ${m.steps.length}`;
+  narrationText.textContent = s.text;
+  reanimate(document.getElementById('narrationContent'), 'fade-slide-in');
+  buildStepper(m.steps.length);
+
+  document.getElementById('prevStepBtn').disabled = (curStep===0);
+  const isLastModule = (curMod===MODULES.length-1);
+  const isLastStepOfCourse = isLastModule && (curStep===m.steps.length-1);
+  document.getElementById('nextStepBtn').textContent = isLastStepOfCourse ? 'Finish course 🎓'
+    : (curStep===m.steps.length-1) ? 'Finish module ✓' : 'Next ▸';
+  document.getElementById('prevModBtn').disabled = (curMod===0);
+  document.getElementById('nextModBtn').disabled = false;
+  document.getElementById('nextModBtn').textContent = isLastModule ? 'Final Assessment 🎓 ⟩' : 'Next module ⟩';
+
+  updateCourseProgress();
+}
+
+/* Course-wide progress — position across every step in every module, like a LinkedIn Learning course bar */
+function totalStepCount(){
+  return MODULES.reduce((sum,m)=>sum+m.steps.length,0);
+}
+function absoluteStepIndex(){
+  let idx=0;
+  for(let i=0;i<curMod;i++) idx += MODULES[i].steps.length;
+  return idx + curStep;
+}
+function updateCourseProgress(){
+  const total = totalStepCount();
+  const pos = absoluteStepIndex()+1;
+  const pct = Math.round((pos/total)*100);
+  document.getElementById('courseProgressFill').style.width = pct+'%';
+  document.getElementById('courseProgressLabel').textContent = `Lesson ${pos} of ${total} · ${pct}% complete`;
+}
+
+function nextStep(){
+  const m = MODULES[curMod];
+  if(curStep < m.steps.length-1){
+    curStep++;
+    loadStep();
+  } else {
+    completed.add(curMod);
+    buildSidebar();
+    if(curMod < MODULES.length-1){
+      loadModule(curMod+1);
+    } else {
+      showQuiz(); // last step of the last module — roll into the Final Assessment
+    }
+  }
+}
+function prevStep(){
+  if(curStep>0){ curStep--; loadStep(); }
+}
+
+/* Speech synthesis — quality over accent. Neural "Online (Natural)" voices
+   (Microsoft/Google) mispronounce far less than older offline voices,
+   regardless of which accent they carry, so we rank by voice quality
+   rather than filtering to one accent/locale first. */
+const VOICE_PRIORITY = [
+  'Google US English',
+  'Microsoft Aria Online (Natural)',
+  'Microsoft Ava Online (Natural)',
+  'Microsoft Andrew Online (Natural)',
+  'Microsoft Emma Online (Natural)',
+  'Microsoft Jenny Online (Natural)',
+  'Microsoft Guy Online (Natural)',
+  'Microsoft Aria Online',
+  'Microsoft Jenny Online',
+  'Samantha',
+  'Microsoft Zira Desktop',
+  'Microsoft David Desktop',
+  'Google UK English Female'
+];
+function pickVoice(){
+  const voices = speechSynthesis.getVoices();
+  if(!voices.length) return null;
+  for(const name of VOICE_PRIORITY){
+    const hit = voices.find(v=>v.name.indexOf(name)!==-1);
+    if(hit) return hit;
+  }
+  // Any voice whose name suggests a higher-quality neural engine, even if
+  // not in the list above.
+  const neural = voices.find(v=>(v.lang==='en-US'||v.lang==='en-GB') &&
+    /Natural|Online|Neural/i.test(v.name));
+  if(neural) return neural;
+  return voices.find(v=>v.lang==='en-US'||v.lang==='en_US')
+      || voices.find(v=>/^en/.test(v.lang))
+      || voices[0];
+}
+let isPaused = false;
+let autoAdvanceTimer = null;
+let chunkGapTimer = null;
+let advanceChunkFn = null; // resumable pointer to the in-progress narration, so Resume can pick up mid-chunk-gap
+let activeUtteranceMeta = null; // {text, rate, pitch, onDone, gen} for whichever utterance is currently speaking
+let lastBoundaryIndex = 0; // char offset within activeUtteranceMeta.text reached so far, from onboundary
+let pausedRemainder = null; // {text, rate, pitch, onDone, gen} captured at the exact word Pause was hit
+
+/* Break a step's narration into trainer-style pacing chunks: sentence
+   boundaries, plus the beat after a colon (setup → payoff) and after an
+   em-dash (aside), so it isn't read as one flat unbroken stream. */
+function splitIntoChunks(text){
+  return text
+    .split(/(?<=[.?!])\s+(?=[A-Z0-9"'])|(?<=—)\s+(?=[a-zA-Z])|(?<=:)\s+(?=[A-Z0-9"'])/)
+    .map(s=>s.trim())
+    .filter(Boolean);
+}
+
+/* Vary rate/pitch per chunk so narration has the shape of a trainer talking
+   — rising on questions, slowing and dropping on warnings/rules, a small
+   beat before a payoff after a colon or dash — instead of one flat tone. */
+function chunkProsody(chunk, idx){
+  let rate = 0.96, pitch = 1.0, pauseAfter = 260;
+  if(/\?$/.test(chunk)){ pitch += 0.13; rate += 0.01; pauseAfter = 380; }
+  else if(/[:—]$/.test(chunk)){ rate -= 0.04; pauseAfter = 430; }
+  else if(/[.!]$/.test(chunk)){ pauseAfter = 320; }
+  else { pauseAfter = 210; }
+  if(/^(remember|always|never|note|important|warning|watch)\b/i.test(chunk) || /\b(never|always)\b/i.test(chunk)){
+    rate -= 0.05; pitch -= 0.03; pauseAfter += 80;
+  }
+  // Deterministic wobble (not random, so it stays stable across pause/resume)
+  // keeps consecutive chunks from landing at an identical pitch.
+  pitch += ((idx % 4) - 1.5) * 0.018;
+  rate = Math.max(0.80, Math.min(1.1, rate));
+  pitch = Math.max(0.85, Math.min(1.22, pitch));
+  return {rate, pitch, pauseAfter};
+}
+
+function setPlayBtnLabel(){
+  const btn = document.getElementById('playBtn');
+  if(speaking) btn.textContent = '⏸ Pause';
+  else if(isPaused) btn.textContent = '▶ Resume';
+  else btn.textContent = '⏸ Pause';
+}
+
+/* Browser TTS tries to pronounce short acronyms as words and mangles them
+   ("CVOR" -> a garbled syllable, "OIG" -> "oyg"). Spacing the letters out
+   forces the engine to read them letter-by-letter. Display text (captions,
+   narration panel) is untouched — this only rewrites what gets spoken. */
+function speakableText(text){
+  let out = text;
+  // Letter-by-letter acronyms — TTS engines otherwise try to pronounce
+  // them as one garbled word.
+  ['RTR','OIG','ACLS','BLS','CVOR','CRNA','BSN','MSN','CRM','RNOR','MMR','LPN'].forEach(acr=>{
+    const spaced = acr.split('').join(' ');
+    out = out.replace(new RegExp('\\b'+acr+'\\b','g'), spaced);
+  });
+  // "IT" (Information Technology) reads as the pronoun "it" unless spelled
+  // out — safe because we only ever write the acronym in ALL CAPS.
+  out = out.replace(/\bIT\b/g, 'I T');
+  // "C2C" (Corp-to-Corp) — semantic, not letter-by-letter.
+  out = out.replace(/\bC2C\b/g, 'C to C');
+  // "resume" (the CV) is a heteronym — left as-is, TTS engines default to
+  // the verb pronunciation ("to resume/continue"). Respell it phonetically
+  // so it's read as "reh-zoo-may" instead.
+  out = out.replace(/\bresumes\b/gi, 'reh-zoo-mays');
+  out = out.replace(/\bresume\b/gi, 'reh-zoo-may');
+  return out;
+}
+
+/* Speaks one piece of text and tracks exactly how far it got (via
+   onboundary's word-level charIndex) so a Pause mid-sentence can resume
+   from that word instead of replaying the whole utterance. Chrome's native
+   speechSynthesis.resume() is known to restart an utterance from position 0
+   rather than truly resuming it — we never rely on it; Pause always cancels
+   and Resume always re-synthesizes just the remaining text. */
+function speakText(text, rate, pitch, onDone, gen){
+  lastBoundaryIndex = 0;
+  activeUtteranceMeta = {text, rate, pitch, onDone, gen};
+  const u = new SpeechSynthesisUtterance(text);
+  u.rate = rate; u.pitch = pitch;
+  const preferred = pickVoice();
+  if(preferred) u.voice = preferred;
+  u.onboundary = (e)=>{ if(e.charIndex !== undefined) lastBoundaryIndex = e.charIndex; };
+  u.onstart = ()=>{ speaking=true; micEl.classList.add('speaking'); setPlayBtnLabel(); };
+  u.onend = ()=>{
+    speaking=false; micEl.classList.remove('speaking'); setPlayBtnLabel();
+    if(gen !== renderGen) return;
+    if(isPaused) return; // this 'end' came from our own cancel() in the Pause branch, not natural completion
+    activeUtteranceMeta = null;
+    onDone();
+  };
+  u.onerror = ()=>{ speaking=false; micEl.classList.remove('speaking'); setPlayBtnLabel(); };
+  speechSynthesis.speak(u);
+}
+
+function speakCurrent(genAtCallTime){
+  stopSpeak();
+  isPaused = false;
+  // Bump renderGen when called directly (Start Course, Replay, Resume-fallback)
+  // rather than reusing the current one — otherwise a second direct call
+  // shares the same gen as any loop already in flight, so neither call's
+  // "if(myGen !== renderGen) return" staleness check can ever catch the
+  // other, and the two speech loops livelock fighting over shared globals
+  // (chunkGapTimer, activeUtteranceMeta) instead of one cleanly winning.
+  const myGen = genAtCallTime !== undefined ? genAtCallTime : ++renderGen;
+  const text = MODULES[curMod].steps[curStep].text;
+  const chunks = splitIntoChunks(speakableText(text));
+  let i = 0;
+  function speakChunk(){
+    if(myGen !== renderGen) return;
+    if(i >= chunks.length){
+      advanceChunkFn = null;
+      autoAdvance(myGen);
+      return;
+    }
+    const chunk = chunks[i];
+    const {rate, pitch, pauseAfter} = chunkProsody(chunk, i);
+    speakText(chunk, rate, pitch, ()=>{
+      i++;
+      if(myGen !== renderGen) return;
+      if(isPaused){ advanceChunkFn = speakChunk; return; } // caught mid-gap by Pause — Resume will call this
+      chunkGapTimer = setTimeout(()=>{
+        chunkGapTimer=null;
+        if(isPaused){ advanceChunkFn = speakChunk; return; } // Pause landed while this gap was ticking
+        speakChunk();
+      }, pauseAfter);
+    }, myGen);
+  }
+  advanceChunkFn = speakChunk;
+  speakChunk();
+}
+function stopSpeak(){
+  speechSynthesis.cancel();
+  speaking=false;
+  micEl.classList.remove('speaking');
+  advanceChunkFn = null;
+  activeUtteranceMeta = null;
+  pausedRemainder = null;
+  if(autoAdvanceTimer){ clearTimeout(autoAdvanceTimer); autoAdvanceTimer=null; }
+  if(chunkGapTimer){ clearTimeout(chunkGapTimer); chunkGapTimer=null; }
+}
+
+/* Pause freezes exactly where you are — current narration (down to the
+   word) and the pending auto-advance to the next step. Resume picks back
+   up from that same word, never from the start of the sentence. */
+function togglePause(){
+  if(!courseStarted){ beginCourse(); speakCurrent(); return; }
+  if(isPaused){
+    isPaused = false;
+    if(pausedRemainder){
+      const {text, rate, pitch, onDone, gen} = pausedRemainder;
+      pausedRemainder = null;
+      if(gen === renderGen) speakText(text, rate, pitch, onDone, gen);
+    } else if(advanceChunkFn){ advanceChunkFn(); } // resume mid-gap, from the next pacing chunk — not a restart
+    else { speakCurrent(); }
+  } else {
+    isPaused = true;
+    if(activeUtteranceMeta){
+      const {text, rate, pitch, onDone, gen} = activeUtteranceMeta;
+      const remainder = text.slice(lastBoundaryIndex).trim();
+      pausedRemainder = remainder ? {text: remainder, rate, pitch, onDone, gen} : null;
+      activeUtteranceMeta = null;
+      speechSynthesis.cancel(); // stops immediately; onend sees isPaused=true and skips advancing
+    }
+    speaking=false; micEl.classList.remove('speaking');
+    if(autoAdvanceTimer){ clearTimeout(autoAdvanceTimer); autoAdvanceTimer=null; }
+    if(chunkGapTimer){ clearTimeout(chunkGapTimer); chunkGapTimer=null; }
+  }
+  setPlayBtnLabel();
+}
+
+/* Auto-play like a continuous course: advance to the next step when
+   narration finishes, and roll straight into the next module — like a
+   LinkedIn-Learning-style playlist — rather than stopping dead at the end
+   of each module and silently waiting for a manual "Next module" click. */
+function autoAdvance(myGen){
+  if(myGen !== renderGen) return; // the user already navigated elsewhere — don't touch their new state
+  if(isPaused) return; // frozen until Resume
+  const m = MODULES[curMod];
+  if(curStep < m.steps.length-1){
+    autoAdvanceTimer = setTimeout(()=>{
+      autoAdvanceTimer = null;
+      if(myGen !== renderGen || isPaused) return; // navigated away or paused during the gap
+      curStep++; loadStep();
+    }, 550);
+  } else {
+    completed.add(curMod);
+    buildSidebar();
+    if(curMod < MODULES.length-1){
+      autoAdvanceTimer = setTimeout(()=>{
+        autoAdvanceTimer = null;
+        if(myGen !== renderGen || isPaused) return; // navigated away or paused during the chapter break
+        loadModule(curMod+1);
+      }, 1100); // a beat longer than an in-module step, so it reads as a chapter break
+    }
+  }
+}
+
+function beginCourse(){
+  courseStarted = true;
+  isPaused = false;
+  document.getElementById('startOverlay').classList.add('hidden');
+}
+
+/* ---------------------------------------------------------------
+   FINAL ASSESSMENT & CERTIFICATION
+----------------------------------------------------------------*/
+let quizActive = false;
+const quizViewEl = document.getElementById('quizView');
+const quizCardEl = document.getElementById('quizCard');
+
+function showQuiz(){
+  quizActive = true;
+  stopSpeak();
+  document.getElementById('startOverlay').classList.add('hidden');
+  document.querySelector('.stage-outer').style.display = 'none';
+  document.querySelector('.controls').style.display = 'none';
+  document.querySelector('.course-progress').style.display = 'none';
+  quizViewEl.classList.add('show');
+  modTitle.textContent = 'Final Assessment & Certification';
+  modSub.textContent = quizSubmitted ? 'Your results' : `Question ${quizIndex+1} of ${QUIZ_QUESTIONS.length}`;
+  screenTitleEl.textContent = '';
+  document.getElementById('modBadge').textContent = 'CERTIFICATION';
+  buildSidebar();
+  renderQuiz();
+}
+
+function exitQuizToModule(i){
+  quizActive = false;
+  quizViewEl.classList.remove('show');
+  document.querySelector('.stage-outer').style.display = '';
+  document.querySelector('.controls').style.display = '';
+  document.querySelector('.course-progress').style.display = '';
+  loadModule(i);
+}
+
+function renderQuiz(){
+  if(quizSubmitted) renderQuizResults();
+  else renderQuizQuestion();
+}
+
+function renderQuizQuestion(){
+  const total = QUIZ_QUESTIONS.length;
+  const q = QUIZ_QUESTIONS[quizIndex];
+  const pct = Math.round((quizIndex/total)*100);
+  const optionsHtml = q.options.map((opt,oi)=>`
+    <li class="quiz-option${quizAnswers[quizIndex]===oi?' selected':''}" data-oi="${oi}">
+      <div class="radio"></div><div>${opt}</div>
+    </li>`).join('');
+  quizCardEl.innerHTML = `
+    <div class="quiz-eyebrow">Final Assessment · Question ${quizIndex+1} of ${total}</div>
+    <div class="quiz-progress-row">
+      <div class="quiz-progress-track"><div class="quiz-progress-fill" style="width:${pct}%"></div></div>
+      <div class="quiz-progress-count">${quizIndex+1} / ${total}</div>
+    </div>
+    <div class="quiz-question">${q.q}</div>
+    <ul class="quiz-options">${optionsHtml}</ul>
+    <div class="quiz-nav">
+      <button class="ctrl ghost" id="quizBackBtn" ${quizIndex===0?'disabled':''}>⟨ Back</button>
+      <button class="ctrl gold" id="quizNextBtn" ${quizAnswers[quizIndex]===null?'disabled':''}>
+        ${quizIndex===total-1 ? 'Submit Assessment ✓' : 'Next ▸'}
+      </button>
+    </div>`;
+  quizCardEl.querySelectorAll('.quiz-option').forEach(el=>{
+    el.onclick = ()=>{
+      quizAnswers[quizIndex] = parseInt(el.dataset.oi, 10);
+      renderQuizQuestion();
+    };
+  });
+  document.getElementById('quizBackBtn').onclick = ()=>{
+    if(quizIndex>0){ quizIndex--; modSub.textContent = `Question ${quizIndex+1} of ${total}`; renderQuizQuestion(); }
+  };
+  document.getElementById('quizNextBtn').onclick = ()=>{
+    if(quizAnswers[quizIndex]===null) return;
+    if(quizIndex < total-1){
+      quizIndex++; modSub.textContent = `Question ${quizIndex+1} of ${total}`; renderQuizQuestion();
+    } else {
+      submitQuiz();
+    }
+  };
+}
+
+function submitQuiz(){
+  let correctCount = 0;
+  QUIZ_QUESTIONS.forEach((q,i)=>{ if(quizAnswers[i]===q.correct) correctCount++; });
+  quizScorePct = Math.round((correctCount/QUIZ_QUESTIONS.length)*100);
+  quizSubmitted = true;
+  modSub.textContent = 'Your results';
+  renderQuizResults();
+}
+
+function renderQuizResults(){
+  const passed = quizScorePct >= PASS_THRESHOLD*100;
+  quizCardEl.innerHTML = `
+    <div class="quiz-results" style="--pct:${quizScorePct}">
+      <div class="quiz-score-ring"><div class="pct">${quizScorePct}%</div></div>
+      <div class="pass-banner ${passed?'pass':'fail'}">${passed ? '✓ Passed' : 'Not Yet Passed'}</div>
+      <h3>${passed ? 'Certification Unlocked' : 'Keep Going — Almost There'}</h3>
+      <p>${passed
+        ? `You scored ${quizScorePct}% — at or above the ${Math.round(PASS_THRESHOLD*100)}% pass threshold. Your JobDiva Mastery certificate is ready below.`
+        : `You scored ${quizScorePct}%. You need ${Math.round(PASS_THRESHOLD*100)}% to unlock certification — review the modules you're unsure of, then retake the assessment.`}</p>
+      <div class="cert-actions">
+        <button class="ctrl ghost" id="quizRetakeBtn">↺ Retake Assessment</button>
+        ${passed ? '<button class="ctrl gold" id="quizViewCertBtn">🎓 View Certificate</button>' : ''}
+      </div>
+    </div>`;
+  document.getElementById('quizRetakeBtn').onclick = retakeQuiz;
+  if(passed) document.getElementById('quizViewCertBtn').onclick = renderCertificate;
+}
+
+function retakeQuiz(){
+  quizAnswers = new Array(QUIZ_QUESTIONS.length).fill(null);
+  quizIndex = 0;
+  quizSubmitted = false;
+  modSub.textContent = `Question 1 of ${QUIZ_QUESTIONS.length}`;
+  renderQuizQuestion();
+}
+
+function renderCertificate(){
+  const today = new Date();
+  const dateStr = today.toLocaleDateString('en-US', {year:'numeric', month:'long', day:'numeric'});
+  quizCardEl.innerHTML = `
+    <div class="certificate" id="theCert">
+      <div class="cert-frame-accent"></div>
+      <div class="cert-body-pad">
+        <div class="cert-logo-wrap">${shot("honorvet_logo.png","HonorVet Technologies")}</div>
+        <div class="cert-sdvosb">Service-Disabled Veteran Owned Small Business</div>
+        <div class="cert-divider-soft"></div>
+        <div class="cert-completion-label">CERTIFICATE OF COMPLETION</div>
+        <div class="cert-course-name">JobDiva Mastery — Recruiter Training</div>
+        <div class="cert-certify-text">This is to proudly certify that</div>
+        <input type="text" class="cert-name-input" id="certNameInput" placeholder="Type your full name" value="${recipientName||''}">
+        <div class="cert-desc">has successfully completed the comprehensive <strong>JobDiva Mastery — Recruiter Training</strong>
+          programme — covering the HireTrack Flow, JobDiva navigation, Agent Search &amp; Talent Search, candidate
+          management, DivaMatch, compliance, and the full interview-to-offer process.</div>
+        <div class="cert-badges">🏆 Assessment Score: ${quizScorePct}%&nbsp;&nbsp;|&nbsp;&nbsp;🎖 Modules Completed: ${completed.size}/${MODULES.length}</div>
+        <div class="cert-divider-soft cert-divider-space"></div>
+        <div class="cert-sig">Rachana Narang</div>
+        <div class="cert-sig-role">AUTHORISED — HONORVET TECHNOLOGIES</div>
+        <div class="cert-url">honorvettech.com</div>
+        <div class="cert-footer-row">
+          <div class="cert-meta-block left">
+            <div class="cert-meta-value">${dateStr}</div>
+            <div class="cert-meta-label">Date of Completion</div>
+          </div>
+          <div class="cert-meta-block right">
+            <div class="cert-meta-value">HonorVet Technologies</div>
+            <div class="cert-meta-label">Issuing Organisation</div>
+          </div>
+        </div>
+      </div>
+      <div class="cert-actions">
+        <button class="ctrl ghost" id="certBackBtn">⟨ Back to Results</button>
+        <button class="ctrl gold" id="certPrintBtn">🖨 Print / Save as PDF</button>
+      </div>
+    </div>`;
+  document.getElementById('certNameInput').oninput = (e)=>{ recipientName = e.target.value; };
+  document.getElementById('certBackBtn').onclick = renderQuizResults;
+  document.getElementById('certPrintBtn').onclick = ()=> window.print();
+}
+let recipientName = '';
+
+document.getElementById('startCourseBtn').onclick = ()=>{
+  beginCourse();
+  speakCurrent();
+};
+
+document.getElementById('playBtn').onclick = ()=>{ togglePause(); };
+document.getElementById('replayBtn').onclick = ()=>{ beginCourse(); speakCurrent(); };
+document.getElementById('nextStepBtn').onclick = ()=>{ beginCourse(); stopSpeak(); nextStep(); };
+document.getElementById('prevStepBtn').onclick = ()=>{ beginCourse(); stopSpeak(); prevStep(); };
+document.getElementById('nextModBtn').onclick = ()=>{ beginCourse(); stopSpeak(); if(curMod<MODULES.length-1) loadModule(curMod+1); else showQuiz(); };
+document.getElementById('prevModBtn').onclick = ()=>{ beginCourse(); stopSpeak(); if(curMod>0) loadModule(curMod-1); };
+
+// warm up voices list (Chrome loads async)
+speechSynthesis.onvoiceschanged = ()=>{};
+window.addEventListener('resize', ()=>{ if(!quizActive) loadStep(); });
+
+const sidebarEl = document.getElementById('sidebar');
+const backdropEl = document.getElementById('sidebarBackdrop');
+document.getElementById('menuBtn').onclick = ()=>{
+  sidebarEl.classList.add('open'); backdropEl.classList.add('show');
+};
+backdropEl.onclick = ()=>{
+  sidebarEl.classList.remove('open'); backdropEl.classList.remove('show');
+};
+
+buildSidebar();
+loadModule(0);
+</script>
+</body>
+</html>
