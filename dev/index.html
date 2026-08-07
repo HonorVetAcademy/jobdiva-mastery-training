@@ -761,6 +761,11 @@ const MODULES = [
       text:"Then you check My Jobs for anything assigned to you, contact candidates by call, email, or text, conduct phone screens, update candidate records, and move qualified candidates through each stage of the HireTrack Flow — all starting from this one homepage.",
       target:{x:4.4,y:37.8},
       html: shot("p2_dashboard.webp","My Jobs — highlighted in the sidebar","This job was assigned to me, so I find it right here under My Jobs")
+    },
+    {
+      text:"Scroll down and the dashboard gets specific: a Candidate Notes chart shows your logging activity by week, To Do This Week tracks upcoming interviews, starts, and pending tasks, Submittal Due Dates flags anything past due, and My Open Jobs breaks down exactly how many reqs you own — and how many of those have zero activity yet.",
+      target:{x:42,y:81},
+      html: shot("dashboard_widgets.webp","User Dashboard — My Open Jobs breakdown","Real numbers: 5 open jobs, 3 as primary, 2 with no activity yet — a same-day priority list")
     }
   ]
 },
@@ -825,6 +830,42 @@ const MODULES = [
   ]
 },
 {
+  section:"Phase 1 — Sourcing & Screening",
+  title:"Job List — Filtering Your Jobs",
+  step:"—", owner:"Recruiter",
+  screen:"Real Screenshot — Job List",
+  steps:[
+    {
+      text:"My Jobs is really the Job List screen underneath, and it's built to filter. Click the Job Status dropdown and switch between My Open Jobs Only, My Jobs Only, All Open Jobs, My Primary Open Jobs, All My Primary Jobs, or All Closed Jobs — so you're never scrolling through reqs that don't apply to you right now.",
+      target:{x:12,y:22},
+      html: shot("joblist_status_filter.webp","Job List — Job Status dropdown open","The real filter options: My Open Jobs Only, My Jobs Only, All Open Jobs, and more")
+    },
+    {
+      text:"Next to it, the Issued Date range narrows the list to jobs opened in a specific window — set a start and end date, click Display, and the table updates instantly. Here, narrowing to August alone drops five jobs down to just one: a Correctional RN req.",
+      target:{x:35,y:14},
+      html: shot("joblist_date_filter.webp","Job List — Issued Date range applied","Filtered to 08/01–08/29/2026: exactly one matching job")
+    }
+  ]
+},
+{
+  section:"Phase 1 — Sourcing & Screening",
+  title:"Creating a New Job — Basic Info, Facility & AI Import",
+  step:"—", owner:"Recruiting Manager / Recruiter",
+  screen:"Real Screenshot — New Job Form",
+  steps:[
+    {
+      text:"Every job order starts at New Job. Basic Info is where it's built: Title, Position Type, Optional Ref#, Priority, Company/Dep, Division, and address — plus Scheduling, Billing, and Compensation further down. Notice AI Import in the top toolbar — it can pull job details in automatically instead of you typing every field by hand.",
+      target:{x:19,y:23},
+      html: shot("newjob_basicinfo.webp","New Job — Basic Info panel","The blank New Job form, with AI Import sitting right above it")
+    },
+    {
+      text:"Facility is its own searchable field, separate from Company/Dep — start typing and JobDiva filters a list of actual client facility locations, like this search narrowing toward 'Active Physical Therapy' sites across several cities. Pick the exact one so the job order ties back to the right physical location.",
+      target:{x:29,y:69},
+      html: shot("newjob_facility.webp","Facility dropdown — searchable list","Typing narrows hundreds of real client facilities down to a handful of matches")
+    }
+  ]
+},
+{
   section:"Phase 1 — Sourcing & Screening", subsection:"Job Details — Agent Search",
   title:"Profession, Specialty, Licenses & Certifications",
   step:"01", owner:"Recruiter",
@@ -867,6 +908,11 @@ const MODULES = [
       text:"You can also Exclude terms — for example, excluding 'Med Surg' keeps unrelated specialties out of your Operating Room search. And for Title, list every variation a candidate might use: 'RN Operating Room,' 'RNOR,' or simply 'Registered Nurse.'",
       target:{x:74.5,y:61.1},
       html: shot("keywords_andor.webp","Boolean string preview","The live boolean string JobDiva builds from your entries, shown at the bottom")
+    },
+    {
+      text:"AND, OR, and Exclude aren't the only Boolean tools worth knowing. Quotation marks force an exact phrase, like \"Newtonian mechanics\" instead of those two words appearing anywhere. Parentheses group terms so you control the order — '(rural OR urban) AND sociology.' And an asterisk catches every variation of a word: 'Develop*' matches 'development,' 'developer,' and more.",
+      target:{x:50,y:50},
+      html: shot("boolean_operators_table.webp","Useful Boolean operators — full reference","A recruiter reference table: AND, OR, NOT, quotation marks, parentheses, and the asterisk wildcard")
     }
   ]
 },
@@ -895,7 +941,7 @@ const MODULES = [
 },
 {
   section:"Phase 1 — Sourcing & Screening", subsection:"Talent Search — Candidate Database",
-  title:"Search Candidates — All 8 Filter Tabs",
+  title:"Search Candidates — All 9 Filter Tabs",
   step:"01", owner:"Recruiter",
   screen:"Real Screenshot — Search Candidates",
   steps:[
@@ -905,9 +951,19 @@ const MODULES = [
       html: shot("pb_search_profession.jpg","Tab 1 — Profession/Specialty, RN selected","Click ADD next to a profession — the button turns red and says REMOVE once it's selected")
     },
     {
-      text:"Tab 2 is Licenses — pick the type, country, and state, and set 'Expiring After' to a date past the job's end so JobDiva skips anyone whose license runs out too soon. The remaining tabs: Certifications (BLS, ACLS, PALS), Qualification (degree requirements), Require (must-have skills), Exclude (removes matches — use carefully), Attribute (team tags like 'Top Candidate'), and Title (job titles outside the standard list).",
+      text:"Here's Profession/Specialty live: click ADD next to RN and it flips to a red REMOVE button, then the right-hand list fills with every specialty under that profession — Critical Care, Correctional, CTICU, and dozens more. Pick 'Burn ICU' and watch the boolean string at the bottom build itself in real time.",
+      target:{x:15,y:50},
+      html: shot("searchcand_profession_live.webp","Profession/Specialty — RN selected, specialty list open","Real ADD/REMOVE toggle plus the live specialty list for RN")
+    },
+    {
+      text:"Tab 2 is Licenses — pick the type, country, and state, and set 'Expiring After' to a date past the job's end so JobDiva skips anyone whose license runs out too soon. The remaining tabs: Certifications (BLS, ACLS, PALS), Qualification (degree requirements), Require (must-have skills), Exclude (removes matches — use carefully), Attribute (team tags like 'Top Candidate'), Title (job titles outside the standard list), and a 9th tab, Candidate UDF — your organization's own custom fields.",
       target:{x:32.6,y:37.1},
       html: shot("pb_search_licenses.jpg","Tab 2 — Licenses, criteria building live","The live criteria string at the bottom shows exactly what JobDiva will search for")
+    },
+    {
+      text:"Stack enough filters and the criteria string reads like a sentence: 'in Florida, with a Bachelor's degree, within 30 miles of this zip, wallet status complete, profession RN is Burn ICU.' Every tab you touch adds one more clause — and 'Only Include Results in JobDiva' keeps the search from pulling in outside job-board candidates you haven't vetted yet.",
+      target:{x:42,y:74},
+      html: shot("searchcand_udf_tab.webp","Candidate UDF tab, live criteria string","The 9th tab, and a real multi-filter criteria string built from several tabs at once")
     },
     {
       text:"Once your filters are set, click Search. Read the results with a yellow 'New' badge first — nobody's called that person yet. The 'R' icon means the resume was added automatically. 'Available' shows when they can start, and 'Last Note' shows when a recruiter last talked to them — always work the newest, most-ready candidate first.",
