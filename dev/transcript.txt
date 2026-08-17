@@ -1,0 +1,1895 @@
+[0.0-15.2] So, Tim, can you, can you, can you just check my screen?
+[15.2-16.8] Is it visible to you?
+[16.8-17.8] Yes.
+[17.8-18.8] All right.
+[18.8-27.0] So, Tim, in automobile technologies, generally we are using ATS, which is called as JobDiva.
+[27.4-29.5] So, first of all, what is ATS?
+[29.5-32.8] ATS is called as Applicant Tracking Systems.
+[32.8-37.8] Actually, you can mute your mic because you are sitting with me in the conference room.
+[37.8-39.8] So, that works.
+[39.8-40.8] Yeah.
+[40.8-43.4] So, ATS is called as Applicant Tracking Systems.
+[43.4-46.6] So, generally what is the major use of the ATS?
+[46.6-49.9] It is to simplify your recruitment process.
+[49.9-57.4] Although it helps you to source the candidate to manage the jobs and ATS is used specifically
+[57.4-59.0] in recruitment companies.
+[59.0-64.1] So, Applicant Tracking Systems has a different users in different, different organizations,
+[64.1-66.7] but here in Ornavet, we are using JobDiva.
+[66.7-75.0] We do have other ATS like C-PAL, right, Bullhorn and one of the ATS, which we were discussing
+[75.0-77.1] actually, what was the name?
+[77.1-83.9] Nexus, right, and some organizations do use their in-house build ATS.
+[83.9-84.9] Okay.
+[84.9-88.8] So, this is the interface of JobDiva.
+[88.8-95.4] So, something which is allocated to you for your recruitment process.
+[95.4-101.4] So, I just wanted to let you know that JobDiva here has a very specific user assigned.
+[101.8-108.5] So, highest user who manages entire JobDiva, they are called as SuperAdmin or Admin Users.
+[108.5-114.5] So, admin user are the person who is responsible for making any particular changes in JobDiva.
+[114.5-120.3] So, JobDiva is always assigned to any particular authorized position within the organization.
+[120.3-124.9] So, for example, Mr. Dhananjay, he is the SuperUser, okay.
+[124.9-128.9] So, he has full right to make any changes in JobDiva.
+[128.9-133.3] As a recruiter, we will be only limited to the portion we are going to work for recruitment
+[133.3-134.6] process.
+[134.6-139.3] It is also integrated with a lot of other departments to which we will discuss in coming
+[139.3-140.3] time.
+[140.3-147.4] So, generally, you will be always be able to see a certain kind of interface or the applications
+[147.4-152.2] or bars as per your authorization or positions within the organization.
+[152.3-158.8] So, me as a trainer or maybe as a recruiter would be able to see a limited access to the
+[158.8-161.1] applications and bars available, okay.
+[161.1-167.4] So, today we are going to discuss majorly in regards to your entire discussion of JobDiva
+[167.4-169.6] training would be on recruitment process.
+[169.6-175.6] So, how actually recruitment utilize the JobDiva into their day to day activities.
+[175.6-179.7] So, this is the interface which we have.
+[179.7-182.1] This is called as JobDiva interface.
+[182.1-188.0] However, every user will be given their individual credentials which is always being created
+[188.0-189.9] by the super admin.
+[189.9-196.0] So, every manager and maybe any recruiter who is newly joined, right, although their manager
+[196.0-202.8] helps to create the user IDs to specific particular teams they have been allocated, okay.
+[202.8-205.2] So, this is called as upper bar.
+[205.2-207.6] So, we are going to start with upper bar.
+[207.7-210.7] So, this is something which is JobDiva icon.
+[210.7-215.0] This is the common search bar or a universal search bar.
+[215.0-220.2] Here we can just typically write down any particular content, any particular information
+[220.2-221.4] we would like to search.
+[221.4-227.0] For example, we wanted to look for any particular job ID, we wanted to look for any particular
+[227.0-231.1] email ID or we wanted to look for any particular candidate resume.
+[231.1-237.5] So, what we can do is we can just write down the particular name of the particular candidate.
+[237.9-243.4] Maybe resume email ID which has been mentioned or maybe contact details.
+[243.4-249.4] So, once you click on this to search criteria, you would be able to see that it can also
+[249.4-254.2] help you to include the closed matches available in JobDiva.
+[254.2-258.2] If you wanted to look for something specific, you need to have the particular email ID or
+[258.2-261.6] contact details for a particular resume or maybe a specific job ID.
+[261.7-267.2] So, we can have a particular two terms which is called as JobDivide and ReferenceID.
+[267.2-272.5] Any of the particular search you would like to make to look for a particular details,
+[272.5-277.6] you would be able to search here itself and once you click on this, it will try to include
+[277.6-280.6] the more relevant or the closed match results.
+[280.6-285.1] So, this is all about your search bar.
+[285.1-288.2] Next icon which we have is this is called as favorites.
+[288.5-293.2] So, these are the preset applications which has been set by the admin team.
+[293.2-298.4] So, whatever applications you are able to see, these are allocated as per the requirements
+[298.4-300.7] of the company and the positions allocated.
+[300.7-307.2] So, however, we highly recommend not to make any changes because it is already given to
+[307.2-313.2] particular user as per their positions specifically that what exactly they are going to do within
+[313.2-314.2] the organization.
+[314.6-319.3] So, for example, you have certain kind of icons available.
+[319.3-325.2] These icons are set to make sure that if someone wants to see the BI shared with me, right,
+[325.2-326.2] candidate hard list.
+[326.2-328.3] So, this is more relevant to my recruitment part.
+[328.3-332.6] So, we highly recommend not to make any changes in this icon.
+[332.6-333.6] Second is called as alerts.
+[333.6-338.6] So, as you know that JobDivide is a SaaS based platform.
+[339.4-345.0] So, generally in this platform, every user would be able to see their own activities
+[345.0-347.4] or alerts happening in the JobDivide.
+[347.4-353.1] For example, you have been allocated with any particular job in JobDivide, right, and
+[353.1-356.6] that status has been changed from open to old.
+[356.6-360.9] Maybe any person has been assigned with a particular job.
+[360.9-364.0] Maybe any job description has been automatically modified.
+[364.0-367.0] So, or maybe manually added in the JobDivide.
+[367.0-370.8] So, that I just wanted to let you know guys that there is a term called as codler.
+[370.8-375.7] Codler is something that connect VMS to JobDivide.
+[375.7-381.1] It is an inbuilt function in JobDivide, which is called as VMS synchronization.
+[381.1-385.4] Any particular clients we have, we have a term called as VMS, which is called as vendor
+[385.4-386.4] management system.
+[386.4-390.9] Where we generally, these are the client allocated MSP portal.
+[390.9-396.1] So, the client portal through which we get the job requirements or job requirements, right.
+[396.4-399.8] So, it is integrated in the JobDivide.
+[399.8-404.8] How it works basically, it is working with a functionality called as VMS synchronization,
+[404.8-411.6] where our admin team adds the details like a link to particular VMS, right, and their
+[411.6-413.8] password and their user IDs.
+[413.8-416.6] So, one it has been added an integrator.
+[416.6-420.4] So, specifically JobDivide start communicating with VMS.
+[420.4-425.9] So, whatever exchange of information happening between the both the softwares, for example,
+[425.9-430.6] any new particular position has been created automatically, how it is being created in the
+[430.6-433.1] JobDivide through codler, ok.
+[433.1-442.6] So, it is a functionality which communicates VMS to or connects VMS to JobDivide, ok.
+[442.6-449.1] So, any activity happening either through codler or maybe manually would be able to be
+[449.1-450.8] visible in alert section.
+[450.8-455.6] So, that is why it is called as alerts.
+[455.8-459.1] So, the first icon which we have is this is called as news.
+[459.1-463.8] So, generally guys as you know that JobDivide is a software, right, and it keeps on enhancing
+[463.8-465.1] the features, right.
+[465.1-471.2] So, you would be able to see a lot of information about JobDivide, which includes certain categories
+[471.2-476.4] like enhancement, updates, trainings, updates, right.
+[476.4-479.9] Can you see this kind of categories which has been mentioned?
+[479.9-485.0] So, these categories will help you to understand what exactly is the enhancement being made
+[485.0-486.4] in the JobDivide.
+[486.4-490.4] For example, here they have mentioned that, ok, this is the tool, right, generally.
+[490.4-497.6] And as you know that as we are entering into a very new kind of atmosphere using AI.
+[497.6-503.5] So, now entire JobDivide team is enhancing the features of JobDivide with AI powered
+[503.5-504.8] features, ok.
+[504.8-509.3] So, what kind of enhancement has been made in this particular enhancement sections?
+[509.3-513.9] If you see they have mentioned automated AI posting, job description means this feature
+[513.9-514.9] has been enhanced.
+[514.9-518.5] So, you would be able to see and access the information, ok.
+[518.5-523.2] So, something they have enhanced which is called as automated AI posting description.
+[523.2-525.4] They have informed, ok.
+[525.4-527.3] With this feature what exactly is enabled?
+[527.3-532.5] So, whenever a new job is manually created by JobDivide user, AI assist will automatically
+[532.5-537.4] edit the job description as per the team-wide instructions and save the edit output for
+[537.4-542.3] the posting description, which is very relevant for us as a recruiter, as a manager.
+[542.8-546.9] So, certain kind of enhancements as per your understanding, you would be able to access
+[546.9-549.8] and you would be able to read this.
+[549.8-553.0] Another guys, any updates happening in JobDivide?
+[553.0-555.8] Would you be able to check it here?
+[555.8-560.3] So, for example, this enhancement has been in this section, ok.
+[560.3-565.3] So, clearly they have stated what enhancement has been made to change to license and certification
+[565.3-566.3] alert logics.
+[566.3-569.6] So, JobDivide is a very large tool, right.
+[569.7-574.1] It always depends on the company and the organization, how they have customized this tool as per
+[574.1-575.3] their requirement, ok.
+[575.3-581.0] So, you will keep on getting enhancement in lot of or updates in lot of ways.
+[581.0-585.8] But generally what you utilize, what to actually see and read, it depends upon your key area
+[585.8-586.8] of interest.
+[586.8-588.4] Third thing, training.
+[588.4-594.6] So, guys, as you know that there are JobDivide has various functions available and it has
+[594.6-598.3] been integrated with lot of departmental tools.
+[598.6-601.1] So, for example, someone who is into onboarding, right.
+[601.1-607.2] So, they should also know how to perform or maybe add the details for onboarding packages,
+[607.2-609.4] accepting rejection documents, right.
+[609.4-615.7] So, here as per their key area of interest, they would be able to see and join the webinar
+[615.7-619.4] or maybe register this webinar for a particular day.
+[619.4-625.1] Here we have another kind of particular webinar which can be relevant to me or administrator.
+[625.1-628.8] For example, team leader and administrator training, where would be able to learn more
+[628.8-633.4] about the JobDivide from an administration point of view which includes the topic, right,
+[633.4-638.5] adding new users, resetting password, review of team profile or maybe customization and
+[638.5-639.5] many more.
+[639.5-643.7] So, someone who is very new to the JobDivide, for example, actually you are very new to
+[643.7-644.7] the JobDivide.
+[644.7-647.5] First of all, you need to understand what exactly is this tool, right.
+[647.5-648.5] What is the JobDivide?
+[648.5-654.2] So, virtually you can always go and just click to this link and choose the preference for
+[654.2-658.1] your training as for your understanding of the JobDivide.
+[658.1-660.7] Here as a person, I have been into the recruitment now, right.
+[660.7-662.9] So, I wanted to go for a recruiter training.
+[662.9-665.4] So, dedicated webinars has been arranged.
+[665.4-669.6] Someone who is into the client relationship management or I would say a BDM business development
+[669.6-673.4] management team, they would be able to utilize CRM.
+[673.4-675.1] Someone who is into healthcare recruitment, right.
+[675.1-680.2] So, dedicated JobDivide also have exclusive feature for healthcare department.
+[680.2-685.4] So, as per the healthcare department and healthcare recruitment, whatever the updates
+[685.4-690.2] or maybe what kind of anxiety the features are available for healthcare recruitment,
+[690.2-694.0] you would be able to see in healthcare recruiting webinar.
+[694.0-699.1] If you wanted to go for advanced BI, this is more of report creations and kind of filtration
+[699.1-700.1] of data.
+[700.1-703.8] They would be able to access the advanced BI webinar.
+[703.8-706.1] Someone who wants to learn more about AI powered features.
+[706.1-709.6] So, what exactly are the newly introduced AI feature?
+[709.6-714.1] For example, in JobDivide for a new global prompt where your team can design standard
+[714.1-717.9] prompts to refine the results, your team sets the features.
+[717.9-723.5] So, these are all webinars which generally you can go and learn from these webinars as
+[723.5-725.7] per UK area of interest, okay.
+[725.7-729.9] So, once you register on any particular webinar, you would be able to get the details over
+[729.9-732.9] your emails.
+[732.9-739.5] So, this is all about the news section.
+[739.5-743.8] Next we have is help section.
+[743.8-749.1] So, this icon will help you to navigate through any particular desired interest or topics
+[749.1-750.3] you wanted to navigate.
+[750.3-755.8] For example, someone who is very much interested into emails, right, and I wanted to learn
+[755.8-757.7] for authorizing email merge.
+[757.7-763.0] So, I can read this topic and I would be able to get an idea about this particular topics
+[763.0-764.8] and the links which has been mentioned.
+[765.2-771.6] So as per area of interest, you can read these topics which has been mentioned.
+[771.6-779.0] Someone who is more of, kind of just going to this feature which is called resume feature.
+[779.0-782.3] So candidate attributes or maybe candidate hard list, right.
+[782.3-786.7] So they can read this entire details mentioned for candidate attributes.
+[786.7-793.4] So as per your key area of interest, you can download the user guides too, okay.
+[793.4-796.0] So this is a very general chatbot.
+[796.0-800.6] So it's a general chatbot, any particular feature or the query you have within the job
+[800.6-804.5] Diva, you would be able to access and just take the help of the chatbot.
+[804.5-809.2] It will give you a best possible answer to resolve your query.
+[809.2-813.8] If it is not able to resolve online, you would be able to request to support job Diva team
+[813.8-817.6] so that the query should be resolved.
+[817.6-821.7] Next icon which we have is that is something that you use a right.
+[821.7-824.8] So from here you would be able to sign out to job Diva.
+[824.8-826.6] You can even check for your profile.
+[826.6-831.0] For example, some recruiters may complain that, okay, I am working in a different department,
+[831.0-835.8] right, and why my division has been a healthcare or maybe why other details are not mentioned
+[835.8-836.8] here.
+[836.8-841.9] So even they can check also that they can request to admin team to rectify it, okay.
+[841.9-845.2] And even if you would like to add few of the social media handles, right, or maybe on
+[845.2-850.1] the professional platform handle, so maybe any other details, you can add it here.
+[850.1-851.1] Okay.
+[851.1-857.6] So in general, major use of this icon is just to go and sign in and sign out.
+[857.6-858.8] Okay.
+[858.8-864.5] So through this mean, you would be able to lower it from the job Diva.
+[864.5-866.6] With this, we are done with the upper bar.
+[866.6-871.9] But most important guys, if you wanted to access the job Diva out of office hours without
+[871.9-877.3] office internet connection, you need to have a particular install VPN through our dedicated
+[877.3-878.3] IT team.
+[878.3-884.2] They would be able to guide you that how actually would be able to access the job Diva from
+[884.2-889.5] any particular opportunity you get to work in home, right, sometime maybe on the leaves,
+[889.5-894.7] right, or sometime any particular emergency time you wanted to get access to the job Diva.
+[894.7-899.4] For that, you need to correct the VPN and then you would be able to access the job Diva.
+[899.4-900.9] Okay.
+[900.9-905.4] So any question, the bar which we have completed, which is the upper bar.
+[909.3-911.6] All right.
+[911.6-916.1] So now we are going to move ahead with the left side, which is called as left bar.
+[916.1-919.3] So first icon, which we have is this is called as homepage.
+[919.3-925.3] So once we click on this homepage, it will navigate to you to desired and reflected homepage
+[925.3-929.0] available as per the user authorized.
+[929.0-936.2] Next we have these lines, which is the, these are called as applications and this entire
+[936.2-938.3] white space is called as bars.
+[938.3-939.3] Okay.
+[939.3-943.8] And now if you see first bar, which is named as sourcing bar.
+[943.8-949.0] So we have sub bars available from where you can utilize these application features directly
+[949.0-958.1] from this section, just by clicking on their particular application name.
+[958.1-963.0] This icon represents application means once I click on this, it will re navigate to you
+[963.0-969.6] to this interface and you would be able to see all applications visible in this section.
+[969.6-972.0] Next is called as user dashboard.
+[972.0-977.7] So user dashboard is very individual dashboard within job Diva.
+[977.7-983.1] Now we have different pre made user dashboards available.
+[983.1-987.7] So you are able to see at this point of time dashboard created by me.
+[987.7-991.6] So generally dash one means you can see your sales activity.
+[991.6-995.4] You can see your any particular current employees working right now.
+[995.4-997.3] You can see your contact notes, right?
+[997.3-1002.9] You can see your submitted due dates and the date on maybe the particular jobs, which has
+[1002.9-1003.9] been assigned.
+[1003.9-1005.9] You can see your candidate ownership details.
+[1005.9-1009.0] You can see your onboarding from my candidate start.
+[1009.0-1014.3] If it has been updated correctly, you can see for to do this week list.
+[1014.3-1018.5] You can customize and delete these any particular metrics as per your choice.
+[1018.5-1021.1] So for example, I don't want to see my sales activity for this week.
+[1021.1-1022.7] I can delete it from here.
+[1022.7-1026.8] But generally I have an option to customize my dashboard.
+[1026.8-1033.9] So as a recruiter, I can add any particular dashboard of my choice in job Diva.
+[1033.9-1039.2] So for example, if you see, we have an option to see my contact sales pipeline history of
+[1039.2-1040.7] my sales, right?
+[1040.7-1043.0] And my active opportunity funnel.
+[1043.0-1048.9] So I wanted to add this particular dashboard, which is called as my active opportunity funnel
+[1048.9-1054.1] and the explanation why actually we are adding it and what is the relevancy of this dashboard
+[1054.1-1057.2] can be read from here and then apply changes.
+[1057.2-1062.4] So once we make any changes, it will automatically reflect in the job Diva.
+[1062.4-1069.6] And with this, you would be able to see an entire dedicated your own dashboard.
+[1069.6-1074.8] So in a recruitment perspective, you would be able to see your onboarding candidates,
+[1074.8-1076.4] your current employers, right?
+[1076.4-1081.1] You have to do the list to your submittal due dates if the jobs which has been assigned
+[1081.1-1088.0] to you or maybe any particular operative team, it should be assigned real time and everything
+[1088.0-1091.2] should be added real time in the job Diva.
+[1091.2-1096.8] Then only you would be able to see your customized dashboard information reflecting the exact
+[1096.8-1097.8] details.
+[1097.8-1098.8] Okay?
+[1099.8-1104.6] So this is all about your dashboard and how you can utilize this feature, which is called
+[1104.6-1108.3] as user dashboard.
+[1108.3-1115.2] So any question this icon, which is called as user dashboard.
+[1115.2-1118.0] So next icon, which we have is history section.
+[1118.0-1123.3] So it is more relevant to the particular clicks made on particular sections assigned as per
+[1123.3-1127.9] the user authorization, for example, candidates, jobs and pages.
+[1127.9-1133.4] So whatever clicks I have made yesterday on particular resume in candidate section,
+[1133.4-1139.6] at what point of time, or maybe on what date you can access the particular details in the
+[1139.6-1141.1] history section.
+[1141.1-1145.4] If I open yesterday a particular jobs, right, at what point of time, or maybe earlier than
+[1145.4-1151.1] that, maybe any particular dates has been mentioned, we would be able to access the jobs from here
+[1151.1-1152.1] itself.
+[1152.1-1157.6] If I just click on these few pages right now, so actually what is the benefit of this section?
+[1157.6-1162.9] First of all, it will give you a click history of your particular assigned user sections.
+[1162.9-1170.3] Second, I can check for any particular candidate resume which I have clicked today or yesterday.
+[1170.3-1174.7] Maybe any particular jobs which I have just opened or maybe opened yesterday or earlier
+[1174.7-1177.2] than that or maybe any particular pages.
+[1177.2-1183.8] So this is more relevant to just check your click history on these particular assigned
+[1183.8-1186.2] candidate jobs and pages.
+[1186.2-1187.2] Okay?
+[1188.2-1190.3] Next is settings.
+[1190.3-1194.0] So guys, we highly recommend note to make any changes in the settings.
+[1194.0-1195.0] Okay?
+[1195.0-1197.4] If you wanted to make any changes, you can request your manager.
+[1197.4-1202.4] They can request is to job diva admin team or maybe they can or even directly you can
+[1202.4-1204.1] request to Mr. Dhananjay.
+[1204.1-1207.1] He is a super admin within the organization.
+[1207.1-1212.2] So they can make any particular changes as per your authorized position and the requirements
+[1212.2-1213.8] which you wanted to make.
+[1213.8-1215.0] So, okay?
+[1215.0-1219.8] So this is all about your right section.
+[1219.8-1228.5] So any question in particular right section which we have with this, we are done with
+[1228.5-1234.0] upper bar and right section or right bar for this job.
+[1234.0-1238.0] Now we are majorly going to focus on these particular bars.
+[1238.0-1244.4] So as I am a recruiter, I am going to majorly use these particular bars.
+[1244.4-1246.9] So first bar, this is called as again bars.
+[1246.9-1248.3] This is called as application.
+[1248.3-1252.9] I can see the name of this particular bar which is called as sourcing.
+[1252.9-1257.5] So first green bar is called as sourcing bar more relevant to the candidate management
+[1257.5-1261.7] and candidate allocations.
+[1261.7-1268.0] Second bar which is a blue bar which is called as jobs bar which is more relevant to the
+[1268.0-1271.3] job management and job allocation within the job diva.
+[1271.7-1274.8] Third is called as analytics which is a red bar.
+[1274.8-1279.1] This is majorly used for the report generation and report ratings.
+[1279.1-1283.9] However, access to this is very individual, depends on the manager and the user level
+[1283.9-1285.9] access.
+[1285.9-1289.0] Next is called as engagement, a yellow bar.
+[1289.0-1293.7] Engagement is more relevant to your particular, in regards to your calendars, right?
+[1293.7-1298.2] Or maybe interviews and live interviews which we are going to discuss in coming time.
+[1298.2-1303.1] So as a recruiter, my major focus would be to use the first bar which is called as sourcing
+[1303.1-1310.5] bar, second jobs bar, a bit part of engagement if I am working or going to work in IT, information
+[1310.5-1312.0] technology in future.
+[1312.0-1317.1] If these features align in healthcare, for example, the features like interviews, live
+[1317.1-1321.6] interviews, okay, or we can use the my calendar, right, which we are going to teach you in
+[1321.6-1322.9] coming time.
+[1322.9-1328.0] So in analytics, maybe only a one part of analytics or maybe one reporter, two rupees
+[1328.0-1332.8] of analytics would be utilizing as a recruiter.
+[1332.8-1340.6] So this is all about your four bars and the usability as per the recruitment process.
+[1340.6-1346.1] So any any questions still here guys, from anyone?
+[1346.1-1348.0] All right.
+[1348.0-1353.4] Now we are going to begin with the first bar, which I like to discuss is jobs.
+[1353.4-1354.4] Why?
+[1354.4-1358.9] Because within the process of recruitment, how recruitment lifecycle works.
+[1358.9-1363.4] So first of all, we are always being allocated with a particular job.
+[1363.4-1366.9] Second we try to source that job, or we need to create a job.
+[1366.9-1372.2] If it is not created by the codler, then we need to start cleaning that job.
+[1372.2-1375.4] And generally we start working on that position, right?
+[1375.4-1380.2] So first feature which we are going to discuss, which is called as my jobs.
+[1380.2-1386.6] Although job section or maybe a job or particular have applications like my job, my job as a
+[1386.6-1393.0] primary, search jobs, new jobs, my job dashboard and my primary job dashboard.
+[1393.0-1399.0] However, in first feature, if you see my job, my jobs mean all the allocated jobs which
+[1399.0-1405.6] has been assigned to me and which are open would be able to reflect here itself.
+[1405.6-1409.5] So we have a first icon which is called as job status.
+[1409.5-1414.2] So you can check any particular job status as per UK area of interest, including all
+[1414.2-1420.0] open jobs, my jobs, or maybe my jobs only my primary jobs.
+[1420.0-1421.4] So there are two words guys.
+[1421.4-1427.0] One is called as primary recruiter and other is called as recruiter or secondary recruiter.
+[1427.0-1432.4] So primary recruiter is someone who is primary assigned for a particular job, whereas secondary
+[1432.4-1437.0] recruiter is someone who is secondary assigned for a particular secondary job.
+[1437.0-1443.2] You may also see some kind of a particular words mentioned PR, primary sales, PS, primary
+[1443.2-1445.0] sales, okay, or sales.
+[1445.0-1449.3] They are more of your managers or maybe of account managers or maybe current relation
+[1449.3-1453.9] managers.
+[1453.9-1461.0] Another option which we have is that is something more related to the navigating to any particular
+[1461.0-1468.1] issue date, the duration, if you want to explore any particular job from the issue date to any
+[1468.1-1469.2] end date.
+[1469.2-1474.2] So as per your key area of interest, you would be able to check any particular jobs has been
+[1474.2-1482.2] assigned from this to this date as per your choice and would be able to check it.
+[1482.6-1485.8] So these all jobs should be open jobs only.
+[1485.8-1489.8] Okay, if I wanted to apply filter, you can apply for any particular job filters which
+[1489.8-1495.7] has been mentioned here like all closed job, all my primary jobs, my primary open jobs,
+[1495.7-1498.8] all open jobs, my jobs only and all jobs.
+[1498.8-1503.6] So this is all about the this section, which is called as job section.
+[1503.6-1506.6] However, we have an option which is called as refresh list.
+[1506.6-1511.2] So any particular current option, or maybe any particular new job or maybe which the
+[1511.2-1515.2] changes which has been, I have been assigned for a particular job, right?
+[1515.2-1519.2] Or maybe my manager assigned new job, I can just refresh to list and I would be able to
+[1519.2-1522.4] see the changes which reflects in this section.
+[1522.4-1527.4] However, if you see issued, so you would be able to see a issue date that when this position
+[1527.4-1532.5] has been issued title, what is the position title has been updated in the job diva company
+[1532.5-1533.5] or the client name.
+[1533.5-1538.4] Okay, what specifically clients of the company have been working with or maybe any particular
+[1538.4-1545.0] client mentioned state and federal RFQ means it's any particular state or federal client.
+[1545.0-1548.5] Then we can have the location or any particular hiring managers name.
+[1548.5-1552.8] We can actually check for the status as per my choice, which I mentioned that I wanted
+[1552.8-1556.9] to look for any particular open job status, which is reflecting here is open.
+[1556.9-1558.2] We have reference ID.
+[1558.2-1564.6] So guys, we have two important terms which is called as reference ID and job diva ID.
+[1564.6-1567.1] We also call it as optional reference ID.
+[1567.1-1570.1] So what is this ID particular?
+[1570.1-1575.2] The IT is called as actual client assigned job ID.
+[1575.2-1580.7] When we get any particular job from a client through VMS or any particular manual mode,
+[1580.7-1586.1] we get a dedicated unique number or unique ID allocated to that particular position,
+[1586.1-1590.6] which is called as reference ID or optional reference ID.
+[1590.6-1591.6] Job Divide.
+[1591.6-1596.0] Once the position has been created manually or through codeler in the job diva, it gives
+[1596.0-1598.5] a unique number to that position in job.
+[1598.5-1601.7] You just to manage the job in the job diva.
+[1601.7-1604.2] So that position is called as job Divide.
+[1604.2-1609.6] So as a recruiter, any of the ID you need to have a most particular job Divide just to
+[1609.6-1614.7] work on the job diva and client ID to share it to the candidates.
+[1614.7-1616.2] Okay.
+[1616.2-1620.6] So this is all about your optional reference ID and job Divide.
+[1620.6-1624.7] Next we have this feature, which is called as harvest harvest is the auto AI feature,
+[1624.7-1629.2] which is enabled scheduled or not scheduled, which I will teach you in coming time by reflecting
+[1629.2-1631.4] that particular icon, how it works.
+[1631.4-1636.1] It helps you to give a particular additional help in your sourcing by sharing the resume
+[1636.1-1640.4] from the database and job boards.
+[1640.4-1642.5] Next we have is maximum.
+[1642.5-1645.2] So here we have another option, which is called as priority.
+[1645.2-1649.4] Priority means something like you wanted to set this job or is this job assigned you on
+[1649.4-1650.4] the high priority?
+[1650.4-1652.6] Yes, it is a time specific job.
+[1652.6-1656.5] So within the short span of time, you need to fill that position and submit a candidate.
+[1656.5-1659.5] Means it is a very urgent to fill out this position.
+[1659.5-1661.2] Next we have is max bill rate.
+[1661.2-1662.5] So what is the max bill rate?
+[1662.5-1666.9] The bill rate we receive from the client that is called as max bill rate.
+[1666.9-1668.6] Okay.
+[1668.6-1670.1] Next what is the start date?
+[1670.1-1675.0] So for example, if the start has been mentioned here means you get an idea about a particular
+[1675.0-1679.0] position that this is the start date of this position, which I am working right now for
+[1679.0-1681.0] correctional RN.
+[1681.0-1682.1] Submitted due date.
+[1682.1-1687.0] If the due date has been updated in the job diva, which is must and you would be able to
+[1687.0-1692.9] see the last date, the candidate or the resume to be submitted for this position.
+[1692.9-1700.0] As we just discussed the user, which is called as user mentioned below who has been assigned.
+[1700.0-1702.1] What for example, who is the recruiter?
+[1702.1-1703.5] Primary recruiter is Mr. McRae.
+[1703.5-1706.3] So Mr. McRae is assigned as a primary recruiter.
+[1706.3-1707.3] Who is the sales?
+[1707.3-1709.4] Sales is racially nothing.
+[1709.4-1710.8] Who is the sales Steve Smith?
+[1710.8-1712.2] Who is the primary sales?
+[1712.2-1717.1] So these are the relevant terms you will come across in the job device user.
+[1717.1-1721.3] So as a primary recruiter, if someone has been assigned, so what is the priority to fill
+[1721.3-1723.3] that position within short span of time?
+[1723.3-1724.3] Right.
+[1724.3-1728.4] As a recruiter, I am also sporting that so I can also work on that position.
+[1728.4-1729.5] Who is the primary sales?
+[1729.5-1733.3] Your managers, your account managers to whom you wanted to submit that profile.
+[1733.3-1734.3] Okay.
+[1734.3-1736.7] So they are called as primary sale.
+[1736.7-1743.4] So with this, we are done with this entire first application, which is called as job
+[1743.4-1747.2] or my jobs.
+[1747.2-1757.7] So any question in this entire interface or in this section?
+[1757.7-1762.3] Should we move ahead guys?
+[1762.3-1765.3] Next is called as my jobs as a primary.
+[1765.3-1770.6] So guys, you will always be assigned the job in two kinds of categories.
+[1770.6-1776.0] First is called as primary jobs, maybe a primary recruiter or secondary recruiter.
+[1776.0-1782.6] So in this second, you would be able to see that as a user, if I've been chosen as a primary
+[1782.6-1791.3] recruiter, you would be able to see and navigate your all assigned primary jobs in this section.
+[1791.3-1796.4] So whatever the jobs assigned as a primary recruiter would be able to reflect here itself.
+[1796.4-1801.4] So interfaces similar, there are no changes, only just a status change and you would be
+[1801.4-1808.3] able to see all jobs which are primary open jobs as a primary recruiter.
+[1808.3-1816.3] So means this is my high priority jobs, which I need to fill on the priority versus with
+[1816.3-1820.9] this we are to done with the first application and second application.
+[1820.9-1823.4] Third is called as search job.
+[1823.4-1828.8] So team, if you wanted to search for any particular job, there are numerous ways to search a job.
+[1828.8-1834.0] So one of the icon which we discussed is a global search bar where we can generally use
+[1834.0-1838.7] any particular job ID or optional reference ID or maybe any particular title of the job
+[1838.7-1840.6] you wanted to look for.
+[1840.6-1845.4] Another option we can also search through this icon, which is called as search job.
+[1845.4-1850.2] So that you always need to have few gathered information to search for a particular job.
+[1850.2-1857.9] So first thing you can navigate through data shoot to and date of a particular search job.
+[1857.9-1860.5] Second you can select the status.
+[1860.5-1862.3] What sort of status you wanted to select?
+[1862.3-1866.7] Are you going to look for open jobs, whole job field or maybe select all.
+[1866.7-1871.2] Okay, it depends what exactly is your preference to search a job.
+[1871.2-1872.4] I want to look for open job.
+[1872.4-1878.3] I can select for any particular date or the date durations mentioned.
+[1878.3-1883.3] If the start dates are updated, you can select for a particular start dates and end date.
+[1883.3-1889.1] One of the best and easiest way to look for a particular job ID is to have the job reference
+[1889.1-1893.1] ID or maybe a optional reference ID.
+[1893.1-1897.2] As we just discussed, ID or manager will always give you a job Diva reference ID to
+[1897.2-1901.8] work on that position and assigning job Diva or optional reference ID.
+[1901.8-1904.1] So either of them need to be there.
+[1904.1-1908.0] So once you have the details for both the job IDs or maybe one of them, you would be
+[1908.0-1913.2] able to search in job Diva if it is created in job Diva.
+[1913.2-1918.9] So I highly recommend to use job Diva ID or optional reference ID if it has been added
+[1918.9-1924.8] and created in job Diva and then search through this mean you would be able to see and look
+[1924.8-1928.6] for a particular job in job Diva.
+[1928.6-1934.2] So for example, this is a particular example which I wanted to show you that this is the
+[1934.2-1939.0] particular assigned job which I was looking for and the title with other details has been
+[1939.0-1941.6] mentioned.
+[1941.6-1946.8] This is how we can simplify our job search in job Diva.
+[1946.8-1950.2] So I hope everybody is clear with the search job icon.
+[1950.2-1956.6] Now to search for a particular job.
+[1956.6-1959.8] Next icon is called as new job.
+[1959.8-1964.2] So first of all, we need to understand that what is this feature all about.
+[1964.2-1968.6] So this application will enable you to create a new job.
+[1968.6-1973.4] But before that, we have a term called as codler which we discussed.
+[1973.4-1976.4] So it is automatically creating a jobs for you.
+[1976.4-1980.6] So number one, number two, in case there is a technical reason that the codler is not
+[1980.6-1986.3] functioning in that case, we need to create a jobs manually.
+[1986.3-1991.7] Second scenario can be maybe we got any particular email from the client right that this is the
+[1991.7-1996.9] position we have through emails and we need to add in the job Diva.
+[1996.9-2001.6] Before working on that position manually, you need to create a particular job ID in the
+[2001.6-2002.6] job Diva.
+[2002.9-2009.7] So for particular creation of job ID in the job Diva, we need to have set of details.
+[2009.7-2012.7] So what are those set of details?
+[2012.7-2016.7] So there are the two terms which we are going to discuss, which is the part of quality assurance
+[2016.7-2017.7] process.
+[2017.7-2022.5] One is called as job Diva cleaning and the rest called as job description cleaning.
+[2022.5-2023.8] So job Diva cleaning.
+[2023.8-2029.0] So whatever the details which we are going to enter in these sections, this is called
+[2029.0-2030.6] as job Diva cleaning.
+[2030.6-2034.8] So first of all guys to create a job, we need to have the particular title of the position.
+[2034.8-2040.2] For example, I'm going to create a job for title which is called as registers.
+[2040.2-2044.0] I have an option to choose for professional specialty.
+[2044.0-2050.6] So if I'm going to create job for RN, I can choose any particular specialty which I wanted
+[2050.6-2052.6] to add.
+[2052.6-2055.5] So your specialty will be added here.
+[2055.5-2060.4] Is it a position that is the contract right to hire full time or per day on position or
+[2060.4-2061.7] direct placement?
+[2061.7-2067.4] As per your allocator position, you can select the particular icon and option.
+[2067.4-2073.1] Next is called as optional reference ID, which we just discussed that it is a client assigned
+[2073.1-2076.7] job ID to particular job.
+[2076.7-2080.7] Priority is it on high priority or low priority?
+[2080.7-2082.6] You will or very high priority.
+[2082.6-2088.0] So you can always select these priority as per the allocation of the job requirement.
+[2088.0-2093.1] Next we can select two particular contact.
+[2093.1-2098.4] So contact means this is something who is a hiring manager for this position or client
+[2098.4-2101.0] representative from the client side.
+[2101.0-2106.6] If it is created in the job Diva, you would be able to see the details here itself.
+[2106.6-2108.7] Next we can select the divisions.
+[2108.7-2112.2] So for example, someone who is working in information technology, the interface will
+[2112.2-2113.2] change.
+[2113.2-2116.2] They can select the particular there assigned divisions.
+[2116.2-2126.0] Someone working in healthcare, they would be able to select this particular divisions
+[2126.0-2128.4] in job Diva.
+[2128.4-2132.6] Someone who has been assigned for any particular division can select these particular divisions
+[2132.6-2138.3] and can choose the particular division and add it in the job Diva.
+[2138.3-2140.0] Next is company of the client.
+[2140.0-2141.8] So what is the client name?
+[2142.0-2147.4] Which client this position has been created or maybe it is going to be created.
+[2147.4-2149.9] So let's say this position belongs to a healthcare client.
+[2149.9-2154.6] So I can add that and search or look for any particular client, the job which I wanted
+[2154.6-2156.5] to create.
+[2156.5-2157.7] Next facility.
+[2157.7-2160.0] So we have an additional option with this client.
+[2160.0-2162.4] We have an additional option for the facilities.
+[2162.4-2168.5] If this is the position we wanted to create for the facility that has been mentioned about
+[2168.6-2173.9] Northwest Hospital, we can add the specialty to address line.
+[2173.9-2177.8] So guys, you need to always have the complete address of a particular position.
+[2177.8-2187.0] The address includes a facility details plus the city street zip code and area code.
+[2187.0-2188.8] So that makes a complete address.
+[2188.8-2193.3] In this case, if you see, this is called as completed address where they have mentioned
+[2193.3-2200.9] under Washington Street, then two particular details which has been mentioned and city,
+[2200.9-2204.3] then state, then zip code, else area code.
+[2204.3-2209.9] So as for the details, we need to add here itself in the dedicated sessions and then
+[2209.9-2212.7] save it.
+[2212.7-2217.5] Next if your schedule has been mentioned.
+[2217.5-2224.0] So for example, the duration has been given to you, you can mark the start date to end
+[2224.0-2225.6] date.
+[2225.6-2228.6] It will help you to choose the duration.
+[2228.6-2233.0] So this is called as job scheduling.
+[2233.0-2234.1] So what are the shift timing?
+[2234.1-2236.4] Is it a day shift?
+[2236.4-2241.6] And what are the job start time or maybe end time or maybe any particular days you wanted
+[2241.6-2246.0] to select which has been assigned by the client, number of working days and additional notes.
+[2246.0-2252.5] So once you add these details, it will be added in this section.
+[2252.5-2258.0] So it will help you to enter these details and calculate the duration for weeks, days,
+[2258.0-2260.3] years and months.
+[2260.3-2261.3] Billing details.
+[2261.3-2266.8] So team, whatever the bill rate you have received from the client, you can always add this bill
+[2266.8-2268.8] rate here itself.
+[2269.8-2276.3] Still as per my knowledge, we are not utilizing these entire information to calculate the
+[2276.3-2283.4] total weekly compensation of the packages, but I highly recommend to use billing rates.
+[2283.4-2287.2] Next we can choose submittal due date.
+[2287.2-2291.2] So what is the end date to submit a particular candidate on this position?
+[2291.2-2292.2] Opening.
+[2292.2-2294.8] How many openings are there for the particular position?
+[2294.8-2296.2] Maximum submissions allowed.
+[2296.2-2301.4] How many submissions we can submit or resume we can submit on one openings or two openings
+[2301.4-2302.7] or three openings?
+[2302.7-2306.5] What is the experience level required for a particular position?
+[2306.5-2309.7] This position is on-site, hybrid or remote.
+[2309.7-2312.5] So you need to select the status.
+[2312.5-2315.3] The next part which is called as job description.
+[2315.3-2322.4] So job description is always given in unformatted form.
+[2322.6-2327.1] Majorly we need to create and make a complete, cleaned job description.
+[2327.1-2330.4] That's why it is called as job description cleaning.
+[2330.4-2334.4] So in that case, how to format the job description?
+[2334.4-2344.9] So for example, now another term which we are going to discuss which is called as JD
+[2344.9-2358.1] Cleaning or job description cleaning.
+[2358.1-2361.1] Why it is important to discuss the job description or JD Cleaning?
+[2361.1-2365.8] The reason being the company has integrated the job devour with company's website number
+[2365.8-2372.4] one with a dedicated company's sourcing portals for healthcare, maybe for IT and for known
+[2372.4-2373.4] IT.
+[2373.4-2380.2] So we have portals like Vivian, we have portals like Monster, Dice, Currywilder, Resumelary
+[2380.2-2384.4] and many more which has been integrated in the job devour.
+[2384.4-2390.8] Additionally, we also sometime post any particular jobs to the company's website.
+[2390.8-2397.6] So how it is done and from where this information is being touched, that is the reason we need
+[2397.6-2399.5] to always clean the job.
+[2399.5-2404.4] So that no particular details should outline in unformatted form.
+[2404.4-2406.7] So there are some do and don'ts we need to consider.
+[2406.7-2416.1] So first thing guys, we need to always have the position, title, position or title or
+[2416.1-2419.0] maybe a role.
+[2419.0-2429.3] Second, we need to always have the particular location where this position is wasted.
+[2430.2-2436.6] Now we need to add the full address of the particular position.
+[2436.6-2442.2] Then we have duration.
+[2442.2-2443.2] What is the duration?
+[2443.2-2445.8] You need to calculate the duration.
+[2445.8-2448.4] It can be few months or maybe few years, right?
+[2448.4-2453.2] A few weeks as per the details, you need to add it.
+[2453.2-2455.7] What can be the shift timings?
+[2455.7-2458.6] It varies from department to department.
+[2458.6-2462.3] For example, in IT, we may have very specific shift timings, right?
+[2462.3-2465.8] That starts from 8 to 5 or 9 to 6, right?
+[2465.8-2470.8] In healthcare, it can be any particular shift timings can be given by the client.
+[2470.8-2481.5] So you need to write down the shift timings and is it a shift type?
+[2481.5-2489.8] So shift timings, is it a day shift, night shift or a rotational shift in case of healthcare?
+[2489.8-2496.6] So we need to add this information and the details and then create the job description.
+[2496.6-2503.3] If you wanted to create additional particular details, you can add the visa requirements
+[2503.3-2511.1] like in this visa requirements, maybe GC or USC.
+[2511.2-2516.6] But in general guys, on our technologies, maximum business is based on WTO, right?
+[2516.6-2519.6] So this is one of the tax terms which we have already discussed.
+[2519.6-2523.4] So immediately we recruit and we only consider candidates who are independent contractor
+[2523.4-2527.6] being a US citizen or green card holders, okay?
+[2527.6-2530.2] So these are the details which you always need to consider.
+[2530.2-2535.8] If any additional detail is there, you can always add in the note section like this.
+[2535.8-2539.3] Any particular additional details can be added here itself.
+[2539.7-2544.7] Next, now you need to write down the job description.
+[2547.4-2552.2] So this is very general and the standard job description which we are going to discuss.
+[2552.2-2556.6] So you can remove the spacings from this feature which is called as paragraph,
+[2556.6-2563.0] keeping it to zero and do not highlight these entire icons.
+[2563.0-2565.4] You can keep it simple and short.
+[2566.2-2575.0] You can outline or maybe underline if you wanted these particular titles which has been mentioned,
+[2575.0-2577.2] just to give you the highlighting effect.
+[2582.4-2584.7] Now there are three things we need to consider.
+[2584.7-2587.2] Job description is always divided into three parts.
+[2587.2-2590.6] First part is called as intro to job.
+[2590.6-2592.6] What is this job all about?
+[2592.8-2599.0] And it is not mandatory that every time we would be able to get and see introduction
+[2599.8-2601.2] to job from the client side.
+[2601.2-2604.6] Sometimes only skills has been mentioned but just for your knowledge,
+[2604.6-2608.0] I'm just letting you know how job has been given to us.
+[2608.0-2614.1] So for example, I'm just going to take a sample format.
+[2623.5-2629.4] So introduction to job means something which is very specific to position.
+[2629.4-2631.2] That what is this job all about?
+[2631.2-2631.6] Right?
+[2632.5-2635.4] It will give you an insight about the positional requirement.
+[2636.4-2637.6] So it is mentioned like this.
+[2637.6-2640.2] Okay, so we are seeking a particular RN,
+[2640.2-2643.8] force so and so, high quality patient care clinical hospital settings
+[2643.8-2646.5] and what exactly she is going to perform in general.
+[2646.5-2650.2] The RN will assess patient administrator medications and treatment,
+[2650.2-2654.5] collaborate with the physicians, healthcare teams and educate patients,
+[2654.5-2657.2] families ensure compliance with the healthcare standards.
+[2657.2-2661.9] So this a bit introduction of the job is called as job introduction.
+[2663.0-2668.1] After that, sometime it is mentioned skills are required.
+[2670.0-2672.8] Or maybe sometime it is mentioned requirements.
+[2673.1-2676.7] Means what are must to have?
+[2678.0-2681.4] What exactly is required for this particular job?
+[2689.1-2692.5] So for example, in this case, the JD which we have created,
+[2693.0-2695.4] they are mentioned qualifications, right?
+[2695.4-2700.4] So key responsibilities can also be added and mentioned in the job description.
+[2702.9-2705.9] So now you would be able to see, okay, so this is something
+[2708.0-2712.5] particular client is looking for a particular candidate who can access,
+[2713.0-2716.5] monitor, document patient status, administration or administration,
+[2716.5-2722.5] medications, treatment or intravenous therapies as prescription or prescribed and develop,
+[2722.5-2727.4] implement, individualize nursing care plan and so on.
+[2727.5-2733.3] Okay, so this is generally left acted to the qualifications to that this is something or
+[2733.3-2738.3] the requirement. So team, sometime you get a very limited information,
+[2738.3-2741.8] sometime only maybe requirements are mentioned, okay.
+[2741.8-2745.1] Sometime note a detailed responsibilities are also mentioned.
+[2745.1-2749.8] In that case, we can always connect with your account managers or maybe your managers to give
+[2749.8-2752.6] us the detailed information to work on this position.
+[2753.3-2757.9] Additionally, once you have the qualifications to, okay, or the requirements or must to have,
+[2757.9-2764.2] after that additional that you will see sometime it is mentioned,
+[2764.9-2770.4] preferred skills or requirements.
+[2772.5-2778.2] So for example, client wants someone additionally with additional experiences.
+[2779.0-2785.5] So in this case, desired skills and requirements will also be mentioned.
+[2788.2-2792.6] So for example, I want someone who has ICU and
+[2797.3-2803.4] emergency room experience, okay. I want someone who holds ACLS2, okay.
+[2803.4-2807.0] I want someone who has multi-state or compact license.
+[2808.8-2820.0] So this is how generally your entire job description has been divided.
+[2820.0-2825.4] So some guys details we need to consider before formatting any particular job description.
+[2825.4-2829.8] First of all, there should not be any particular client's sensitive information need to be
+[2829.8-2834.5] mentioned here. No contract details of the client and the vendor, the staffing company
+[2834.5-2841.8] should be here, okay. Third thing, it is your will that you can add the client name or not,
+[2841.8-2849.4] but we highly recommend note to post it because we can share it manually over the email to the
+[2849.4-2854.7] candidate. And from here, the posting happens to company's website or maybe to the integrated
+[2854.7-2860.2] portals we have, right. So there, a certain information will reflect accordingly, which
+[2860.2-2865.8] has been formatted. Number one. So we highly recommend if you are going to share any particular
+[2865.8-2871.6] email manually to candidate, you can add the client details, okay. So this is how your job
+[2871.6-2876.0] description formatting happens, but generally we need to align it. This is not aligned. So how
+[2876.0-2879.5] your aligned job description looks like. I'm just going to give you a hint about it.
+[2881.9-2888.3] And in coming time, we will also be moving ahead with the job description formatting session,
+[2888.3-2893.2] where you will be able to format various type of jobs as per the requirement of the departments.
+[2893.2-2900.6] In IT, we have a different set of particular requirement of job formatting. In healthcare,
+[2900.6-2906.6] it's, it is very portal and the client specific. I may have very detail oriented details that you
+[2906.6-2914.2] need to gather and then clean the information. But this is very standard job description formatting.
+[2919.1-2939.9] So you can select the paragraphs just to remove the spacings.
+[2939.9-2954.2] If you want, you can underline it. If you wanted to highlight, you can or unlike highlight it, okay.
+[2959.7-2968.3] So in general, this is how your job description has been cleaned, okay. And once this job description
+[2968.3-2973.8] has been cleaned, you need to add this job description in this section, which is called as
+[2973.8-2984.2] job description by just copy pasting here. So this is how your job description will be added and
+[2984.2-2989.2] cleaned. So that's why it is called as job description cleaning.
+[2989.9-2998.3] Next is called as requirements. So guys, every, every client have a particular
+[2998.3-3005.4] requirements inside of compliances, right? Or maybe in healthcare, things pick between very
+[3005.4-3010.0] different way. For example, we make a submittal packet, right? And during that submittal packet,
+[3010.0-3014.6] some of the external submission requirements are there. What are the compliances of the client
+[3014.6-3021.2] requirements during the start or maybe during the external submission, it is required. So we can
+[3021.2-3026.6] always check in this section. If you wanted to add any particular requirement, you can also add it
+[3026.6-3033.0] here itself. So for example, this is a preset template, which has been added by the job department
+[3033.0-3038.3] team or maybe our company's team. So in general, here it has been mentioned, okay. So for example,
+[3038.4-3045.4] ISE is I require any particular references in external submissions or direct test and by
+[3045.4-3049.4] going check once candidate has been hired and shortlisted, maybe any particular security
+[3049.4-3054.0] clearance would be required during the external submissions. In that case, once I save it,
+[3054.0-3058.2] you would be able to see the requirements of a particular position as per the client specific
+[3058.2-3063.4] details, okay? So that need to be updated. However, if additional requirements are there,
+[3063.4-3070.1] you can view this entire interface and go to add more requirements or maybe any qualification.
+[3070.1-3075.8] For example, you wanted to add any particular vaccination status, maybe wallet status, maybe
+[3075.8-3082.3] any particular shift preferences, you can add these qualifications here itself, okay? This is
+[3082.3-3089.8] the day shift I would like to add. So it will be added in this section, okay? So through this mean,
+[3089.8-3095.3] you would be able to let other people know that, okay, these are the requirements for a
+[3095.3-3100.8] particular position, the person who is going to create this position. Next is called as user.
+[3100.8-3107.6] So user authority has only been provided to the managers, they can only assign the particular
+[3107.6-3113.8] position to particular user. So in user, if you see, we already discussed as a sales primary
+[3113.8-3119.3] sales recruiter and primary recruiter and secondary recruiter and secondary sales. So as we discussed,
+[3119.3-3125.4] primary sales are the managers or either account managers, primary recruiters, you or maybe one
+[3125.4-3131.2] of the person who has been assigned as a recruiter or secondary recruiter to work on this position.
+[3131.2-3136.1] So as per the user, you can see and select and check for your particular status that what has
+[3136.1-3141.5] been assigned, what and start working on this position. Once it has been assigned, you would be
+[3141.5-3147.1] able to get a dedicated email to of your assigned that, okay, this position has been assigned on the
+[3147.9-3155.0] job diva to you. Next is called as remarks. So any particular information which is just for
+[3155.0-3159.7] your knowledge client may have provided to you or maybe you wanted to add any particular remarks,
+[3159.7-3165.8] you can always add remarks in this section. Once you add the details guys, now we need to navigate
+[3165.8-3174.4] to this icon which is called as save icon. Once I click on save button, this entire details which
+[3174.4-3182.9] has been added will be given a unique number which is called as job diva ID. So now the job has been
+[3182.9-3187.7] created. So just let me give you an example of any particular existing job
+[3189.4-3195.7] which has been created automatically or through quarterly. So this is generally called as a proper
+[3196.3-3201.4] job has been created in the job diva. So you would be able to see your interface like this.
+[3202.4-3210.0] Although this is uncleaned and unformatted job, we need to make first of all the changes which
+[3210.0-3218.2] is called as job diva cleaning. We need to entirely clean this interface and then we need to clean this
+[3218.2-3223.9] job description. And if any of the remarks you need to add, you can add it and save it.
+[3224.9-3229.4] And you will be getting a particular ID which is called as job diva ID.
+[3230.6-3236.1] So I hope we are clear how to create a particular job and once we click on this icon,
+[3236.1-3243.9] we would be able to see this interface and we will be getting the exclusive new job diva ID for this
+[3244.0-3250.6] position. So I hope we are clear how to create a particular job in job diva.
+[3252.0-3257.2] One question, sir. Usually we don't post jobs, right?
+[3258.4-3265.8] You do post jobs. Usually I am asking like regularly if I'm asking we don't post jobs, right?
+[3267.0-3272.4] It depends on your manager and your department how they want it to do it. But on an average,
+[3272.4-3275.1] yes, you guys don't post every job.
+[3280.4-3285.1] But if it is required as per your manager's instruction or as per your willingness,
+[3285.1-3289.8] you have right to do so. As per your allocated job portals, you can post it.
+[3290.4-3296.4] Okay. So I hope we are clear how to create a new job.
+[3296.4-3303.0] And we are clear with the two terms which is called as job diva cleaning and job description
+[3303.0-3313.5] cleaning and what I do and don'ts. Thank you. So with this, we are done with three icons which
+[3313.5-3320.4] is called as my jobs, my jobs as a primary and search jobs and fourth icon we just discussed
+[3320.4-3326.1] which is called as new job. So any question in these four icons, what we have discussed?
+[3327.3-3338.2] So next icon is called as my job dashboard. So guys, whenever we are assigned any particular job,
+[3338.2-3344.6] either it is a primary job or a primary recruiter, either it is a normal open jobs,
+[3344.6-3351.0] right? As a secondary recruiter. So you would be able to see your dashboard. So dashboard
+[3351.0-3357.8] mean which gives you depth insight about the positions details. For example,
+[3358.6-3366.0] like issue date, job number, job divisions, job title, city, state, company, hiring measure,
+[3366.0-3371.4] primary sales, who is the role primary role in this position as a primary recruiter,
+[3371.4-3377.8] what is the build rate, what is the salary, if it has been updated, job status, which is open,
+[3377.8-3383.8] what is the priority status, if it has been updated, what is the position type and
+[3383.8-3389.2] submitter due date with the opening which is one. We can see how many submissions has been
+[3389.2-3395.6] maximum made, what is the internal submissions made to this position which I am just checking right
+[3395.6-3403.0] now and what is the exactly, external rejections if it has been updated by your managers,
+[3403.1-3410.0] interview updates or hires or submitters, okay? So you can also review your dashboard and look
+[3410.0-3416.2] for any particular dashboard details in my job dashboard in relevant to your open jobs with
+[3416.2-3421.5] no submitters. So means this position has been assigned to you and still no submitter has been
+[3421.5-3428.3] made by you. Open submitters on pending interviews. So for example, if we have completed an interview,
+[3428.3-3435.9] right, but yet the status has not been updated in the node section to interview completed or
+[3435.9-3443.3] interview. So later stage I will teach you that node section will how it will impact your
+[3443.3-3449.2] job dashboard too, okay? So those type of interview status need to be updated in the node section.
+[3449.2-3455.6] So you would be able to see how many still interviews are pending in job diva which has
+[3455.6-3463.1] been updated but not yet marked completed, covered open jobs for seminal positions, okay, and filled
+[3463.1-3469.3] out the jobs. So it will give you an overview of this position which has been allocated that 14
+[3469.3-3475.8] openings for their internal submissions overview where 29 internal submissions happened for rejected
+[3476.6-3484.6] external submissions done by the managers and two external rejections happened. However,
+[3484.6-3492.3] 22 interview happened and 16 hires. So it is a cumulative overall dashboard for any particular
+[3492.3-3496.8] positions activity happening on this dashboard, okay?
+[3499.4-3503.8] So I hope it is clear what is this all about the job dashboard?
+[3504.0-3508.9] Any question from your side in this dashboard?
+[3512.6-3520.3] Okay. Thank you. So guys, dashboard is always similar here just you would be able to see the
+[3520.3-3525.4] dashboard as a primary job dashboard where you've been assigned as a primary recruiter.
+[3526.2-3535.1] That's it, okay? So this is all about your one question. This will be updated, right?
+[3537.2-3544.3] This will be updated when you are directly updating the backend. If the interview rejections,
+[3544.3-3550.3] acceptance, internal submissions, rejections, if the managers and recruiters do everything
+[3551.1-3565.4] process, we will teach you about nodes, we will teach you about internal submission, external
+[3565.4-3571.8] submissions, right? Operating the ownership status, everything so that choosing the specialties,
+[3571.8-3579.0] everything so that you'd be able to see the entire details in job diva which reflects on your
+[3579.0-3585.0] dashboards. That's what will happen. A limited information will be there or incomplete information
+[3585.0-3591.5] will be there, okay? So you might see one thing on another dashboard or another recruiters dashboard,
+[3591.5-3596.5] it is not visible on your dashboard because something has been missing in the backend which
+[3596.5-3600.2] the action need to be performed still it is not performed in the process, okay?
+[3602.2-3603.0] Clear comment?
+[3603.0-3608.4] All right. Any other question guys from your side?
+[3613.8-3621.9] Anjali from your side? So with this we are done with jobs barn and various job applications.
+[3623.9-3628.7] Now we are going to start with the next icon which is called as analytics.
+[3629.1-3635.8] An analytics something more related to the reports. So I think so we are only using two
+[3635.8-3641.8] type of reports here. One is called as submittal matrix reports, okay?
+[3644.3-3651.7] Just to check a submittals of a particular users, okay? Next, in face matrix,
+[3651.7-3657.4] submittal reports, I can check for particular submittals of particular users, departments,
+[3657.4-3662.9] and details. For example, I can check for any but I'm not sure that you have been authorized to see
+[3662.9-3670.4] or not, okay? But this is how we can utilize this report section. So in general, if you wanted to
+[3670.4-3677.0] look for any particular group, how many recruiters the user has been assigned,
+[3677.3-3682.1] what submissions they have made or maybe number of jobs, meter, interviews, and hires, okay? I would
+[3682.1-3688.1] be able to see all details from here and in HTML table format.
+[3692.1-3699.1] So I can access the entire information of if it is, if you have the access to this report,
+[3699.1-3704.5] you would be able to see, okay, how many jobs assigned to this particular user, how many as a
+[3705.0-3710.1] primary, internal submissions, or external submissions, pending external submissions, okay?
+[3710.1-3716.9] Or maybe interviews, offers, and hires. So I can check from this duration to this duration,
+[3716.9-3723.3] no highest external rejections or interview has been updated here itself. But external
+[3723.3-3727.9] submissions has been made for team. So this is majorly for a particular
+[3728.0-3734.3] a particular manager's point of view that they can check for interview, submittals, and hires.
+[3736.0-3745.0] Whereas in this section, which we have, M-Burned Report, we generally utilize a user-specific report.
+[3745.6-3759.2] So as for my information, you would be able to use these particular reports, okay? Even you can
+[3759.2-3764.2] check for any particular job activity or summary details, right, on what clients, particular,
+[3764.2-3768.6] or maybe a different kind of set of clients or the groups or the divisions, how many jobs to
+[3768.6-3774.1] what were clients were open, closed, right, I can apply the filters. So this is in general about
+[3774.2-3779.8] report readings and particular reports utilized by your managers.
+[3781.8-3786.7] Next we have is engagements. This is the feature we generally don't use it, okay? It is very
+[3786.7-3797.0] confidential to your managers only. Be shared with me. Next is called as engagement. So in
+[3797.0-3805.1] engagement sections, we will be utilizing my calendar. In future, we can utilize company's
+[3805.1-3810.8] calendar or jobs calendar. As per my information yet, we have been only utilizing these features
+[3810.8-3817.0] like interviews and live knowledge or live interviews in information technology department.
+[3817.6-3824.6] So let's navigate to my calendar. So my calendars here you can particularly see you. So first of
+[3824.6-3833.1] all guys, this calendar is generally synchronized or attached with the outlook, okay? Yet it is not
+[3833.1-3838.3] functioning right now due to technical reason, but yes, this has been synchronized by the outlook.
+[3838.9-3845.6] So you can create any particular events in job diva. So you can choose for any particular
+[3845.6-3850.3] subject line. You can choose any particular candidate. This event details can be shared to
+[3850.3-3856.3] candidate. You can check for any particular event time, okay? And mark the duration and time.
+[3856.3-3861.5] If you want to keep it private or maybe participation optional, you can create a
+[3861.5-3867.0] reacquaintance of this particular events, which you are going to create any particular location
+[3867.0-3873.4] you can mentioned. And you can check the recurrence type point, which is like appointment,
+[3873.4-3879.6] reminder, maybe demo or many any presentations, right? And can assign any particular users.
+[3879.6-3887.0] So once you do it with a description and save, it will automatically be created here itself.
+[3887.0-3894.4] Like this event has been created, attend the meeting on at the NJS on August 4th from so and so.
+[3894.4-3899.8] So I have received a particular email from job diva that this event as a attendee,
+[3899.8-3903.9] you have been invited for this event created by the NJS. Okay.
+[3904.9-3910.6] Second, you can utilize this task feature as a manager or maybe as a recruiter. If you
+[3910.6-3916.4] want you to assign any particular task, you can assign this task to any particular colleague
+[3916.4-3920.6] or the recruiter or the manager in case if you authorize to do so. Yes.
+[3921.4-3926.0] So actually I am getting a call from a candidate. Can I join in next five minutes?
+[3926.6-3929.3] Yes, please. Good. Thank you.
+[3929.8-3939.4] So this is something I can write down the subject, any particular desired subject you wanted to
+[3939.4-3945.0] write down with the due date of this task assignment and whom to assign any particular user
+[3945.6-3951.5] with task type. Is it like maybe a follow up, maybe an email follow up second or third,
+[3951.5-3957.8] maybe a contractor, reminder, okay. And task type. So what is the task type you once you select it,
+[3957.8-3964.0] what is the completion percentage of this task, you can select it. If you wanted to assign the task
+[3965.9-3972.9] to particular candidate, you can okay from here and add the description. Once you add it and save
+[3972.9-3982.0] it, this task email will be shared to particular user itself, okay. If you want you can create a
+[3982.0-3987.4] task for the candidate from here itself too, okay. The names which we have added, it will be
+[3987.4-3993.9] reflected there itself. So as a user, I will be getting the task email that Anjali has created
+[3993.9-4002.0] this task for me, okay, that's it. So this is all about your utilization of this calendar, okay.
+[4002.0-4009.6] This is your my calendar feature. Next feature which we have is live interviews. So for example,
+[4009.6-4014.0] you wanted to arrange although we have a different mode of live interviews, right,
+[4014.0-4018.9] through teams to zoom, but if you wanted to conduct it through job diva, how we can look for a
+[4018.9-4025.3] particular candidate and can conduct a live interview. So these features can be utilized.
+[4025.3-4029.1] So you can search for any particular candidate name or last name, okay.
+[4031.3-4036.5] Here you would be able to see any particular recorded videos available and mentioned here
+[4036.6-4043.0] of the any particular candidate you wanted to look for. So for example, if Steve Smith has been
+[4043.0-4048.5] interviewed live earlier on job diva with any particular recruiter and the video has been
+[4048.5-4054.8] saved, it will be reflected in this section. We can also search by the name of the particular
+[4054.8-4062.4] candidate from the duration recorded and search. Next, how we need to conduct a live interview.
+[4062.4-4070.6] So first of all, I need to select the particular candidate name like Steve Smith. If I have the
+[4070.6-4076.1] email ID of the contact details, I can add it and look up the candidate. Once I have the candidate
+[4076.1-4082.6] in front of me, I can add this candidate with the subject line. At this point of time right now,
+[4082.6-4086.6] I will share this link candidate would be able to receive an email and we can get connected over
+[4087.2-4095.8] call through this job diva assigned interview link. Else we can customize the time and the duration.
+[4095.8-4103.9] For example, I can I want you to connect with me at 1.45 pm on this particular date, okay.
+[4103.9-4112.3] And I can share the email through job diva. Once I share it and save it, it will automatically
+[4112.3-4120.1] be sharing an email to the candidate that yes, so and so live interview request has been made by
+[4120.1-4126.3] the job diva, okay. So this is all about your conduct live interview feature.
+[4129.2-4134.7] Next feature which we have is this is called as e-interviews. So what are e-interviews? So first
+[4134.7-4140.3] of all, interview something a set of pre-questions are being made, feeling sleepy,
+[4142.3-4147.0] guys job diva takes almost like 4 to 5 hours to complete. I am trying to complete it in short
+[4147.0-4152.2] span of time by explaining each and every feature in depth. But once you go through this training,
+[4152.2-4157.3] your all the doubts will be cleared in the process how job diva has been used and is
+[4157.3-4165.8] being used in the on-vote technologies. Yes, so yes, we can take a bit break whenever it is required,
+[4165.8-4166.4] okay.
+[4172.6-4179.8] So we were discussing about e-interviews. So what are e-interviews? First of all,
+[4179.8-4186.0] e-interview something which generally we prepare a set of questions and share to the candidate,
+[4186.0-4191.6] so that he can fill those questions and submit it. So in this case, first of all,
+[4191.6-4197.4] any particular questions has been shared to any particular candidate would be visible under this
+[4197.5-4203.0] sections, okay. Now how to first for create a e-interview
+[4204.2-4208.3] or the questions we need to send to a candidate. Some of the questions which I already have
+[4208.3-4213.4] created, right. But although how I can create it, I can go to add new interview section.
+[4213.4-4217.0] I can name this particular e-interview like
+[4217.8-4230.9] maybe LPN questions. What is the expiration date of these e-interviews would like to create? Maybe I
+[4230.9-4237.4] want to create it for three days, okay. Particular description you can add it and I will create it
+[4237.4-4244.3] manually. So manually you can add the questions here itself. This is how the interface looks like.
+[4244.3-4248.2] So first of all guys, you need to select for a time limit for a particular question.
+[4249.0-4254.5] For example, I give only three minutes and four seconds to fill this question.
+[4255.5-4265.7] Now how much of experience you have in hospital?
+[4266.2-4276.2] Just a very generic question I am just trying to create, okay. So now we have an option to select
+[4276.2-4280.2] how do you want the candidate to answer those questions. You want the candidate to record the
+[4280.2-4288.1] video or else you wanted to give an access that the candidate should write down the question
+[4288.1-4293.4] or maybe you wanted to make it multiple choice questions, okay. Or maybe select multiple options
+[4293.4-4300.0] or record an audio answer. As per your preference, you can select it. Once you prepare the question
+[4300.0-4307.2] and add the details and it expires in three minutes and four seconds, you can save and
+[4307.2-4312.9] add more. Means this question has been saved. Now you can add the second question. Through this
+[4312.9-4318.4] mean you can make the questionnaire set for the candidate in terms of e-interviews, okay. So that
+[4318.6-4324.4] before the complete interview or the live interview, you can actually have an idea about those answer
+[4324.4-4330.4] which you wanted to take from the candidate, okay, through e-interviews. If I wanted to save,
+[4330.9-4339.1] I can save and quit it from here itself. It will automatically be saving this and taking me back
+[4339.1-4345.1] to the dedicated section once I complete the entire questions. So this is how your entire
+[4345.8-4351.2] saved question looks like. So now under this section which is called as MS Power, I've
+[4351.2-4357.7] created five questions, so six questions, right, and maybe the videos has been recorded.
+[4359.4-4365.0] Okay, so is it like you allow any person to record the video for these answering these
+[4365.0-4370.4] questions live, okay. We generally perform this activity in IT because there are a lot of candidates
+[4370.5-4376.7] who do a forgery experience while making any other particular candidate for the answering
+[4376.7-4380.6] these questions, right, or maybe the experience is very different, the candidate is very different,
+[4380.6-4385.5] right. So just to check and authenticate and validate that candidate that yes, this is the only
+[4385.5-4390.7] candidate who is answering the questions and who is going to the interviews or he has or she has
+[4390.7-4397.2] the knowledge live answering these questions, we set the these e-interviews. How to assign it?
+[4397.8-4404.4] As I need new interview. So now if I wanted to send this e-interview questionnaire to someone,
+[4404.4-4409.5] I can send it from here itself. First of all, I need to look for a particular candidate,
+[4410.1-4416.5] then I need to search for a particular details of the candidates, it might be email ID, phone number,
+[4417.0-4423.1] or maybe any particular address, city, state, zip has been mentioned and look up. So once I look up,
+[4423.2-4429.1] I selected Mr. Steve Smith, what is the questionnaire he wanted to send? I wanted to send it for LPN,
+[4429.1-4434.7] right, assign. Once I assign it, it will send a e-interview to this candidate. So they will
+[4434.7-4440.7] receive an email where these questions has been mentioned, okay. With this feature,
+[4442.0-4446.4] we are done with this engagement part, which is,
+[4447.3-4455.4] so in that case, we will be receiving an email to and here we will be able to see the answer in
+[4455.4-4461.7] e-interview sections, okay. So this is how we generally utilize the engagement section.
+[4463.4-4470.7] So I hope we are clear with jobs and engagements. In addition, if any features has been activated
+[4470.7-4475.5] and is required, right, we will be giving additional training on those features, okay.
+[4476.2-4480.0] So we are done with entire job section and engagement sections.
+[4481.4-4486.2] Now we are going to start with most important section, which is called as sourcing section.
+[4490.8-4494.1] Actually, just give me two minutes, okay, I am just coming.
+[4861.7-4870.9] Can we start now? Okay. So now we are going to start with this tab, which is called as sourcing
+[4870.9-4879.0] bar, okay. So in sourcing, generally we utilize all the applications which we have. So first
+[4879.0-4886.6] application is called as talent search. Now generally in talent search, first of all,
+[4886.6-4894.3] we need to understand the purpose of this icon. You have been sourcing the candidates, right,
+[4894.3-4899.0] and we have been using a certain kind of searches, which is like title search,
+[4900.1-4908.2] bullion search. I hope we are aware about it, right. So what is the title search? Title search is a
+[4908.2-4913.0] search where we generally look for a particular title. Actually, you can turn on your camera.
+[4917.1-4927.0] Yeah. So, Kamal, we are discussing about the first icon, which is called as talent search, okay.
+[4927.0-4934.2] All right. All right. So I will just... Actually, I got a call from a candidate and I am sending her the
+[4934.2-4942.2] RTR. So, yeah, I will be listening. Yeah. That's fine. I can understand. Everybody is busy.
+[4942.2-4951.2] I know. So sorry. No, don't feel sorry about it. That's fine. Okay. So guys, we are going to discuss
+[4951.2-4956.6] over the first icon, which is called as talent search. Now what specifically is all about talent
+[4956.6-4964.8] search? So what do you understand by this icon? Any idea about it? Kamal, any idea from your side?
+[4965.5-4967.8] What is this icon, which is called as talent search?
+[4969.8-4973.0] To search the candidates for the job.
+[4973.7-4977.8] Exactly. So this is very important icon guys. Major of the recruitment part,
+[4977.8-4984.9] I must say that your 80% part, you are utilizing the talent search, okay. So to understand this,
+[4984.9-4992.9] I need your attention and I would be requiring your engagement in this icon, okay. So first of
+[4993.0-4997.0] all, we need to discuss about two types of strings, which we have, right? Generally, we call it as
+[4997.0-5004.0] agent search. So that is something we have two types of agent search or the strings. Number one,
+[5004.0-5010.8] title search. Number two, Boolean search. Title search means where we only use specific titles.
+[5010.8-5015.7] The titles can be like any particular job, addition title like register nurse
+[5016.1-5030.9] or maybe RN or maybe LPN, LPN, right, where we are only going to look for any particular
+[5030.9-5036.7] title we wanted to search, that is called as title search. The benefit of using title search is
+[5037.4-5043.4] that you get very specific results, okay. Second type of search we have is, which is called as
+[5043.4-5050.7] Boolean search. Boolean search is always made by few operators. So there are few operators,
+[5050.7-5056.6] which I just shared in your chat box, which I'm just going to again share in my screen.
+[5056.6-5061.3] These are the various operator or we generally call it as Boolean operators in job diva. So
+[5061.3-5068.4] without Boolean operators, you cannot make Boolean string, okay. Most important guys,
+[5069.1-5073.8] these operators are the foundation of any particular recruitment process and the recruitment
+[5073.8-5080.2] sourcing, okay. So Boolean operators helps you to define the entire Boolean string. So there are
+[5080.2-5085.4] six type operators we have. So first operator is called as and operator, which is very common and
+[5085.4-5092.4] widely used and operator provides the result that contains both or all keywords. For example,
+[5092.5-5103.6] I'm looking for, I'm looking for Rn, ICU and Rn emergency room. Means I need both the keywords
+[5103.6-5111.3] in the resume, okay. So in that case, we are using and operator. In general, in layman language,
+[5111.3-5118.0] we use and operator where we require two things at the same point of time. I require pen and
+[5118.0-5127.0] pencil means I require both the things, okay. In general, we use and operator. Second is called
+[5127.0-5135.0] as or which provide results that contains either keyword, maybe meteor or meteorite, okay.
+[5136.7-5143.4] So for example, if we wanted to create an another option, either this or either that,
+[5144.2-5153.5] you can give me pen or pencil. I have an option, you can give me pen or pencil means I am looking for
+[5153.5-5163.1] the distant nurse ICU or emergency room. In that case, we use Boolean operator or where we have
+[5163.1-5171.0] option to look for the result that contains either keywords. Third is called as not,
+[5171.0-5177.2] we generally call it as and not. It provides results that contain first keyword, but not the
+[5177.2-5182.5] second. For example, in this case, it has been mentioned football not soccer, okay. I am looking
+[5182.5-5193.6] for LPN not Alvian, okay. I am looking for Rn ICU not Rn ER, okay. Where my preference is to look
+[5193.6-5202.6] for first keyword. Second quotation marks. Quotation marks provides the exact phases.
+[5204.3-5210.3] Quotation mark is always used on the combination of two words or more than that. It is never used
+[5210.3-5216.8] on one word, okay. So for example, I wanted to look for a particular title which is called as
+[5216.9-5224.1] register nurse in Boolean string. How I can use it? I need to first of all write two keywords,
+[5224.1-5231.6] which is registered and nurse, but register and nurse is very common word, right. It is not a
+[5231.6-5237.8] title. How we need to make the title by using quotation mark. Once you use the quotation mark,
+[5237.8-5243.6] it gives and provides the understanding that I am looking for the exact phrase or the combination
+[5243.6-5249.4] of two words or more than that. Maybe I am looking for staff registered nurse. It is a combination
+[5249.4-5255.8] of three words. It has particular meaning. It has a particular title where we use quotation marks.
+[5255.8-5263.3] So that's why guys quotation mark is always used where we require results with the exact
+[5263.3-5272.5] phrase. It is never used on single word. Parenthesis. It allows you to group together the keywords and
+[5272.6-5283.1] the control in order to search. Without parenthesis, your Boolean entire Boolean string is meaningless.
+[5284.6-5290.8] Parenthesis will decide how this entire search will be searched. It will decide the meaning of
+[5290.8-5297.1] that particular search, okay. As you know that these operators are generally program operator,
+[5297.1-5303.0] which try to help and make computer understand or the job Diva understand that this is something
+[5303.0-5309.0] I am looking from the database. Like for example, we have computer computer understand the programming
+[5309.0-5314.2] languages, right. It don't understand Steve Smith language or Anjali language. It only understand
+[5314.2-5320.8] programming language, right. Same job Diva understands operators language to harvest the
+[5320.8-5329.2] resume through these search operators, okay. So parenthesis, it gives the entire meaning of a
+[5329.2-5337.4] particular search. Applied in the right way, it will make a proper chronology that okay. I am
+[5337.4-5342.1] looking for first thing which is called as register nurse. Then I am looking for someone who has
+[5342.1-5350.4] worked in hospital have certifications which is BLS. Now it has some meaning. How to define
+[5350.4-5360.0] that meaning in job Diva? Let me just give you an idea about it. So for example,
+[5361.5-5366.0] to use parenthesis, first of all, you need to understand the right area that what exactly I
+[5366.0-5379.4] wanted to search for. I wanted to look for register nurse, okay, who has experience in
+[5381.7-5391.7] maybe let's say ICU, okay. And they should have BLS. This is my common understanding what I wanted
+[5391.7-5399.8] to look for. Now how I need to give a meaning to this entire sentence, entire keywords
+[5401.4-5411.1] by using operators, right. Now I wanted to look for register nurse, R N. These are the two words.
+[5412.2-5417.4] I wanted to look for a combination of two words. And then we have ICU
+[5417.4-5421.0] which is also called as
+[5425.7-5428.2] intensive care unit, right.
+[5430.9-5436.7] And BLS. It is also called as basic life support, but I will just write in one form which is called
+[5436.7-5443.0] as BLS. Now if you see, I made a normal string, right, but still I need to use the operators.
+[5443.4-5450.9] I require the combination of word which is called as intensive care unit. I am using the operator
+[5450.9-5458.5] which is called as quotation marks. I wanted to look for a particular register nurse, okay,
+[5458.5-5465.1] which is also called as R N. I use operator either or.
+[5465.4-5478.2] And I require these both E words in the resume, R N or and ICU. Means this is my requirement,
+[5478.2-5484.3] must to have in the resume, right. So, where I am looking for both the keywords. So, how this
+[5484.3-5489.4] meaning will get, how this string will get the meaning first of all guys, we need to select
+[5489.4-5496.8] parenthesis. Now your string will understand by using parenthesis, it will give a first criteria
+[5496.8-5502.2] to this string that the first chronology to understand this string is I need to look for
+[5502.8-5510.2] register nurse, which can be written in form of register nurse or R N.
+[5511.8-5517.0] Now I wanted to give a criteria to second string means second criteria.
+[5517.9-5522.2] I am looking for R N in ICU or intensive care unit,
+[5522.2-5530.3] which is also written as ICU or intensive care unit, where I have used quotation mark to make sure
+[5530.3-5538.6] that it sure it actually source the keyword in this manner, okay, because I require the exact
+[5538.6-5552.4] phrase then BLS. Now my entire criteria has been made. And if you see it is defining the
+[5553.2-5559.2] entire criteria of your search, I wanted to look for register nurse, which is written as an register
+[5559.2-5567.0] nurse or R N. Second criteria I wanted to look for ICU or intensive care unit experience with BLS
+[5567.1-5573.8] certification, right. So this is how generally we use these operators to make the string making.
+[5573.8-5580.4] Guys string making is an art of every individual, it defines and it depends upon your knowledge,
+[5580.4-5584.6] how you well equipped with the departmental knowledge you have been working with. For example,
+[5584.6-5589.8] you have been working in healthcare, you should know the basic responsibilities, okay, basic
+[5589.8-5596.2] kind of information of thought particular skill set being a recruiter, okay. IT may have different
+[5596.2-5600.8] skill set requirements, so they will work in different criteria. It's all string making is
+[5600.8-5607.7] art of individual, okay. There is no static learning for string making, okay. So that's why
+[5607.7-5613.4] self-study is required. Once you complete your training, make sure with over the time with your
+[5613.4-5618.3] experience, you will make a very strong strings, but these are the foundation how to make a string,
+[5618.3-5625.9] okay. Next asprick. So team asprick we generally use when we have the access of either a particular
+[5625.9-5632.2] assigned job boards from monster.com, dice.com, right. So we can generally use it. The last operator
+[5632.2-5636.0] which we have is asprick. What is the meaning of this operator and what is the relevancy and the
+[5636.0-5641.3] function it provides the results that contains the variation of keywords. So for example,
+[5641.3-5647.8] I would name manage. I wanted to see how many variations are there in the resume with the word
+[5647.8-5656.9] manage. At the end, I will write. So at the end, exactly once we apply a last particular
+[5657.9-5663.5] asprick sign here which is called as star sign, it will give you a lot of variations.
+[5663.5-5670.0] If it is available and mentioned in the resume, managed management,
+[5670.3-5680.6] managing or etc. etc. Whatever the possibilities are there. For example, we have another word name
+[5680.6-5691.0] as develop. Yes, Komal. What can be the possibility of the variation with the word name develop?
+[5691.9-5698.4] Yes, developed. Development.
+[5700.5-5706.6] Yes. So I hope you got an general idea about the asprick, right, where it is used and how it is
+[5706.6-5712.2] used and what is the function of this operator. So cumulatively, these are called as six Boolean
+[5712.2-5718.1] operators which we generally use to make a Boolean string. Okay. However, asprick is not used in
+[5718.2-5725.6] job diva. It is only used in direct job boards from monster.com, dice.com, career builder. Okay.
+[5727.2-5735.0] Your job diva is specifically or two string maker. Okay. It can combine and make the string. So
+[5735.0-5739.8] there are three type of strings we can generally make at the same point of time. Okay. Or maybe
+[5739.8-5745.3] individually. So first string which we are just going to choose, this is called as title search.
+[5745.4-5746.5] So I wanted to look for
+[5749.2-5758.9] registerness, alternate means or an alternate name of this particular title. Can you see guys?
+[5760.6-5766.9] Now in that scenario, this is called as title search in job diva. We have an option to add
+[5766.9-5774.9] the years. Okay. Three years of experience I require. I require recent three years of experience as a
+[5774.9-5782.5] RN. There is another function called as with mapping or without mapping. So once we activate
+[5782.5-5789.8] this function, it will help you to give the exact search results what you are looking for
+[5789.8-5801.9] as a register nurse. Okay. This is called as title search. Now another string which is called as
+[5801.9-5809.1] Boolean string. Here we can generally search the Boolean string. Okay. We can make our Boolean
+[5809.1-5816.4] string from here. But you need to understand one thing guys. You cannot combine Boolean string,
+[5816.4-5823.1] title string and every details to make it more complex. The lighter the string, more the results.
+[5823.1-5827.3] Title mean I'm looking for specific titles in the job diva. Okay. That's it.
+[5827.8-5833.5] If I'm going to look for any particular now title to give you specific results, I wanted to expand
+[5833.5-5838.2] my results. I wanted to look for particular maybe in title search, I have only 30 40 resumes, right?
+[5838.2-5844.0] I went to expand it to 200 to 300 wanted to get a lot of variations of resume with the
+[5844.0-5851.0] feasibility of expansion. We use Boolean search. So in this case, I'm making a string which is
+[5851.0-5859.0] making a string which is I'm looking for RN or they're called as register nurse with ICU experience,
+[5860.2-5861.4] which is also called as
+[5868.9-5874.8] intensive care unit. Okay. So as we discussed, you can select as per your preference for
+[5874.8-5880.3] year recent or with the mapping or without mapping. Okay. And can you see below it is
+[5880.3-5888.8] making automatically a string for you guys lighter the string more the results. Okay. But
+[5888.8-5894.2] this is called as Boolean string by using Boolean operator. So it is automatically
+[5894.2-5902.1] applying all the preters for you. Okay. Now you can choose a specialty. Okay. So this feature
+[5902.2-5911.0] will work if the candidates specialties profession has been added in the resume section
+[5911.0-5917.3] in the job to you. Okay. You would be able to get a very refined results. Okay. So you can also
+[5917.3-5926.3] combine specialties to for example, I'm looking for RN burn ICU. Okay. Can you see guys? It has
+[5926.3-5937.9] chosen profession and specialty to. Okay. So it is having a preloaded all the specialties and
+[5937.9-5944.0] profession in the healthcare requirements. Okay. So you can select as per that. Now your string
+[5944.0-5953.0] is prepared in the job. We have more than 20 likes of resume in the job. Now coming to this part,
+[5953.1-5958.5] which is very important to understand how to source the candidate to source the candidate.
+[5958.5-5962.6] First of all, guys, we need to understand these options, which is called as real time job
+[5962.6-5973.4] board access, either any particular job assigned to you or maybe results also include in the job
+[5973.4-5980.8] given. So for example, if I wanted to look for a real time job board access, it will source from
+[5980.8-5986.7] real time assigned job board. If I wanted to dedicate Lee select any particular job board,
+[5986.7-5994.5] I wanted to apply any particular sorting or filter. For example, you wanted to see resume
+[5994.5-6001.1] updated or maybe any particular relevancy for monster. Maybe you select both and
+[6005.3-6010.6] I wanted to see more relevant resume or I wanted to see the last active or maybe resume
+[6010.8-6018.1] updated. Okay. So as per that, you can choose your particular job boards. Okay. I highly recommend
+[6018.1-6026.5] to use all the ways to source the candidate to optimize the database. Okay. And then search it.
+[6027.1-6032.4] Once you search it as per your string or as per your search criteria, it will try to fetch out
+[6032.4-6039.4] all resumes from the internal database to active database to okay, and active job models. So this
+[6039.4-6047.8] is how your results are defined. And once you keep progressing with a search criteria pages,
+[6047.8-6051.0] you would be able to see your numbers of resumes are going to be increased.
+[6054.2-6059.0] So can you see it is now increased from 150. It is going to increase to
+[6059.5-6073.3] 100. So as per your search criteria, whatever I have added with the best possible understanding
+[6073.3-6077.6] and capability of the database, it will give you a relevant resume, which is almost like
+[6077.6-6085.4] 166 resumes would be present in front of me. Okay. So this is how we generally source a candidate
+[6085.4-6092.8] and check for any particular specialties selecting by combining boolean string with specialties to
+[6092.8-6098.6] enhance the search criteria. From here, you can copy paste your entire strings to which you have
+[6098.6-6104.1] made at the word or not bad. Okay. From here, you can paste it or you can select it.
+[6105.8-6112.0] But most important thing guys, you need to select for state country, generator states.
+[6112.0-6118.0] You need to select for any particular state you wanted to source for. You need to select
+[6118.0-6124.6] for any particular zip code. Okay. We have an option that within exact miles you wanted to search
+[6126.2-6132.3] or maybe to exact zip code, maybe you wanted to search within how much miles which has been
+[6132.3-6142.8] mentioned, maybe 20 miles. Okay. Maybe outside of this zip code going to 50 miles. We can search for
+[6142.8-6148.8] outside more than 50 miles. Okay. So you can choose always your search criteria and the location
+[6148.8-6156.5] based on these details. If you wanted to add the period, you can if the periods has been added in
+[6156.5-6162.0] the resumes of the candidate. If you want to select any particular degrees, okay. Bachelor,
+[6162.0-6166.9] so maybe select for any particular major majors, you can select it from here and your string will
+[6166.9-6174.2] be made accordingly. Okay. And then search it. But we highly recommend not to use too much of filters.
+[6174.2-6183.0] Right. We highly recommend to use specialties, require titles. Okay. It will give you a very
+[6183.0-6187.6] good results. If you wanted to add licenses option, you can add any particular license
+[6187.6-6193.8] options from here itself. Okay. You wanted to add any particular certifications, options,
+[6193.8-6200.2] you can add it from here itself in your search criteria to enhance the search from the internal
+[6200.2-6205.1] database and active database, you can choose for any qualification if it has been added in the
+[6205.7-6212.2] sections. You can check for a wallet status if it is you wanted to add in the wallet status,
+[6212.2-6216.8] you can add complete wallets available to this search criteria. If the wallet has been updated
+[6216.8-6221.8] in the candidate section and then search it, you would be able to get the desired results.
+[6222.7-6228.3] Through this mean, you search and look for the particular candidates.
+[6231.1-6236.6] So, I hope till here everybody is clear how to make the search criteria, how we can utilize title
+[6236.6-6244.5] search, how we can utilize require and specialty and qualifications or licenses or certifications,
+[6244.5-6251.4] how you can add in the string. Next we have is exclude. So, as we discussed, right, and not,
+[6251.4-6258.9] I wanted to look for LPN. I was going, I was just looking for a LPN. What I wanted to exclude this
+[6258.9-6265.8] word named as LPN. I can exclude it from here. But generally when we are already clear that what
+[6265.8-6271.8] I am looking for, why to exclude or add any particular keyword for the exclutations. Okay.
+[6272.5-6279.9] Attributes, yet we don't add in the strings at this point of time. Okay. So, this is how only
+[6279.9-6288.6] we generally use title, require a bit part of qualifications like vaccination status,
+[6288.6-6296.1] maybe a vaccination type wallet or visa status, licenses and professional specialties.
+[6296.1-6298.8] This is how we make the strings in the job development.
+[6302.0-6305.8] So, with this we are done with the string making of job development.
+[6307.8-6315.2] In general guys, now I want you guys to ping one one string with your understanding of bullion
+[6315.2-6322.3] operators. Okay. So, just I am going to give you a particular requirement. In very general,
+[6322.3-6329.8] we can look for look for RN for burn ICU who has experience working in hospital and have
+[6329.9-6336.1] ACLS and BLS. So, just to make a string and share it.
+[6337.5-6343.4] Can you write it please? We will. Okay. So, Kamala, I am just waiting it for you.
+[6343.4-6348.6] We will not consider experience. We will only consider that in general how to make a string.
+[6348.6-6360.2] Okay. So, first thing is I am looking for RN burn ICU. Okay. Who has BLS ACLS and have experience
+[6360.2-6366.9] working in hospital. Very general string. Okay. Just make this string and share it in the chat box.
+[6378.6-6380.6] Okay.
+[6392.2-6396.9] So, guys, once you shared your string and chat box, do let me know. Okay.
+[6439.4-6439.8] Okay.
+[6459.7-6462.9] How much time guys? It is very basic string.
+[6468.6-6470.9] Okay.
+[6481.0-6482.4] Kamala, I think so you are on mute.
+[6487.4-6490.9] Just two minutes actually so my net is not working.
+[6492.6-6494.9] Okay. Take your time.
+[6498.6-6500.9] Okay.
+[6528.9-6548.4] Okay. So, we have the strings.
+[6549.0-6549.7] Done.
+[6563.1-6570.1] Okay. Good. Yes. So, now I assume that you have very good understanding of the string making.
+[6570.1-6576.8] Okay. All right. So, with this guys, we are done with entire icon or application,
+[6576.8-6583.4] which is called as talent search. Okay. So, any question from your side in talent search?
+[6589.6-6591.1] Any question guys from your side?
+[6594.6-6599.9] All right. So, let's go to next icon, which is called as new candidate. So, Kamala is not here.
+[6600.2-6607.8] Okay. She is here. So, we are going to start with the new icon, which is called as new candidate.
+[6607.8-6612.0] So, for example, you have been sourcing the candidates from different portals, right? Or
+[6612.0-6615.9] maybe you're also utilizing LinkedIn or maybe you're getting any particular candidates from the
+[6616.5-6623.4] any source, for example, LinkedIn references, right? How to add that candidate in the job?
+[6623.9-6628.5] How to add resume in the job given generally to add the resume?
+[6628.5-6635.0] We have these options. So, first option is called as upload. So, how to utilize this option? We need
+[6635.0-6641.1] to select first of all the source of that particular resume. Second, the condition is the resume should
+[6641.1-6648.2] be less than 5 MB. You need to select a particular desired folder of the location from where
+[6649.9-6656.0] you need to fetch out the resume and then upload. Once you upload it, I'm just going to
+[6656.0-6663.8] let you know how to do it real time. So,
+[6669.7-6676.5] so just let's assume that this is one resume I have. And once I upload it, this is here.
+[6678.7-6685.4] Next page, how it looks like. Okay. Now we need to check this all information and review the
+[6685.4-6690.5] information. The first section is personal information. Second is called as professional
+[6690.5-6698.6] and specialty. Then work experience and education. So team, you need to mark these sections too,
+[6698.6-6703.1] which is very important, which is called as professional specialty for adding any particular
+[6703.1-6709.1] resume in the healthcare. Okay. Once you verify and very confident that these details are correct,
+[6709.1-6713.9] then submit. Once you submit, you would be able to see resume like this.
+[6716.4-6718.6] That has been created in the job development.
+[6728.2-6734.6] This is how your resume will be in the job development. Okay. So, this is called as candidate
+[6734.6-6740.6] section, which we will discuss later. Okay. So, this is one of the way to add the candidate in the
+[6740.6-6747.4] job development. Next option we have is just to email the particular resume to this dedicated
+[6747.4-6756.4] email ID on avatar.com. Once we share this particular resume to this email, you will receive
+[6756.4-6761.8] a email confirmation that this resume has been added to the job development.
+[6763.1-6768.6] Third is called as copy paste. So, again, you need to select the particular source, right? If none,
+[6768.6-6775.8] then others copy paste the entire resume and then submit it. Once we submit it, your resume will be
+[6775.8-6781.8] added in the job development. Guys, you have an option to also add few details and can save the
+[6781.8-6789.0] details and add a creator candidate in the job development. So, these are the four ways to utilize
+[6789.0-6794.2] and add the candidates in the job development. One of the best and easiest way to upload is to
+[6794.2-6804.1] use this feature upload an email. Okay. Through which we can use the upload email feature and
+[6804.1-6813.0] upload the details in the job development. I hope we are clear with this icon, which is called as
+[6813.0-6820.8] creator candidate. Next is called as lookup a candidate. Lookup a candidate means by the name
+[6820.9-6825.5] itself, which is very simple. I wanted to look for a resume. The ways we discussed, first of all,
+[6825.5-6831.0] is the universal search bar. Second, one of the easiest and best way we can utilize that having
+[6831.0-6837.4] a candidate name with the email address and the phone number. Once we have these details,
+[6837.4-6842.3] you can generally look up the candidate or look up for a resume in the job table. Okay.
+[6845.3-6850.0] Next icon is called as search candidate. So, guys, in job divide, you will see a similar kind
+[6850.1-6856.0] of features are there or icons are there. Okay. So, we just discussed about lookup a candidate.
+[6856.0-6859.8] Right. We just discussed to lookup a candidate we can use for any particular
+[6859.8-6864.9] name. Wanted to look for email ID with the contact details. Additionally, you can add
+[6865.5-6873.5] specialties and lookup. Okay. Professional specialties, you can look up for a candidate
+[6873.5-6879.8] by selecting it. You would be able to get the desired results in terms of specialty and profession
+[6880.0-6885.5] if it has been added at the back end by the recruiters in the job. Okay. Then only would
+[6885.5-6895.9] you be able to get a particular desired candidate. Okay. Okay. Next icon, which we have is this is
+[6895.9-6901.8] called as search employee. So, now there is a difference between both these terms. One is called
+[6901.8-6907.0] as search candidate, another is called as search employee. So, any idea about it, Komal?
+[6911.0-6918.8] Komal, it seems like, yeah, we are unable to hear you.
+[6919.9-6923.8] Am I audible now? Yes, you are audible now. Your mic is correct.
+[6924.5-6930.2] Sorry. Okay. So, the search employee means the candidates which are already placed and we are
+[6930.2-6936.2] looking for them. Search candidates, the candidates which are not placed or the resumes we have
+[6936.2-6945.0] downloaded from Monster or Diase or Vivian and all. That's it. All right. So, Komal said that
+[6945.0-6948.8] whatever the candidates, still we are into the sourcing phase, right? Still that candidates has
+[6948.8-6955.0] been submitted to the particular. We wanted to look for a particular candidate, right? We wanted
+[6955.0-6960.3] to look for a particular candidate for sourcing of the particular job, right? And still they are
+[6960.3-6965.6] into the smittal phase. They are called as search candidate. Once a candidate has been interviewed
+[6965.6-6973.0] and started with the client. For example, now onboarding happened, okay, interview happened,
+[6973.0-6977.4] right? And candidate joined the project. We got the email confirmation from the client,
+[6977.4-6982.6] that okay, Komal joined on our technologies, right? It has been confirmed and validated by
+[6982.6-6989.3] the onboarding department. Start has been marked in the job diva that candidate turns into a
+[6989.4-6994.6] employee in job diva. Now the status change from a general candidate, they become the
+[6995.3-7000.7] employee. Once they joined the project, receive the confirmation from the client, our department
+[7000.7-7006.1] updates us and manager creates the start or maybe recruiter or team lead creates the start in the
+[7006.1-7013.1] job diva, they become employee in the organization in job diva, okay? So, that's why their status
+[7013.1-7018.9] changed from candidates to employee. So, in general, you would be able to see here it has been
+[7018.9-7026.2] mentioned. Charles Lewis has been assigned to ICF from so and so date in red written lines.
+[7026.2-7032.2] So, that means this candidate has been employed now, okay? So, that is called as search employer.
+[7033.2-7039.1] So, I hope till here we are clear with talent search, new candidates, search candidates, search
+[7039.1-7045.5] employees. Any questions so far, I think we would like to discuss or contribute?
+[7049.0-7055.9] Actually, okay. Now next section which is called as candidate hot list. So, first of all, we need
+[7055.9-7063.5] to understand this feature, what is hot list? So, team hot list is something that you can
+[7063.5-7070.5] generally manage your own candidates rather than accelerates. Second, this hot list will enable
+[7070.5-7079.8] you to use the feature in general that you will be getting lot of internal recruited candidates in
+[7079.8-7089.4] the job diva too, okay? So, if you see a lot of recruiters have created their own hot list, okay?
+[7090.3-7095.9] This is the hot list which has been created by various recruiters. It is just to manage your
+[7095.9-7101.4] candidates or your favorite candidates for a particular job, okay? Second, you can add those
+[7101.4-7109.2] candidates. Third thing, it will auto fetch new resume as per your string criteria. It helps you,
+[7109.2-7115.7] it works for you in the backend, okay? So, that is why it is called as hot list. I have some of the
+[7115.9-7122.1] hot positions with me. For example, RN, ICU, based in New York every week with eye healthcare, right?
+[7122.1-7127.9] Rather than sourcing what I did, I created my hot list to make sure that this hot list works for me.
+[7127.9-7134.3] I have 15 candidates who were my good looking candidates for job, right? What I can do is,
+[7134.3-7140.9] I can add those candidates in the hot list. Second, auto filter or auto sourcing of candidates will
+[7140.9-7148.0] also happen for the critical hot list in the job diva. So, how I can create it and how can it help
+[7148.0-7152.5] in the recruitment process or the sourcing process? So, first thing is we need to go to
+[7153.8-7156.9] my hot list. So, these are the few hot list which has been created by me.
+[7160.9-7166.3] The first step is to go to new hot list. So, once we click on this new hot list,
+[7166.4-7173.7] we need to decide our search criteria. So, for example, I am looking for
+[7173.8-7187.0] the
+[7187.0-7193.5] distanters or RN. Let us look for burn ICU.
+[7198.5-7203.5] Even I can choose special ATM profession too. I am just applying the journal Boolean search
+[7204.3-7206.9] and I wanted to look for any particular state.
+[7209.7-7217.5] Okay. Now the string has been applied. Now I need to continue. Once I continue, I need to name this string.
+[7222.0-7227.8] Okay. Second step guys, most important, link this job to particular hot list.
+[7228.8-7234.3] If it is available, you can link to your hiring manager string. You need to add the description.
+[7236.6-7242.9] You never assign any users, any groups or any divisions. Okay. Only your managers can assign
+[7243.6-7246.5] and or deals can assign and save it.
+[7249.9-7256.3] Once I save it, can you see guys, now my hot list has been created for this job reference
+[7256.4-7260.3] by the user Steve Smith. Now how to look for a particular candidate?
+[7262.8-7268.9] What I will do, I will just click on this name to the hot list, which I have given Komal.
+[7269.9-7274.8] You would be able to see a few results here now as per my string criteria. So guys,
+[7274.8-7278.2] hot list will always work as per your search criteria.
+[7278.8-7289.3] Now, can you see I'm getting these results based on my search criteria?
+[7291.3-7299.8] Still here, any question guys? How to create a hot list? Komal from your side, any question?
+[7301.4-7306.8] All right. So now my loading has been completed. These are the only feasible results I have,
+[7306.8-7311.9] but I wanted to add my favorite candidate, Charles Lewis in hot list. How I can do it?
+[7312.5-7314.6] Here we have an icon. Can you see these?
+[7315.6-7325.3] Actors. Exactly. So this is the icon. I can just utilize and I can add to the hot list.
+[7325.3-7330.6] So now Komal's favorite candidate, Charles Lewis has been added or maybe relevant candidate has been
+[7330.6-7335.3] added to the hot list. In that case, what we need to do? We need to refresh our hot list.
+[7336.2-7341.2] Once I reload it, Komal would be able to see your Charles Lewis mentioned here.
+[7342.1-7350.6] Now it has been added in your hot list. So you can add your relevant candidate to the hot list.
+[7350.6-7354.2] So can you see this M sign? It says, okay, this candidate has been added.
+[7355.0-7363.4] Exactly. And previously presented to a job. Okay. So this is all about hot list creation and
+[7364.1-7370.2] candidate. Now I wanted to remove this candidate from hot list. I can remove it from here also.
+[7370.2-7375.5] Number one. Number two, I can go to again candidate section. I can just re-click through.
+[7375.5-7381.0] Can you see guys? Let me reroute it. There is a highlighting sign now.
+[7382.3-7386.4] What I need to do? I need to go to this highlighter. Again, I need to go to this icon.
+[7387.1-7387.6] Okay.
+[7387.6-7399.2] Removed. Now I need to go again to this section, reload it. Now this candidate will be available
+[7399.2-7405.4] under hot list. Okay. So I hope till here we are clear how to add the candidate and how to
+[7405.4-7410.2] remove the candidate in hot list and how to create a candidate in hot list and how the results are
+[7410.2-7419.4] optimized if your string is very relevant. Okay. Clear till here. So if you would like to
+[7419.4-7425.7] preview, you can preview the information in very short form here. Okay. You can expand your results.
+[7425.7-7430.6] It will give you a more relevant expanded results. We have a feature named email merge,
+[7431.1-7434.0] which we will just discuss right now.
+[7434.0-7446.8] So this is the more candidate matched required years of experience means something,
+[7446.8-7452.2] the criteria which I have set up right. This candidate has most relevant years of experience
+[7452.2-7459.7] mentioned. Okay. So this is all about your hot list, how to create it, how to manage the hot list
+[7459.7-7464.0] and what are the benefits of the hot list. Second, how to add the candidates in hot list
+[7464.0-7469.8] and how to expand our results and use the feature which is called as preview. For email merge,
+[7469.8-7474.4] we will go to search criteria and then we will check for how to perform the email merge. Okay.
+[7475.9-7481.6] So any question guys in this section, how to create a hot list and how to add the candidates.
+[7489.7-7494.8] Anjali, any question from your side? Any question from your side?
+[7498.0-7500.1] Let's go back to hot list now. Okay.
+[7502.6-7507.6] So with this guys, we are done with the hot list. Okay. Next we have is
+[7508.2-7515.0] search candidate notes. Exactly. So what is the relevancy of this icon or the application?
+[7515.0-7519.8] To search for any particular notes or actions I wanted to look for for any particular desired
+[7519.8-7525.3] candidate or the user. So guys, for example, we have different type of note content mentioned by
+[7525.3-7532.5] recruiters. So it is not every time our recruiters are using the actually assigned job diva language
+[7532.5-7537.5] for notes. For example, there are different type of notes are there that is called as RTR log,
+[7537.5-7544.9] right? Or maybe RTR signed interviewed or maybe start or maybe any other notes available.
+[7545.0-7549.5] Right. So in that case, if I wanted to look for a particular notes, first of all, I need to select
+[7549.5-7555.4] a particular notes specific in the resume section, which we will discuss later. But
+[7557.0-7562.6] however, recruiters sometime till date, what they were doing, they use their own languages like
+[7562.6-7570.0] logged or do not contact DNC. Okay. Or maybe in loop or certain kind of notes. Right. So just to
+[7570.1-7576.8] make sure that if we wanted to look for any particular notes, if these are added, as per the
+[7576.8-7583.8] job diva note actions or maybe by their self note actions content, you can utilize this feature,
+[7583.8-7589.9] which is called as search candidate note. So let's see. I wanted to look for
+[7592.5-7599.7] note content mentioned logged. I can select for any particular candidate name if I wanted to look for
+[7600.2-7606.7] I can also select any particular note actions. Okay. So if the candidates or the recruiters,
+[7606.7-7612.0] sorry, if the recruiters are not usually utilizing these note actions, they want to be able to see
+[7612.0-7618.5] entire notes, which they are looking for. I can also choose any particular notes action from here,
+[7618.5-7625.8] like for example, RTR receipt. Okay. Now, let me check for
+[7625.8-7630.6] Komal, have you been working on any particular requirements?
+[7634.0-7634.6] Yes. So
+[7636.2-7636.5] Okay.
+[7640.1-7645.0] Okay. So we have the common name here. Okay. Rather than selecting any particular division
+[7645.0-7649.9] groups or the group list, I just selected one of the user the notes for Komal I want to select.
+[7650.5-7654.2] I don't have the candidate name at this point of time. If she has submitted, I can add it here.
+[7654.7-7659.8] Okay. Even I have an option to write. All right. That's great. So can you just let me know the
+[7659.8-7669.5] candidate name? Okay. Wait. Well, VEL VA. Is it correct? Yes. Okay. What is the last name of the
+[7669.5-7673.0] candidate? Well, I guess just wait a moment.
+[7673.4-7677.6] It's
+[7683.6-7689.6] just ping me in the chat box. Yeah, sure. Wait. Well, Williams Williams. Yep.
+[7695.2-7697.8] Is it correct? Yes. It's correct. All right.
+[7697.9-7704.5] So now we can also include any particular and deleted notes automatically generated
+[7704.5-7710.3] notes or maybe manually entered notes. You can select for any particular duration and search.
+[7710.3-7716.2] Now, let's see if she ever added the particular note actions in the job diva as per the hard
+[7716.2-7720.2] work process. She would be able to get the desired results.
+[7729.1-7734.7] So as per my search, there are no note actions mentioned RT are received in
+[7735.8-7741.9] this submission. Okay. But this is how we generally can search for any note actions. So that's why
+[7741.9-7749.4] guys, it is very important and we highly always recommend everyone to use the note actions rather
+[7749.4-7755.6] than common words. Okay. So these actions are very spined. If you see everything has been mentioned.
+[7755.6-7760.7] Okay. So that will discuss how to add this note section in the job diva. But once it has been
+[7760.7-7765.2] added, you would be able to see the desired results. Okay. This is how we can search for
+[7765.3-7772.0] candidate note in job diva. So, so any questions from your side, guys?
+[7774.6-7779.8] Next part, which we have is that is called as search attributes. So this icon, first of all,
+[7779.8-7784.2] we need to understand what are the attributes. So team attributes are set of information required
+[7784.2-7789.0] for the submittal purpose. For example, you take candidates last four digital of SSN, DOB is right
+[7789.0-7794.0] on other informations for the submittal purpose. So in that case, if I wanted to look for any
+[7794.0-7800.6] particular dedicated candidate attributes, I can utilize this icon. So in this case,
+[7800.6-7807.4] I have a candidate name, Charles Lewis. Their attributes has been already been added SSM one,
+[7807.4-7812.7] two, three, four, five, right? I wanted to look for the attributes. So guys, this icon is called as
+[7812.7-7819.9] attributes icon. Okay. I just selected the candidate name, Charles Lewis
+[7823.7-7831.2] and search. So can you see guys, what I was looking for? Is it visible to me?
+[7832.6-7839.8] I can just click to this resume and I can navigate to attributes icon. And can you see guys,
+[7839.8-7846.9] is it visible to me? This is how we can search for a particular attributes in job design. Okay.
+[7848.0-7854.0] But attributes need to be updated. If it is not updated, you won't be able to see any attributes.
+[7854.8-7860.0] It is a part of quality audit process. You need to make sure that these attributes need to be
+[7860.0-7871.6] updated for every submission. Okay, comma. Next we have is import candidates. So now,
+[7872.5-7880.5] Anjali have 15, 20 resume. Okay. So that still has not been added in the job design. So she wants to
+[7880.5-7888.1] add the resume in the bulk. Okay. How she can add it in create a candidate, we can only add one resume.
+[7888.8-7894.9] Okay. But here we can open and add multiple resumes. So how we can do it guys. So first of all,
+[7894.9-7900.9] we can utilize this feature which is called as bulk upload. Well, select the option bulk upload
+[7900.9-7908.4] resume files. The condition is your file should be less than 50. Okay. It should not be greater than
+[7908.4-7918.0] 50. Next, we need to select for any particular resume source, right. And now she wanted to
+[7918.0-7924.6] particularly add this candidate in her hot list. In that case, Komal can select her name,
+[7925.4-7929.7] the hot list which she have already created, or she can also create new hot list from here
+[7929.7-7936.0] itself the way we did it. She can select any particular files or any particular resume she
+[7936.0-7944.8] wanted to add. So for example, I will upload one file, then I can upload or select
+[7945.5-7953.7] the second file from the desired source. Okay. I would be able to see the size and it will be
+[7953.7-7961.1] giving me the exact details of the size. Okay. But yet it has not been uploaded. Once I click start
+[7961.1-7968.2] uploaded, it will show me the resumes like this that these resume has been added. Okay. And it
+[7968.2-7974.0] also also been added under your hot list so that your selected candidates can also reflect under
+[7974.0-7978.6] your hot list too. This is how you can maintain your favorite candidates in job to you.
+[7981.8-7987.2] We don't use this feature which is called as bulk axle, but if you wanted to upload any
+[7987.2-7995.4] axle sheet, you can perform the same particular actions. Okay. The way we did for bulk up resume.
+[7996.6-8000.6] This is how we can generally import the candidates in job to you.
+[8005.0-8008.1] With this guys, we are done with the entire sourcing section.
+[8013.5-8015.6] So any questions sourcing section guys?
+[8021.0-8028.2] So it's just that when we are in the new candidate application, we just have to add
+[8028.2-8035.8] only one candidate, one specific one. Right. And the import candidates will be of bulk upload.
+[8036.6-8040.1] Right. That's a bulk upload. I got it.
+[8041.0-8041.8] Okay.
+[8043.0-8061.8] Okay. So it is your choice. It's entirely depends upon you wanted to add it or you want to want to
+[8062.8-8066.6] add it. Yes, you can skip that. If you wanted to add it, you can add it.
+[8068.7-8073.5] Okay. So team with this we are done with sourcing the entire sourcing applications,
+[8073.5-8078.8] jobs entire jobs application, a bit part of analytics just for your knowledge. Okay. And
+[8078.8-8084.9] engagement we just did Michael enter interviews and live interviews. Okay. Now I'm going to take
+[8084.9-8093.3] you to the job section, which is called as particular assigned job jobs.
+[8102.9-8105.5] Are you all good or you want a break right now?
+[8106.5-8107.1] Lunch break.
+[8111.0-8114.0] All good. I think so we are left with only 30 minutes.
+[8114.0-8115.8] So we will try to complete in 30 minutes.
+[8118.6-8123.5] Okay. So team, this is called as job section, right? It has two parts, which is called as left
+[8123.5-8128.0] section and right section. So we are going to start with particular first icon. This is called
+[8128.0-8133.0] as save button. So once you save, once you add or edit any information in this section, you would
+[8133.0-8138.6] be able to save in the same section. Second is called as print page print page means if you
+[8138.6-8142.9] wanted to print this page, right, you can print this page by giving the command, but generally we
+[8142.9-8147.7] request our it team to do so if you wanted to make it happen. Second is third is called as clone
+[8147.7-8155.0] this job. We wanted to create a similar job with a new job ID. This is how we can create a job. Okay.
+[8156.0-8161.4] Now two jobs has been created. I wanted to create a sorry, I wanted to merge a particular job. I can
+[8161.4-8167.0] merge it from here itself. Before that, you need to get your job assigned. And however, you need to
+[8167.0-8171.0] select for any particular job you wanted to choose to merge with the details. It will
+[8171.0-8176.2] be reflected here. And once we continue, select the particular details you wanted to keep and
+[8176.2-8182.1] save it, your job will be merged. Next we have is post to job board. So it is very important
+[8182.1-8187.4] guys to understand how to post our jobs in the job diva. So first of all, before that again,
+[8187.4-8191.4] I'm reciting guys, it is very important to understand these two terms which is called as
+[8191.4-8196.2] job diva cleaning and job description cleaning job diva cleaning, which we already discussed is
+[8196.2-8202.1] mandatory to do so. And job description cleaning and why it is must to have. Okay.
+[8203.4-8207.6] You need to clean it. And once you clean it, you would be able to navigate to this section,
+[8207.6-8212.7] which is called as post to job boards. So if you wanted to post a job, first of all, you need to
+[8212.7-8218.1] save the string, your job should be assigned and the status should be open. After that, you need to
+[8218.1-8223.5] go to this section. You can choose this show the period of your company's candidate portal on your
+[8223.5-8229.4] company's candidate portal. Only the jobs in general, if you're going to use
+[8230.2-8234.6] monster and dice, if the slots are integrated, you would be able to post it from job diva,
+[8234.6-8240.3] else you need to go to dedicated portal, right? But for LinkedIn, yes, we do post LinkedIn jobs
+[8240.3-8245.0] from here itself. So in that case, what we need to do first of all, this is something if you
+[8245.0-8251.7] tick it, this job will also be posted on the company's website. Okay. And save it. Now how
+[8251.7-8257.5] to post it on LinkedIn. So I have an option, which is called as LinkedIn. I need to go this,
+[8257.5-8265.5] I need to check for this particular details. This particular details are only visible. If first of
+[8265.5-8271.6] all, again, I'm repeating guys, listen carefully, your job should be opened, it should be assigned,
+[8271.6-8277.8] third thing, your string should be saved. Okay. Once it is saved, then only would be able to
+[8277.8-8284.1] see this entire section. Okay. Now in this section, you need to select the contract ID.
+[8284.1-8289.8] You need to scroll it down. Okay. And select the contract ID. And you can select additional
+[8289.8-8294.1] LinkedIn job posting fields like your degree, where I've selected healthcare provider,
+[8294.1-8300.0] and industries, hospital and healthcare, employment status, contract, or maybe any
+[8300.0-8306.4] particular status you wanted to check, experience level, if you wanted to add, you can, as per the
+[8306.4-8311.4] required experience level and expiry date, you can select from this particular calendar
+[8312.1-8317.7] and post update. Once you post updated, it will automatically posted on the
+[8319.0-8324.2] LinkedIn. Okay. So LinkedIn, it is not your personal LinkedIn, it is something that is
+[8324.2-8330.1] company's integrated LinkedIn. Okay. So your jobs will be posted, right? And then save it.
+[8330.1-8334.9] Maybe it takes some time to reflect, it is not like immediately it will reflect. Okay. I'm not
+[8334.9-8340.2] sure how in backend, how quickly it reflects, but sometime it takes time to reflect on the
+[8340.2-8346.7] particular portals. Okay. So this is how you perform your action, which is called as post to
+[8346.7-8356.3] job order LinkedIn and company's website. So any question this section guys, how to post the job
+[8356.3-8371.0] on LinkedIn, Angelie, Komal. No. So next, okay. Next, I second is post to social networks. So guys,
+[8371.7-8376.2] as you know that we are only utilizing this feature, right? We are not utilizing this at this
+[8376.2-8383.1] point of time. Okay. But if you wanted to post it, so you need to sign it to your own specific or
+[8383.1-8391.2] maybe company specific assigned social networks, attachment. So guys, any particular attachments
+[8391.2-8395.9] you want to attach to this job, you can attach it from here itself. If any particular attachment
+[8395.9-8400.9] has been added by any particular job, a sign, you will see highlighting signs. So you can
+[8400.9-8408.9] download it from here itself. Next we have is calendar, which we generally used from the initial
+[8408.9-8416.5] interface of JobDiva, but you can also utilize from here itself. Okay. Privacy, hide my clients or
+[8416.5-8421.0] hide client location. Okay. But generally, we don't recommend to use this feature.
+[8422.1-8429.4] Next is called as job applicants. So guys, now you know that our entire this JobDiva has been
+[8429.4-8436.1] integrated with portals to and as well as with specific company website. So any particular
+[8436.1-8442.0] candidate applying from anywhere, okay, will be available in this section. You have right to
+[8442.0-8448.2] select and take action to reject it to accept it. If you accept it, that profile will automatically
+[8448.2-8454.7] be created in the JobDiva. Okay. So from here, you would be able to see all the job applicants
+[8454.7-8460.3] who is applied on any particular source. Next is email job. So you would be able to email this
+[8460.3-8465.8] particular job from here to any particular candidate by adding the subject, the email.
+[8466.6-8471.5] Guys, you need to always make sure whatever the content you are going to add here in terms of
+[8471.5-8476.8] job description, it should be well formatted with the aligned details. So you can always
+[8476.8-8482.8] take a template from requested DM or maybe from requested manager that I wanted to share this
+[8482.8-8489.1] job to particular candidate from JobDiva. I need to have the particular template. In general,
+[8489.2-8493.8] you can request, they will share the template with you and you would be able to, because at this
+[8493.8-8499.4] point of time, this is the pre-added template, right? So if you wanted to share in this manner,
+[8499.4-8504.0] you can, but we highly recommend to just check with your manager before sharing it from here so
+[8504.0-8508.5] that they would be able to provide you the normal journalic template which we have in the,
+[8508.5-8516.2] which we just discussed also like this, okay, to the candidate and send. Once you send it,
+[8516.2-8520.8] you would be able to see automatically the email has been shared to the candidate.
+[8522.6-8526.9] Interest or candidates email merge. So guys, a lot of candidates or maybe recruiters have been
+[8526.9-8532.5] performing the email merge to the candidates, right? For this particular job, how many email merge has
+[8532.5-8537.4] been performed? All the action status, if the candidate has responded or they have shown their
+[8537.4-8543.0] interest, you would be able to see it here itself, okay? This is the live feature. Once you do it,
+[8543.0-8548.4] you would be able to see the, any particular candidate, if they show the interest in the email
+[8548.4-8555.0] merge feature, the name, the cell number, state, date, respondent and action will be shown here
+[8555.0-8564.1] itself, okay? We don't use at this point of time the job developer, although we have dedicated
+[8564.1-8570.0] calculators which are preset by the company, we use a certain set of calculators for healthcare.
+[8570.4-8575.7] It is not integrated for the supplier submittals, so we would be able to use this feature. You can
+[8575.7-8586.5] add job locations or multiple job locations from this icon. We highly recommend now to choose or
+[8586.5-8592.9] change any particular setting layouts from this section and we highly recommend to keep always
+[8593.0-8598.7] to keep always default layout which is available, okay? So in this section, you can always
+[8599.5-8606.9] log in your first of all LinkedIn to look for desired LinkedIn matches, okay?
+[8608.6-8613.4] And eventually you can also find similar candidates or similar kind of jobs to
+[8613.4-8619.8] this particular open job. So once we click on this guys, this is a AI feature, okay? So it will try
+[8619.8-8627.0] to analyze the internal data ways and look for a similar kind of jobs that these many jobs are
+[8627.0-8633.8] available and open in the job development, okay? So here means we have an opportunity to work on
+[8633.8-8646.0] a lot of jobs, okay? Clear? Now next thing which we already discussed that is called as job
+[8646.1-8651.8] debug cleaning and job description cleaning, how we do so and with this we are done with the right
+[8651.8-8662.7] side of job debug. Now we are going to move ahead with the left, sorry, right side of the job we
+[8662.7-8668.3] are done with the left side. So this icon which we just discussed how to search the candidates
+[8668.3-8677.4] by using a specific Julian search criteria. So maybe title search, okay? You can create the
+[8677.4-8686.0] string. So there is a function called as harvest. What is a harvest? So guys, harvest is a function
+[8686.0-8693.5] which gives you resume from internal database to any particular active integrated job works,
+[8693.5-8700.2] okay? Once you activate it or on schedule it, for that you need to save the string first of all,
+[8700.2-8706.4] clean the job description and the details and on schedule it. Once you save it, it will keep you
+[8706.4-8715.7] sharing the resume as per the added string, okay? Once you not schedule it, it will stop sharing,
+[8715.7-8721.8] but for that you need to save first of all, yes, for that you need to save this feature
+[8722.8-8727.1] to make it happen that I don't need now resume for this particular position,
+[8727.1-8732.3] I submitted a candidate, you need to select not schedule and save it. Without save these actions
+[8732.3-8740.0] will not be performed. Now mean I require number of resume just right now as per my search criteria,
+[8740.0-8745.0] I can save it, it will try to share the best possible resumes available as per the understanding
+[8745.1-8755.9] of the search criteria. However, we have an option to edit job works criteria, but you can edit it
+[8755.9-8765.0] or even you can also add the same kind of string from here itself too. Here we have another option
+[8765.0-8771.8] that AI will also suggest the search criteria to you, that's okay. As per the job description,
+[8772.5-8778.9] I have just analyzed and I find like this is the best string we can use. So it has given you the
+[8778.9-8783.8] search criteria, you can also add the search criteria from here and it has been automatically
+[8783.8-8794.4] added guys. So you can also use the AI feature for harvesters, okay? Now your string has been made,
+[8794.4-8799.3] you would be able to see that this is how your string has been made. So this is how we can utilize
+[8799.3-8806.2] the harvest feature. Even we can click these all integrated job works and utilize it.
+[8809.4-8812.5] Now next part which we are going to discuss which is called as
+[8813.2-8820.9] user field. So now VPN has been integrated in the job diva. So if you wanted to post any particular
+[8820.9-8826.2] position from job diva, how you can do it, you need to go to this field which is called as user
+[8826.2-8836.1] field, then VPN, you need to select post on VPN, yes. Then you need to always write down the travel
+[8836.1-8842.1] rates, that is the weekly rates. Any particular shift details you wanted to add, you can always
+[8842.1-8850.3] add it here and save it. So once you save it and save the job, okay, your entire information will
+[8850.4-8858.8] be posted to VPN platform. But guys, it will not get posted immediately just after a click.
+[8858.8-8863.3] It takes some time, maybe 30 minutes, maybe an hour, maybe 45 minutes, okay, it depends how much
+[8863.3-8871.6] time they take. But yes, it gets posted on the VPN platform, okay. I hope we are clear how to post
+[8872.6-8883.9] the jobs from user field to VPN. Komal. Yes, sir. I hope we are clear how to post a particular job
+[8883.9-8891.8] from user field. Yeah, from VPN, yeah, yeah. All right. Yes, I know. I hope it is clear.
+[8892.6-8897.8] All right. So now next we are going to discuss about this icon which is called as activities.
+[8898.8-8905.8] So in activities, generally, you will see your entire not your right. Every anyone who is working
+[8905.8-8911.1] on this position, what activities they have made in terms of internal submissions, external submissions,
+[8911.1-8917.7] or interview updates or start will be visible under activity sections. Okay. So for example,
+[8917.7-8922.6] if Komal submitted one of the candidate to me and Anjali also submitted one of the candidate to me
+[8922.6-8928.9] on this position, it will be reflected here itself. If I perform the action external submission,
+[8928.9-8933.8] it will be reflected under this section. Okay. We got an interview and we have updated the
+[8933.8-8938.3] interview in the candidate section or either here itself, you would be able to perform the actions
+[8938.3-8942.3] through here, but I will let you know how to update the interview and make the internal submissions
+[8942.3-8947.1] and external submissions. Okay. And if any particular candidates has joined the project and
+[8947.1-8952.2] the start has been marked in the job, it will also be reflected under this section.
+[8953.2-8960.7] So first thing guys, we have an also option to select particular candidate and can make an
+[8960.7-8967.1] internal submission from here itself too. Okay. But I will highly recommend to use candidates side
+[8967.1-8972.2] for making a submission, which I will teach you how we have an also option to schedule interview
+[8972.2-8976.2] from here itself. But the basic criteria is first of all, you need to go to the resume of the
+[8976.2-8983.0] candidate. Rather than doing things from here, we can also utilize resume of the candidate.
+[8983.0-8987.7] To that section, we would be able to update it. And we can also create a start for a particular
+[8987.7-8991.8] candidate from here itself. But the condition is you need to look for a particular resume.
+[8992.8-8996.1] So I will teach you to perform these actions from candidate section.
+[8996.9-9002.8] Of the candidates profile. Yes. Right. So let's let's search for any particular.
+[9003.7-9010.1] So I hope we are done with this entire job section. And I hope we are clear with this
+[9010.1-9015.8] section. Any questions from your side guys, starting from left side with icons to right side
+[9015.8-9018.2] with these informations, which has been mentioned.
+[9021.4-9028.6] Actually, so let's look for another part, which is called as search criteria page.
+[9029.5-9034.0] This is the part from where you will see the resume is okay. And as per your string,
+[9034.0-9039.9] you would be able to get the results here in the job diva. So basically, we see this is the
+[9039.9-9049.6] real time search criteria page. So in this case, for example, guys, as per the search criteria,
+[9049.6-9053.1] what we have added, let me just simplify the search.
+[9089.3-9094.2] I don't know something is happening to joke. Okay, so let me simply search for
+[9094.9-9097.8] simply so we can simply search from the upper one.
+[9098.6-9102.2] Yeah, I'm just applying it. Okay, so let's see the results.
+[9103.0-9109.4] How many results we got? Okay, so team, this is called as search criteria page. Okay. And
+[9109.4-9115.0] from here, you can see what search are applied. Okay. So additionally, no filters applied. So
+[9115.0-9120.0] we would have applied the filters, it will be shown here itself. So this is all about your
+[9120.0-9124.5] major focus to source the candidate and open the resume from here. But before that, we have
+[9124.5-9130.2] few things to understand. So first thing is to understand the expand. So guys, expanded results
+[9130.2-9135.4] mean more relevant results, right? As per the search criteria, it will give me more specific
+[9135.4-9140.6] added results as per the can you see candidate master year's requirements. Okay.
+[9141.4-9147.8] Next preview preview means just to get a short idea about the experiences. If it is available
+[9147.8-9152.2] in certain manner, you would be able to see expanded version of resume. Another option we
+[9152.2-9157.4] can also use just to scroll down and keep your cursor here, you would be able to see the entire
+[9159.2-9163.4] resume of the candidate. I can unprivileged from here itself.
+[9164.2-9170.9] Next, these are the specified notes available. So if you see these icons,
+[9171.8-9177.8] someone has added the notes for these candidates. Okay, Ashley. So you will be able to see like this.
+[9179.0-9185.9] E. So E means any particular you wanted to exclude from the email merge feature.
+[9185.9-9191.0] Email merge is something when we try to reach multiple candidates or mass candidates are the
+[9191.0-9195.4] same point of time. Okay, with one email that feature is called as email merge, which will
+[9195.4-9201.3] perform. Yes. Now Ashley wants, okay, you feel like or maybe Ashley requested, I want to receive an
+[9201.3-9209.3] email merge from your site, you can exclude the Ashley from here itself. Yes. Now we will
+[9209.3-9214.9] understand how to perform the email merge. So if you wanted to, so first of all guys,
+[9214.9-9221.0] the main purpose of email merge is to simplify your sourcing. Okay, it helps you to reach multiple
+[9221.0-9228.5] candidates and increase your responses within short span of time. So additional help will be used
+[9228.5-9233.6] by performing email merge. So what we can do is it will seek your consent, right, and you need to
+[9233.6-9239.0] provide the consent by clicking here. Again, it will seek your consent that maybe the email merge
+[9239.0-9243.0] can be performed to relevant or non relevant candidates. So it's still you're good to go with
+[9243.6-9248.5] that. Yes. Once you provide any action as per your willingness, you can choose
+[9249.3-9255.9] the next page will be visible here like this. Here are to select your email ID would be there.
+[9256.9-9262.6] You need to select your dedicated templates. Guys, we highly recommend to perform email merge to
+[9263.3-9269.3] 50, 100, 200. Highest limit we have is triple line. Why we recommend no to perform
+[9269.3-9275.3] triple line email merge to candidates. The reason being your email can be blocked or spam.
+[9275.3-9281.2] Second, our IT team can detect in a day, thousands of emails are going from your outlook. Okay,
+[9281.8-9290.9] so they can also reach you just to make sure that to work on the very safer side, always use
+[9291.5-9298.6] 50, 100, 200, 250 or 300s. Okay, the emails you wanted to send to the candidates.
+[9298.6-9302.2] This is already pre-selected because why we wanted to share to the client employers who
+[9302.2-9307.4] have been working, right? We have an option to skip any particular candidates previously
+[9307.4-9312.9] text merged candidates or maybe previously we have received for a similar kind of jobs.
+[9312.9-9320.2] You can always select it or skip it or unskip it and then perform next.
+[9321.0-9329.1] Once you perform this icon and the feature, this is how the action has been selected and you would
+[9329.1-9335.4] be able to see the template. Now you need to beautify your template. If you will perform the email
+[9335.4-9341.1] merge like this, the candidate not get a good presentation of the job description and it is
+[9341.1-9346.1] not simplified, right? So what we can do is just to make it more eye-catching, we utilize these
+[9346.2-9355.3] titles like urgent hiring with the details and then specific locations. You can utilize the
+[9355.3-9362.6] particular IT or maybe healthcare templates which is added in the job. Additionally, you can also
+[9362.6-9368.1] request from your manager if they have the basic template which we use to share the email to the
+[9368.1-9374.8] candidate, you can utilize it here itself with your signatures. Okay, once you use it and add it,
+[9374.9-9385.8] send emails. So once you send the email, you will receive an email confirmation over your email
+[9385.8-9393.2] that so and so candidates with the numbers have received the email merge. So for example,
+[9393.2-9399.8] if I perform 300 email merge, if it went to 300, it will show you 300 digit number in job
+[9399.8-9406.9] debug. Okay, so this is how your email merge has been performed. So with this, we are done with
+[9406.9-9411.5] this section which is called as search criteria page. So any questions in this section guys?
+[9413.8-9421.8] No, sir. Now let's go to candidate section. So this is particular called as candidate section.
+[9422.0-9432.0] This is how your candidate section looks like. We have two parts. One is left side and right side.
+[9432.0-9437.2] So first of all, we are going to discuss on the left side. So team first icon which is called
+[9437.2-9443.3] as homepage, it will navigate to you the homepage of the job diva. Second, we can mark,
+[9444.6-9449.5] we can check for any particular my jobs which we already discussed during the
+[9449.6-9454.6] initial phase of training. We can print this page. We highly recommend now to change any
+[9454.6-9459.5] particular settings in job diva. We can also see the previous candidate
+[9462.0-9470.1] before. Actually, we can check for next candidate. Okay. Or you want to navigate to next resume,
+[9470.1-9476.2] we can go from here itself rather than opening this page. Okay.
+[9480.1-9487.5] Next is viewed candidate. So guys, if you have viewed any particular candidate,
+[9487.5-9491.9] viewed mean just resume, cola apne usko kathe viewed. Okay. You can navigate to
+[9492.6-9497.8] view icon. If you want to see next view candidate, you can view it from here itself.
+[9498.4-9503.4] This is the icon. We just wanted to do the resume. So now only resume is visible here.
+[9504.1-9510.4] If you wanted to view the details, we can view the entire details by just clicking on this icon
+[9510.4-9512.4] and you would be able to see it.
+[9523.9-9531.6] Okay. This is called as changeability. So for example, if any candidate wants to opt out for
+[9531.6-9536.5] any particular emails from your site, you can just copy paste this link and share it to them.
+[9536.5-9543.3] Okay. So they will opt out it. If they say we wanted to opt in for any particular emails from
+[9543.3-9548.4] your site, you can always use this icon and send the link from here itself.
+[9550.2-9555.3] You can mark candidate available, unavailable, unavailable, indefinitely as per the status of
+[9555.3-9560.9] the conversation with the candidate to the job development. Okay. And even provide the explanation
+[9560.9-9565.3] why you're performing this action and save it here. So if you see this,
+[9567.0-9571.3] let me check for previous resume, which we have opened Ashley.
+[9585.1-9590.7] So now this candidate is unavailable till this site. So for example, Komal is also working
+[9590.7-9595.7] on the same candidate. Anjali is also working. So now one of them has updated that this candidate is
+[9595.7-9602.2] not available until this duration. Right. So rather than calling you would be able to get an idea.
+[9602.2-9608.1] Okay. So she's not available. So and so did. So you won't be able to reach this candidate. Okay.
+[9608.6-9612.9] This is the major benefit of changing availability and keeping it.
+[9613.5-9624.1] Next is texting consent. Okay. So guys, we have an option to opt in and opt out for a candidate,
+[9624.1-9627.6] but I think so we don't use this icon at this point of time.
+[9629.5-9633.7] How to add in the heart list, which we just discussed, right through this section,
+[9633.7-9636.8] we can add it to particular heart list from here.
+[9637.3-9644.3] So email merge. Now how many recruiters have performed the email merge to this candidate?
+[9645.6-9649.9] When the email has been shared to particular jobs or the different jobs,
+[9650.5-9659.0] candidate open or not and resume match. So this will give you a status of your email merge history
+[9659.1-9671.5] to this candidate. Next is called as do not submit. So for example, I wanted to make sure that this
+[9671.5-9676.6] candidate should not be submitted to ICF, one of the client I've been working with, right.
+[9676.6-9682.3] I can choose the company from here with specific reason. Maybe this candidate have a bad behavior,
+[9682.3-9688.7] right, during the work and have been terminated and I added the notes. Once I add in, save it,
+[9689.1-9694.7] what will happen? You would be able to see a long line mentioned the details of this candidate to
+[9695.5-9703.2] do not add, do not submit list, okay. But this feature should be enabled or assigned to you by
+[9703.2-9709.4] the admin. Else you won't be able to perform it, okay. Background. So if you wanted to add any
+[9709.4-9714.2] particular background of the candidate, you can add it from here by selecting any particular job,
+[9714.3-9719.8] right. We're linking to company or the contacts or maybe any kind of particular
+[9719.8-9724.2] background information you wanted to add of this candidate. You can add it here itself.
+[9725.2-9728.9] Next is called as attributes. So guys, attributes are something.
+[9731.8-9737.8] System is bit slow. Attributes are something. These are the submission details required for
+[9737.8-9742.7] submittal purpose. Nowadays, we have integrated it and utilizing the feature called as phone
+[9742.7-9747.0] screening, right. So you will see a similar kind of set of questions can be there, right.
+[9747.0-9753.5] But previously, these were the attributes which we were utilizing that as part of QA process,
+[9753.5-9758.6] you need to take information from the candidate and you need to add those details in the job
+[9758.6-9765.1] diva. So you need to save it. Once you save it, then this entire section will be highlighted.
+[9765.1-9771.2] The icon will be highlighted. References. So for any particular positions, right,
+[9771.2-9775.2] you have been going to submit a candidate and prepare a submittal packet, you get a reference.
+[9775.2-9781.4] You can add multiple references at the same point of time on this icon, okay. Once you fill all the
+[9781.4-9788.0] details and save new reference, it will automatically be saving the reference for you, okay.
+[9790.0-9795.4] Next is agrit rate. So guys, you can also change the agrit rates from here itself. Even you can
+[9795.4-9804.2] also add new agrit rates from this position for this candidate too, okay. Next is called as,
+[9804.2-9810.7] so Calcudiva still we are not utilizing it as discussed. We have our own dedicated calculators
+[9810.7-9816.8] at this point of time for overtime for California or maybe for normal calculations or R&D packages
+[9816.8-9822.3] or compensations. But in future, if it is activated or maybe company will utilize it,
+[9822.3-9827.8] then you will go with training for this too, okay. Next is called as licenses. So guys,
+[9829.0-9832.1] you can add any particular license of any particular candidate
+[9833.2-9839.1] from here itself by just selecting the right option of the license, license number,
+[9839.1-9845.8] name, state, compact license, how may be any particular expiration date you need to add
+[9845.8-9851.9] and attach it, okay. So for example, I wanted to add for this, I can add attachment from here,
+[9851.9-9860.4] okay. Once you attach it and save it, it will automatically be added in this section, okay.
+[9862.5-9866.7] Next, this is called as candidate information section. So let's say, actually told I have
+[9866.7-9872.5] the update email and I have one of the alternate emails too and this is my contract new address,
+[9872.5-9876.8] right or any particular details has been changed. I have a period expectations with so and so and
+[9876.8-9882.0] the preferred one, you can save it from here. Guys, sometime we observe candidate do delete
+[9882.0-9888.7] the resume from here. Yesterday, I observed that few resume has been deleted from here, right.
+[9888.7-9893.4] Make sure we will never delete any candidate resume from here, okay.
+[9896.5-9902.6] With this, we can add and save the details of the candidate. Now guys, next feature,
+[9902.6-9906.6] look up a candidate, which we did only if you wanted to look for any particular candidate,
+[9906.6-9910.3] you can add the name and details here and the resume will be visible on these sections,
+[9911.0-9915.4] okay. Lookup employee, same which we discussed earlier, okay.
+[9915.4-9921.1] Social networks. So any particular candidate social networks, let me just...
+[9927.0-9932.1] So you would be able to see the social networks and add it here itself, okay. For example, you
+[9932.1-9937.0] have the LinkedIn of the candidate, you can add it here itself. For example, you have any particular
+[9937.0-9942.1] YouTube or maybe any particular handles of a particular candidate, you can add it from here
+[9942.1-9947.9] itself and save it. This is something, see video shorter for this video. So guys, we will perform
+[9947.9-9953.7] the action live interview, right. Any particular interviews are there, you would be able to add
+[9953.7-9959.4] the video of the candidate with the file or drop down here itself too, okay. You can download it
+[9959.4-9963.8] and add it here also, okay. Maybe any interview you took on any other platforms too, you can add
+[9963.8-9969.0] the videos from here itself, okay. Most important guys, you can also email the
+[9970.8-9972.9] details to the candidate from here itself,
+[9976.4-9979.2] because it has been integrated with the outlook.
+[9980.0-9990.6] Conduct live interview which we just discussed, right. We use it from that icon from here also.
+[9992.1-9997.4] Guys, most important, we have integrated the ring central, okay. And how to make a call from here
+[9997.4-10004.3] by clicking on this, you would be able to make the call like this. Yes. So your ring central has
+[10004.3-10014.4] also been integrated in the job. Okay. At this point of time, we are not utilizing
+[10014.4-10021.6] syntax from here, but in future if we have a dedicated different tools that is called as
+[10021.6-10027.8] LI5 and ring central, okay. Ring central for calling and LI4 your texting purpose. But yes,
+[10027.9-10035.9] you can utilize calling feature from here itself. Okay. Next is preferred locations. So team,
+[10035.9-10039.5] candidate may have some preference for the locations, right. So you can add that preference
+[10039.5-10045.6] location of the candidate from this section, okay. You can select the zip code cities and add the
+[10045.6-10050.6] details and save it. It will be reflected under preferred locations. Most important guys,
+[10051.4-10058.3] profession and specialty. Exactly. So you need to always add profession and specialties
+[10058.9-10063.4] in job. It might be multiple professional specialties. You need to always add it. Why it
+[10063.4-10069.8] is important guys. Sometime we say and we also listen that okay, recruiters says, oh, I see like
+[10069.8-10076.4] databases very less in the job. I'm not able to see too much of RN for burn ICU and database.
+[10076.4-10081.5] Or maybe I'm sourcing for social worker, right. I'm not able to see a lot of resume. Why so?
+[10081.5-10086.6] Because if you are going to add the particular special professional specialties, it will give
+[10086.6-10092.8] you very specific results. So we always recommend to use this and always add for every particular
+[10092.8-10099.0] candidate you are working with. Okay. Next is called as activity. Before that, I wanted to move
+[10099.0-10104.6] ahead with the qualifications. So guys qualification, license and certifications. You have an option to
+[10104.6-10110.6] upload the certifications from here itself. The way we did it earlier, if you have a BLS,
+[10110.6-10116.7] ACLS, you wanted to add and the certificate number at the expiration date of the particular BLS
+[10116.7-10122.9] and attachments from here, right with the description and save it. Once you save it,
+[10122.9-10128.1] what will happen? It will be reflected in the certification section. Same we can do it for
+[10128.1-10134.5] licenses to. It's the same as we did earlier from that part. Yes. So here we also have an option
+[10134.6-10139.6] that send expiration alerts. If you've added the particular expiration date of the particular
+[10139.6-10145.9] license of a candidate, okay, like this, it is expiring tomorrow. What will happen? You can also
+[10148.1-10154.6] so if it is enabled, you can also use this feature. It will share an or two email to the
+[10154.6-10160.9] candidates. Okay. So this will also help the candidates that they are getting the reminder
+[10160.9-10167.1] for the expirations. Now, coming part of qualification, guys, a bit complex, but yes,
+[10167.1-10173.6] if you wanted to use it, you can. But at this point of time, we are not utilizing it. Okay.
+[10173.6-10179.9] But yes, if you wanted to utilize it, you can check for any particular work authorization,
+[10179.9-10184.0] automatic station that what is the work authorization of this candidate, U.S. citizen.
+[10184.9-10189.0] It has been added. Okay. You wanted to rate this candidate. You can select, okay,
+[10189.8-10196.5] excellent candidate, have rated, right? Now, any live interview, let me just, okay,
+[10197.3-10203.8] recorded live interviews are there. I can check it from here and can assign it. Okay. And shift
+[10203.8-10209.8] preferences, what are the shift preferences of the day shift? So how it will benefit you guys?
+[10209.8-10216.9] I will let you know. Once you go on this part, search criteria, right? Now, if we go to this
+[10216.9-10224.6] talent search, we have an option qualifications. If this feature will only work, guys, if you are
+[10224.6-10231.8] performing this accurately details in qualifications, then only you will be getting results here itself
+[10232.4-10238.5] by selecting particular work authorization, U.S. citizen. Now, people say, I'm not getting any
+[10238.5-10243.3] particular resume based on U.S. citizen. Why? Because you have not added anything in the
+[10243.3-10249.4] qualifications. If you will add the qualifications, select it, then only would be able to enhance and
+[10249.4-10254.6] optimize the data. Okay. So this is something every recruiter in the company will practice
+[10254.6-10261.8] this by the coming time, okay, months, years, into years, right? What will happen? Automatically,
+[10261.8-10268.0] your results will be more optimized. So that's why we highly recommend to use some kind of
+[10268.0-10275.2] qualifications as per your information which you actually harvest from the candidate, okay.
+[10276.2-10281.0] Now, node section, which is very important. So guys, we will also be covering a bit part of
+[10281.0-10285.3] Hired Track 2. So it is a process generally, which is still into the progress, but I will give you an
+[10285.3-10290.2] overview of it into your recruitment process. So now we have seen like there are a lot of
+[10291.0-10297.5] automated nodes are available. So by sourcing the candidate, we can also utilize the nodes,
+[10297.5-10303.0] okay. Maybe Anjali is also talking to a candidate or maybe Komal is also talking to a candidate,
+[10303.0-10307.9] but if you are not adding the nodes, what will happen? You want to be able to claim the submission.
+[10307.9-10310.8] To claim the submission, first of all, you need to...
+[10310.8-10311.4] Ask the ownership.
+[10312.2-10317.7] Ownership, exactly. And how ownership is taken? You need to get the rate confirmation first of all.
+[10317.7-10324.0] We have observed that recruiters are just applying ownership rule first. No RTS are there,
+[10324.0-10330.1] nothing RTS. So what will happen? It is just you are creating artificially ownership of a candidate
+[10330.1-10336.7] in the job divide, right. You need to have first of all, any particular communication from the
+[10336.7-10342.2] candidate, either over text or over RTR. Until unless you are not received RTR, we cannot claim
+[10342.2-10347.3] that candidate, right. So we need to have the authorization, okay. Rest, it depends upon the
+[10347.3-10352.3] department specific if they are doing so, then they can perform the action, but this is the
+[10352.3-10357.4] general right way to do so. First thing we need to do is to link to open jobs. So we need to
+[10357.4-10363.3] select the open jobs or sign job. If link to hiring manager, if you know the hiring manager's name,
+[10363.3-10368.0] you can link to company or the client, then actions. So guys, there are different types of
+[10368.0-10373.1] actions we have. Offer, offer, extended, external, submission, turn, feedback, taken or debrief.
+[10373.1-10380.1] So every action have the relevant meanings, okay. TWC, two-way communications, right.
+[10380.1-10386.5] RTR send, for example, Komal just sent the RTR. She just she selected the action, RTR send. She can
+[10386.5-10395.3] also write RTR sent. In that case, if the templates are available, you can still at this point of
+[10395.3-10400.5] time, we are working on the templates, but if there is no template, you can just write on the RTR
+[10402.7-10408.1] sent, okay. You can actually add the date and the time of this RTR that has been shared.
+[10408.1-10412.7] Now, you are just working Komal and you have entered the node status. Anjali just
+[10413.4-10418.3] have not added the node status, right. So if you receive the confirmation,
+[10418.3-10421.7] still Anjali need to also confirm that she have already shared the RTR, right.
+[10423.0-10427.9] Every time you work guys, you need to make sure you need to always select these nodes as
+[10427.9-10433.9] well as the status of the conversation. Now, in this case, RTR received. So let's say Komal just
+[10433.9-10441.5] received RTR, okay. And she have just mentioned, but Anjali is still working on that position and
+[10441.5-10446.1] Anjali try to reach to candidate and without checking the nodes, what will happen?
+[10447.6-10451.9] Candidate will say, or maybe Komal can also come up to you and can let you know that you
+[10451.9-10456.1] cannot log this candidate. Why? Because she have already received the RTR from the candidate.
+[10456.1-10465.0] And to claim the ownership, where we have an option which is ownership taken for one week,
+[10465.0-10470.9] okay. So you need to add these status as per the node section and add it. You can also have the
+[10470.9-10476.7] phone screening template which is available for healthcare. These are the details you need to
+[10476.7-10481.6] discuss. So generally phone screening is something that where we have to have the
+[10481.6-10487.5] lot of questions we discuss with the candidate or the details, okay. And then save it. So you can
+[10487.5-10495.0] also add up the follow up task in the system from here itself, okay. And then save it. So that's why
+[10495.0-10501.4] guys, it is very important to make sure that whatever the actions of nodes need to be discussed,
+[10501.4-10508.6] as per the high track process, you need to always add it, okay. And select the particular details.
+[10508.6-10516.6] So for example, your candidate, select a for interview, right. And phone screening happened.
+[10518.8-10525.4] Maybe you don't like the candidate for the position, okay. And Komal said, okay,
+[10525.4-10529.8] this candidate is not relevant to this position, okay. The position I've been working for.
+[10530.6-10533.0] So what you can do is, you can always select this
+[10533.2-10539.8] rejected after the phone screening and save it. Once I save it, what will happen? It will give me
+[10540.6-10545.8] nodes idea that, okay, this candidate ownership taken was for one week. This candidate has been
+[10545.8-10551.6] rejected by the phone screening, okay. Now why it is important, it will give you the status of the
+[10551.6-10558.5] candidates in the job diva about the rejection, acceptance, RTL shared, any particular nodes in
+[10558.5-10565.1] the node section too, okay. That is the more relevancy of the nodes, even you can check and
+[10565.1-10571.7] view deleted nodes from here itself. So this is all about your node sections.
+[10573.2-10579.6] Next, how to perform a particular submissions. I hope everybody is clear, what is the relevancy
+[10579.6-10588.2] of node section and what actions need to be performed. And even you can use templates too,
+[10588.3-10597.0] okay. So now, guys, most important thing which is submissions. So how to submit this candidate
+[10597.0-10600.8] internally? We were discussing about the activity in the job section, right, in this section.
+[10604.7-10609.7] Here, we can also perform the activities from here. Additionally, we can also perform the
+[10609.7-10617.4] activities from this section. So how we will do it? First of all, we will go to activity section.
+[10617.4-10621.0] If I wanted to submit a candidate which has been logged now ownership has been taken,
+[10621.0-10625.3] I wanted to update the candidate resume and job diva to my manager that I wanted to submit
+[10625.3-10631.5] this candidate, I would use this icon, small resume and go to this new activity. First of all,
+[10631.5-10637.5] step number one guys, very important, have a do everything step by step, okay. First thing,
+[10637.5-10644.0] select your particular assigned job. You can choose your particular job ID and search it.
+[10644.7-10651.6] Then you need to select for a particular job which is already selected. Position type,
+[10652.2-10655.3] update the latest resume of the candidate by selecting this icon.
+[10656.6-10661.6] Submit to your manager or primary sales, okay, who is assigned to this position.
+[10662.2-10668.2] We will always write down the aggregate build rate, okay. Always write down the
+[10668.9-10676.3] aggregate period hourly per day, year or weekly, okay. Submit to date and time which is already
+[10676.3-10682.2] reflected. Time zone, you can choose the time zone. If it is cop to cop, generally in healthcare,
+[10682.2-10688.2] we don't do it, okay. In major cases, we can always select the particular date and then
+[10688.9-10693.1] check for your primary sales and steep Smith. And if you wanted to add any particular internal
+[10693.1-10698.3] notes, you can add it to brief your manager about the candidate. Most important guys,
+[10699.4-10706.2] this is part of Hired Track Process. Send email to primary sales, okay. Now, I am going to perform
+[10706.2-10718.4] this internal submission. Once I clicked on this primary sales icon, this entire interface will
+[10718.4-10724.6] open. In this case, what you need to do, first of all guys, you need to select the templates, okay.
+[10725.4-10730.2] Now, you need to provide the specific ratings to your manager, okay, that this is something that
+[10730.2-10736.2] candidate I am considering for particular role. This is my observation. This is the client, okay.
+[10737.0-10741.5] And this is the title. This is the primary specialties, okay. So, you need to provide them the
+[10741.5-10747.8] clinical profile. Second, the candidate wallet status which we will discuss in coming time.
+[10747.8-10753.6] Licenses details which has been added, okay. Assignments availability details and
+[10753.6-10758.3] aggregate period which already has been filled out and other informations and you need to provide
+[10758.3-10764.6] the candidate background summary details in three to five lines and provide you ratings with the
+[10764.6-10772.1] percentage or the ratings which has been mentioned and provide why this candidate stands out, okay.
+[10772.2-10778.9] And any concerning red flags and the details and send email to your manager, okay. Once you do it,
+[10780.0-10784.3] they would be able to get an idea about this submission that, okay, this is the recruiters
+[10784.3-10788.5] observation. So, guys, this is all about the automating the process rather than going to
+[10788.5-10795.1] recruit manager requesting them, right. Please, sir, you can submit my resume. This is my observation.
+[10795.1-10800.2] You can provide it directly by sitting from here itself, okay. For example, we have recruiters
+[10800.2-10805.3] working from home, right. They can just submit the candidate, provide the observation with the
+[10805.3-10810.6] details and submit to their managers. So, their managers can check the details. Same goes with
+[10810.6-10814.6] the manager. So, manager need to submit the candidate. They also need to provide their
+[10814.6-10822.3] observation with the details for external submissions, okay. From here, I can delete this
+[10822.3-10828.5] submission. If you wanted to make external submission in JobDiva, how to do it? We can do it from here.
+[10828.5-10834.0] We just need to reopen this submission again and either I can reject the candidate as a manager
+[10834.0-10840.4] or submit the candidate externally to client, okay. And I need to again notify to the particular
+[10840.4-10848.2] details. So, I need to make an entry of it and save it. So, guys, this is just an internal
+[10848.2-10853.4] submission. I am just deleting right now for the reference. But generally, this is how we make a
+[10853.4-10858.5] submission in the JobDiva and how we can utilize the HireTrack process, okay.
+[10859.8-10865.4] So, I hope Komal and actually we are aware now how to make internal submission, how to make
+[10865.4-10871.8] external submission, how to reject the candidate and how to follow the HireTrack process in submission.
+[10874.4-10877.1] Next, how to update and interviews in the JobDiva?
+[10877.3-10885.3] So, most important thing, guys, we need to select the particular job. We need to select the position
+[10885.3-10891.4] type. We need to select the resume, okay. We need to select the interview name. If it is the same
+[10891.4-10895.7] way to your hiring measures, which has been mentioned, agreeable rate, pay rate, most important,
+[10895.7-10902.5] guys, interview date and time with time zones, okay. You need to consider three details to get
+[10903.1-10910.6] updated information from the manager and you need to always write down, aggregate on
+[10912.2-10919.3] the interview, the details which you received on the date, okay. And then even you can also enter
+[10919.3-10925.7] the any particular Zoom link, any particular other details in the JobDiva and save it. Once you save
+[10926.4-10933.2] your interview will be updated here itself. Now, one interview has been updated. You can also
+[10934.2-10939.0] reschedule another or update another interview in JobDiva from same procedure, okay.
+[10940.2-10943.4] This is how your interview are updated.
+[10945.8-10947.1] Till here, any question, guys?
+[10947.4-10959.9] Next feature, okay. Next feature is called as start. Generally, only your managers and DMs are
+[10959.9-10965.4] authorized. But in case in future, if you're authorized to make a start of any particular
+[10965.4-10970.7] candidate, the candidates that joined the project, we got the confirmation on how to perform it.
+[10970.7-10975.9] This is the feature we need to use. Step number one, we need to go to more search.
+[10975.9-10977.6] Komal, can you just turn on your camera?
+[10981.8-10990.1] Thank you. In this feature, what we can do is we can select for a particular job reference ID,
+[10990.1-10996.0] search it. Okay. Second, we need to select the position type.
+[10997.0-11003.4] Higher, is it a rehire or new hire? Okay. Second, final build rate. Then we need to add for the
+[11003.4-11009.6] period. Client contacts, you can add the start date and the end date from here itself.
+[11010.2-11015.4] Then you can choose for any particular start actions, which is selected. Okay.
+[11016.4-11023.7] Half-receptor and any additional details need to be added and then send it. Once you send,
+[11023.7-11029.0] you can also save it here from here. Even guys, you can notify to any particular users to
+[11029.7-11036.1] these icons. Okay. And then save it. Once you save it, you would be able to see the start mentioned
+[11036.1-11043.7] in this section. This is how we can make a start in the job developer. Clear? Guys, only we are left
+[11043.7-11048.0] with a very small portion of job developer and after that we will take lunch break. Okay. So,
+[11048.6-11055.8] take five minutes. Yeah. So, I hope this side everybody is clear about activities,
+[11056.4-11062.8] notes, qualifications, a bit part of qualifications, right? Licenses, certifications.
+[11064.5-11070.5] Any question in this section? Okay. Good. Now, team, most important thing, which is
+[11071.7-11078.0] right side of the candidate. First of all, how to download the resume of the candidate and upload
+[11078.0-11083.8] the resume of the candidate. Before that, this is a feature called as wallet. So, guys, whatever
+[11083.8-11089.6] the details we have been adding to attachments, to certifications, to licenses, whatever details
+[11089.6-11096.0] has been added, it will be reflected in the wallets. Wallet is what it is just a complete set of
+[11096.0-11101.9] information in regards to your certification, licenses, or any attachments has been added here.
+[11101.9-11107.8] RTS has been added here. Okay. Or updated. You would be able to see entire candidate details
+[11107.8-11115.0] in this wallet section. If you wanted to add or represent any wallet, I can check from here. Now,
+[11116.2-11121.1] this is unslecked. At this point of time, I am not able to see a candidate wallet details mentioned
+[11121.1-11126.1] here or the candidate information that has been added in the wallet, how to do it. We can do it
+[11126.1-11132.8] from here. We generally need to select this icon and this icon, whatever the details has been added
+[11132.9-11139.8] and update it. Okay. And you would be able to see that, okay, now these details are mentioned
+[11139.8-11146.6] here itself. However, the wallet status is incomplete because still all parameters has not been
+[11147.6-11155.1] added. Okay. In the job diva. However, you can also download the entire information of the
+[11155.2-11162.8] added details in the wallet in most file or maybe in the, so candidates may have,
+[11167.5-11175.5] okay. So candidate already have been, I think so this candidate already has been presented
+[11175.5-11184.1] somewhere earlier and they have the particular. Can you see guys? This is something called as
+[11184.2-11189.9] seminal packet. So means rather than requesting calling a candidate, right, it is a hard work of
+[11189.9-11195.8] a one recruiter, which will be beneficial to every recruiter. Okay. So every information can be
+[11195.8-11200.9] verified and discussed with a candidate by having a preloaded wallet, all the details available in
+[11200.9-11206.6] the wallet section. Okay. So that's why guys, it is very important for you guys also to upload
+[11206.6-11213.6] each and every detail in the wallet section as well as in certification, attachments, RTR,
+[11213.6-11223.0] qualification, certification licenses. Okay. Clear guys. Next is called as resume. So we can
+[11223.7-11230.2] upload the resume from here itself by selecting any particular source and upload it. We can
+[11230.2-11235.7] download the resume from this section. Guys, this icon will give you an overview that this is the
+[11235.7-11241.8] latest resume available of this candidate job diva. Maybe if we have any other dates to mean,
+[11241.8-11245.2] that is the previous updated resume of the candidate available in job diva.
+[11247.0-11253.0] Next icon is printer resume. We can print it from here. Next resume email resume. We can email the
+[11253.0-11263.0] resume from here itself. Next, which is called as find ideal candidate, find ideal job to this
+[11263.0-11268.0] candidate. For example, this candidate has the resume. Now I wanted to make sure that
+[11268.6-11274.4] I wanted to find ideal jobs for this candidate. So there are plenty of jobs you can reach for this
+[11274.4-11281.6] particular candidate. You can select any particular job and can reach him. Second, if I wanted to
+[11281.6-11286.8] check for any particular job that matches to this candidate, I can select the ID and no criteria has
+[11286.8-11295.0] been matched to this resume. Generate a tailored resume to a job. So guys, if you wanted to generate
+[11295.0-11301.7] any particular resume to a job, you can generate it like this. But generally, we don't do it. We
+[11301.7-11307.5] highly recommend to go to candidate, request for updated resume and format the resume. Okay.
+[11308.7-11312.6] In this section, we just allow it.
+[11317.2-11323.8] We have another feature which is called as AIS system. So guys, it is used for writing down
+[11323.8-11330.4] any particular summary. This is auto AI feature. It will help you to generate a maybe casual or
+[11330.4-11336.2] formal summary, maybe approximate approximately length of the write up as per your selection of words
+[11336.2-11341.5] and the summary will be generated here itself. However, you can also use chat GPT if you would
+[11341.5-11348.2] like to, but we can also utilize job diva AI specific feature in terms of summary generation.
+[11348.3-11353.0] Okay. Clear. Two layer. Any question guys?
+[11355.4-11362.4] So we can all, okay. We can also, can you see this one resume list? So how many resume has been
+[11362.4-11371.1] uploaded in this section? We can also hide it or unhide it from here. Next guys, most important,
+[11371.1-11377.3] which is called as diva match. What is the benefit of diva match? First of all, guys,
+[11377.3-11384.0] diva match will give you the percentage of any particular matching job to this candidate.
+[11386.0-11395.8] Can you see this? This first job AI healthcare, RN medical surgical has 90%, 95% of matching
+[11395.8-11401.4] to this candidate. Even you can also check against any random job you would like to check from here
+[11401.4-11407.8] itself. Okay. Now, what is the benefit guys? You have pool of opportunities to submit this candidate
+[11407.8-11416.0] in job diva and to clients. So I can submit this candidate to how many jobs I can discuss with
+[11416.0-11422.2] these job two candidates. So rather than looking for jobs, we have pre ready set open jobs in the
+[11422.2-11433.0] job diva. Okay. But these jobs should be open in job diva. Is it not? It is closed in the portal
+[11433.0-11441.8] and still it is open in the job diva. What will happen? This feature you can utilize, but generally
+[11441.8-11448.2] you need to always check for any particular details accurately. Okay. But yes, you can utilize it in
+[11448.2-11453.6] very great matching for any particular job so that you can submit to particular candidate.
+[11453.6-11461.4] You can sort it by highest to lowest matchings. Okay. Clear? Any questions from here guys?
+[11465.0-11470.9] Save emails. So guys, it is very important to utilize this feature. So now our job diva has
+[11470.9-11476.6] been integrated with how to look to write or sync without look to. So any particular
+[11476.9-11484.3] communicating with this candidate on this email, you can able to check any particular
+[11485.0-11492.8] emails of communication to this candidate of any particular recruiter within the company.
+[11494.2-11503.2] Can you see guys? I always send the RTRs right and maybe other informations they have mentioned.
+[11504.0-11510.6] So your RTR subject, it is very relevant to the subject where so subject is RTR shared. Okay.
+[11510.6-11516.4] So that's why major of the emails you are seeing that are RTR shared. Okay. Task which we already
+[11516.4-11521.4] discussed. I think so e-live interviews and live interviews which we have already discussed.
+[11521.4-11528.7] So team with this we are done with entire job diva training and I hope now you would be able to
+[11529.0-11533.4] utilize job diva effectively in your recruitment journey.
+[11537.4-11539.6] So any question from your side guys?
+[11541.2-11541.7] Also.
+[11543.2-11545.1] Actually any question from your side?
+[11552.6-11554.2] Ma'am we are done with job diva.

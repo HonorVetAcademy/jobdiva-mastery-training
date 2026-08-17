@@ -1,21 +1,23 @@
 # JobDiva Mastery — Recruiter Training
 
-An animated, voice-narrated training course that walks new recruiters through JobDiva and HonorVet's HireTrack Flow — from what an ATS is, through sourcing, screening, compliance, and the interview-to-offer process — using real screenshots and clips from an actual JobDiva session.
+A hands-on, voice-narrated training course built directly from a live JobDiva/HireTrack recruiter training session recording. Real screen-recording video (attendee panels cropped out) walks through the full recruiter workflow — from what an ATS is, through sourcing, job creation, candidate management, mass outreach, and the end-to-end HireTrack placement process — with narration precisely timed to what's on screen.
 
-**Live course:** enable GitHub Pages on this repo (Settings → Pages → Deploy from branch `main`, folder `/`) or open it directly via the Pages URL once enabled.
+**Live course:** https://honorvetacademy.github.io/jobdiva-mastery-training/
 
 ## What's inside
 
-- **`index.html`** — the self-contained build. All screenshots/clips are embedded as base64 data URIs, so this single file is the entire app — open it directly in a browser, or serve it via GitHub Pages.
-- **`dev/`** — the working source: `dev/index.html` references image files under `dev/shots/clips/` individually (easier to edit), plus the source screenshots, playbook material, and the Python scripts used to extract/crop clips from the original session recordings.
+- **`index.html`** — the app. Loads `course-data.js` (lesson content/timing), `captions_b64.js` (embedded WebVTT captions), and `logo.js`, and plays back the course video from `out/parts/`.
+- **`out/parts/`** — the training video, split into 4 parts (each under GitHub's 100MB file limit). Each lesson knows which part it lives in and seeks to the right local timestamp automatically — from a viewer's perspective it plays as one continuous course.
+- **`dev/`** — the source material and generation scripts used to build the course: the trimmed narration script per lesson (`lesson_segments.json`), per-segment audio durations, the raw session transcript, and the Python scripts (`gen_segments.py`, `gen_captions_parts.py`, `assemble_v2.py`) that synthesize narration (Edge TTS), build per-part WebVTT captions, and assemble the final narration track.
 
 ## Features
 
-- Real JobDiva screenshots and clips with an animated magnifying-glass highlight synced to narration
-- Full voice narration via the Web Speech API, with natural pacing and pause/resume
-- Collapsible sidebar course outline, mirroring the HireTrack Flow's two phases and nine checkpoints
-- A final assessment (80% to pass) that unlocks a HonorVet Technologies certificate of completion, with a print-to-PDF option
+- 35 lessons across 9 modules, each with a "what you'll learn," skills, key takeaways, terminology, and knowledge-check quizzes
+- Narration precisely anchored to on-screen content — no single continuous voiceover drifting out of sync with the video
+- Custom video player: play/pause, scrubbing, fullscreen, and toggleable synced captions
+- Sequential lesson locking — complete a lesson to unlock the next
+- A final assessment covering the full course
 
 ## Privacy note
 
-All screenshots have been reviewed and cropped to remove any colleagues' faces, video-call panels, or personal browser profile photos before inclusion.
+The source recording has been cropped to remove attendee webcam panels and any other participant-identifying UI before inclusion.
