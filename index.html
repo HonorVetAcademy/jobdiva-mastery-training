@@ -215,6 +215,12 @@ video::cue{background:rgba(5,15,20,0.75); color:#fdf6e6; font-family:var(--sans)
   .hero{padding:36px 26px;}
   .hero h1{font-size:28px;}
 }
+@media print{
+  .sidebar, .topbar, .no-print{display:none !important;}
+  body, .content{background:#fff !important; padding:0 !important; margin:0 !important;}
+  .completion-wrap{padding:0 !important;}
+  .cert-box{box-shadow:none !important; margin-top:0 !important; page-break-inside:avoid;}
+}
 </style>
 </head>
 <body>
@@ -237,7 +243,9 @@ video::cue{background:rgba(5,15,20,0.75); color:#fdf6e6; font-family:var(--sans)
 <script src="course-data.js?v=11"></script>
 <script>
 const STORAGE_KEY = "jobdiva_course_progress_v1";
-let state = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{"completed":{},"collapsed":{},"quiz":{},"finalScore":null}');
+let state = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{"completed":{},"collapsed":{},"quiz":{},"finalScore":null,"watched":{},"certName":""}');
+if(!state.watched) state.watched = {};
+if(state.certName === undefined) state.certName = "";
 function saveState(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
 
 const ALL_LESSONS = COURSE.modules.flatMap(m => m.lessons.map(l => ({...l, moduleId:m.id, moduleTitle:m.title})));
@@ -248,6 +256,8 @@ function completedCount(){ return Object.keys(state.completed).filter(k=>state.c
 function pct(){ return Math.round((completedCount()/totalLessons())*100); }
 function isDone(id){ return !!state.completed[id]; }
 function moduleDone(m){ return m.lessons.every(l=>isDone(l.id)); }
+function isWatched(id){ return !!state.watched[id]; }
+function allLessonsDone(){ return ALL_LESSONS.every(l=>isDone(l.id)); }
 function isUnlocked(id){
   const idx = ALL_LESSONS.findIndex(x=>x.id===id);
   if(idx<=0) return true;
@@ -261,6 +271,19 @@ function flashLocked(){
   note = document.createElement("div");
   note.id = "lockNote";
   note.textContent = "🔒 Complete the current lesson first to unlock this one.";
+  note.style.cssText = "position:fixed; top:76px; right:36px; background:#1a1a1a; color:#fff; padding:10px 16px; border-radius:8px; font-size:12.5px; font-weight:700; box-shadow:0 8px 24px rgba(0,0,0,0.25); z-index:50;";
+  document.body.appendChild(note);
+  setTimeout(()=>{ note.remove(); }, 2600);
+}
+function flashFinalLocked(){
+  const topbar = document.querySelector(".topbar");
+  if(!topbar) return;
+  let note = document.getElementById("lockNote");
+  if(note) note.remove();
+  note = document.createElement("div");
+  note.id = "lockNote";
+  const remaining = totalLessons() - completedCount();
+  note.textContent = `🔒 Complete all ${totalLessons()} lessons first — ${remaining} remaining.`;
   note.style.cssText = "position:fixed; top:76px; right:36px; background:#1a1a1a; color:#fff; padding:10px 16px; border-radius:8px; font-size:12.5px; font-weight:700; box-shadow:0 8px 24px rgba(0,0,0,0.25); z-index:50;";
   document.body.appendChild(note);
   setTimeout(()=>{ note.remove(); }, 2600);
@@ -299,7 +322,8 @@ function renderSidebar(){
     });
     html += `</ul></div>`;
   });
-  html += `<button class="nav-btn ${currentView.type==='final'?'active':''}" onclick="goFinal()">🏁 Final Assessment</button>`;
+  const finalLocked = !allLessonsDone();
+  html += `<button class="nav-btn ${currentView.type==='final'?'active':''}" onclick="${finalLocked?'flashFinalLocked()':'goFinal()'}" title="${finalLocked?'Complete every lesson to unlock':''}">${finalLocked?'🔒':'🏁'} Final Assessment</button>`;
   sb.innerHTML = html;
 }
 
@@ -309,17 +333,42 @@ function goLesson(id){
   if(!isUnlocked(id)){ flashLocked(); return; }
   currentView = {type:"lesson", id}; render();
 }
-function goFinal(){ currentView = {type:"final"}; render(); }
-function goCompletion(){ currentView = {type:"completion"}; render(); }
+function goFinal(){
+  if(!allLessonsDone()){ flashFinalLocked(); return; }
+  currentView = {type:"final"}; render();
+}
+function goCompletion(){
+  if(!state.completionDate){ state.completionDate = new Date().toDateString(); saveState(); }
+  currentView = {type:"completion"}; render();
+}
+function updateCertName(val){ state.certName = val; saveState(); const el = document.getElementById("certRecipient"); if(el) el.textContent = val.trim() || "_______________________"; }
+function printCertificate(){ window.print(); }
 
 function markDone(id, val){
+  if(val && !isWatched(id)){
+    const cb = document.getElementById("doneToggle");
+    if(cb) cb.checked = false;
+    return;
+  }
   state.completed[id] = val; saveState(); renderSidebar();
   if(currentView.type==='lesson' && currentView.id===id){
     const nextBtn = document.getElementById("nextBtn");
     if(nextBtn){ nextBtn.disabled = !val; nextBtn.title = val ? "" : "Mark this lesson complete to continue"; }
-    const hint = document.getElementById("lockHint");
+    const hint = document.getElementById("doneHint");
     if(hint) hint.style.display = val ? "none" : "block";
   }
+}
+function markWatched(id){
+  if(isWatched(id)) return;
+  state.watched[id] = true; saveState();
+  const label = document.getElementById("doneToggleLabel");
+  const cb = document.getElementById("doneToggle");
+  const lockHint = document.getElementById("lockHint");
+  if(cb) cb.disabled = false;
+  if(label) label.title = "";
+  if(lockHint) lockHint.style.display = "none";
+  const doneHint = document.getElementById("doneHint");
+  if(doneHint && !isDone(id)) doneHint.style.display = "block";
 }
 
 function render(){
@@ -383,8 +432,8 @@ function renderHome(){
   </div>
   <div class="card" style="text-align:center;">
     <h3>Final Assessment</h3>
-    <p style="color:var(--muted)">A ${FINAL_ASSESSMENT.length}-question checkpoint covering the full course. Unlocks anytime — best after finishing all lessons.</p>
-    <button class="pill-btn primary" onclick="goFinal()">Go to Final Assessment</button>
+    <p style="color:var(--muted)">A ${FINAL_ASSESSMENT.length}-question checkpoint covering the full course. ${allLessonsDone() ? "You've completed every lesson — you're ready." : `Locked until all ${totalLessons()} lessons are complete (${completedCount()}/${totalLessons()} so far).`}</p>
+    <button class="pill-btn primary" ${allLessonsDone()?"":"disabled"} title="${allLessonsDone()?"":"Complete every lesson to unlock"}" onclick="goFinal()">${allLessonsDone()?"Go to Final Assessment":"🔒 Locked"}</button>
   </div>
   `;
 }
@@ -461,10 +510,11 @@ function renderLesson(l){
 
   <div class="nav-buttons">
     <button class="pill-btn" ${prevL?"":"disabled"} onclick="${prevL?`goLesson('${prevL.id}')`:""}">← Previous</button>
-    <label class="complete-toggle"><input type="checkbox" id="doneToggle" ${isDone(l.id)?"checked":""} onchange="markDone('${l.id}', this.checked)"> Mark lesson complete</label>
+    <label class="complete-toggle" id="doneToggleLabel" title="${isWatched(l.id)?"":"Watch the full video to unlock this"}"><input type="checkbox" id="doneToggle" ${isDone(l.id)?"checked":""} ${isWatched(l.id)?"":"disabled"} onchange="markDone('${l.id}', this.checked)"> Mark lesson complete</label>
     <button class="pill-btn primary" id="nextBtn" ${isDone(l.id)?"":"disabled"} title="${isDone(l.id)?"":"Mark this lesson complete to continue"}" onclick="${nextL?`goLesson('${nextL.id}')`:`goFinal()`}">${nextL?"Next Lesson →":"Go to Final Assessment →"}</button>
   </div>
-  <div id="lockHint" style="text-align:right;margin-top:8px;font-size:11.5px;color:var(--muted); display:${isDone(l.id)?"none":"block"};">🔒 Check "Mark lesson complete" above to unlock the next lesson.</div>
+  <div id="lockHint" style="text-align:right;margin-top:8px;font-size:11.5px;color:var(--muted); display:${isWatched(l.id)?"none":"block"};">▶ Watch the full video to unlock "Mark lesson complete."</div>
+  <div id="doneHint" style="text-align:right;margin-top:8px;font-size:11.5px;color:var(--muted); display:${(isWatched(l.id) && !isDone(l.id))?"block":"none"};">🔒 Check "Mark lesson complete" above to unlock the next lesson.</div>
   `;
 }
 
@@ -549,6 +599,9 @@ function attachVideo(l){
   let lastSaved = 0;
   v.addEventListener("timeupdate", ()=>{
     if(!ccScrubbing) paint(v.currentTime - l.start);
+    if(v.currentTime >= l.end - 1){
+      markWatched(l.id);
+    }
     if(v.currentTime >= l.end + 2){
       if(!pausedAtEnd){ v.pause(); pausedAtEnd = true; }
     } else {
@@ -645,6 +698,7 @@ function renderFinal(){
   `;
 }
 let finalAnswers = {};
+function attachFinal(){ finalAnswers = {}; }
 function selectFinal(qi, oi){
   finalAnswers[qi] = oi;
   const box = document.querySelector(`[data-fquiz="${qi}"]`);
@@ -677,17 +731,36 @@ function submitFinal(){
 }
 
 function renderCompletion(){
+  const name = (state.certName||"").trim();
   return `
   <div class="completion-wrap">
-    <div style="font-size:52px;">🏅</div>
-    <h1>Course Complete</h1>
-    <p style="color:var(--muted);max-width:520px;margin:0 auto;">You've completed <b>${COURSE.title}</b> — ${totalLessons()} lessons across ${COURSE.modules.length} modules, plus the final assessment (score: ${state.finalScore ?? "—"}%).</p>
-    <div class="cert-box">
-      <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);font-weight:800;">Certificate of Completion</div>
-      <h2 style="margin:10px 0 4px;">JobDiva ATS Mastery for US Staffing Recruiters</h2>
-      <p style="color:var(--muted);margin:0;">Completed ${new Date().toDateString ? "" : ""}Batch 118 Training Day 4 Course</p>
+    <div class="no-print">
+      <div style="font-size:52px;">🏅</div>
+      <h1>Course Complete</h1>
+      <p style="color:var(--muted);max-width:520px;margin:0 auto;">You've completed <b>${COURSE.title}</b> — ${totalLessons()} lessons across ${COURSE.modules.length} modules, plus the final assessment (score: ${state.finalScore ?? "—"}%).</p>
+      <div style="max-width:360px;margin:22px auto 0;text-align:left;">
+        <label style="font-size:12px;font-weight:700;color:var(--muted);">Name for certificate</label>
+        <input id="certNameInput" type="text" value="${name.replace(/"/g,'&quot;')}" placeholder="Type your full name" oninput="updateCertName(this.value)" style="width:100%;margin-top:6px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-family:inherit;">
+      </div>
     </div>
-    <div style="margin-top:26px;">
+    <div class="cert-box" id="certBox">
+      <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);font-weight:800;">Certificate of Completion</div>
+      <div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:2px;">HonorVet Technologies</div>
+      <p style="margin:22px 0 2px;font-size:12.5px;color:var(--muted);">This certifies that</p>
+      <h2 id="certRecipient" style="margin:0 0 14px;font-size:26px;">${name || "_______________________"}</h2>
+      <p style="margin:0 0 4px;font-size:12.5px;color:var(--muted);">has successfully completed</p>
+      <h2 style="margin:0 0 16px;">${COURSE.title}</h2>
+      <p style="color:var(--muted);margin:0 0 22px;">${totalLessons()} lessons · ${COURSE.modules.length} modules · Final assessment score: ${state.finalScore ?? "—"}%</p>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:18px;padding-top:14px;border-top:1px solid rgba(200,150,62,0.4);">
+        <div style="text-align:left;">
+          <div style="font-family:var(--serif);font-size:16px;font-weight:600;">HonorVet Technologies</div>
+          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">Recruiter Training</div>
+        </div>
+        <div style="text-align:right;font-size:12.5px;color:var(--muted);">Completed ${state.completionDate || new Date().toDateString()}</div>
+      </div>
+    </div>
+    <div class="no-print" style="margin-top:26px;display:flex;gap:12px;justify-content:center;">
+      <button class="pill-btn primary" onclick="printCertificate()">🖨️ Print / Save as PDF</button>
       <button class="pill-btn" onclick="goHome()">← Back to Course Home</button>
     </div>
   </div>`;
