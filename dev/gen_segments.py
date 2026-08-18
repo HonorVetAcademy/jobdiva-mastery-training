@@ -18,6 +18,8 @@ MAX_RETRIES = 5
 def mp3_is_valid(path):
     return os.path.exists(path) and os.path.getsize(path) > 1000
 
+MAX_CHARS_PER_SEC = 19.5  # natural speech at this voice/rate never exceeds this; higher implies a truncated/cut-short synth
+
 async def synth(lid, idx, text):
     key = f"{lid}_{idx}"
     mp3_path = os.path.join(OUT_MP3, f"{key}.mp3")
@@ -37,9 +39,11 @@ async def synth(lid, idx, text):
                                     stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
                 with wave.open(wav_path, "rb") as w:
                     dur = w.getnframes() / w.getframerate()
+                if len(text) / dur > MAX_CHARS_PER_SEC:
+                    raise RuntimeError(f"implausible rate {len(text)/dur:.1f} chars/sec — likely truncated synth")
                 return key, dur
             except Exception as e:
-                if os.path.exists(mp3_path) and not mp3_is_valid(mp3_path):
+                if os.path.exists(mp3_path):
                     os.remove(mp3_path)
                 if os.path.exists(wav_path):
                     os.remove(wav_path)
