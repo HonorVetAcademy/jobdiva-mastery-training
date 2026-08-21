@@ -203,10 +203,31 @@ video::cue{background:rgba(5,15,20,0.75); color:#fdf6e6; font-family:var(--sans)
 .score-ring{width:130px;height:130px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;margin:0 auto 20px; font-family:var(--serif); box-shadow:var(--shadow-sm);}
 .completion-wrap{text-align:center; padding:44px 20px;}
 .completion-wrap h1{font-size:30px; font-family:var(--serif); font-weight:600;}
-.cert-box{border:1px solid rgba(200,150,62,0.4); border-radius:var(--r-lg); padding:36px; margin-top:26px;
-  background:linear-gradient(160deg,#fffdf6,var(--gold-soft)); position:relative; box-shadow:var(--shadow-md);}
-.cert-box::before{content:''; position:absolute; inset:10px; border:1px dashed rgba(200,150,62,0.5); border-radius:calc(var(--r-lg) - 6px); pointer-events:none;}
-.cert-box h2{font-family:var(--serif); font-weight:600;}
+/* HonorVet standard certificate */
+.hv-cert{max-width:660px; margin:26px auto 0; background:#fff; text-align:center; position:relative;
+  border-left:6px solid #ee1a0f; border-right:6px solid #ee1a0f; box-shadow:var(--shadow-md); overflow:hidden;}
+.hv-cert-bar{height:9px; background:linear-gradient(90deg,#ee1a0f,#ff9000,#ffd400);}
+.hv-cert-inner{padding:38px 44px 34px;}
+.hv-cert-logo{max-width:230px; width:100%; height:auto; margin:0 auto 10px; display:block;}
+.hv-cert-tagline{font-size:10.5px; letter-spacing:2px; text-transform:uppercase; color:#9a9a9a; font-weight:600;}
+.hv-cert-rule{height:1px; background:linear-gradient(90deg,transparent,rgba(238,26,15,0.35),transparent); margin:20px 0;}
+.hv-cert-kicker{font-size:12px; letter-spacing:2.5px; text-transform:uppercase; color:#ee1a0f; font-weight:800; margin-bottom:6px;}
+.hv-cert-course{font-family:var(--serif); font-weight:700; font-size:22px; margin:0 0 18px; color:var(--ink);}
+.hv-cert-muted{color:#8a8a8a; font-size:13px; margin:0 0 2px;}
+.hv-cert-name{font-size:34px; font-weight:800; color:#ee1a0f; display:inline-block; margin:2px 0 18px;
+  padding-bottom:6px; border-bottom:2.5px solid #ee1a0f;}
+.hv-cert-desc{color:#666; font-size:13px; line-height:1.6; max-width:520px; margin:0 auto 20px;}
+.hv-cert-pillrow{display:flex; justify-content:center; gap:14px; flex-wrap:wrap; margin-bottom:6px;}
+.hv-cert-pill{background:#fdecea; border:1px solid rgba(238,26,15,0.25); color:#c62828; border-radius:999px;
+  padding:8px 18px; font-size:12.5px; font-weight:600;}
+.hv-cert-signame{font-family:var(--serif); font-style:italic; font-weight:700; font-size:19px; color:var(--ink);
+  display:inline-block; padding-bottom:5px; border-bottom:1.5px solid #333; margin-top:8px;}
+.hv-cert-sigtitle{font-size:11px; letter-spacing:1.5px; text-transform:uppercase; color:#ee1a0f; font-weight:800; margin-top:6px;}
+.hv-cert-site{font-size:12px; color:#9a9a9a; margin-top:2px;}
+.hv-cert-footer{display:flex; align-items:center; justify-content:center; gap:22px; margin-top:4px;}
+.hv-cert-footer-div{width:1px; height:32px; background:#ddd;}
+.hv-cert-footer-main{font-family:'Courier New',ui-monospace,monospace; font-weight:700; font-size:14.5px; color:var(--ink);}
+.hv-cert-footer-sub{font-size:9.5px; letter-spacing:1.5px; text-transform:uppercase; color:#9a9a9a; margin-top:2px;}
 
 @media (max-width:900px){
   .sidebar{display:none;}
@@ -215,11 +236,16 @@ video::cue{background:rgba(5,15,20,0.75); color:#fdf6e6; font-family:var(--sans)
   .hero{padding:36px 26px;}
   .hero h1{font-size:28px;}
 }
+@media (max-width:600px){
+  .hv-cert-inner{padding:28px 20px 24px;}
+  .hv-cert-name{font-size:26px;}
+  .hv-cert-footer{gap:14px;}
+}
 @media print{
   .sidebar, .topbar, .no-print{display:none !important;}
   body, .content{background:#fff !important; padding:0 !important; margin:0 !important;}
   .completion-wrap{padding:0 !important;}
-  .cert-box{box-shadow:none !important; margin-top:0 !important; page-break-inside:avoid;}
+  .hv-cert{box-shadow:none !important; margin-top:0 !important; page-break-inside:avoid; max-width:100% !important;}
 }
 </style>
 </head>
@@ -238,9 +264,9 @@ video::cue{background:rgba(5,15,20,0.75); color:#fdf6e6; font-family:var(--sans)
   </main>
 </div>
 
-<script src="logo.js?v=11"></script>
-<script src="captions_b64.js?v=11"></script>
-<script src="course-data.js?v=11"></script>
+<script src="logo.js?v=12"></script>
+<script src="captions_b64.js?v=12"></script>
+<script src="course-data.js?v=12"></script>
 <script>
 const STORAGE_KEY = "jobdiva_course_progress_v1";
 let state = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{"completed":{},"collapsed":{},"quiz":{},"finalScore":null,"watched":{},"certName":""}');
@@ -743,21 +769,33 @@ function renderCompletion(){
         <input id="certNameInput" type="text" value="${name.replace(/"/g,'&quot;')}" placeholder="Type your full name" oninput="updateCertName(this.value)" style="width:100%;margin-top:6px;padding:10px 12px;border:1px solid var(--line);border-radius:8px;font-size:14px;font-family:inherit;">
       </div>
     </div>
-    <div class="cert-box" id="certBox">
-      <div style="font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);font-weight:800;">Certificate of Completion</div>
-      <div style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:2px;">HonorVet Technologies</div>
-      <p style="margin:22px 0 2px;font-size:12.5px;color:var(--muted);">This certifies that</p>
-      <h2 id="certRecipient" style="margin:0 0 14px;font-size:26px;">${name || "_______________________"}</h2>
-      <p style="margin:0 0 4px;font-size:12.5px;color:var(--muted);">has successfully completed</p>
-      <h2 style="margin:0 0 16px;">${COURSE.title}</h2>
-      <p style="color:var(--muted);margin:0 0 22px;">${totalLessons()} lessons · ${COURSE.modules.length} modules · Final assessment score: ${state.finalScore ?? "—"}%</p>
-      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:18px;padding-top:14px;border-top:1px solid rgba(200,150,62,0.4);">
-        <div style="text-align:left;">
-          <div style="font-family:var(--serif);font-size:16px;font-weight:600;">HonorVet Technologies</div>
-          <div style="font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;">Recruiter Training</div>
+    <div class="hv-cert" id="certBox">
+      <div class="hv-cert-bar"></div>
+      <div class="hv-cert-inner">
+        <img class="hv-cert-logo" src="${HONORVET_LOGO_DATA_URI}" alt="HonorVet Technologies">
+        <div class="hv-cert-tagline">Service-Disabled Veteran Owned Small Business</div>
+        <div class="hv-cert-rule"></div>
+        <div class="hv-cert-kicker">Certificate of Completion</div>
+        <h2 class="hv-cert-course">${COURSE.title}</h2>
+        <p class="hv-cert-muted">This is to proudly certify that</p>
+        <h1 id="certRecipient" class="hv-cert-name">${name || "_______________________"}</h1>
+        <p class="hv-cert-desc">has successfully completed the <b>${COURSE.title}</b> training program, demonstrating mastery of JobDiva navigation, Boolean-search sourcing, job and candidate management, mass outreach, and the end-to-end HireTrack placement process.</p>
+        <div class="hv-cert-pillrow">
+          <span class="hv-cert-pill">🏆 Final Score: <b>${state.finalScore ?? "—"}%</b></span>
+          <span class="hv-cert-pill">📚 Lessons: <b>${totalLessons()}/${totalLessons()}</b></span>
         </div>
-        <div style="text-align:right;font-size:12.5px;color:var(--muted);">Completed ${state.completionDate || new Date().toDateString()}</div>
+        <div class="hv-cert-rule"></div>
+        <div class="hv-cert-signame">Rachana Narang</div>
+        <div class="hv-cert-sigtitle">Authorised — HonorVet Technologies</div>
+        <div class="hv-cert-site">honorvettech.com</div>
+        <div class="hv-cert-rule"></div>
+        <div class="hv-cert-footer">
+          <div><div class="hv-cert-footer-main">${state.completionDate || new Date().toDateString()}</div><div class="hv-cert-footer-sub">Date of Completion</div></div>
+          <div class="hv-cert-footer-div"></div>
+          <div><div class="hv-cert-footer-main">HonorVet Technologies</div><div class="hv-cert-footer-sub">Issuing Organisation</div></div>
+        </div>
       </div>
+      <div class="hv-cert-bar"></div>
     </div>
     <div class="no-print" style="margin-top:26px;display:flex;gap:12px;justify-content:center;">
       <button class="pill-btn primary" onclick="printCertificate()">🖨️ Print / Save as PDF</button>
